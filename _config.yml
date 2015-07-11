@@ -69,6 +69,5 @@ theme: hexo-theme-vno
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/51offer/51offer.github.com.git
+  repo: git@github.com:51offer/51offer.github.com.git
   branch: master
-
