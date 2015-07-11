@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - "0.12"
+
+before_install:
+  # Set Git config
+  - git config --global user.name "travis_bot"
+  - git config --global user.email mithvv@gmail.com
+  # Install Hexo
+  - npm install hexo -g
+  # Clone the repository
+  - git clone git@github.com:51offer/51offer.github.com.git
+
+script:
+  - hexo generate
+  - hexo deploy
+
+branches:
+  only:
+    - blog
