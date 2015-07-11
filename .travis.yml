@@ -2,11 +2,7 @@ language: node_js
 node_js:
 - '0.12'
 before_install:
-
-- git config --global user.name "travis_bot"
-- git config --global user.email mithvv@gmail.com
 - npm install hexo -g
-
 script:
 - hexo generate
 - hexo deploy
