@@ -1,0 +1,27 @@
+menu:
+  #Archives: /archives
+  #项目作品: /projects
+  51Offer: http://www.51offer.com
+rss: /atom.xml
+description: 51Offer免费申请留学智能平台
+social:
+  #weibo: 
+  github: https://github.com/51offer
+  #stack_overflow: 
+  #facebook: http://www.facebook.com/yang.desheng.me
+  #twitter: https://twitter.com/lenbo_
+  #google_plus: https://www.google.com/+LenboMa
+
+page_comment: false
+logo: /images/logo2.jpg
+background:
+  cover: /images/background-cover.jpg
+  color: cover-blue
+
+archive_date_format: MMM DD
+fancybox: true
+
+duoshuo_shortname: 
+
+google_analytics: UA-42596364-1
+favicon: /images/favicon.png
