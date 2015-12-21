@@ -1,5 +1,5 @@
 title: 周精益分享 - 前端入门篇2期
-date: 2015-12-11  10:30:00
+date: 2015-12-18  10:30:00
 tags:
 - linux
 - shell
@@ -8,7 +8,6 @@ tags:
 - weui
 categories: 移动组周技术分享
 ---
-
 ### linux 重定向命令
 
 #### 1. 什么是数据流重定向
@@ -33,7 +32,7 @@ categories: 移动组周技术分享
 
 ####2.输出重定向
 
-```shell
+```
  >：以覆盖的方法将『正确的数据』输出到指定的文件或装置上
  
  1> ：以覆盖的方法将『正确的数据』输出到指定的文件或装置上
@@ -53,8 +52,10 @@ categories: 移动组周技术分享
  >> sus.txt  2>> err.txt：以累加的方法将『正确的数据』输出到sus.txt,将『错误的数据』输出到err.txt
 
 ```
+
 eg: 
-```shell
+
+```
 
     Administrator@jungou-PC /cygdrive/d/20151221
     $ ls
@@ -119,12 +120,13 @@ eg:
 	Administrator@jungou-PC /cygdrive/d/20151221
 	$
 ```
+
 #### 3.输入重定向
 
 - 在标准输入中，<代表将原来需要由键盘输入的数据改由文件内容来替代，<<则代表结束输入。
 
 
-```shell
+```
     Administrator@jungou-PC /cygdrive/d/20151221
     $ cat input.txt
     1
@@ -148,7 +150,7 @@ Android的测试支持库可通过Android SDK管理器获取。参考： Testing
 
 ![](index_files/69ad9c93-77a9-43f0-81dc-381de769725c.png)
 
-##### AndroidJUnitRunner[](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#AndroidJUnitRunner)
+#####[AndroidJUnitRunner](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#AndroidJUnitRunner)
 
 AndroidJUnitRunner类是一个JUnit测试运行器，可以让你在Android设备上执行包括Espresso和UI Automatorr测试框架运行JUnit3或JUnit4中风格的测试类。测试运行器手柄测试加载测试包和应用，运行测试，并报告测试结果。该类取代InstrumentationTestRunner类(仅支持JUnit 3)。
 
@@ -164,7 +166,7 @@ AndroidJUnitRunner类是一个JUnit测试运行器，可以让你在Android设�
 
 要求的Android2.2（API 8）或更高。
 
-##### Espresso[](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#Espresso)
+#####[Espresso](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#Espresso)
 
 
 Espresso提供了一组API来构建UI测以测试用户流程。这些API让你写简洁和可靠运行的自动化UI测试。Espresso非常适合白盒自动测试，在测试代码利用实现代码的细节从应用程序测试。
@@ -181,7 +183,7 @@ Espresso的主要特性：
 
 
 
-##### UI Automator[](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#UIAutomator)
+#####[UI Automator](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#UIAutomator)
 
 
 
