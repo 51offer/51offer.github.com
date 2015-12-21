@@ -1,0 +1,308 @@
+title: 周精益分享 - 前端入门篇2期
+date: 2015-12-11  10:30:00
+tags:
+- linux
+- shell
+- JUnit4
+- express
+- weui
+categories: 移动组周技术分享
+---
+
+### linux 重定向命令
+
+#### 1. 什么是数据流重定向
+
+- Linux 默认提供了三个特殊设备，用于终端的显示和输出，分别为
+ 
+	1. stdin（标准输入,对应于你在终端的输入）
+	2. stdout（标准输出，对应于终端的输出）
+	3. stderr（标准错误输出，对应于终端的输出）
+	
+- 任何一条linux 命令执行，它会是这样一个过程：
+
+![](http://7xohph.com1.z0.glb.clouddn.com/051121.png)
+
+> 一个命令执行了：
+> 
+> 先有一个输入：输入可以从键盘，也可以从文件得到
+> 
+> 命令执行完成：成功了，会把成功结果输出到屏幕：standard output默认是屏幕
+> 
+> 命令执行有错误：会把错误也输出到屏幕上面：standard error默认也是指的屏幕
+
+####2.输出重定向
+
+```shell
+ >：以覆盖的方法将『正确的数据』输出到指定的文件或装置上
+ 
+ 1> ：以覆盖的方法将『正确的数据』输出到指定的文件或装置上
+
+ 1>>：以累加的方法将『正确的数据』输出到指定的文件或装置上
+
+ 2> ：以覆盖的方法将『错误的数据』输出到指定的文件或装置上
+
+ 2>>：以累加的方法将『错误的数据』输出到指定的文件或装置上
+
+ &> ：以覆盖的方法将『正确和错误的数据』输出到指定的文件或装置上
+
+ &>>：以累加的方法将『正确和错误的数据』输出到指定的文件或装置上
+
+ > sus.txt   2> err.txt：以覆盖的方法将『正确的数据』输出到sus.txt,将『错误的数据』输出到err.txt
+
+ >> sus.txt  2>> err.txt：以累加的方法将『正确的数据』输出到sus.txt,将『错误的数据』输出到err.txt
+
+```
+eg: 
+```shell
+
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ ls
+    
+	#以覆盖的方法将『正确的数据』输出到指定的文件或装置上
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ echo "new" > 1.txt
+     
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ ls
+    1.txt
+    
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ cat 1.txt
+    new
+    
+	#以累加的方法将『正确的数据』输出到指定的文件或装置上
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ echo "add" >> 1.txt
+    
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ cat 1.txt
+    new
+    add
+    
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ ech 2.txt
+    -bash: ech: 未找到命令
+    
+    #以覆盖的方法将『错误的数据』输出到指定的文件或装置上
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ ech 2> 2.txt
+    
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ cat 2.txt
+    -bash: ech: 未找到命令
+    
+	#以累加的方法将『错误的数据』输出到指定的文件或装置上
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ ech 2>> 2.txt
+    
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ cat 2.txt
+    -bash: ech: 未找到命令
+    -bash: ech: 未找到命令
+    
+    #以覆盖的方法将『正确的数据』输出到sus.txt,将『错误的数据』输出到err.txt
+    Administrator@jungou-PC /cygdrive/d/20151221
+	$ echo "all" > sus.txt 2> err.txt
+	#以累加的方法将『正确的数据』输出到sus.txt,将『错误的数据』输出到err.txt
+	Administrator@jungou-PC /cygdrive/d/20151221
+	$ eco "add" >> sus.txt 2>> err.txt
+	
+	Administrator@jungou-PC /cygdrive/d/20151221
+	$ cat sus.txt
+	all
+	
+	Administrator@jungou-PC /cygdrive/d/20151221
+	$ cat err.txt
+	-bash: eco: 未找到命令
+	
+	Administrator@jungou-PC /cygdrive/d/20151221
+	$
+```
+#### 3.输入重定向
+
+- 在标准输入中，<代表将原来需要由键盘输入的数据改由文件内容来替代，<<则代表结束输入。
+
+
+```shell
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ cat input.txt
+    1
+    2
+    3 
+	#这里按下[ctrl+d]来离开
+    Administrator@jungou-PC /cygdrive/d/20151221
+    $ cat input.txt
+    1
+    2
+    3
+```
+
+
+##Android 测试库
+
+
+Android的测试支持库为测试Android应用提供了大量框架。该库提供了一组API快速构建和运行测试代码，包括JUnit4和功能用户界面(UI)测试。可以从Android Studio IDE中或命令行这执行。
+
+Android的测试支持库可通过Android SDK管理器获取。参考： Testing Support Library Setup 。
+
+![](index_files/69ad9c93-77a9-43f0-81dc-381de769725c.png)
+
+##### AndroidJUnitRunner[](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#AndroidJUnitRunner)
+
+AndroidJUnitRunner类是一个JUnit测试运行器，可以让你在Android设备上执行包括Espresso和UI Automatorr测试框架运行JUnit3或JUnit4中风格的测试类。测试运行器手柄测试加载测试包和应用，运行测试，并报告测试结果。该类取代InstrumentationTestRunner类(仅支持JUnit 3)。
+
+这个运行器的主要特点：
+
+*   JUnit支持
+
+*   获得设备信息
+
+*   测试筛选
+
+*   测试分片
+
+要求的Android2.2（API 8）或更高。
+
+##### Espresso[](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#Espresso)
+
+
+Espresso提供了一组API来构建UI测以测试用户流程。这些API让你写简洁和可靠运行的自动化UI测试。Espresso非常适合白盒自动测试，在测试代码利用实现代码的细节从应用程序测试。
+
+Espresso的主要特性：
+
+*   灵活的API用于查看和适配目标应用。
+
+*   一套扩展的action API自动化UI交互。
+
+*   UI线程同步以提高测试的可靠性。欲了解更多信息，请参见UI线程同步。
+
+要求Android2.2（API 8）或更高。
+
+
+
+##### UI Automator[](http://automationtesting.sinaapp.com/blog/android_Testing_Support_Library#UIAutomator)
+
+
+
+UI Automator提供了一组API来构建基于交互UI的测试。API允许你执行操作，如打开设置菜单，非常适合黑盒自动化测试，在测试代码不依赖于应用的内部实现。
+
+
+
+主要特性：
+
+
+
+*   UI Automator Viewer：检查的布局层次。
+
+*   API来获取设备状态信息并执行操作。欲了解更多信息，请参见访问设备状态。
+
+*   API跨应用测试。
+
+
+
+要求Android4.3（API等级18）或者更高。
+
+uiautomatorviewer提供了一个方便的图形用户界面进行扫描和分析在Android设备上当前显示的UI组件。您可以使用此工具来检查的布局层次和查看UI组件。
+
+UiDevice类可以访问设备并进行操作。你可以调用它的方法来访问设备属性，如当前的方向或显示尺寸。该UiDevice类也让您执行操作，例如：旋转设备；按下D-pad按钮；按Back、Home、Menu等；打开通知树栏；当前窗口截图等。
+
+
+
+多应用相关的API： UiCollection枚举容器的UI元素以计数，或通过文字(或属性等)针定位子元素; UIObject表示是在设备上可见的UI元素; [UiScrollable?](http://automationtesting.sinaapp.com/wiki/UiScrollable)：为可滚动UI容器提供查找支持； [UiSelector?](http://automationtesting.sinaapp.com/wiki/UiSelector)：查询一个或者多个UI元素; Configurator: 设置参数。
+
+
+
+####JUnit4 Annotations常用注释
+
+JUnit4的测试类不用再继承TestCase类了。使用注解会方便很多。
+
+
+
+@Before：初始化方法
+
+@After：释放资源
+
+@Test：测试方法，在这里可以测试期望异常和超时时间
+
+@Ignore：忽略的测试方法
+
+@BeforeClass：针对所有测试，只执行一次，且必须为static void
+
+@AfterClass：针对所有测试，只执行一次，且必须为static void
+
+
+
+一个JUnit 4 的单元测试用例执行顺序为：
+
+@BeforeClass –> @Before –> @Test –> @After –> @AfterClass
+
+每一个测试方法的调用顺序为：
+
+@Before –> @Test –> @After
+
+
+## app推送架构设计之全局观——xpleemoon
+![app推送架构设计之全局观](http://img.my.csdn.net/uploads/201512/20/1450607389_8633.png)
+
+- BroadcastReceiver只负责显示Notification，而Service才是推送消息的实际执行者，那为何要如此设计呢？
+  - BroadcastReceiver生命周期最多只有8秒，超过8秒会造成ANR，而Service则不存在这个问题。很明显，BroadcastReceiver天生就是不适合处理复杂操作的组件。因此，考虑到未来推送的复杂性和扩展性，上图的具体处理流程将是：
+    1. BroadcastReceiver接收push消息
+    2. 显示Notification
+    3. 点击Notification（Notification包含的PendingIntent用于启动Service），启动Service
+    4. Service解析Notification传递过来的Intent，执行具体操作（可通过策略模式，让代码不要那么烂），比如打开一个页面、执行网络请求、执行本地操作……
+  - Notification上按钮的点击是无法自动取消Notification，因此，Service还用于取消Notification
+  - 显示和执行分开，同时执行通过策略模式进行。这样的好处是便于维护和降低代码耦合
+
+
+## express.js 入门介绍 - 曾铭
+
+- [官方文档](http://expressjs.com/en/index.html)非常清晰
+
+### 三个 Demo
+
+- node.js 的 hello world
+- express.js app 的 hello app
+- 一个完整的 express.js 项目结构
+
+``` powershell
+➜  myapp  tree -L 2
+.
+├── app.js
+├── bin
+│   └── www
+├── hello_app.js
+├── helloworld.js
+├── node_modules
+│   ├── ...
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.jade
+    ├── index.jade
+    └── layout.jade
+```
+
+## weui - 王胜
+
+**WeUI 为微信 Web 服务量身设计**
+> WeUI是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信 Web 开发量身设计，可以令用户的使用感知更加统一。包含button、cell、dialog、 progress、 toast、article、icon等各式元素。
+
+查看演示实例
+
+``` powershell
+  git clone https://github.com/weui/weui.git
+  cd weui
+  npm install -g gulp
+  npm install
+  gulp -ws
+```
+  运行gulp -ws命令，会监听src目录下所有文件的变更，并且默认会在8080端口启动服务器，然后在浏览器打开 http://localhost:8080/example。
+
+参考 [github-weui](https://github.com/weui/weui)
