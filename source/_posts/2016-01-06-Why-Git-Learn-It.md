@@ -4,13 +4,11 @@ tags: git
 categories: 
 ---
 
-# Why Git? Learn It!
-
 ## 总览
 
 - 为什么要用 Git？
 - Git + SourceTree + Gitlab 的使用演示
-- 一些注意和推荐
+- 提醒和推荐
 
 ## 为什么要用 Git？
 
@@ -141,9 +139,6 @@ categories:
 - 忽略文件的配置
 - 着手代码前思考终极问题：『我在哪里，要去何处？』（先认清所在分支，pull）
 - commit 已经 push 到远端了，这个时候不要想着再去修改了
-- Github 经常被 X
-	- coding.net 代码私有库托管可以用。找开源代码，永远是 Github
-	- Google 也是。珍爱生命，自配 VPN
 - 学习新东西，坑总是有的，多填了也就会了
 
 ### 一些推荐
@@ -154,10 +149,14 @@ categories:
 - 完整提交，完整提交，必须完整提交！不该有任一个提交项目不可运行。
 - 保证非工作期间，工作区间干净
 - 不想提交但要切换分支处理事物用 stash 处理
-- Github
-- 国内 Git 私有库托管推荐 coding.net，国外推荐 bitbucket（支持Hg） 和 Gitlab
+- Github 经常被 X
+	- coding.net 代码私有库托管可以用。找开源代码，永远是 Github
+	- Google 也是被 X。珍爱生命，自配 VPN
+- 国内 Git 私有库托管推荐 coding.net，国外推荐 bitbucket（支持hg） 和 Gitlab
 
 ## 其它
 - 依赖（迷信）工具不可取，但工具会影响思维方式，而思维方式非常重要
-> 举例： 
-> SVN 的思维方式决定了 diff patch 的开源合作方式。交流不顺畅，实现思路难以程现，这种合作方式很长时间里都是高端人士的特权。Git + Github 催生了 fork，成就了最大的程序员社交网站，也极力促进了开源社区的发展。
+
+> 举例：  
+> SVN 的思维方式决定了 diff patch 的开源合作方式。交流不顺畅，实现思路难以程现，这种合作方式很长时间里都是高端人士的特权。  
+> Git + Github 催生了 fork，成就了最大的程序员社交网站，也极力促进了开源社区的发展。
