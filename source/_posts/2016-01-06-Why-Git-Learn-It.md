@@ -1,7 +1,9 @@
 title: Why Git? Learn It!
 date: 2016-01-06 16:00:00
-tags: git
-categories: 
+tags:
+- git
+
+categories: 技术部分享
 ---
 
 ## 总览
