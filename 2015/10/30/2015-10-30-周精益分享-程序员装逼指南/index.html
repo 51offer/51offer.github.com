@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>周精益分享 - 程序员装逼指南 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android 单元测试『图像和滤镜』@(Share)[UIImage]
+[toc]
+图像常见的图像格式
+png（Portable Network Graphic）便携式网络图形格式
+tiff、tif（Tagged Image File Format）标记图像文件格式
+jpg、jpeg（Joint Photographic Experts Group）联合摄影专家组
+gif（Graphic Int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="周精益分享 - 程序员装逼指南">
+<meta property="og:url" content="http://yoursite.com/2015/10/30/2015-10-30-周精益分享-程序员装逼指南/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Android 单元测试『图像和滤镜』@(Share)[UIImage]
+[toc]
+图像常见的图像格式
+png（Portable Network Graphic）便携式网络图形格式
+tiff、tif（Tagged Image File Format）标记图像文件格式
+jpg、jpeg（Joint Photographic Experts Group）联合摄影专家组
+gif（Graphic Int">
+<meta property="og:image" content="http://yoursite.com/./1446137205500.png">
+<meta property="og:image" content="http://yoursite.com/./1446137161636.png">
+<meta property="og:image" content="http://yoursite.com/./1446175520419.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周精益分享 - 程序员装逼指南">
+<meta name="twitter:description" content="Android 单元测试『图像和滤镜』@(Share)[UIImage]
+[toc]
+图像常见的图像格式
+png（Portable Network Graphic）便携式网络图形格式
+tiff、tif（Tagged Image File Format）标记图像文件格式
+jpg、jpeg（Joint Photographic Experts Group）联合摄影专家组
+gif（Graphic Int">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2015-10-30-周精益分享-程序员装逼指南" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/30/2015-10-30-周精益分享-程序员装逼指南/" class="article-date">
+  	<time datetime="2015-10-30T10:30:00.000Z" itemprop="datePublished">2015-10-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      周精益分享 - 程序员装逼指南
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android_单元测试">Android 单元测试</h2><h2 id="『图像和滤镜』">『图像和滤镜』</h2><p>@(Share)[UIImage]</p>
+<p>[toc]</p>
+<h3 id="图像">图像</h3><h4 id="常见的图像格式">常见的图像格式</h4><ul>
+<li>png（Portable Network Graphic）便携式网络图形格式</li>
+<li>tiff、tif（Tagged Image File Format）标记图像文件格式</li>
+<li>jpg、jpeg（Joint Photographic Experts Group）联合摄影专家组</li>
+<li>gif（Graphic Interchange Format）图形交换格式</li>
+</ul>
+<h4 id="图像实例化">图像实例化</h4><ul>
+<li><p>imageNamed:</p>
+<blockquote>
+<p>使用频率高，内存缓存优化</p>
+</blockquote>
+</li>
+<li><p>imageWithContentsOfFile:</p>
+<blockquote>
+<p>单次使用，暂时不清楚如何支持ImageAssert下的图片路径</p>
+</blockquote>
+</li>
+<li><p>imageWithData:</p>
+<blockquote>
+<p>本地或网络的文件数据加载</p>
+</blockquote>
+</li>
+<li><p>imageWithCGImage:</p>
+<blockquote>
+<p>绘制生成图，代码如下</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旧图局部裁剪</span></span><br><span class="line">   <span class="built_in">CGImageRef</span> myImageRef = [oldImage <span class="built_in">CGImageRef</span>];</span><br><span class="line">   <span class="built_in">CGRect</span> subRect = <span class="built_in">CGRectMake</span>(<span class="number">20</span>, <span class="number">20</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">   <span class="built_in">CGImageRef</span> cgCrop = <span class="built_in">CGImageCreateWithImageInRect</span>(myImageRef, subRect);</span><br><span class="line">   <span class="built_in">UIImage</span> *imageCrop = [<span class="built_in">UIImage</span> imageWith<span class="built_in">CGImage</span>:cgCrop];</span><br></pre></td></tr></table></figure>
+<h4 id="显示图像">显示图像</h4><blockquote>
+<p>屏幕的缩放因子，导致我们需要@2x及@3x图，对视图截图操作也同样需要针对Retina及plus优化<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIImage</span>*)screenShotBy:(<span class="built_in">UIImageView</span>*)imagView</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//  UIGraphicsBeginImageContext(imagView.bounds.size);</span></span><br><span class="line"><span class="comment">// 2表示Retina，3表示plus分辨率，1正常，0则是当前设备的缩放因子</span></span><br><span class="line"><span class="comment">// YES 表示不包含图像的alpha通道</span></span><br><span class="line">	<span class="built_in">UIGraphicsBeginImageContextWithOptions</span>((imagView<span class="variable">.bounds</span><span class="variable">.size</span>), <span class="literal">YES</span>, <span class="number">2</span>);</span><br><span class="line">	[imagView<span class="variable">.layer</span> renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line">	<span class="built_in">UIImage</span>*image = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line">	<span class="built_in">UIGraphicsEndImageContext</span>();</span><br><span class="line">	<span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h5 id="contentModel">contentModel</h5><p><em>图像内容展现方式</em></p>
+<ul>
+<li>UIViewContentModelScaleToFill（默认）</li>
+<li>UIViewContentModelScaleAspectFill（下拉放大）</li>
+<li>UIViewContentModelScaleAspectFit</li>
+<li>UIViewContentModelCenter （一些停靠模式）</li>
+<li>UIViewContentModelTop/Bottom</li>
+<li>UIViewContentModelLeft/Right</li>
+</ul>
+<h5 id="拉伸属性">拉伸属性</h5><p><code>代码</code><br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line">image=[oldIconImage <span class="string">stretchableImageWithLeftCapWidth:</span><span class="number">10</span> <span class="string">topCapHeight:</span><span class="number">12</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二</span></span><br><span class="line">image = [oldIconImage <span class="string">resizableImageWithCapInsets:</span>UIEdgeInsetsMake(<span class="number">17</span>, <span class="number">17</span>, <span class="number">17</span>, <span class="number">25</span>)];</span><br></pre></td></tr></table></figure></p>
+<p><code>ImageAssert</code></p>
+<p><img src="./1446137205500.png" alt="Alt text"><br>使用slicing，小变大无视差<br><img src="./1446137161636.png" alt="Alt text"></p>
+<hr>
+<h3 id="图像选择器">图像选择器</h3><h4 id="系统自带">系统自带</h4><h4 id="自定义">自定义</h4><hr>
+<h3 id="滤镜">滤镜</h3><h3 id="人脸识别">人脸识别</h3><h2 id="聊聊_QCon2015_-_曾铭">聊聊 QCon2015 - 曾铭</h2><h3 id="pure-native_移动跨平台架构设计与实战">pure-native 移动跨平台架构设计与实战</h3><p>by 赵世婚</p>
+<h4 id="好处">好处</h4><ul>
+<li>重复逻辑：网络层、账户逻辑</li>
+<li>性能（网络压缩、打破内存限制）</li>
+<li>多一层封装应对业务变动</li>
+</ul>
+<h4 id="坏处">坏处</h4><ul>
+<li>跨平台开发代码生成</li>
+<li>调试：异常捕获</li>
+</ul>
+<h4 id="总结：">总结：</h4><ul>
+<li>学不来：人员构成决定技术选型，技术选型决定依赖人员 {:&amp;.rollIn}</li>
+<li>分层来应对业务变动（横向分层和纵向分层）</li>
+</ul>
+<h3 id="JavaScript_-_The_World’s_Best_Programming_Language">JavaScript - The World’s Best Programming Language</h3><p>by Hax</p>
+<h4 id="JavaScript_最好_？">JavaScript 最好 ？</h4><ul>
+<li>语言简陋：弱类型、标准库、面向对象、模块、异步 {:&amp;.rollIn}</li>
+<li>编程时注意：好的范式、不好的范式</li>
+</ul>
+<h4 id="不过">不过</h4><ul>
+<li>npm 飞速发展的 packages 数量 {:&amp;.rollIn}</li>
+<li>ECMAScript 6，语言特性问题完美解决 (c)</li>
+<li>Babel 6to5 (python)<ul>
+<li>most hard to upgrade -&gt; always use latest feature!</li>
+</ul>
+</li>
+<li>最快的动态语言，还会更快 (ruby)</li>
+<li>JS as a Platform：中间语言 (c#, java）</li>
+<li>生态系统：浏览器、node.js、公司、社区</li>
+</ul>
+<h4 id="总结：-1">总结：</h4><ul>
+<li>js 是现阶段发展最快的语言 {:&amp;.rollIn}</li>
+<li>前端前途无量！</li>
+</ul>
+<h3 id="react">react</h3><h4 id="jQuery">jQuery</h4><ul>
+<li>DOM 操作</li>
+<li>组件散乱，社区力量难以聚合</li>
+</ul>
+<h4 id="AngularJS">AngularJS</h4><ul>
+<li>绑定 数据与数据、数据与视图之间的关系</li>
+<li>npm</li>
+</ul>
+<h4 id="React">React</h4><ul>
+<li>用 js 写界面……（似乎是一种倒退）</li>
+<li>还整个 JSX 让界面好写一点</li>
+<li>React Native</li>
+</ul>
+<h4 id="总结">总结</h4><ul>
+<li>前端风起云涌 {:&amp;.rollIn}</li>
+<li>小扎灭我客户端之心不死</li>
+</ul>
+<h3 id="总的总结">总的总结</h3><ul>
+<li>拥抱变化</li>
+<li>最差也可以变最好，关键要敢于拥抱变化</li>
+<li>技术紧迫感：勇于尝试新东西</li>
+<li>业务紧迫感：技术改变留学</li>
+</ul>
+<h3 id="推荐：">推荐：</h3><ul>
+<li>JavaScript - The World’s Best Programming Language</li>
+<li>pure-native移动跨平台架构设计与实战</li>
+<li>注重实效的性能</li>
+<li>ReactJS 实战</li>
+<li>ELE.ME是如何运行的</li>
+</ul>
+<h2 id="Android_6-0运行权限_-_王胜">Android 6.0运行权限 - 王胜</h2><h3 id="一般权限和危险权限">一般权限和危险权限</h3><p>Android 6.0以前，所有的权限在应用安装或者更新时自动完成授权。如果用户想安装这个App，必需接受所有的权限申请。为了保护用户的隐私，Android M特意调整了Android的授权架构。将应用权限分为一般(Normal)和危险(Dangerous)两种级别的权限:</p>
+<ul>
+<li><p>一般权限不会直接危害用户的隐私。如果你的App在manifest列出一般权限，那么系统会自动授予这些权限。</p>
+</li>
+<li><p>危险权限可以访问用户的隐私数据。 如果你的App在manifest列出一般权限，那么系统会自动授予这些权限。如果列出危险权限，需要通过用户显示交互通过你的应用权限申请。</p>
+</li>
+</ul>
+<h3 id="权限组">权限组</h3><p>Anroid系统里所有的危险权限都拥有所归属的权限组。如果设备运行在Android6.0(API level 23)，并且App的targetSdkVersion是23或者更高，当App请求危险权限时将会有以下表现：</p>
+<ul>
+<li><p>如果App请求manifest里声明的危险权限，并且App当前还没有获取任何权限组里的权限，系统将弹出一个描述App想要访问权限的对话框。但是对话框不会描述该权限属于哪个权限组。例如：App请求权限 <strong>READ_CONTACTS</strong>  ，系统对话框只显示App需要访问设备的联系人。如果用户授权通过，系统仅仅给App需要的权限。</p>
+</li>
+<li><p>如果App请求manifest里声明的危险权限，并且App已经用户该危险权限所在的权限组的权限，系统则直接授予此次请求的权限，而不需要用户手动交互。例如：如果App已经有先前的 <strong>READ_CONTACTS</strong> 权限，那么再请求 <strong>WRITE_CONTACTS</strong> 权限，系统则直接授予。</p>
+</li>
+</ul>
+<blockquote>
+<p>任何权限都有所归属的权限组，包括一般权限和App自定义的权限。然而，权限组只影响那些危险权限相关的用户体验。你可以忽略一般权限的权限组。</p>
+</blockquote>
+<p><strong>危险权限和权限组</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">权限组</th>
+<th style="text-align:center">权限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CALENDAR</td>
+<td style="text-align:center"><ul><li>READ_CALENDAR</li><li>WRITE_CALENDAR</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">CAMERA</td>
+<td style="text-align:center"><ul><li>CAMERA</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">CONTACTS</td>
+<td style="text-align:center"><ul><li>READ_CONTACTS</li><li> WRITE_CONTACTS</li><li>GET_ACCOUNTS</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">LOCATION</td>
+<td style="text-align:center"><ul><li>ACCESS_FINE_LOCATION</li><li> ACCESS_COARSE_LOCATION</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">MICROPHONE</td>
+<td style="text-align:center"><ul><li>RECORD_AUDIO</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">PHONE</td>
+<td style="text-align:center"><ul><li>READ_PHONE_STATE</li><li>CALL_PHONE</li><li>READ_CALL_LOG</li><li>WRITE_CALL_LOG</li><li> ADD_VOICEMAIL</li><li>USE_SIP</li><li> PROCESS_OUTGOING_CALLS</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">SENSORS</td>
+<td style="text-align:center"><ul><li>BODY_SENSORS</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">SMS</td>
+<td style="text-align:center"><ul><li>SEND_SMS</li><li>RECEIVE_SMS</li><li> READ_SMS</li><li>RECEIVE_WAP_PUSH</li><li>RECEIVE_MMS</li></ul></td>
+</tr>
+<tr>
+<td style="text-align:center">STORAGE</td>
+<td style="text-align:center"><ul><li>READ_EXTERNAL_STORAGE</li><li> WRITE_EXTERNAL_STORAGE</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="权限检测">权限检测</h3><p>Android的所有版本里，都需要将所需的一般权限和危险权限都声明在App的manifest里。然而这些声明在不同的系统版本和App的target SDK Level会有不同的影响:</p>
+<ul>
+<li><p>如果设备运行在Android 5.1或者更低，或者你的App target SDK是22或者更低：如果你在manifest里声明了危险权限，用户则不得不在安装App时给予授权；如果他们不授权，系统将不会安装此App。</p>
+</li>
+<li><p>如果设备运行在Android 6.0或者更高，或者你的App target SDK是23或者更高：App不仅需要在manifest里声明危险权限，而且App在运行时还需要在每次需要危险权限时发起请求。用户可以接受也可以拒绝权限申请，App也需要在用户拒绝危险权限申请时能长长运行。</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：此处的权限处理只有App的target API level 23或者更高，而且运行在Android 6.0 (API level 23)或者更高的设备上才会如此。如果设备的中App的targetSdkVersion 是 22或者更低，系统则在安装或者更新App时自动授予危险权限。</p>
+</blockquote>
+<p><a href="http://developer.android.com/tools/support-library/index.html" target="_blank" rel="external">The Android Support Library</a>能很好地处理检测、请求和权限。Android 6.0 (API level 23) framework也提供了类似的方法。然而，使用support库能更简单一些，因为你不需要在调用方法之前检测android系统的版本。 </p>
+<h3 id="发起权限申请请求">发起权限申请请求</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Here, this Activity is the current activity</span></span><br><span class="line"><span class="keyword">if</span> (ContextCompat.checkSelfPermission(thisActivity,</span><br><span class="line">                Manifest.permission.READ_CONTACTS)</span><br><span class="line">        != PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Should we show an explanation?</span></span><br><span class="line">    <span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</span><br><span class="line">            Manifest.permission.READ_CONTACTS)) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></span><br><span class="line">        <span class="comment">// this thread waiting for the user's response! After the user</span></span><br><span class="line">        <span class="comment">// sees the explanation, try again to request the permission.</span></span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// No explanation needed, we can request the permission.</span></span><br><span class="line"></span><br><span class="line">        ActivityCompat.requestPermissions(thisActivity,</span><br><span class="line">                <span class="keyword">new</span> String[]&#123;Manifest.permission.READ_CONTACTS&#125;,</span><br><span class="line">                MY_PERMISSIONS_REQUEST_READ_CONTACTS);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an</span></span><br><span class="line">        <span class="comment">// app-defined int constant. The callback method gets the</span></span><br><span class="line">        <span class="comment">// result of the request.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="处理权限请求结果">处理权限请求结果</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span><br><span class="line">        String permissions[], <span class="keyword">int</span>[] grantResults)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (requestCode) &#123;</span><br><span class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</span><br><span class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></span><br><span class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></span><br><span class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// permission was granted, yay! Do the</span></span><br><span class="line">                <span class="comment">// contacts-related task you need to do.</span></span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// permission denied, boo! Disable the</span></span><br><span class="line">                <span class="comment">// functionality that depends on this permission.</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// other 'case' lines to check for other</span></span><br><span class="line">        <span class="comment">// permissions this app might request</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：每次需要权限时，都需要显示请求调用，即使你已经获得的同权限组的其他权限。另外，权限分组处理的机制在将来的Android发型版本中有可能更改。因此你的App不应该依赖所需的权限在或者不在同一个权限组里。</p>
+</blockquote>
+<p>参考：</p>
+<ul>
+<li><a href="http://developer.android.com/training/permissions/requesting.html" target="_blank" rel="external">Requesting Permissions at Run Time</a></li>
+<li><a href="http://developer.android.com/training/permissions/best-practices.html" target="_blank" rel="external">Permissions Best Practices</a></li>
+</ul>
+<h2 id="Swift_Access_Control_-_潘君">Swift Access Control - 潘君</h2><p>(未完待续)</p>
+<ul>
+<li><p>三个级别</p>
+<ul>
+<li>Public</li>
+<li>Internal</li>
+<li><p>Private</p>
+<p>大部分默认是internal</p>
+</li>
+</ul>
+</li>
+<li><p>可应用于</p>
+<ul>
+<li>Module<ul>
+<li>application</li>
+<li>framework</li>
+</ul>
+</li>
+<li>source file<ul>
+<li>properties</li>
+<li>types</li>
+<li>functions</li>
+<li>and so on（苹果文档这个太二了）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>准则</p>
+<ul>
+<li>public变量不能定义为internal或者private的类型</li>
+<li>函数的访问权限不能高于参数和返回值</li>
+</ul>
+</li>
+<li><p>应用场景</p>
+<ul>
+<li>Single-Target Apps    Internal</li>
+<li>Frameworks  Public</li>
+<li>Unit Test Targets      @testable<img src="./1446175520419.png" alt="Alt text"></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>会级联影响 例如修饰了type 同时也会影响type的members</p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SomePublicClass</span> &#123;          // <span class="title">explicitly</span> <span class="title">public</span> <span class="title">class</span></span></span><br><span class="line">    <span class="keyword">public</span> var somePublicProperty = <span class="number">0</span>    // explicitly <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">    var someInternalProperty = <span class="number">0</span>         // implicitly internal <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">    <span class="keyword">private</span> func somePrivateMethod() &#123;&#125;  // explicitly <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeInternalClass</span> &#123;               // <span class="title">implicitly</span> <span class="title">internal</span> <span class="title">class</span></span></span><br><span class="line">    var someInternalProperty = <span class="number">0</span>         // implicitly internal <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">    <span class="keyword">private</span> func somePrivateMethod() &#123;&#125;  // explicitly <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">SomePrivateClass</span> &#123;        // <span class="title">explicitly</span> <span class="title">private</span> <span class="title">class</span></span></span><br><span class="line">    var somePrivateProperty = <span class="number">0</span>          // implicitly <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">    func somePrivateMethod() &#123;&#125;          // implicitly <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">member</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Function</p>
+</li>
+<li><p>Tuple</p>
+<ul>
+<li>取元素中访问level最小的为准</li>
+<li>例如 （PrivateClass, InternalClass） 则取private</li>
+</ul>
+</li>
+<li><p>Enumeration </p>
+<ul>
+<li>一样</li>
+</ul>
+</li>
+<li><p>class</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> func <span class="title">someMethod</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">B</span>: <span class="title">A</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">override</span> <span class="keyword">internal</span> func <span class="title">someMethod</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/04/周精益分享-装逼指南二期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          周精益分享 - 程序员装逼指南二期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/23/周精益分享-英语/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周精益分享 - 英语</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015-10-30-周精益分享-程序员装逼指南" data-title="周精益分享 - 程序员装逼指南" data-url="http://yoursite.com/2015/10/30/2015-10-30-周精益分享-程序员装逼指南/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

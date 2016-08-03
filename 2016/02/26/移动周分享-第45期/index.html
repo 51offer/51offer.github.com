@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第45期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="swift 的 guard &amp;amp; defer - 杨志平guard 使用1234567891011121314151617181920212223242526272829303132333435363738394041424344454647// 原始方法 (强解包可能会出现问题)func tranIntToString1(x: Int?) -&amp;gt; String &amp;#123;    if">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第45期">
+<meta property="og:url" content="http://yoursite.com/2016/02/26/移动周分享-第45期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="swift 的 guard &amp;amp; defer - 杨志平guard 使用1234567891011121314151617181920212223242526272829303132333435363738394041424344454647// 原始方法 (强解包可能会出现问题)func tranIntToString1(x: Int?) -&amp;gt; String &amp;#123;    if">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第45期">
+<meta name="twitter:description" content="swift 的 guard &amp;amp; defer - 杨志平guard 使用1234567891011121314151617181920212223242526272829303132333435363738394041424344454647// 原始方法 (强解包可能会出现问题)func tranIntToString1(x: Int?) -&amp;gt; String &amp;#123;    if">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第45期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/26/移动周分享-第45期/" class="article-date">
+  	<time datetime="2016-02-26T10:30:00.000Z" itemprop="datePublished">2016-02-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第45期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="swift_的_guard_&amp;_defer_-_杨志平">swift 的 guard &amp; defer - 杨志平</h2><h4 id="guard_使用">guard 使用</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原始方法 (强解包可能会出现问题)</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">tranIntToString1</span><span class="params">(x: Int?)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> x == <span class="literal">nil</span> || x! &lt;= <span class="number">0</span> &#123;</span><br><span class="line">  	    <span class="comment">// 不符合值的要求时，写点代码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 使用x</span></span><br><span class="line">    <span class="keyword">return</span> x!.description</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 改进</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">tranIntToString2</span><span class="params">(x: Int?)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> x = x <span class="keyword">where</span> x&gt;<span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x.description</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保镖模式</span></span><br><span class="line"><span class="comment">// 和上面写法对比</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">tranIntToString3</span><span class="params">(x: Int?)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    guard <span class="keyword">let</span> x = x <span class="keyword">where</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 变量不符合条件判断时，执行下面代码</span></span><br><span class="line">    <span class="keyword">return</span> x.description</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 非可选型</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">tranIntToString4</span><span class="params">(x: Int)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    guard x &gt; <span class="number">0</span> <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x.description</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 常常用于条件判断拦截</span></span><br><span class="line"><span class="keyword">var</span> view = <span class="type">UIView</span>(frame: <span class="type">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">80</span>,<span class="number">80</span>))</span><br><span class="line">view.backgroundColor = <span class="type">UIColor</span>.redColor()</span><br><span class="line"></span><br><span class="line"><span class="type">UIView</span>.animateWithDuration(<span class="number">0.3</span>) &#123; [<span class="keyword">weak</span> view]() -&gt; <span class="type">Void</span> <span class="keyword">in</span></span><br><span class="line">    guard <span class="keyword">let</span> view = view <span class="keyword">where</span> view.alpha&gt;<span class="number">0</span> <span class="keyword">else</span> &#123;<span class="keyword">return</span>&#125;</span><br><span class="line">    view.alpha = <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="懒加载">懒加载</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.分析 NSArray 是一个闭包的返回值，而这是一个没有参数的闭包 </span></span><br><span class="line">lazy <span class="variable"><span class="keyword">var</span> dataArray</span>:NSArray = &#123; [] &#125;() </span><br><span class="line"></span><br><span class="line"><span class="comment">//2.也可以写成这样 </span></span><br><span class="line">lazy <span class="variable"><span class="keyword">var</span> dataArray</span>:NSArray = &#123; <span class="keyword">return</span> NSArray() &#125;()</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.从plist文件加载 </span></span><br><span class="line">lazy <span class="variable"><span class="keyword">var</span> dataArray</span>:Array<span class="type">&lt;XWWine&gt;</span> = &#123;</span><br><span class="line">    let winePath = NSBundle.mainBundle().pathForResource(<span class="string">"wine.plist"</span>, ofType: nil)!</span><br><span class="line">    let winesM = NSMutableArray(contentsOfFile: winePath);</span><br><span class="line">    <span class="variable"><span class="keyword">var</span> tmpArray</span>:Array<span class="type">&lt;XWWine&gt;</span>! = []</span><br><span class="line">    <span class="keyword">for</span> tmpWineDict <span class="keyword">in</span> winesM! &#123;</span><br><span class="line">        <span class="variable"><span class="keyword">var</span> wine</span>:XWWine = XWWine.wineWithDict(tmpWineDict <span class="keyword">as</span>! NSDictionary)</span><br><span class="line">        tmpArray.append(wine)</span><br><span class="line">    &#125;</span><br><span class="line">    print(<span class="string">"我就运行一次"</span>)</span><br><span class="line">    <span class="keyword">return</span> tmpArray &#125;()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>调用的时候再在家初始化方法（懒加载）</p>
+</blockquote>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lazy <span class="keyword">private</span> <span class="keyword">var</span> underlineView: UIView = &#123;</span><br><span class="line">    <span class="keyword">let</span> view = UIView(frame: .zero)</span><br><span class="line">    <span class="keyword">return</span> view</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<h4 id="defer_关键字">defer 关键字</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">    defer 关键字</span><br><span class="line">*/</span></span><br><span class="line"><span class="keyword">postfix</span> <span class="func"><span class="keyword">func</span> ++<span class="params">(<span class="keyword">inout</span> x: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    defer &#123;</span><br><span class="line">        x = x/<span class="number">2</span></span><br><span class="line">        defer &#123;</span><br><span class="line">            x += <span class="number">100</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//postfix func ++(inout x: Int) -&gt; Int &#123;</span></span><br><span class="line"><span class="comment">//    let current = x</span></span><br><span class="line"><span class="comment">//    x += 2</span></span><br><span class="line"><span class="comment">//    return current</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">100</span></span><br><span class="line"><span class="keyword">let</span> num2 = num++</span><br><span class="line">num		<span class="comment">//150</span></span><br><span class="line">num2	<span class="comment">//100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">prefix</span> <span class="func"><span class="keyword">func</span> ++<span class="params">(<span class="keyword">inout</span> x:Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    x += <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> number = <span class="number">100</span></span><br><span class="line"><span class="keyword">let</span> number2 = ++number</span><br><span class="line">number 		<span class="comment">// 102</span></span><br><span class="line">number2		<span class="comment">// 102</span></span><br></pre></td></tr></table></figure>
+<h4 id="嵌套枚举使用(简直就是动态Model)">嵌套枚举使用(简直就是动态Model)</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">MenuScrollingMode</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> ScrollEnabled</span><br><span class="line">    <span class="keyword">case</span> ScrollEnabledAndBouces</span><br><span class="line">    <span class="keyword">case</span> PagingEnabled</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">MenuItemWidthMode</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> Flexible</span><br><span class="line">    <span class="keyword">case</span> Fixed(<span class="string">width:</span> CGFloat)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">MenuDisplayMode</span> &#123;</span></span><br><span class="line">    <span class="keyword">case</span> Standard(<span class="string">widthMode:</span> MenuItemWidthMode, <span class="string">centerItem:</span> Bool, <span class="string">scrollingMode:</span> MenuScrollingMode)</span><br><span class="line">    <span class="keyword">case</span> SegmentedControl</span><br><span class="line">    <span class="keyword">case</span> Infinite(<span class="string">widthMode:</span> MenuItemWidthMode)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化：用来携带信息很不错</span></span><br><span class="line"><span class="keyword">public</span> var menuDisplayMode = MenuDisplayMode.Standard(<span class="string">widthMode:</span> PagingMenuOptions.MenuItemWidthMode.Fixed(<span class="string">width:</span> <span class="number">44</span>), <span class="string">centerItem:</span> <span class="literal">false</span>, <span class="string">scrollingMode:</span> PagingMenuOptions.MenuScrollingMode.PagingEnabled)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例</span></span><br><span class="line">func labelWidth(size <span class="string">size:</span> CGSize, <span class="string">widthMode:</span> PagingMenuOptions.MenuItemWidthMode) -&gt; CGFloat &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> widthMode &#123;</span><br><span class="line">    <span class="keyword">case</span> .<span class="string">Flexible:</span> <span class="keyword">return</span> ceil(size.width)</span><br><span class="line">    <span class="keyword">case</span> let .Fixed(width): <span class="keyword">return</span> width</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="iOS事件传递_&amp;_事件响应_-_张超耀">iOS事件传递 &amp; 事件响应 - 张超耀</h1><h3 id="什么是响应链">什么是响应链</h3><ul>
+<li>在我们点击屏幕的时候，iphone获取到了用户进行了“单击”这一行为，操作系统把包含这些点击事件的信息包装成UITouch和UIEvent形式的实例，然后找到当前运行的程序，逐级寻找能够响应这个事件的对象，直到没有响应者响应。这一寻找的过程，被称作事件的响应链</li>
+</ul>
+<h3 id="什么是响应者">什么是响应者</h3><ul>
+<li>在iOS中，能够响应事件的对象都是<code>UIResponder</code>的子类对象。<code>UIResponder</code>提供了四个用户点击的回调方法，分别对应用户点击开始、移动、点击结束以及取消点击，其中只有在程序强制退出或者来电时，取消点击事件才会调用</li>
+</ul>
+<figure class="highlight"><figcaption><span>(void)touchesBegan:(NSSet<uitouch *=""> *)touches withEvent:(nullable UIEvent *)event;</uitouch></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)touchesMoved:(NSSet&#60;UITouch *&#62; *)touches withEvent:(nullable UIEvent *)event;&#10;- (void)touchesEnded:(NSSet&#60;UITouch *&#62; *)touches withEvent:(nullable UIEvent *)event;&#10;- (void)touchesCancelled:(nullable NSSet&#60;UITouch *&#62; *)touches withEvent:(nullable UIEvent *)event;&#10;- (void)touchesEstimatedPropertiesUpdated:(NSSet * _Nonnull)touches NS_AVAILABLE_IOS(9_1);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们可以看到方法接收两个参数，一个<code>UITouch</code>对象的集合，还有一个<code>UIEvent</code>对象。这两个参数分别代表的是点击对象和事件对象</li>
+</ul>
+<h3 id="事件对象">事件对象</h3><ul>
+<li>iOS使用<code>UIEvent</code>表示用户交互的事件对象，在<code>UIEvent.h</code>文件中，我们可以看到有一个<code>UIEventType</code>类型的属性，这个属性表示了当前的响应事件类型。分别有多点触控、摇一摇以及远程操作（在iOS之后新增了<code>3DTouch</code>事件类型）。在一个用户点击事件处理过程中，<code>UIEvent</code>对象是唯一的</li>
+</ul>
+<h3 id="点击对象">点击对象</h3><ul>
+<li><p><code>UITouch</code>表示单个点击，其类文件中存在枚举类型<code>UITouchPhase</code>的属性，用来表示当前点击的状态。这些状态包括点击开始、移动、停止不动、结束和取消五个状态。每次点击发生的时候，点击对象都放在一个集合中传入<code>UIResponder</code>的回调方法中，我们通过集合中对象获取用户点击的位置。其中通过<code>- (CGPoint)locationInView:(nullable UIView *)view</code>获取当前点击坐标点，<code>- (CGPoint)previousLocationInView:(nullable UIView *)view</code>获取上个点击位置的坐标点。</p>
+</li>
+<li><p>为了确认UIView确实是通过UIResponder的点击方法响应点击事件的，我创建了UIView的类别，并重写<code>+ (void)load</code>方法，使用<code>method_swizzling</code>的方式交换点击事件的实现 ——参照最下方<code>demo</code></p>
+</li>
+</ul>
+<h3 id="响应链传递">响应链传递</h3><ul>
+<li>上面已经介绍了某个控件在接收到点击事件时的处理，那么系统是怎么通过用户点击的位置找到处理点击事件的view的呢？</li>
+<li>存在着这么一个方法：<code>- (nullable UIResponder *)nextResponder</code>，通过方法名我们不难发现这是获取当前view的下一个响应者，逐级获取下一响应者，直到没有下一个响应者位置</li>
+</ul>
+<p><a href="https://github.com/prettychaoyao/EventResponsderDemo.git" target="_blank" rel="external">源码地址</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/04/移动周分享-第46期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第46期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/02/19/移动周分享-第44期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第44期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第45期" data-title="移动周分享-第45期" data-url="http://yoursite.com/2016/02/26/移动周分享-第45期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

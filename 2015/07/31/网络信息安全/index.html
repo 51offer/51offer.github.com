@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>网络信息安全 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="微信支付的网络安全 - 王胜协议规则
+采用HTTPS传输
+POST提交
+MD5签名，请求和接收数据均需要校验签名，详见
+调用申请退款、撤销订单接口需要商户证书
+
+安全规范
+签名算法
+设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&amp;amp;key2=value2…）拼接成字符串stringA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络信息安全">
+<meta property="og:url" content="http://yoursite.com/2015/07/31/网络信息安全/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="微信支付的网络安全 - 王胜协议规则
+采用HTTPS传输
+POST提交
+MD5签名，请求和接收数据均需要校验签名，详见
+调用申请退款、撤销订单接口需要商户证书
+
+安全规范
+签名算法
+设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&amp;amp;key2=value2…）拼接成字符串stringA">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络信息安全">
+<meta name="twitter:description" content="微信支付的网络安全 - 王胜协议规则
+采用HTTPS传输
+POST提交
+MD5签名，请求和接收数据均需要校验签名，详见
+调用申请退款、撤销订单接口需要商户证书
+
+安全规范
+签名算法
+设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&amp;amp;key2=value2…）拼接成字符串stringA">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-网络信息安全" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/31/网络信息安全/" class="article-date">
+  	<time datetime="2015-07-31T11:08:35.000Z" itemprop="datePublished">2015-07-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网络信息安全
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="微信支付的网络安全_-_王胜">微信支付的网络安全 - 王胜</h2><h3 id="协议规则">协议规则</h3><ul>
+<li>采用HTTPS传输</li>
+<li>POST提交</li>
+<li>MD5签名，请求和接收数据均需要校验签名，<a href="#安全规范">详见</a></li>
+<li>调用申请退款、撤销订单接口需要商户证书</li>
+</ul>
+<h3 id="安全规范">安全规范</h3><ul>
+<li>签名算法<ol>
+<li>设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&amp;key2=value2…）拼接成字符串stringA。</li>
+<li>在stringA最后拼接上key得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue</li>
+</ol>
+</li>
+<li><p>生成随机数算法</p>
+<p>微信支付API接口协议中包含字段nonce_str，主要保证签名不可预测。我们推荐生成随机数算法如下：调用随机数函数生成，将得到的值转换为字符串</p>
+</li>
+<li><p>商户证书</p>
+<ul>
+<li><p>获取商户证书</p>
+<blockquote>
+<p>微信支付接口中，涉及资金回滚的接口会使用到商户证书，包括退款、撤销接口。</p>
+</blockquote>
+</li>
+<li><p>使用商户证书</p>
+</li>
+<li>商户证书安全</li>
+</ul>
+</li>
+<li><p>商户回调API安全</p>
+<p>在普通的网络环境下，HTTP请求存在DNS劫持、运营商插入广告、数据被窃取，正常数据被修改等安全风险。商户回调接口使用HTTPS协议可以保证数据传输的安全性。所以微信支付建议商户提供给微信支付的各种回调采用HTTPS协议。请参考：<a href="https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=10_4" target="_blank" rel="external">HTTPS搭建指南</a>。</p>
+</li>
+</ul>
+<p>参考资料：<a href="https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=4_1" target="_blank" rel="external">微信支付</a></p>
+<h2 id="安全『相对论』_-_曾铭">安全『相对论』 - 曾铭</h2><h3 id="角色">角色</h3><h4 id="介质">介质</h4><ul>
+<li>服务器</li>
+<li>API</li>
+<li>网络传输过程</li>
+<li>客户端</li>
+</ul>
+<h4 id="人">人</h4><ul>
+<li>owner： 开发者 内部人员</li>
+<li>用户：消费者、商家</li>
+<li>『坏人们』：黑客（白帽）、『友商』、路过……</li>
+</ul>
+<p>分清角色才能明白设定一个安全逻辑是针对谁，解决什么问题。</p>
+<h3 id="目标">目标</h3><ul>
+<li>『一有适当的利润，资本就会非常胆壮起来。只要有10％的利润，它就会到处被人使用；有20％，就会活泼起来；有50％，就会引起积极的冒险；有100％，就会使人不顾一切法律；有300％，就会使人不怕犯罪，甚至不怕绞首的危险。』</li>
+<li>没有绝对的安全，只有相对的安全</li>
+<li>为了安全是否影响了普通用户？能否变通？</li>
+<li>影响的是一个用户还是全部用户？</li>
+<li>能否补救？主动？被动？</li>
+<li>你不需要完美，你只需要比友商好一些</li>
+</ul>
+<h3 id="实践">实践</h3><p>聊聊发短信接口的案例</p>
+<ul>
+<li>get -&gt; post</li>
+<li>限制单日单个手机号，（避免单个手机号过多骚扰，产品不完整，建议加提示）</li>
+<li>限制单个 IP 请求次数 （有必要，但要适量放宽，要跟踪结果）</li>
+<li>图形验证码 (把问题转化为计算机不擅长的问题来保障安全，有必要，用户体验有影响，可优化）</li>
+<li>一种 API 加密方式（根本问题是：API 如何判断这个请求是可信的客户端发来的）</li>
+</ul>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">客户端 - 网络传输 - API</span><br><span class="line"><span class="built_in">key</span>, 加密（签名）算法 sign=<span class="built_in">md5</span>(<span class="built_in">key</span>+url_path+time)</span><br></pre></td></tr></table></figure>
+<h2 id="RSA_-李仙鹏">RSA -李仙鹏</h2><p>在公钥系统中，我们采用公钥加密，私钥解密的方式，使得报文能够比较安全的传输。</p>
+<p>假设A和B通信，但他们之间不通过对称密钥，B有一个公钥$K_B^+$和一个私钥$K_B^-$。为了与B实现通信，A首先需要获得B的公钥$K_B^+$对报文m进行加密，即$K_B^+(m)$；B收到A的加密报文后用私钥$K_B^-$进行解密，即$K_B^-(K_B^+(m))=m$。其中的加解密算法通常使用RSA（RSA取创始人Ron Rivest, Adi Shamir, Leonard Adleman的姓氏首字母）。</p>
+<h3 id="RSA工作方式">RSA工作方式</h3><p>加密时，首先把报文m做e次的幂运算，然后做模n的算数运算，即$m^e\%n$；解密则先把上述密文值做d次幂，再做模n运算，即$(m^e)^d\%n=m^\left(ed\right)\%n$。</p>
+<h3 id="RSA工作原理推导">RSA工作原理推导</h3><p>为了解开RSA工作原理的神秘面纱，需要使用数论中的一个神奇结论：如果<strong><em>p和q是素数</em></strong>，且有$n=pq$，则$x^y\%n$与$x^\left(y\%\left(p-1\right)\left(q-1\right)\right)\%n$相等。应用这个结论，那我们的私钥解密为：$$(m^e)^d\%n=m^\left(ed\%\left(p-1\right)\left(q-1\right)\right)\%n$$</p>
+<p>注意，$m&lt;n$，并且我们是这样选择e和d的：$ed-1$能被$\left(p-1\right)\left(q-1\right)$整除，等价地说$ed\%\left(p-1\right)\left(q-1\right)=1$，由此可得：$$(m^e)^d\%n=m^1\%n=m\qquad m&lt;n，n=pq,ed\%\left(p-1\right)\left(q-1\right)=1,p和q是素数$$</p>
+<p>于是乎，就得到了我们希望的结果：先对m做e次幂（加密）再做d次幂（解密），然后做模n的算数运算，就可得到原始报文m。另外通过颠倒上述公式的加解密次序，一样能得到原来的m。<br>$$(m^e)^d\%n=m=(m^d)^e\%n\Rightarrow K_B^-(K_B^+(m))=m=K_B^+(K_B^-(m))$$</p>
+<p>因此B对外公开的公钥$K_B^+$为二元组$(n,e)$，私钥$K_B^-$为二元组$(n,d)$</p>
+<h4 id="举例验证">举例验证</h4><p>条件：$$m&lt;n，\quad n=pq,\quad ed\%\left(p-1\right)\left(q-1\right)=1,\quad p和q是素数$$</p>
+<p>取简单的值：$$p=5,\quad q=7$$</p>
+<p>那么可以推导出：$$n=pq=5*7=35,\quad (ed-1)\%(p-1)(q-1)=0\Rightarrow (ed-1)\%(5-1)(7-1)=0\Rightarrow (ed-1)\%24=0$$</p>
+<p>于是，我们可以简单起见，为了减少计算量，设$ed-1$为$24$的1倍，那么我们可取值$$e=5,\quad d=5$$</p>
+<p>假设传输明文为：$$m=3$$</p>
+<p>那么综上所述，我们可以得出：</p>
+<ul>
+<li><p>加密，$m^e\%n=3^5\%35=33$</p>
+</li>
+<li><p>解密，$(m^e\%n)^d\%n=33^5\%35=3=m$，因此对RSA加密后的密文解密得到的就是原始的明文</p>
+</li>
+</ul>
+<h2 id="iOS_越狱应用安全-潘君">iOS 越狱应用安全-潘君</h2><ul>
+<li>对ipa砸壳</li>
+<li>class-dump 导出头文件</li>
+<li>头文件导入project方便查看</li>
+<li>善用Xcode的搜索找需要hook的函数</li>
+<li>hook函数完成不可告人的目的<ul>
+<li><a href="http://blog.sina.com.cn/s/blog_45e2b66c01016jn5.html" target="_blank" rel="external">Message Hook</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="参考资料">参考资料</h3><ul>
+<li><a href="http://security.ios-wiki.com/" target="_blank" rel="external">iOS Security</a></li>
+<li><a href="http://iosre.com/c/development-discussion" target="_blank" rel="external">iOSRE</a></li>
+</ul>
+<h1 id="网络安全_-_张超耀">网络安全 - 张超耀</h1><h2 id="主要特性">主要特性</h2><ul>
+<li><p>保密性</p>
+<ul>
+<li>信息不泄露给非授权用户、实体或过程，或供其利用的特性。</li>
+</ul>
+</li>
+<li><p>完整性</p>
+<ul>
+<li>数据未经授权不能进行改变的特性。即信息在存储或传输过程中保持不被修改、不被破坏和丢失的特性。</li>
+</ul>
+</li>
+<li><p>可用性</p>
+<ul>
+<li>可被授权实体访问并按需求使用的特性。即当需要时能否存取所需的信息。例如网络环境下拒绝服务、破坏网络和有关系统的正常运行等都属于对可用性的攻击；</li>
+</ul>
+</li>
+<li><p>可控性</p>
+<ul>
+<li>对信息的传播及内容具有控制能力。</li>
+</ul>
+</li>
+<li><p>可审查性</p>
+<ul>
+<li>出现安全问题时提供依据与手段</li>
+</ul>
+</li>
+</ul>
+<h2 id="主要类型">主要类型</h2><h3 id="网络安全由于不同的环境和应用而产生了不同的类型。主要有以下几种:">网络安全由于不同的环境和应用而产生了不同的类型。主要有以下几种:</h3><ul>
+<li><p>系统安全</p>
+<ul>
+<li>运行系统安全即保证信息处理和传输系统的安全。它侧重于保证系统正常运行。避免因为系统的崩演和损坏而对系统存储、处理和传输的消息造成破坏和损失。避免由于电磁泄翻，产生信息泄露，干扰他人或受他人干扰。</li>
+</ul>
+</li>
+<li><p>网络的安全</p>
+<ul>
+<li>网络上系统信息的安全。包括用户口令鉴别，用户存取权限控制，数据存取权限、方式控制，安全审计。安全问题跟踩。计算机病毒防治，数据加密等。</li>
+</ul>
+</li>
+<li><p>信息传播安全</p>
+<ul>
+<li>网络上信息传播安全，即信息传播后果的安全，包括信息过滤等。它侧重于防止和控制由非法、有害的信息进行传播所产生的后果，避免公用网络上大云自由传翰的信息失控。</li>
+</ul>
+</li>
+<li><p>信息内容安全</p>
+<ul>
+<li>网络上信息内容的安全。它侧重于保护信息的保密性、真实性和完整性。避免攻击者利用系统的安全漏润进行窃听、冒充、诈编等有损于合法用户的行为。其本质是保护用户的利益和隐私。</li>
+</ul>
+</li>
+</ul>
+<h2 id="HTTP加密_-吴明">HTTP加密 -吴明</h2><ul>
+<li>对称性加密<ul>
+<li>加密双方使用同一个密钥进行加密和解密。密钥是控制加密及解密过程的指令。算法是一组规则，规定如何进行加密和解密</li>
+<li>常用算法:<ul>
+<li>DES、3DES、TDEA、Blowfish、RC2、RC4、RC5、IDEA、SKIPJACK、AES</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非对称性加密<ul>
+<li>非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）。公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密；如果用私有密钥对数据进行加密，那么只有用对应的公开密钥才能解密。因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法。</li>
+<li>RSA、Elgamal、背包算法、Rabin、D-H、ECC（椭圆曲线加密算法）</li>
+</ul>
+</li>
+<li>对称性加密示例<ul>
+<li>sig计算<br>sig主要用来做校验，由BaseString和SecretKey通过HMAC-SHA1算法计算得到的。</li>
+<li>BaseString 组成<br>BaseString由以下三部分组成：http方法名、请求url和参数，其中参数需要按照统一的规则进行编码和排序，具体规则如下：<br>根据参数名称将所有请求参数按照参数名字母的先后顺序逐个比较，进行升序排序（参数名注意区分大小写），然后使用=号连接参数名和编码后的参数值，最后使用_下划线连接经过上述处理后的参数，例如：<pre><code>
+param1=encode(value1)_param2=encode(value2)_parma3=encode(value3)
+</code></pre>
+注：a、比如参数名：abcdef和abcDef，abc都是一样的，大写D的asi码在小写d的asi码前面，所以：abcDef排在abcdef前面
+b、BaseString中的参数是指所有GET/POST的请求参数，但不包括sig参数，也不包括cookie或HTTP header字段
+将http方法名、请求url和参数这三部分用”&”连接起来，然后再进行
+encode编码即得到BaseString，使用伪代码描述以上过程如下：
+<pre><code>
+BaseString=encode(httpMethod+"&"+httpUrl+"&"+sorted_query_params.each{|p,v|p+"="+encode(v)}.join("_"))
+</code></pre>
+然后使用BaseString和SecretKey通过HMAC-SHA1算法计算sig，最后将计算
+出的sig进行编码，使用伪代码描述签名过程如下：
+encode (getHmacSHA1Sig(BaseString, SecretKey)）
+- sig计算示例
+例如某个请求的url为http://192.168.6.218:8080/test/jobplan/login，假设使用的ConsumerKey为eqsrje1tlarvvm54fwsjhcb4,使用的SecretKey为ks5t9fpiwmo3oanccu4f6eas,请求中用到的参数如下：
+<pre><code>
+consumer_key – eqsrje1tlarvvm54fwsjhcb4
+hrid - 00016145
+password - 7215ee9c7d9dc229d2921a40e899ec5f
+fields - dspName
+format – xml
+timestamp - 2013-11-20 09:21:17
+</code></pre>
+首先依据上面的算法得出BaseString为:
+<pre><code>
+POST%26http%3A%2F%2F192.168.6.218%3A8080%2FfuannaEP%2Fjobplan%2Flogin%26consumer_key%3Deqsrje1tlarvvm54fwsjhcb4_fields%3DdspName_format%3Djson_hrid%3D00016145_password%3D7215ee9c7d9dc229d2921a40e899ec5f_timestamp%3D2013-11-20%2B09%253A21%253A17
+</code></pre>
+通过BaseString和SecretKey通过HMAC-SHA1算法计算所得的签名如下：
+dqgTQkET7MxSShy1M4WXbWEKodA%3D
+然后就可以发送请求，生成的http 请求链接如下：
+<pre><code>
+http://192.168.6.218:8080/test/jobplan/login?password=7215ee9c7d9dc229d2921a40e899ec5f&consumer_key=eqsrje1tlarvvm54fwsjhcb4&hrid=10057&format=xml&fields=dspName×tamp =2013-11-20 09:21:17&signature=dqgTQkET7MxSShy1M4WXbWEKodA%3D
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/07/ 随意“无主题”/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          无主题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/26/上海-Android-小伙伴一起来-51offer-玩吧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[上海] Android 小伙伴一起来 51offer 玩吧</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="网络信息安全" data-title="网络信息安全" data-url="http://yoursite.com/2015/07/31/网络信息安全/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

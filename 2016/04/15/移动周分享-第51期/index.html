@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第51期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java方法参数过多 - 吴明
+示例方法
+
+1234567891011public void getNews(Context context,						Callback callback,						String uuid,						String uid,						String from,						String token,						String uid,						String ...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第51期">
+<meta property="og:url" content="http://yoursite.com/2016/04/15/移动周分享-第51期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Java方法参数过多 - 吴明
+示例方法
+
+1234567891011public void getNews(Context context,						Callback callback,						String uuid,						String uid,						String from,						String token,						String uid,						String ...">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第51期">
+<meta name="twitter:description" content="Java方法参数过多 - 吴明
+示例方法
+
+1234567891011public void getNews(Context context,						Callback callback,						String uuid,						String uid,						String from,						String token,						String uid,						String ...">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第51期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/15/移动周分享-第51期/" class="article-date">
+  	<time datetime="2016-04-15T10:30:00.000Z" itemprop="datePublished">2016-04-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第51期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java方法参数过多_-_吴明">Java方法参数过多 - 吴明</h2><ul>
+<li>示例方法</li>
+</ul>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="literal">void</span> getNews(Context context,</span><br><span class="line">						Callback callback,</span><br><span class="line">						<span class="built_in">String</span> uuid,</span><br><span class="line">						<span class="built_in">String</span> uid,</span><br><span class="line">						<span class="built_in">String</span> from,</span><br><span class="line">						<span class="built_in">String</span> token,</span><br><span class="line">						<span class="built_in">String</span> uid,</span><br><span class="line">						<span class="built_in">String</span> <span class="attribute">...</span><span class="built_in">..</span>)&#123;</span><br><span class="line">						</span><br><span class="line">						<span class="attribute">...</span><span class="attribute">...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>示例构造函数</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> Person &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> lastName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> firstName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> middleName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> salutation;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> suffix;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> streetAddress;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> city;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> state;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> isFemale;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> isEmployed;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">boolean</span> isHomeOwner;</span><br><span class="line">    <span class="keyword">public</span> Person(<span class="built_in">String</span> lastName, <span class="built_in">String</span> firstName, <span class="built_in">String</span> middleName, <span class="built_in">String</span> salutation,</span><br><span class="line">                  <span class="built_in">String</span> suffix, <span class="built_in">String</span> streetAddress, <span class="built_in">String</span> city, <span class="built_in">String</span> state,</span><br><span class="line">                  <span class="built_in">boolean</span> isFemale, <span class="built_in">boolean</span> isEmployed, <span class="built_in">boolean</span> isHomeOwner) &#123;</span><br><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">        <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">        <span class="keyword">this</span>.middleName = middleName;</span><br><span class="line">        <span class="keyword">this</span>.salutation = salutation;</span><br><span class="line">        <span class="keyword">this</span>.suffix = suffix;</span><br><span class="line">        <span class="keyword">this</span>.streetAddress = streetAddress;</span><br><span class="line">        <span class="keyword">this</span>.city = city;</span><br><span class="line">        <span class="keyword">this</span>.state = state;</span><br><span class="line">        <span class="keyword">this</span>.isFemale = isFemale;</span><br><span class="line">        <span class="keyword">this</span>.isEmployed = isEmployed;</span><br><span class="line">        <span class="keyword">this</span>.isHomeOwner = isHomeOwner;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>问题：<ul>
+<li>添加大量参数理解难度</li>
+<li>易参数位置不正确且运行正常</li>
+<li>不易维护</li>
+<li>那一个方法或者构造方法多少个参数才好了—没有答案<ul>
+<li><a href="http://www.objectmentor.com/omTeam/martin_r.html" target="_blank" rel="external">Robert Martin</a>在Clean Code写到        </li>
+<li><a href="http://www.stevemcconnell.com/" target="_blank" rel="external">Steve McConnell</a>在Code Complete中写到：开发者应该限制参数在七个以内</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数参数的理想个数是零，其次是一，紧随其后的是二，应该尽可能避免三个参数的情况。参数如果多于三个则需要特殊的理由，而且无论如何都不应该再使用。</span><br></pre></td></tr></table></figure>
+<h5 id="解决方法">解决方法</h5><ul>
+<li><p>引入参数对象</p>
+<ul>
+<li><p>参数关系紧密合并到一个对象中</p>
+<ul>
+<li><p>Person.class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> FullName fullName;</span><br><span class="line">    <span class="keyword">public</span> Address address;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isFemale;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isEmployed;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isHomeOwner;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(FullName fullName, Address address, <span class="keyword">boolean</span> isFemale, <span class="keyword">boolean</span> isEmployed, <span class="keyword">boolean</span> isHomeOwner)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName = fullName;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">        <span class="keyword">this</span>.isFemale = isFemale;</span><br><span class="line">        <span class="keyword">this</span>.isEmployed = isEmployed;</span><br><span class="line">        <span class="keyword">this</span>.isHomeOwner = isHomeOwner;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- FullName.class
+
+<span class="comment"><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> FullName &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> lastName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> firstName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> middleName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> salutation;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> suffix;</span><br><span class="line">    <span class="keyword">public</span> FullName(<span class="built_in">String</span> lastName, <span class="built_in">String</span> firstName, <span class="built_in">String</span> middleName, <span class="built_in">String</span> salutation, <span class="built_in">String</span> suffix) &#123;</span><br><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">        <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">        <span class="keyword">this</span>.middleName = middleName;</span><br><span class="line">        <span class="keyword">this</span>.salutation = salutation;</span><br><span class="line">        <span class="keyword">this</span>.suffix = suffix;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+
+
+- Address.class
+
+
+<span class="comment"><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	public class Address &#123;</span><br><span class="line">    public String streetAddress;</span><br><span class="line">    public String city;</span><br><span class="line">    public String <span class="keyword">state</span>;</span><br><span class="line">    public Address(String streetAddress, String city, String <span class="keyword">state</span>) &#123;</span><br><span class="line">        this.streetAddress = streetAddress;</span><br><span class="line">        this.city = city;</span><br><span class="line">        this.<span class="keyword">state</span> = <span class="keyword">state</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+
+
+- 问题：参数对象可能被滥用。如果一个开发者纯粹为了减少参数数量，把联系不紧的几个参数强捆在一个类中这肯定是行不通的，在可读性上甚至适得其反。
+</code></pre><ul>
+<li><p>Builder模式：</p>
+<ul>
+<li>需求：当一个对象需要不同的参数构造方法？不能写5*5满足所有的需求吧</li>
+<li>适用范围：构建对象时，如果碰到类有很多参数——其中很多参数类型相同而且很多参数可以为空时，使用Builder模式来完成。当参数数量不多、类型不同而且都是必须出现时，通过增加代码实现Builder往往无法体现它的优势。在这种情况下，理想的方法是调用传统的构造函数。再者，如果不需要保持不变，那么就使用无参构造函数调用相应的set方法吧。</li>
+<li><p>代码</p>
+<ul>
+<li>Person.class</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> FullName fullName;</span><br><span class="line">    <span class="keyword">public</span> Address address;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isFemale;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isEmployed;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> isHomeOwner;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(FullName fullName, Address address, <span class="keyword">boolean</span> isFemale, <span class="keyword">boolean</span> isEmployed, <span class="keyword">boolean</span> isHomeOwner)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullName = fullName;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">        <span class="keyword">this</span>.isFemale = isFemale;</span><br><span class="line">        <span class="keyword">this</span>.isEmployed = isEmployed;</span><br><span class="line">        <span class="keyword">this</span>.isHomeOwner = isHomeOwner;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> FullName fullName;</span><br><span class="line">        <span class="keyword">private</span> Address address;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">boolean</span> isFemale;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">boolean</span> isEmployed;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">boolean</span> isHomeOwner;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span><br><span class="line">         * 如果有必填参数这里可以构造必填构造方法</span><br><span class="line">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Builder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setFullName</span><span class="params">(FullName fullName)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fullName = fullName;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setAddress</span><span class="params">(Address address)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.address = address;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setFemale</span><span class="params">(<span class="keyword">boolean</span> female)</span> </span>&#123;</span><br><span class="line">            isFemale = female;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setEmployed</span><span class="params">(<span class="keyword">boolean</span> employed)</span> </span>&#123;</span><br><span class="line">            isEmployed = employed;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Builder <span class="title">setHomeOwner</span><span class="params">(<span class="keyword">boolean</span> homeOwner)</span> </span>&#123;</span><br><span class="line">            isHomeOwner = homeOwner;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Person <span class="title">create</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Person(fullName, address, isFemale, isEmployed, isHomeOwner);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- FullName.class
+
+<span class="comment"><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> FullName &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> lastName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> firstName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> middleName;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> salutation;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">String</span> suffix;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> FullName(<span class="built_in">String</span> lastName, <span class="built_in">String</span> firstName, <span class="built_in">String</span> middleName, <span class="built_in">String</span> salutation, <span class="built_in">String</span> suffix) &#123;</span><br><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">        <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">        <span class="keyword">this</span>.middleName = middleName;</span><br><span class="line">        <span class="keyword">this</span>.salutation = salutation;</span><br><span class="line">        <span class="keyword">this</span>.suffix = suffix;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> static <span class="keyword">class</span> Builder &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">String</span> lastName;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">String</span> firstName;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">String</span> middleName;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">String</span> salutation;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">String</span> suffix;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Builder() &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Builder setLastName(<span class="built_in">String</span> lastName) &#123;</span><br><span class="line">            <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Builder setFirstName(<span class="built_in">String</span> firstName) &#123;</span><br><span class="line">            <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Builder setMiddleName(<span class="built_in">String</span> middleName) &#123;</span><br><span class="line">            <span class="keyword">this</span>.middleName = middleName;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Builder setSalutation(<span class="built_in">String</span> salutation) &#123;</span><br><span class="line">            <span class="keyword">this</span>.salutation = salutation;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Builder setSuffix(<span class="built_in">String</span> suffix) &#123;</span><br><span class="line">            <span class="keyword">this</span>.suffix = suffix;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> FullName create() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> FullName(lastName, firstName, middleName, salutation, suffix);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+
+
+ - Address.class
+
+ <span class="comment"><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public class Address &#123;</span><br><span class="line">    public String streetAddress;</span><br><span class="line">    public String city;</span><br><span class="line">    public String <span class="keyword">state</span>;</span><br><span class="line">    public Address(String streetAddress, String city, String <span class="keyword">state</span>) &#123;</span><br><span class="line">        this.streetAddress = streetAddress;</span><br><span class="line">        this.city = city;</span><br><span class="line">        this.<span class="keyword">state</span> = <span class="keyword">state</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    public static class Builder &#123;</span><br><span class="line">        private String streetAddress;</span><br><span class="line">        private String city;</span><br><span class="line">        private String <span class="keyword">state</span>;</span><br><span class="line"></span><br><span class="line">        public Builder() &#123;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public Builder <span class="built_in">set</span>StreetAddress(String streetAddress) &#123;</span><br><span class="line">            this.streetAddress = streetAddress;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public Builder <span class="built_in">set</span>City(String city) &#123;</span><br><span class="line">            this.city = city;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public Builder <span class="built_in">set</span>State(String <span class="keyword">state</span>) &#123;</span><br><span class="line">            this.<span class="keyword">state</span> = <span class="keyword">state</span>;</span><br><span class="line">            return this;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public Address create() &#123;</span><br><span class="line">            return new Address(streetAddress, city, <span class="keyword">state</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+
+ 调用的地方
+
+ <span class="comment"><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> public static void main(String<span class="comment">[]</span> args) &#123;</span><br><span class="line">	FullName fullName = new FullName.Builder().setFirstName(<span class="string">"yes"</span>)</span><br><span class="line">			.setLastName(<span class="string">"no"</span>).create();</span><br><span class="line">	Address address = new Address.Builder().setCity(<span class="string">"china"</span>).setState(<span class="string">"12"</span>)</span><br><span class="line">			.create();</span><br><span class="line">	<span class="keyword">Person</span> <span class="keyword">person</span> = new <span class="keyword">Person</span>.Builder().setAddress(address)</span><br><span class="line">			.setFullName(fullName).create();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+
+ - 优点：客户端代码的可用性和可读性得到了大大提高，构造函数的参数数量明显减少调用起来非常直观。单个builder构建多个对象时Builder参数可在创建期间进行调整，还可以根据对象不同而进行改变，有效的避免重载构造函数。
+ - 缺点：增加代码量，代码变得更加冗长(相比较参数数量的增加，相同类型的参数混在一起，可选参数的增加而言，改善代码可读性更有价值)
+</code></pre><ul>
+<li><p>重载</p>
+<ul>
+<li>适用范围：方法中参数可选参数或者参数中指定参数相同</li>
+<li><p>代码</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public String <span class="property">name</span>(String <span class="property">name</span>,int <span class="property">year</span>) &#123;</span><br><span class="line"><span class="command">	return</span> <span class="property">name</span>+<span class="property">year</span>;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * 重载</span><br><span class="line"> * @param <span class="property">name</span></span><br><span class="line"> * @<span class="constant">return</span></span><br><span class="line"> */</span><br><span class="line">public String <span class="property">name</span>(String <span class="property">name</span>) &#123;</span><br><span class="line"><span class="command">	return</span> <span class="property">name</span>+<span class="string">"null"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code><span class="bullet">- </span>优点：遇到可选参数或者默认参数时，使用方法重载会十分有效。
+</code></pre><ul>
+<li><p>使用工具</p>
+<ul>
+<li>静态分析工具<ul>
+<li>android—Android studio</li>
+<li><a href="http://www.importnew.com/8937.html" target="_blank" rel="external">其他Java静态代码分析工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a href="http://www.importnew.com/7185.html" target="_blank" rel="external">ImportNew参考文章</a></p>
+</li>
+</ul>
+<h2 id="Swift与JavaScript交互_-_刘康">Swift与JavaScript交互 - 刘康</h2><h3 id="概述">概述</h3><p>iOS原生应用和web页面的交互大致上有这几种方法：</p>
+<ul>
+<li>iOS7之后的<code>JavaScriptCore</code></li>
+<li><code>拦截协议</code></li>
+<li>第三方框架<code>WebViewJavaScriptBridge</code> : 是基于拦截协议进行的封装，学习成本相对JavaScriptCore较高</li>
+<li>iOS8之后的<code>WKWebView</code> : iOS8之后推出的，还没有成为主流使用。</li>
+</ul>
+<h3 id="关于JavaScriptCore">关于JavaScriptCore</h3><p>涉及到的几种类型：</p>
+<ul>
+<li>JSContext:  JSContext是代表JS的执行环境，通过-evaluateScript:方法就可以执行JS代码</li>
+<li>JSValue: JSValue封装了JS与ObjC中的对应的类型，以及调用JS的API等</li>
+<li>JSExport:  JSExport是一个协议，遵守此协议，就可以定义我们自己的协议，在协议中声明的API都会在JS中暴露出来，才能调用</li>
+</ul>
+<h3 id="Swift与JS交互方式">Swift与JS交互方式</h3><p>两种调用JS代码的方法：</p>
+<p>1、直接调用JS代码</p>
+<p>2、在Swift中通过JSContext注入模型，然后调用模型的方法</p>
+<h4 id="直接调用JS代码">直接调用JS代码</h4><p>我们可以不通过模型来调用方法，也可以直接调用方法</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接JS方法</span></span><br><span class="line">let context = <span class="function"><span class="title">JSContext</span><span class="params">()</span></span></span><br><span class="line">context.<span class="function"><span class="title">evaluateScript</span><span class="params">(<span class="string">"var num = 8"</span>)</span></span></span><br><span class="line">context.<span class="function"><span class="title">evaluateScript</span><span class="params">(<span class="string">"function double(value) &#123;return value * 2&#125;"</span>)</span></span></span><br><span class="line"><span class="comment">// 调用并打印结果</span></span><br><span class="line">let result = context.<span class="function"><span class="title">evaluateScript</span><span class="params">(<span class="string">"double(num)"</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"result = \(result)"</span>)</span></span></span><br><span class="line"><span class="comment">// 可通过下标来获取JS方法</span></span><br><span class="line">let doubleFunc = context.<span class="function"><span class="title">objectForKeyedSubscript</span><span class="params">(<span class="string">"double"</span>)</span></span></span><br><span class="line">let double10Result = doubleFunc.<span class="function"><span class="title">callWithArguments</span><span class="params">([<span class="string">"10"</span>])</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"doubleFunc(10), result = \(double10Result.toString())"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>这种方式是没有注入模型到JS中的。这种方式使用起来不太合适，通常在JS中有很多全局的函数，为了防止名字重名，使用模型的方式是最好不过了。通过我们协商好的模型名称，在JS中直接通过模型来调用我们在Swift中所定义的模型所公开的API。<br>注入模型的交互</p>
+<h4 id="注入模型的交互">注入模型的交互</h4><p>首先，我们需要先定义一个协议，而且这个协议必须要遵守JSExport协议。</p>
+<p>All methods that should apply in Javascript,should be in the following protocol.</p>
+<p>注意，这里必须使用<code>@objc</code>，因为JavaScriptCore库是ObjectiveC版本的。如果不加<code>@objc</code>，则调用无效果。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">objc <span class="class"><span class="keyword">protocol</span> <span class="title">JavaScriptSwiftDelegate</span>: <span class="title">JSExport</span> </span>&#123;</span><br><span class="line">  <span class="func"><span class="keyword">func</span> <span class="title">callSystemCamera</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="func"><span class="keyword">func</span> <span class="title">showAlert</span><span class="params">(title: String, msg: String)</span></span>;</span><br><span class="line">  <span class="func"><span class="keyword">func</span> <span class="title">callWithDict</span><span class="params">(dict: [String: AnyObject])</span></span></span><br><span class="line">  <span class="func"><span class="keyword">func</span> <span class="title">jsCallObjcAndObjcCallJsWithDict</span><span class="params">(dict: [String: AnyObject])</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来，我们还需要定义一个模型:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">@objc</span> <span class="class"><span class="keyword">class</span> <span class="title">SwiftJSModel</span>: <span class="title">NSObject</span>, <span class="title">JavaScriptSwiftDelegate</span> </span>&#123;</span><br><span class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> controller: <span class="type">UIViewController</span>?</span><br><span class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> jsContext: <span class="type">JSContext</span>?</span><br><span class="line">    </span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">callSystemCamera</span><span class="params">()</span></span> &#123;</span><br><span class="line">        showAlert(<span class="string">"JS调用Native"</span>, msg: <span class="string">"这里应该去调用摄像头"</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> jsFunc = <span class="keyword">self</span>.jsContext?.objectForKeyedSubscript(<span class="string">"jsFunc"</span>);</span><br><span class="line">        jsFunc?.callWithArguments([]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">showAlert</span><span class="params">(title: String, msg: String)</span></span> &#123;</span><br><span class="line">        dispatch_async(dispatch_get_main_queue()) &#123; () -&gt; <span class="type">Void</span> <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">let</span> alert = <span class="type">UIAlertController</span>(title: title, message: msg, preferredStyle: .<span class="type">Alert</span>)</span><br><span class="line">            alert.addAction(<span class="type">UIAlertAction</span>(title: <span class="string">"ok"</span>, style: .<span class="type">Default</span>, handler: <span class="literal">nil</span>))</span><br><span class="line">            <span class="keyword">self</span>.controller?.presentViewController(alert, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">callWithDict</span><span class="params">(dict: [String : AnyObject])</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"JS call objc method: callWithDict, args: %@"</span>, dict)</span><br><span class="line">        showAlert(<span class="string">"JS调用Native方法：callWithDict"</span>, msg: <span class="string">"这里处理callWithDict"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">jsCallObjcAndObjcCallJsWithDict</span><span class="params">(dict: [String : AnyObject])</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"js call objc method: jsCallObjcAndObjcCallJsWithDict, args: %@"</span>, dict)</span><br><span class="line">        showAlert(<span class="string">"JS调用Native方法：jsCallObjcAndObjcCallJsWithDict"</span>, msg: <span class="string">"dict:<span class="subst">\(dict)</span>"</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> jsParamFunc = <span class="keyword">self</span>.jsContext?.objectForKeyedSubscript(<span class="string">"jsParamFunc"</span>);</span><br><span class="line">        <span class="keyword">let</span> dict = <span class="type">NSDictionary</span>(dictionary: [<span class="string">"age"</span>: <span class="number">18</span>, <span class="string">"height"</span>: <span class="number">168</span>, <span class="string">"name"</span>: <span class="string">"lili"</span>])</span><br><span class="line">        jsParamFunc?.callWithArguments([dict])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来，我们在controller中在webview加载完成的代理中，给JS注入模型:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">webViewDidFinishLoad</span><span class="params">(webView: UIWebView)</span></span> &#123;</span><br><span class="line">    <span class="keyword">let</span> context = webView.valueForKeyPath(<span class="string">"documentView.webView.mainFrame.javaScriptContext"</span>) <span class="keyword">as</span>? <span class="type">JSContext</span></span><br><span class="line">    <span class="keyword">let</span> model = <span class="type">JSObjCModel</span>()</span><br><span class="line">    model.controller = <span class="keyword">self</span></span><br><span class="line">    model.jsContext = context</span><br><span class="line">    <span class="keyword">self</span>.jsContext = context</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 这一步是将OCModel这个模型注入到JS中，在JS就可以通过OCModel调用我们公暴露的方法了。</span></span><br><span class="line">   <span class="keyword">self</span>.jsContext?.setObject(model, forKeyedSubscript: <span class="string">"OCModel"</span>)</span><br><span class="line">    <span class="keyword">let</span> url = <span class="type">NSBundle</span>.mainBundle().<span class="type">URLForResource</span>(<span class="string">"test"</span>, withExtension: <span class="string">"html"</span>)</span><br><span class="line">    <span class="keyword">self</span>.jsContext?.evaluateScript(try? <span class="type">String</span>(contentsOfURL: url!, encoding: <span class="type">NSUTF8StringEncoding</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span>.jsContext?.exceptionHandler = &#123;</span><br><span class="line">      (context, exception) <span class="keyword">in</span></span><br><span class="line">         <span class="built_in">print</span>(<span class="string">"exception @"</span>, exception)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>JSContext是通过webView的valueForKeyPath获取的，其路径为documentView.webView.mainFrame.javaScriptContext。<br>这样就可以获取到JS的context，然后为这个context注入模型对象。<br>先写两个JS方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   	alert(<span class="string">'Objective-C call js to show alert'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 注意哦，如果JS写错，可能在OC调用JS方法时，都会出错哦。</span></span><br><span class="line"><span class="keyword">var</span> jsParamFunc = <span class="function"><span class="keyword">function</span>(<span class="params">argument</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'jsParamFuncSpan'</span>).innerHTML = argument[<span class="string">'name'</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里定义了两个JS方法，一个是jsFunc，不带参数。<br>另一个是jsParamFunc，带一个参数。</p>
+<p>当点击第一个按钮：Call ObjC system camera时，<br>通过OCModel.callSystemCamera()，就可以在HTML中通过JS调用OC的方法。<br>在Swift代码callSystemCamera方法体中，添加了以下两行代码，就是获取HTML中所定义的JS就去jsFunc，然后调用它。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> jsFunc = self.jsContext?.objectForKeyedSubscript<span class="params">(<span class="string">"jsFunc"</span>)</span>;</span><br><span class="line">jsFunc?.callWithArguments<span class="params">([])</span>;</span><br></pre></td></tr></table></figure>
+<p>这样就可以在JS调用Siwft方法时，也让Swift反馈给JS。<br>注意：这里是通过objectForKeyedSubscript方法来获取变量jsFunc。<br>方法也是变量。看看下面传字典参数：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">jsCallObjcAndObjcCallJsWithDict</span><span class="params">(dict: [String : AnyObject])</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"js call objc method: jsCallObjcAndObjcCallJsWithDict, args: %@"</span>, dict)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> jsParamFunc = <span class="keyword">self</span>.jsContext?.objectForKeyedSubscript(<span class="string">"jsParamFunc"</span>);</span><br><span class="line">    <span class="keyword">let</span> dict = <span class="type">NSDictionary</span>(dictionary: [<span class="string">"age"</span>: <span class="number">18</span>, <span class="string">"height"</span>: <span class="number">168</span>, <span class="string">"name"</span>: <span class="string">"lili"</span>])</span><br><span class="line">    jsParamFunc?.callWithArguments([dict])</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>获取HTML中定义的jsParamFunc方法，然后调用它并传了一个字典作为参数。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/22/移动周分享-第52期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第52期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/08/移动周分享-第50期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第50期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第51期" data-title="移动周分享-第51期" data-url="http://yoursite.com/2016/04/15/移动周分享-第51期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

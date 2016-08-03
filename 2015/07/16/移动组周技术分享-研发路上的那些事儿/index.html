@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动组周技术分享-研发路上的那些事儿 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="心酸研发路 - 杨志平
+大版本发布周期过长（原因：团队专业有限，探索前进，频繁修改），导致没有什么机会思考、设计，人也拖的身心疲惫
+引入架构思想，软件质量提高。后期频繁加入改动，冲淡架构
+老板干涉过多 导致：压力过大 质量无法保证
+老板高度重视UI
+
+研发路上的那些事儿 - 张超耀
+没有专业的移动端团队人员
+产品研发没有系统流程，走一步算一步
+需求人人可以改
+忙的时候忙的要死，闲的时候闲的蛋疼">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动组周技术分享-研发路上的那些事儿">
+<meta property="og:url" content="http://yoursite.com/2015/07/16/移动组周技术分享-研发路上的那些事儿/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="心酸研发路 - 杨志平
+大版本发布周期过长（原因：团队专业有限，探索前进，频繁修改），导致没有什么机会思考、设计，人也拖的身心疲惫
+引入架构思想，软件质量提高。后期频繁加入改动，冲淡架构
+老板干涉过多 导致：压力过大 质量无法保证
+老板高度重视UI
+
+研发路上的那些事儿 - 张超耀
+没有专业的移动端团队人员
+产品研发没有系统流程，走一步算一步
+需求人人可以改
+忙的时候忙的要死，闲的时候闲的蛋疼">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动组周技术分享-研发路上的那些事儿">
+<meta name="twitter:description" content="心酸研发路 - 杨志平
+大版本发布周期过长（原因：团队专业有限，探索前进，频繁修改），导致没有什么机会思考、设计，人也拖的身心疲惫
+引入架构思想，软件质量提高。后期频繁加入改动，冲淡架构
+老板干涉过多 导致：压力过大 质量无法保证
+老板高度重视UI
+
+研发路上的那些事儿 - 张超耀
+没有专业的移动端团队人员
+产品研发没有系统流程，走一步算一步
+需求人人可以改
+忙的时候忙的要死，闲的时候闲的蛋疼">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动组周技术分享-研发路上的那些事儿" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/16/移动组周技术分享-研发路上的那些事儿/" class="article-date">
+  	<time datetime="2015-07-16T16:56:00.000Z" itemprop="datePublished">2015-07-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动组周技术分享-研发路上的那些事儿
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/研发杂谈/">研发杂谈</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="心酸研发路_-_杨志平">心酸研发路 - 杨志平</h2><ul>
+<li>大版本发布周期过长（原因：团队专业有限，探索前进，频繁修改），导致没有什么机会思考、设计，人也拖的身心疲惫</li>
+<li>引入架构思想，软件质量提高。后期频繁加入改动，冲淡架构</li>
+<li>老板干涉过多 导致：压力过大 质量无法保证</li>
+<li>老板高度重视UI</li>
+</ul>
+<h2 id="研发路上的那些事儿_-_张超耀">研发路上的那些事儿 - 张超耀</h2><ul>
+<li>没有专业的移动端团队人员</li>
+<li>产品研发没有系统流程，走一步算一步</li>
+<li>需求人人可以改</li>
+<li>忙的时候忙的要死，闲的时候闲的蛋疼</li>
+</ul>
+<h2 id="研发之路上的坑_-_潘君">研发之路上的坑 - 潘君</h2><h3 id="盲目相信自己,不合理的压缩周期">盲目相信自己,不合理的压缩周期</h3><p>在开发周期过程中,过分相信努力的作用,以为团队只要努努力,可以爆发一个超越平时的战斗力.</p>
+<p>在预估周期的过程中,过分考虑老板的感受,不合理的压缩周期,不断的向需求妥协,导致后期死的非常难看.</p>
+<p>一方面自己的预估承诺没有兑现.另一方面团队本身也精疲力尽.</p>
+<h3 id="好事多磨,鸡血不能多打">好事多磨,鸡血不能多打</h3><p>一个好的项目不是短期可以做出来的,是必须慢慢打磨,而过分相信一个突击开发周期能够做出一个好产品是过于乐观的.</p>
+<p>好事多磨,好的东西需要一个相对合理的周期.这个周期可能比较长,所以在较长的一段时间内要做的是保证团队的舒适度,而不是一味的打鸡血鼓励.</p>
+<p>鸡血是一种需要正向循环的方式.如果没有一个好的反馈,鸡血的功效性就会越来越弱,最后反而会有逆效果.</p>
+<h2 id="高层强插改需求_-_吴明">高层强插改需求 - 吴明</h2><ul>
+<li>背景<ul>
+<li>原公司移动开发中，在一项目层层过滤确定产品后，开发人员并已经开发了一段时间后，公司老板或者其他高层介入修改需求，延长开发时间。</li>
+</ul>
+</li>
+<li>缺点：<ol>
+<li>开发时间浪费，花费时间做无用功</li>
+<li>高层施压不利于下层产品开发，及产品迭代</li>
+<li>项目延期打击开发团队人员士气和积极性</li>
+<li>项目接近上线更改需求，严重影响开发人员心情，及代码编写质量</li>
+</ol>
+</li>
+<li>后期流程改进<ol>
+<li>从项目入口抓起：所有指定项目必须经该项目需求方，产品，开发等直接最高领导确定，并且不更改需求下，开发人员才开发项目。</li>
+<li>项目分阶段给高层领导汇报，把控项目质量。</li>
+<li>高层需要项目后期改需求，只能下个版本迭代，本项目不予以改需求。</li>
+</ol>
+</li>
+</ul>
+<h2 id="参与创业的辛酸史_-_郁兵生">参与创业的辛酸史 - 郁兵生</h2><ul>
+<li>初创团队，没日没夜加班搞项目</li>
+<li>初创团队，不了解情况，项目周期把握不清。赶时间攒代码。</li>
+</ul>
+<h2 id="大众【设计占整个研发的重头】-_顾鹏凌">大众【设计占整个研发的重头】- 顾鹏凌</h2><ul>
+<li>完善的管理体</li>
+<li>细控的研发流程</li>
+<li>设计阶段作为重头，精雕细琢，避免后期遇到问题需要大改动</li>
+</ul>
+<h2 id="杂乱的管理_-_吴强">杂乱的管理  - 吴强</h2><ul>
+<li>初创团队，相关人员不完备</li>
+<li>产品经理只做了原型的工作，没有把控住需求的变更</li>
+<li>一人多职，多项目参与</li>
+<li>空降产品经理，做事一意孤行，跟团队不和</li>
+</ul>
+<h2 id="51offer的原始状态_-_庄丰洲">51offer的原始状态 - 庄丰洲</h2><ul>
+<li>没有移动端团队人员和移动端研发规范流程</li>
+<li>是个人都可以提需求</li>
+</ul>
+<h2 id="工作感悟－李仙鹏">工作感悟－李仙鹏</h2><ul>
+<li><p>团队结构：</p>
+<blockquote>
+<p>崇尚扁平化的互联网公司，员工之间没有非常明县的上下级关系。</p>
+</blockquote>
+</li>
+<li><p>需求把控：</p>
+<blockquote>
+<p>需求不明确、中途变更、压榨开发都TMD是耍流氓</p>
+<ol>
+<li><p>一个好的项目需求，应该在kick off前全面规划产品，产品和设计明确需求并且画押签字，中途不得变更。当临时提出需求变更时，技术应该敢于把画押字据拿出来并且提出拒绝——把变更需求留在下一版本迭代。</p>
+</li>
+<li><p>不应该为了迎合进度而倒推时间压榨开发，这样做出来的东西很可能会是漏洞百出的</p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h2 id="Better_的一路走来_-_王胜"><a href="http://www.iambetter.cn/" target="_blank" rel="external">Better</a> 的一路走来 - 王胜</h2><h3 id="第一个版本历时4个月的天天加班">第一个版本历时4个月的天天加班</h3><ul>
+<li>评估开发时间时，仅有原型；设计稿一出，开发人员瞬间觉得工作量要直线上升。</li>
+<li>按照一个有经验的工程师估出时间，然后上面说再调一个人，时间周期按照除以2来算。掉入《人月计划》中所说的坑。</li>
+<li>新组建的团队，缺少默契，需要磨合。【包括客户端之间，客户端与API之间，客户端与UI之间】</li>
+<li>临近上线，上面对体验要求无止境，导致细节调整没完没了</li>
+</ul>
+<h3 id="一起努力，挺过4个月">一起努力，挺过4个月</h3><ul>
+<li>打过鸡血</li>
+<li>慢慢地团队之间有了默契</li>
+<li>制定上线体验阀值，不能无止境提出体验调整的需求</li>
+</ul>
+<h3 id="后续版本的研发">后续版本的研发</h3><ul>
+<li>严格按照Scrum流程迭代开发版本，目前2周一迭代</li>
+<li>Sprint确定需求后，不能强制加入新的需求</li>
+<li>特例的需求要插入Sprint，那么就顺延Sprint的周期</li>
+</ul>
+<h2 id="工作经历的一些片段_-_曾铭">工作经历的一些片段 - 曾铭</h2><h3 id="文化">文化</h3><ul>
+<li>（敏感信息）略</li>
+</ul>
+<h3 id="好的">好的</h3><ul>
+<li>工程师主导的开发流程：产品做调研，提目标，开发参与设计 feature 包揽实现、测试、验证</li>
+<li>牛人不少：一流的人招一流的人，二流的人招三流的人</li>
+<li>优秀工具的使用 （工具绝非一蹴而就， svn -&gt; git，）</li>
+<li>对代码的极致追求 （代码行数、朝歌-&gt;镐京、Hackathon：一夜实现客户端聊天）</li>
+<li>相对优秀的办公环境 （畅通的网络等）</li>
+</ul>
+<h1 id="不好的">不好的</h1><ul>
+<li>目标不明确 (对商家态度的摇摆)</li>
+<li>不接地气（商业化不成功）</li>
+<li>理想主义者的碰撞, 无妥协</li>
+<li>急躁（寻求改变的高期望）</li>
+<li>压力大</li>
+</ul>
+<h3 id="以上不针对具体公司">以上不针对具体公司</h3>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/19/技术部分享-微信公众号开发/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          微信公众号开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/11/用-travis-ci-自动部署-hexo-静态博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用 travis-ci 自动部署 hexo 静态博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动组周技术分享-研发路上的那些事儿" data-title="移动组周技术分享-研发路上的那些事儿" data-url="http://yoursite.com/2015/07/16/移动组周技术分享-研发路上的那些事儿/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

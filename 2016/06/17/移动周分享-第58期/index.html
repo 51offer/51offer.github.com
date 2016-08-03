@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第58期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java Annotation - 王胜Annotation是什么
+维基百科: A form of syntactic metadaa that can be added to Java source code. 也就是说，Annotation的引入是为了从Java语言层面上，为Java源代码提供元数据的支持。参见维基百科
+
+Annotation的用途
+表象，替代之前JDK1.4开发中，大量繁琐的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第58期">
+<meta property="og:url" content="http://yoursite.com/2016/06/17/移动周分享-第58期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Java Annotation - 王胜Annotation是什么
+维基百科: A form of syntactic metadaa that can be added to Java source code. 也就是说，Annotation的引入是为了从Java语言层面上，为Java源代码提供元数据的支持。参见维基百科
+
+Annotation的用途
+表象，替代之前JDK1.4开发中，大量繁琐的">
+<meta property="og:image" content="http://7xsk2b.com1.z0.glb.clouddn.com/image/custom-annotation-demo.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_2_quickhelp2.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_3_help_inspector1.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_10_keywords5.png">
+<meta property="og:image" content="http://www.appcoda.com/wp-content/uploads/2016/05/t52_15_jazzy_results.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第58期">
+<meta name="twitter:description" content="Java Annotation - 王胜Annotation是什么
+维基百科: A form of syntactic metadaa that can be added to Java source code. 也就是说，Annotation的引入是为了从Java语言层面上，为Java源代码提供元数据的支持。参见维基百科
+
+Annotation的用途
+表象，替代之前JDK1.4开发中，大量繁琐的">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第58期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/17/移动周分享-第58期/" class="article-date">
+  	<time datetime="2016-06-17T10:30:00.000Z" itemprop="datePublished">2016-06-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第58期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java_Annotation_-_王胜">Java Annotation - 王胜</h2><h3 id="Annotation是什么">Annotation是什么</h3><blockquote>
+<p>维基百科: A form of syntactic metadaa that can be added to Java source code. 也就是说，Annotation的引入是为了从Java语言层面上，为Java源代码提供元数据的支持。<a href="http://en.wikipedia.org/wiki/Java_annotation" target="_blank" rel="external">参见维基百科</a></p>
+</blockquote>
+<h3 id="Annotation的用途">Annotation的用途</h3><blockquote>
+<p>表象，替代之前JDK1.4开发中，大量繁琐的配置项，Annotation的出现其实可以极大简化配置文件的数量和需要关注配置的内容。但其实，注解带来的益处远不至于此。</p>
+</blockquote>
+<h3 id="Annotation的分类">Annotation的分类</h3><ul>
+<li><p>文档标注型</p>
+<p>主要是@Documented,用以标注是否在javadoc中</p>
+</li>
+<li><p>编译检查型</p>
+<p>主要在编译过程中，给Java编译器若干指令，检查Java代码中是否存在若干问题， 改变编译器的动作或者行为，通过Annotation的使用，可以调整和控制编译器的使用以及让编译器提供关于代码的更多的检查和验证。主要有：@Override，@SuppressWarning</p>
+</li>
+<li><p>代码分析型</p>
+<p>此类Annotation是在我们开发中使用最多的，主要是通过Annotation提供给代码更多的额外特性和设置，在Java运行过程中发挥作用。常见的是在Spring或者Hibernate等框架中出现的@Controller，@Service，@Bean， @Table, @Enitty等等.</p>
+</li>
+</ul>
+<h3 id="自定义生命周期为Runtime类型Annotation">自定义生命周期为Runtime类型Annotation</h3><p>Runtime的处理主要依赖于反射的接口，在字节码中寻找Annotation的接口和输入参数，提取其内容和数值。大部分的情况下是基于代理模式，动态生成相应的代理类实例，然后通过代理类，调用相应的InvocationHandler，在InvocationHandler之内完成Annotation所要执行的动作；然后再继续调用原来的方法，继续执行。</p>
+<p><strong>用户在定义Runtime类型的Annotation时，需要的步骤：</strong></p>
+<ul>
+<li>定义Annotation</li>
+<li>定义Annotation的处理器类『通过Reflect、InvocationHandler、Proxy.newProxyInstance()来处理具体的逻辑』</li>
+<li>选择合适的调用Annotation的时机和切入点。</li>
+</ul>
+<h3 id="示例">示例</h3><p><img src="http://7xsk2b.com1.z0.glb.clouddn.com/image/custom-annotation-demo.png" alt="custom-annotation-demo.png"></p>
+<p>自定义一个@OnClick注解，通过在方法前面加入这个注解，从而为指定的组件动态添加事件监听方法。</p>
+<ul>
+<li><p>定义OnClick注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="annotation">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="annotation">@interface</span> OnClick &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义OnClickProxyFactory来处理动态绑定方法的逻辑</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OnClickProxyFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 处理OnClick注解</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> target 包含OnClick注解的目标对象</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">handleOnClickAnnotation</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; clsTarget = target.getClass();</span><br><span class="line">            <span class="comment">// 检索目标对象的所有方法, 如果含有OnClick注解, 则为注解中声明的属性对象动态添加AddActionListener方法</span></span><br><span class="line">            <span class="keyword">for</span> (Method method : clsTarget.getDeclaredMethods()) &#123;</span><br><span class="line">                OnClick onClickAnnotation = method.getAnnotation(OnClick.class);</span><br><span class="line">                <span class="keyword">if</span> (onClickAnnotation != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    Field field = clsTarget.getDeclaredField(onClickAnnotation.value());</span><br><span class="line">                    field.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">                    autoAddActionlistener(field.get(target), getActionListenerProxy(target, method));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 为目标对象添加addActionListener方法, 该方法的参数ActionListener为ActionListener代理对象</span><br><span class="line">     * <span class="doctag">@param</span> target 被添加ActionListener方法的事件源对象</span><br><span class="line">     * <span class="doctag">@param</span> actionListenerProxy ActionListener代理对象</span><br><span class="line">     * <span class="doctag">@throws</span> NoSuchMethodException</span><br><span class="line">     * <span class="doctag">@throws</span> InvocationTargetException</span><br><span class="line">     * <span class="doctag">@throws</span> IllegalAccessException</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">autoAddActionlistener</span><span class="params">(Object target, Object actionListenerProxy)</span> <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取JButton的addActionListener方法对象</span></span><br><span class="line">        Method methodAddActionListener = target.getClass().getMethod(<span class="string">"addActionListener"</span>, ActionListener.class);</span><br><span class="line">        <span class="comment">// 为JButton对象添加addActionListener方法</span></span><br><span class="line">        methodAddActionListener.invoke(target, actionListenerProxy);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 获取ActionListener的代理对象</span><br><span class="line">     * <span class="doctag">@param</span> target 指定的代理对象</span><br><span class="line">     * <span class="doctag">@param</span> targetMethod 指定的代理对象的方法</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getActionListenerProxy</span><span class="params">(<span class="keyword">final</span> Object target, <span class="keyword">final</span> Method targetMethod)</span> </span>&#123;</span><br><span class="line">        InvocationHandler handler = <span class="keyword">new</span> InvocationHandler() &#123;</span><br><span class="line">            <span class="annotation">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> targetMethod.invoke(target);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(target.getClass().getClassLoader(), <span class="keyword">new</span> Class[] &#123;ActionListener.class&#125;, handler);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在UI初始化时，调用注解的解析和动态处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UI</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</span><br><span class="line">    <span class="comment">// 省略......</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UI</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// 省略......</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 通过OnClickProxyFactory工厂来处理OnClick注解</span></span><br><span class="line">      OnClickProxyFactory.handleOnClickAnnotation(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="annotation">@OnClick</span>(<span class="string">"btnBlue"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBlueBackground</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      panel.setBackground(Color.BLUE);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@OnClick</span>(<span class="string">"btnRed"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRedBackground</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      panel.setBackground(Color.RED);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@OnClick</span>(<span class="string">"btnSayHello"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      JOptionPane.showConfirmDialog(<span class="keyword">null</span>, <span class="string">"Hello World!"</span>, <span class="string">"Tips"</span>, JOptionPane.YES_OPTION);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>具体的示例源码，移步 <a href="https://github.com/wangsheng/helloJavaSE" target="_blank" rel="external">Github-helloJavaSE</a></p>
+<h3 id="参考">参考</h3><ul>
+<li><a href="http://blog.csdn.net/blueheart20/article/details/18725801" target="_blank" rel="external">Java Annotation原理分析(一)</a></li>
+<li><a href="http://blog.csdn.net/blueheart20/article/details/18761847" target="_blank" rel="external">Java Annotation原理分析(二)</a></li>
+<li><a href="http://blog.csdn.net/blueheart20/article/details/18765891" target="_blank" rel="external">Java Annotation原理分析(三)</a></li>
+<li><a href="http://blog.csdn.net/blueheart20/article/details/18810693" target="_blank" rel="external">Java Annotation原理分析(四)</a></li>
+</ul>
+<h2 id="Xcode_MarkDown的代码文档_(_for_swift_)">Xcode MarkDown的代码文档 ( for swift )</h2><p>@(iOS)[Markdown, Document]</p>
+<h3 id="markdown在swift中的应用">markdown在swift中的应用</h3><h4 id="goals">goals</h4><ul>
+<li>描述各个属性、函数和类的真正用途</li>
+<li>高亮函数的输入和输出（参数和返回值）</li>
+<li>几个月后还能清晰地记得每个函数属性是为了什么</li>
+<li>使用工具制作具有专业外观的使用手册（比如：使用 <a href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy</a>）</li>
+<li>Xcode 里写的代码文档能被预览</li>
+</ul>
+<h4 id="markdown_grammar">markdown grammar</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">#text#：文本标题</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**text**</span>：使文本具有加粗的效果</span><br><span class="line"></span><br><span class="line"><span class="emphasis">*text*</span>：使文本具有斜体的效果</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>text：使文本成为一个无序列表的元素，值得注意的是，有个 * 后面需要有一个空格。同样，可以使用 + 或 - 实现这个的功能</span><br><span class="line"></span><br><span class="line">1.text：使文本成为一个有序列表的元素</span><br><span class="line"></span><br><span class="line">[<span class="link_label">linked text</span>](<span class="link_url">http://some-url.com</span>)：使文本成为可以点击的超链接</span><br><span class="line"></span><br><span class="line">![<span class="link_label">image show</span>](<span class="link_url">http://www.appcoda.com/wp-content/uploads/2016/05/t52_3_help_inspector1.png</span>)：可以显示图片</span><br><span class="line"></span><br><span class="line"><span class="blockquote">&gt; text：创建一个块引用。</span></span><br><span class="line"></span><br><span class="line">使用 4 个空格或 1 个 tab 来缩进所写的代码块，等价于 HTML 中的 \\ 标签。可以继续使用 4 个空格或 1 个 tab 来添加另一个缩进</span><br><span class="line"></span><br><span class="line">如果不想使用空格或 tab 的话，可以使用 <span class="code">` 。比如， `</span>var myProperty` 会显示成 var myProperty</span><br><span class="line"></span><br><span class="line">另一种创建代码块的方法是添加 4 个 <span class="code">`，并从下一行开始写具体的代码，最后添加 4 个 `</span> 表示结束</span><br><span class="line"></span><br><span class="line">反斜杠修饰 Markdown 的特殊字符就可以避免 Markdown 语法的解析了。比如， \<span class="strong">**this\**</span> 就不会产生加粗的效果</span><br></pre></td></tr></table></figure>
+<p>注释区域： 3 个斜线（///）或以下面的形式开头：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/<span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">*</span>/</span><br></pre></td></tr></table></figure></p>
+<h5 id="Case">Case</h5><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">    It calculates and returns the outcome of the division of the two parameters.</span><br><span class="line"></span><br><span class="line">    ## Important Notes ##</span><br><span class="line">    1. Both parameters are **double** numbers.</span><br><span class="line">    2. For a proper result the second parameter *must be other than 0*.</span><br><span class="line">    3. If the second parameter is 0 then the function will return nil.</span><br><span class="line"></span><br><span class="line">*/</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">performDivision</span>（<span class="title">number1</span>: <span class="title">Double</span>, <span class="title">number2</span>: <span class="title">Double</span>） -&gt; <span class="title">Double</span>! </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> number2 != <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> number1 / number2</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_2_quickhelp2.png" alt="case image"></p>
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_3_help_inspector1.png" alt="quick look"></p>
+<h4 id="关键词">关键词</h4><ul>
+<li>Parameter</li>
+<li>Returns</li>
+<li>Remark</li>
+<li>SeeAlso</li>
+<li>Precondiction</li>
+<li>Requires</li>
+<li>Todo</li>
+<li>Version</li>
+<li>Author</li>
+<li>Note</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">    Another complicated function.</span><br><span class="line"></span><br><span class="line">    - Parameter fullname: The fullname that will be broken into its parts.</span><br><span class="line">    - Returns: A *tuple* with the first and last name.</span><br><span class="line"></span><br><span class="line">    - Remark:</span><br><span class="line">        There's a counterpart function that concatenates the first and last name into a full name.</span><br><span class="line"></span><br><span class="line">    - SeeAlso:  `createFullName（_:lastname:）`</span><br><span class="line"></span><br><span class="line">    - Precondition: `fullname` should not be nil.</span><br><span class="line">    - Requires: Both first and last name should be parts of the full name, separated with a *space character*.</span><br><span class="line"></span><br><span class="line">    - Todo: Support middle name in the next version.</span><br><span class="line"></span><br><span class="line">    - Warning: A wonderful **crash** will be the result of a `nil` argument.</span><br><span class="line"></span><br><span class="line">    - Version: 1.1</span><br><span class="line"></span><br><span class="line">    - Author: Myself Only</span><br><span class="line"></span><br><span class="line">    - Note: Too much documentation for such a small function.</span><br><span class="line"> */</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">breakFullName</span>（<span class="title">fullname</span>: <span class="title">String</span>) -&gt; （<span class="title">firstname</span>: <span class="title">String</span>, <span class="title">lastname</span>: <span class="title">String</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> fullnameInPieces = fullname.componentsSeparatedByString（<span class="string">" "</span>）</span><br><span class="line">    <span class="keyword">return</span> （fullnameInPieces[<span class="number">0</span>], fullnameInPieces[<span class="number">1</span>]）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_10_keywords5.png" alt="全关键字"></p>
+<h3 id="Jazzy_自动产生代码文档">Jazzy 自动产生代码文档</h3><blockquote>
+<p><a href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy</a> 是一款可以为 Swift 和 Objective-C 代码产生具有 Apple 风格的代码文档工具。</p>
+<h4 id="效果如下">效果如下</h4><p><img src="http://www.appcoda.com/wp-content/uploads/2016/05/t52_15_jazzy_results.png" alt="jazzy 效果"></p>
+</blockquote>
+<h5 id="下面以Alamofire为例子：">下面以<code>Alamofire</code>为例子：</h5><blockquote>
+<p>jazzy —help 查看帮助</p>
+<ul>
+<li>cd Alamofire 的项目path</li>
+<li>jazzy —output /Users/xcodeyang/Desktop/jazzy_document </li>
+</ul>
+</blockquote>
+<p><strong><a href="http://swift.gg/2016/06/15/swift-markdown/" target="_blank" rel="external">参考博客地址</a></strong></p>
+<h2 id="Android_App共享文件Uri不能为file://_-_吴明">Android App共享文件Uri不能为file://  - 吴明</h2><ul>
+<li>先看异常信息:</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">E/StrictMode: null</span><br><span class="line">              java<span class="class">.lang</span><span class="class">.Throwable</span>: file:<span class="comment">// Uri exposed through Intent.getData()</span></span><br><span class="line">                  at android<span class="class">.os</span><span class="class">.StrictMode</span><span class="class">.onFileUriExposed</span>(StrictMode<span class="class">.java</span>:<span class="number">1757</span>)</span><br><span class="line">                  at android<span class="class">.net</span><span class="class">.Uri</span><span class="class">.checkFileUriExposed</span>(Uri<span class="class">.java</span>:<span class="number">2346</span>)</span><br><span class="line">                  at android<span class="class">.content</span><span class="class">.Intent</span><span class="class">.prepareToLeaveProcess</span>(Intent<span class="class">.java</span>:<span class="number">8045</span>)</span><br><span class="line">                  at android<span class="class">.app</span><span class="class">.Instrumentation</span><span class="class">.execStartActivity</span>(Instrumentation<span class="class">.java</span>:<span class="number">1506</span>)</span><br><span class="line">                  at android<span class="class">.app</span><span class="class">.Activity</span><span class="class">.startActivityForResult</span>(Activity<span class="class">.java</span>:<span class="number">3930</span>)</span><br><span class="line">                  at android<span class="class">.app</span><span class="class">.Activity</span><span class="class">.startActivityForResult</span>(Activity<span class="class">.java</span>:<span class="number">3890</span>)</span><br><span class="line">                  at android<span class="class">.support</span><span class="class">.v4</span><span class="class">.app</span><span class="class">.FragmentActivity</span><span class="class">.startActivityForResult</span>(FragmentActivity<span class="class">.java</span>:<span class="number">843</span>)</span><br><span class="line">                  at android<span class="class">.app</span><span class="class">.Activity</span><span class="class">.startActivity</span>(Activity<span class="class">.java</span>:<span class="number">4213</span>)</span><br><span class="line">                  at android<span class="class">.support</span><span class="class">.v4</span><span class="class">.app</span><span class="class">.ActivityCompatJB</span><span class="class">.startActivity</span>(ActivityCompatJB<span class="class">.java</span>:<span class="number">26</span>)</span><br><span class="line">                  at android<span class="class">.support</span><span class="class">.v4</span><span class="class">.app</span><span class="class">.ActivityCompat</span><span class="class">.startActivity</span>(ActivityCompat<span class="class">.java</span>:<span class="number">133</span>)</span><br><span class="line">                  at com<span class="class">.horizon</span><span class="class">.offer</span><span class="class">.mail</span><span class="class">.maildetail</span><span class="class">.impl</span><span class="class">.ImageAnnexWrapper</span><span class="class">.openFile</span>(ImageAnnexWrapper<span class="class">.java</span>:<span class="number">26</span>)</span><br><span class="line">                  at com<span class="class">.horizon</span><span class="class">.offer</span><span class="class">.mail</span><span class="class">.maildetail</span><span class="class">.MailDetailActivity</span><span class="class">.openAnnexFile</span>(MailDetailActivity<span class="class">.java</span>:<span class="number">184</span>)</span><br><span class="line">                  at com<span class="class">.horizon</span><span class="class">.offer</span><span class="class">.mail</span><span class="class">.maildetail</span><span class="class">.adapter</span><span class="class">.MailAnnexAdapter</span><span class="variable">$MailAnnexViewHolder</span>$<span class="number">1</span>.<span class="function"><span class="title">onClick</span><span class="params">(MailAnnexAdapter.java:<span class="number">75</span>)</span></span></span><br><span class="line">                  at android<span class="class">.view</span><span class="class">.View</span><span class="class">.performClick</span>(View<span class="class">.java</span>:<span class="number">5204</span>)</span><br><span class="line">                  at android<span class="class">.view</span><span class="class">.View</span><span class="variable">$PerformClick</span>.<span class="function"><span class="title">run</span><span class="params">(View.java:<span class="number">21153</span>)</span></span></span><br><span class="line">                  at android<span class="class">.os</span><span class="class">.Handler</span><span class="class">.handleCallback</span>(Handler<span class="class">.java</span>:<span class="number">739</span>)</span><br><span class="line">                  at android<span class="class">.os</span><span class="class">.Handler</span><span class="class">.dispatchMessage</span>(Handler<span class="class">.java</span>:<span class="number">95</span>)</span><br><span class="line">                  at android<span class="class">.os</span><span class="class">.Looper</span><span class="class">.loop</span>(Looper<span class="class">.java</span>:<span class="number">148</span>)</span><br><span class="line">                  at android<span class="class">.app</span><span class="class">.ActivityThread</span><span class="class">.main</span>(ActivityThread<span class="class">.java</span>:<span class="number">5417</span>)</span><br><span class="line">                  at java<span class="class">.lang</span><span class="class">.reflect</span><span class="class">.Method</span><span class="class">.invoke</span>(Native Method)</span><br><span class="line">                  at com<span class="class">.android</span><span class="class">.internal</span><span class="class">.os</span><span class="class">.ZygoteInit</span><span class="variable">$MethodAndArgsCaller</span>.<span class="function"><span class="title">run</span><span class="params">(ZygoteInit.java:<span class="number">726</span>)</span></span></span><br><span class="line">                  at com<span class="class">.android</span><span class="class">.internal</span><span class="class">.os</span><span class="class">.ZygoteInit</span><span class="class">.main</span>(ZygoteInit<span class="class">.java</span>:<span class="number">616</span>)</span><br></pre></td></tr></table></figure>
+<p>在StrictMode(严格)模式下，App之间共享资源报的异常。</p>
+<ul>
+<li>出现这个异常的代码</li>
+</ul>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> void openFile(@NonNull Activity activity, @NonNull <span class="keyword">File</span> <span class="keyword">file</span>) &#123;</span><br><span class="line">        <span class="type">Intent</span> <span class="type">intent</span> = new <span class="type">Intent</span>(<span class="type">Intent</span>.ACTION_VIEW);</span><br><span class="line">        <span class="type">intent</span>.addCategory(<span class="type">Intent</span>.CATEGORY_DEFAULT);</span><br><span class="line">        <span class="type">intent</span>.addFlags(<span class="type">Intent</span>.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">        /**异常这行代码**/</span><br><span class="line">        <span class="type">intent</span>.setDataAndType(Uri.fromFile(<span class="keyword">file</span>), <span class="string">"image/*"</span>);</span><br><span class="line">        ActivityCompat.startActivity(activity, <span class="type">intent</span>, null);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>打印</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uri.<span class="function"><span class="title">fromFile</span><span class="params">(file)</span></span></span><br></pre></td></tr></table></figure>
+<p>输出信息</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Uri</span> uri=file:<span class="comment"><span class="markdown">///storage/emulated/0/download/9text.jpg</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>各方说明<ul>
+<li><a href="https://developer.android.com/preview/behavior-changes.html#sharing-files" target="_blank" rel="external">Android N中说明Uri不能以file://的原因</a><ul>
+<li>传递软件包网域外的 file:// URI 可能给接收器留下无法访问的路径。</li>
+<li>访问权限控制 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://developer.android.com/preview/behavior-changes.html#sharing-files" target="_blank" rel="external">解决办法</a><ul>
+<li><a href="https://developer.android.com/reference/android/support/v4/content/FileProvider.html" target="_blank" rel="external">FileProvider</a></li>
+</ul>
+</li>
+<li><p>总结</p>
+<ul>
+<li><p>开始搜索Uri.fromFile(file)并分析源码</p>
+ <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">  * Creates a Uri from a file. The URI has the form</span><br><span class="line">  * "file://&lt;absolute path&gt;". Encodes path characters with the exception of</span><br><span class="line">  * '/'.</span><br><span class="line">  *</span><br><span class="line">  * &lt;p&gt;Example: "file:///tmp/android.txt"</span><br><span class="line">  *</span><br><span class="line">  * @throws NullPointerException if file is null</span><br><span class="line">  * @return a Uri for the given file</span><br><span class="line">  */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> Uri fromFile(<span class="keyword">File</span> <span class="keyword">file</span>) &#123;</span><br><span class="line">     <span class="keyword">if</span> (<span class="keyword">file</span> == <span class="keyword">null</span>) &#123;</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"file"</span>);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     PathPart path = PathPart.fromDecoded(<span class="keyword">file</span>.getAbsolutePath());</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> HierarchicalUri(</span><br><span class="line">             <span class="string">"file"</span>, Part.EMPTY, path, Part.<span class="keyword">NULL</span>, Part.<span class="keyword">NULL</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p> 没有找到相关解决方案。</p>
+</li>
+<li><a href="https://developer.android.com/reference/android/os/StrictMode.VmPolicy.Builder.html#detectFileUriExposure(" target="_blank" rel="external">StrictMode的FileUriExposedException异常检测</a>)中有提到FileProvider的使用</li>
+<li>我写的一个<a href="https://github.com/milin411/FileIntentDemo.git" target="_blank" rel="external">demo</a></li>
+<li>给以后提醒app之间共享数据传Uri不能传file://</li>
+</ul>
+</li>
+<li><p>参考资料</p>
+<ul>
+<li><a href="https://developer.android.com/reference/android/os/StrictMode.html" target="_blank" rel="external">StrictMode</a> </li>
+<li><a href="http://www.jianshu.com/p/5572b42fc63f" target="_blank" rel="external">Android Uri和Java URI的区别</a></li>
+<li><a href="http://blog.csdn.net/dlutbrucezhang/article/details/8917303" target="_blank" rel="external">Android的Uri</a> </li>
+<li><a href="http://blog.csdn.net/harvic880925/article/details/44679239" target="_blank" rel="external">Uri详解之——Uri结构与代码提取</a></li>
+<li><a href="http://blog.csdn.net/zhangyingli/article/details/37902367" target="_blank" rel="external">根据 Android Training课程写的FileProvider小例子</a></li>
+<li><a href="https://developer.android.com/preview/behavior-changes.html#sharing-files" target="_blank" rel="external">FileUriExposedException 异常</a></li>
+<li><a href="https://developer.android.com/reference/android/support/v4/content/FileProvider.html" target="_blank" rel="external">FileProvider</a></li>
+<li><a href="http://blog.csdn.net/zhangyingli/article/details/37902367" target="_blank" rel="external">FileProvider使用</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="谓词_-_刘康">谓词 - 刘康</h2><ul>
+<li>NSPredicate是Foundation框架中的一个类。</li>
+<li>作用：指定数据被获取和过滤的方式。提供了类似于自然语言一样定义一个集合被搜寻的逻辑条件。</li>
+</ul>
+<p>为了证明NSPredicate的强大功能，先写一个Person类，做准备工作。</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class <span class="keyword">Person</span>: NSObject &#123;</span><br><span class="line">    var name: String</span><br><span class="line">    var age: Int</span><br><span class="line">    init(name: String, age: Int) &#123;</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        super.init()</span><br><span class="line">    &#125;</span><br><span class="line">    override var description: String &#123;</span><br><span class="line">        return <span class="string">"name: \(self.name), age: \(self.age)"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var colleagues = NSMutableArray()</span><br><span class="line">colleagues.addObject(<span class="keyword">Person</span>(name: <span class="string">"Arthur"</span>, age: 45))</span><br><span class="line">colleagues.addObject(<span class="keyword">Person</span>(name: <span class="string">"Michael"</span>, age: 23))</span><br><span class="line">colleagues.addObject(<span class="keyword">Person</span>(name: <span class="string">"Kenny"</span>, age: 25))</span><br><span class="line">colleagues.addObject(<span class="keyword">Person</span>(name: <span class="string">"Bella"</span>, age: 24))</span><br><span class="line">colleagues.addObject(<span class="keyword">Person</span>(name: <span class="string">"Vincent"</span>, age: 36))</span><br><span class="line">colleagues.addObject(<span class="keyword">Person</span>(name: <span class="string">"Adolph"</span>, age: 39))</span><br></pre></td></tr></table></figure>
+<h3 id="基本使用">基本使用</h3><p><strong>找出年龄为24岁的人:</strong></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> predicateByAge = <span class="type">NSPredicate</span>(format: <span class="string">"age == 24"</span>)</span><br><span class="line"><span class="keyword">let</span> <span class="literal">result</span> = colleagues.filteredArrayUsingPredicate(predicateByAge)</span><br></pre></td></tr></table></figure>
+<p><strong>参数可以传入:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let age = <span class="function"><span class="title">NSNumber</span><span class="params">(int: <span class="number">25</span>)</span></span></span><br><span class="line">let predicateByPassAge = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"age == %@"</span>, age)</span></span></span><br><span class="line">let result1 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(predicateByPassAge)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>也可传入要对比的属性，这里是age. 属性的key:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let pridicateByAge1 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"%K == %@"</span>, <span class="string">"age"</span>, NSNumber(int: <span class="number">36</span>)</span></span>)</span><br><span class="line">let result2 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(pridicateByAge1)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>指定通配的变量，这里用24来替代age:</strong></p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> pridicateByAge2 = NSPredicate <span class="params">(format: <span class="string">"age == $age"</span>)</span></span><br><span class="line"><span class="built_in">let</span> result3 = colleagues.filteredArrayUsingPredicate<span class="params">(pridicateByAge2.predicateWithSubstitutionVariables<span class="params">([<span class="string">"age"</span>: NSNumber<span class="params">(int: <span class="number">24</span>)</span>])</span>)</span></span><br></pre></td></tr></table></figure>
+<h4 id="语法小结">语法小结</h4><ul>
+<li>使用<code>%@</code>对应数字，字符串，日期的替代值</li>
+<li>使用<code>%K</code>对应要比较的属性，也就是KVC中的key</li>
+<li>使用$变量名来表示通配的变量，然后<code>predicateWithSubstitutionVariables</code>来决定具体的变量值</li>
+</ul>
+<h3 id="基本比较">基本比较</h3><p><strong>找出年龄大于40岁的同事:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let predicateAgeOver40 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"age &gt; 40"</span>)</span></span></span><br><span class="line">let boss = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(predicateAgeOver40)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>找出年龄在22岁~35岁的人:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let minAge = <span class="function"><span class="title">NSNumber</span><span class="params">(int: <span class="number">22</span>)</span></span></span><br><span class="line">let maxAge = <span class="function"><span class="title">NSNumber</span><span class="params">(int: <span class="number">35</span>)</span></span></span><br><span class="line">let predicateByAge3 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"age BETWEEN &#123;%@, %@&#125;"</span>, minAge, maxAge)</span></span></span><br><span class="line">let result4 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(predicateByAge3)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="语法小结-1">语法小结</h4><ul>
+<li><code>&gt;</code> 大于</li>
+<li><code>&gt;=</code> 大于等于</li>
+<li><code>&lt;</code> 小于</li>
+<li><code>&lt;=</code> 小于等于</li>
+<li><code>==</code> 等于</li>
+<li><code>!=</code> 或者 <code>&lt;&gt;</code> 不等于</li>
+<li><code>BETWEEN</code> 介于两者之间,包括上下限</li>
+</ul>
+<h3 id="复合比较">复合比较</h3><ul>
+<li><code>&amp;&amp;</code> 或者<code>AND</code> 逻辑与</li>
+<li><code>||</code> 或者 <code>OR</code> 逻辑或</li>
+<li><code>!</code>或者<code>NOT</code> 逻辑非</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let predicateByCompare = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"age &lt; 30 OR age &gt;= 40"</span>)</span></span></span><br><span class="line">let result5 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(predicateByCompare)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串比较">字符串比较</h3><ul>
+<li><code>BEGINSWITH</code> 左边表达式以右边表达式开头</li>
+<li><code>CONTAINS</code> 左边表达式包含右边表达式</li>
+<li><code>ENDSWITH</code> 左边表达式以右边表达式结尾</li>
+<li><code>LIKE</code> 左边表达式和右边表达式相似（简单的正则表达式匹配，?匹配一个字符，*匹配0个或者多个字符）</li>
+<li><code>MATCHES</code> 可以实现较为复杂的正则表达式匹配</li>
+<li>用方括号加<code>cd</code>来不区分大小写和变音符号</li>
+<li><code>IN</code> 左边的表达式在右边的集合里</li>
+</ul>
+<p><strong>找出名字以“A”开头的同事:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let pridivateByName1 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"name BEGINSWITH %@"</span>, <span class="string">"A"</span>)</span></span></span><br><span class="line">let result6 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(pridivateByName1)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>名字里包含in,不区分大小写，并且年龄大于等于24:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let pridivateByName2 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"name CONTAINS %@ &amp;&amp; age &gt;= %@"</span>, <span class="string">"in"</span>, NSNumber(int: <span class="number">24</span>)</span></span>)</span><br><span class="line">let result7 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(pridivateByName2)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>复合正则表达式<code>T[a-z]*k</code>:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let privatedivateByName3 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"name MATCHES 'T[a-z]*k'"</span>)</span></span></span><br><span class="line">let result8 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(privatedivateByName3)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>名字是两者中的一个:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let privatedivateByName4 = <span class="function"><span class="title">NSPredicate</span><span class="params">(format: <span class="string">"name IN &#123;'Bella', 'Jack Tomphon'&#125;"</span>)</span></span></span><br><span class="line">let result9 = colleagues.<span class="function"><span class="title">filteredArrayUsingPredicate</span><span class="params">(privatedivateByName4)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="基于Block的谓词">基于Block的谓词</h3><p><strong>基于Block能够灵活的定制谓词，这里简单的Block定义<code>age &gt; 24</code>:</strong></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> blockPredicate = <span class="type">NSPredicate</span> &#123; (person: <span class="type">AnyObject</span>!, _) -&gt; <span class="type">Bool</span> <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">var</span> <span class="literal">result</span> = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> castResult = person <span class="keyword">as</span>? <span class="type">Person</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> castResult.age &gt; <span class="number">24</span> &#123;</span><br><span class="line">            <span class="literal">result</span> = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">result</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> result10 = colleagues.filteredArrayUsingPredicate(blockPredicate)</span><br></pre></td></tr></table></figure>
+<h3 id="Array使用谓词参考：">Array使用谓词参考：</h3><p><a href="http://stackoverflow.com/questions/24382580/filteredarrayusingpredicate-does-not-exist-in-swift-array" target="_blank" rel="external">StackOverFlow</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/15/移动周分享-第59期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第59期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/27/移动周分享-第57期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第57期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第58期" data-title="移动周分享-第58期" data-url="http://yoursite.com/2016/06/17/移动周分享-第58期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

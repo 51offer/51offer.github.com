@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第43期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="tablayout方法setupWithViewPager()坑 - 吴明
+tallayout平常使用setupWithViewPager()
+
+1234ViewPager viewPager=(ViewPager)findViewById(R.id.view_pager);TabLayout tabContainView = (TabLayout) findViewById(R.id.pick_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第43期">
+<meta property="og:url" content="http://yoursite.com/2016/01/29/移动周分享-第43期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="tablayout方法setupWithViewPager()坑 - 吴明
+tallayout平常使用setupWithViewPager()
+
+1234ViewPager viewPager=(ViewPager)findViewById(R.id.view_pager);TabLayout tabContainView = (TabLayout) findViewById(R.id.pick_">
+<meta property="og:image" content="http://static.cnbetacdn.com/article/2015/0903/876e381328b066a.gif">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png?imageView2/2/w/600">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png?imageView2/2/w/600">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png?imageView2/2/w/600">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png?imageView2/2/w/600">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第43期">
+<meta name="twitter:description" content="tablayout方法setupWithViewPager()坑 - 吴明
+tallayout平常使用setupWithViewPager()
+
+1234ViewPager viewPager=(ViewPager)findViewById(R.id.view_pager);TabLayout tabContainView = (TabLayout) findViewById(R.id.pick_">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第43期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/29/移动周分享-第43期/" class="article-date">
+  	<time datetime="2016-01-29T10:30:00.000Z" itemprop="datePublished">2016-01-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第43期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tablayout/">tablayout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/坑/">坑</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/周技术分享/">周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="tablayout方法setupWithViewPager()坑_-_吴明">tablayout方法setupWithViewPager()坑 - 吴明</h4><ul>
+<li>tallayout平常使用setupWithViewPager()</li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ViewPager viewPager=<span class="params">(ViewPager)</span>findViewById<span class="params">(R.id.view_pager)</span>;</span><br><span class="line">TabLayout tabContainView = <span class="params">(TabLayout)</span> findViewById<span class="params">(R.id.pick_school_category_contain)</span>;</span><br><span class="line">viewPager.setAdatper<span class="params">(new FragmentStatePagerAdapter<span class="params">(FragmentManager,fragments)</span>)</span>;</span><br><span class="line">tabContainView. setupWithViewPager<span class="params">(viewPager)</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看setupWithViewPager()方法源码</li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public void setupWithViewPager<span class="params">(@NonNull ViewPager viewPager)</span> &#123;</span><br><span class="line">       final PagerAdapter adapter = viewPager.getAdapter<span class="params">()</span>;</span><br><span class="line">       <span class="keyword">if</span> <span class="params">(adapter == null)</span> &#123;</span><br><span class="line">           throw new IllegalArgumentException<span class="params">(<span class="string">"ViewPager does not have a PagerAdapter set"</span>)</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// First we'll add Tabs, using the adapter's page titles</span></span><br><span class="line">       setTabsFromPagerAdapter<span class="params">(adapter)</span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// Now we'll add our page change listener to the ViewPager</span></span><br><span class="line">       viewPager.addOnPageChangeListener<span class="params">(new TabLayoutOnPageChangeListener<span class="params">(this)</span>)</span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// Now we'll add a tab selected listener to set ViewPager's current item</span></span><br><span class="line">       setOnTabSelectedListener<span class="params">(new ViewPagerOnTabSelectedListener<span class="params">(viewPager)</span>)</span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">// Make sure we reflect the currently set ViewPager item</span></span><br><span class="line">       <span class="keyword">if</span> <span class="params">(adapter.getCount<span class="params">()</span> &gt; <span class="number">0</span>)</span> &#123;</span><br><span class="line">           final int curItem = viewPager.getCurrentItem<span class="params">()</span>;</span><br><span class="line">           <span class="keyword">if</span> <span class="params">(getSelectedTabPosition<span class="params">()</span> != curItem)</span> &#123;</span><br><span class="line">               selectTab<span class="params">(getTabAt<span class="params">(curItem)</span>)</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>就会发现这里有三个坑</p>
+<ul>
+<li><p>setTabsFromPagerAdapter</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public void setTabsFromPagerAdapter<span class="params">(@NonNull PagerAdapter adapter)</span> &#123;</span><br><span class="line">       removeAllTabs<span class="params">()</span>;</span><br><span class="line">       <span class="keyword">for</span> <span class="params">(int i = <span class="number">0</span>, count = adapter.getCount<span class="params">()</span>; i &lt; count; i++)</span> &#123;</span><br><span class="line">           addTab<span class="params">(newTab<span class="params">()</span>.setText<span class="params">(adapter.getPageTitle<span class="params">(i)</span>)</span>)</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>removeAllTabs()这个就是说把前面所有tablayout添加的view都删掉。也就是说在之前不管怎么处理view都被干掉。然后设置为PagerAdapter返回的title</p>
+</li>
+<li><p>setOnTabSelectedListener(new ViewPagerOnTabSelectedListener(viewPager));</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewPagerOnTabSelectedListener</span> <span class="keyword">implements</span> <span class="title">TabLayout</span>.<span class="title">OnTabSelectedListener</span> </span>&#123;</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> ViewPager mViewPager;</span><br><span class="line"></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="title">ViewPagerOnTabSelectedListener</span><span class="params">(ViewPager viewPager)</span> </span>&#123;</span><br><span class="line">          mViewPager = viewPager;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="annotation">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTabSelected</span><span class="params">(TabLayout.Tab tab)</span> </span>&#123;</span><br><span class="line">          mViewPager.setCurrentItem(tab.getPosition());</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="annotation">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTabUnselected</span><span class="params">(TabLayout.Tab tab)</span> </span>&#123;</span><br><span class="line">          <span class="comment">// No-op</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="annotation">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTabReselected</span><span class="params">(TabLayout.Tab tab)</span> </span>&#123;</span><br><span class="line">          <span class="comment">// No-op</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>  这里主要不算不算太坑，最主要的是设置了点击tablayot默认是viewpager是滚动的，自己可以设置这个时间监听。重写他的方法</p>
+</li>
+<li><p>selectTab(getTabAt(curItem));</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="params">(adapter.getCount<span class="params">()</span> &gt; <span class="number">0</span>)</span> &#123;</span><br><span class="line">           final int curItem = viewPager.getCurrentItem<span class="params">()</span>;</span><br><span class="line">           <span class="keyword">if</span> <span class="params">(getSelectedTabPosition<span class="params">()</span> != curItem)</span> &#123;</span><br><span class="line">               selectTab<span class="params">(getTabAt<span class="params">(curItem)</span>)</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>这里最主要是第一次默认选中第一个。相对应一些viewpager第一次就选中的不是第一个，这个就是一个很大的一个问题就是相当于viewpager点击了两次。</p>
+</li>
+<li>分享这个坑主要是给大家提前填。以后还是不能偷懒就为了省代码而忘了看封装的方法的代码是不是有问题。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Chrome_Custom_Tabs_标签优点_-_王进">Chrome Custom Tabs 标签优点 - 王进</h3><ul>
+<li>Chrome自定义标签页（Custom Tabs）将允许应用预加载，从而将网页的加载时间直接减半。</li>
+</ul>
+<p>它的速度比WebView更快，预加载的效果甚至好于Chrome本身。</p>
+<ul>
+<li><p>持良好的用户体验，并且让用户感觉这个自定义 Tab 就是您应用的一部分。</p>
+</li>
+<li><p>使用方法比WebView 简单，只需要一行代码，和直接调用系统浏览器显示网页没啥区别</p>
+</li>
+<li><p>有大量自定义属性，改善用户体验</p>
+</li>
+</ul>
+<p><img src="http://static.cnbetacdn.com/article/2015/0903/876e381328b066a.gif" alt=""></p>
+<h3 id="使用方法">使用方法</h3><p>需要导入Custom Tabs 的支持包：</p>
+<p> compile ‘com.android.support:customtabs:23.1.0’</p>
+<p>最简单的使用方式是只需要使用 <a href="http://developer.android.com/reference/android/support/customtabs/CustomTabsIntent.Builder.html" target="_blank" rel="external">CustomTabsIntent.Builder</a> 对象来设置一些常用自定义选项，然后调用 <a href="http://developer.android.com/reference/android/support/customtabs/CustomTabsIntent.html#launchUrl(android.app.Activity, android.net.Uri" target="_blank" rel="external">CustomTabsIntent.launchUrl(Activity context, Uri url)</a>) 函数即可。当然在具体使用过程中，您还需要判断用户手机是否支持 Custom Tabs。</p>
+<h3 id="配置属性：">配置属性：</h3><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> CustomTabsIntent.Builder intentBuilder = new CustomTabsIntent.Builder<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 修改 ActionBar 的颜色</span></span><br><span class="line">    intentBuilder.setToolbarColor<span class="params">(Color.RED)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加一个分享按钮</span></span><br><span class="line">    String shareLabel = <span class="string">"分享"</span>;</span><br><span class="line">    Bitmap icon = BitmapFactory.decodeResource<span class="params">(getResources<span class="params">()</span>, android.R.drawable.ic_menu_share)</span>;</span><br><span class="line">    PendingIntent pendingIntent = PendingIntent.getActivity<span class="params">(this, <span class="number">0</span>, new Intent<span class="params">(this, BlankActivity.class)</span>, <span class="number">0</span>)</span>;</span><br><span class="line">    intentBuilder.setActionButton<span class="params">(icon, shareLabel, pendingIntent)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加Menu 按钮</span></span><br><span class="line">    intentBuilder.addMenuItem<span class="params">(<span class="string">"打开"</span>, pendingIntent)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//是否显示网页标题</span></span><br><span class="line">    intentBuilder.setShowTitle<span class="params">(<span class="literal">true</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//隐藏网页Bar</span></span><br><span class="line">    intentBuilder.enableUrlBarHiding<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自定义关闭 Custom tabs 的图标</span></span><br><span class="line">    intentBuilder.setCloseButtonIcon<span class="params">(BitmapFactory.decodeResource<span class="params">(getResources<span class="params">()</span>, R.mipmap.ic_launcher)</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自定义 Activity 转场 动画</span></span><br><span class="line">    intentBuilder.setStartAnimations<span class="params">(this, R.anim.slide_in_right, R.anim.slide_out_left)</span>;</span><br><span class="line">    intentBuilder.setExitAnimations<span class="params">(this, android.R.anim.slide_in_left, android.R.anim.slide_out_right)</span>;</span><br><span class="line"></span><br><span class="line">    CustomTabsIntent customTabsIntent = intentBuilder.build<span class="params">()</span>;</span><br><span class="line"><span class="comment">//    customTabsIntent.launchUrl(this, Uri.parse("http://www.51offer.com/"));</span></span><br></pre></td></tr></table></figure>
+<h2 id="Android_NDK_入门_-_杨俊构">Android NDK 入门 - 杨俊构</h2><h3 id="什么是NDK?">什么是NDK?</h3><ul>
+<li>NDK是一系列工具的集合</li>
+</ul>
+<blockquote>
+<p>NDK提供了一系列的工具，帮助开发者快速开发C（或C++）的动态库，并能自动将so和java应用一起打包成apk。这些工具对开发者的帮助是巨大的。<br>    NDK集成了交叉编译器，并提供了相应的mk文件隔离CPU、平台、ABI等差异，开发人员只需要简单修改mk文件（指出“哪些文件需要编译”、“编译特性要求”等），就可以创建出so。<br>    NDK可以自动地将so和Java应用一起打包，极大地减轻了开发人员的打包工作。</p>
+</blockquote>
+<ul>
+<li>NDK提供了一份稳定、功能有限的API头文件声</li>
+</ul>
+<blockquote>
+<p>Google明确声明该API是稳定的，在后续所有版本中都稳定支持当前发布的API。从该版本的NDK中看出，这些API支持的功能非常有限，包含有：C标准库（libc）、标准数学库（libm）、压缩库（libz）、Log库（liblog）。</p>
+</blockquote>
+<h3 id="为什么使用NDK">为什么使用NDK</h3><ol>
+<li>代码的保护。由于apk的java层代码很容易被反编译，而C/C++库反汇难度较大。</li>
+<li>可以方便地使用现存的开源库。大部分现存的开源库都是用C/C++代码编写的。</li>
+<li>提高程序的执行效率。将要求高性能的应用逻辑使用C开发，从而提高应用程序的执行效率。</li>
+<li>便于移植。用C/C++写得库可以方便在其他的嵌入式平台上再次使用</li>
+</ol>
+<h3 id="如何使用NDK">如何使用NDK</h3><ul>
+<li><p>Android JNI 原理</p>
+<blockquote>
+<p>Android上层的Application和ApplicationFramework都是使用Java编写,底层包括系统和使用众多的LIiraries都是C/C++编写的。所以上层Java要调用底层的C/C++函数库必须通过Java的JNI来实现。<br><img src="http://7xohph.com1.z0.glb.clouddn.com/20160131223059.png?imageView2/2/w/600" alt=""></p>
+</blockquote>
+</li>
+<li><p>Android studio NDK 开发</p>
+</li>
+</ul>
+<ol>
+<li>解压NDK开发工具集 </li>
+<li>打开android  studio,新建Android工程 </li>
+<li>点击：File -&gt;ProjectStructure:如图：<br> <img src="http://7xohph.com1.z0.glb.clouddn.com/20160131225242.png?imageView2/2/w/600" alt=""></li>
+<li>在 local.properties 文件中设置ndk的路径  </li>
+<li>在 gradle.properties 添加”android.useDeprecatedNdk=true”</li>
+<li>在 build.gradle 添加NDK 的配置<br> <img src="http://7xohph.com1.z0.glb.clouddn.com/20160131225205.png?imageView2/2/w/600" alt=""></li>
+<li>添加JAVA 接口类文件</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.jungou.jnitest;</span><br><span class="line"><span class="comment">// Created by jungou on 2016/1/28 0028.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JniApi</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.loadLibrary(<span class="string">"jesonlib"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">native</span> String <span class="title">getTitle</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>添加jni文件夹<br> <img src="http://7xohph.com1.z0.glb.clouddn.com/20160131225921.png?imageView2/2/w/600" alt=""></li>
+<li>JAVA 接口类使用Alt+回车 自动修正，自动实现C代码</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;jni.h&gt;</span></span><br><span class="line"><span class="function">JNIEXPORT jstring JNICALL</span><br><span class="line"><span class="title">Java_com_example_jungou_jnitest_JniApi_getTitle</span><span class="params">(JNIEnv *env, jobject instance)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// <span class="doctag">TODO</span></span></span><br><span class="line">	<span class="keyword">return</span> (*env)-&gt;NewStringUTF(env, <span class="string">"hello tile"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>完成接口调用，测试完成    </p>
+<p><img src="http://7xohph.com1.z0.glb.clouddn.com/20160131231227.png?imageView2/2/w/600" alt="">  </p>
+</li>
+</ol>
+<p><a href="https://github.com/bingxuebage/android-jni-demo" target="_blank" rel="external">demo地址</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/19/移动周分享-第44期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第44期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/15/移动周分享-第42期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第42期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第43期" data-title="移动周分享-第43期" data-url="http://yoursite.com/2016/01/29/移动周分享-第43期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

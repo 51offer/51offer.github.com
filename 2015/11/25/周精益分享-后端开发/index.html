@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>周精益分享 - 后端开发 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Swift学习之二 - 张超耀深度理解”?” &amp;amp;&amp;amp; “!” 1Optional其实是个enum，里面有None和Some两种类型。 nil就是Optional.None, 非nil就是Optional.Some, 然后会通过Some(T)包装（wrap）原始值，这也是为什么在使用Optional的时候要拆包（从enum里取出来原始值）的原因。声明为Optional只需要在类型后面紧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="周精益分享 - 后端开发">
+<meta property="og:url" content="http://yoursite.com/2015/11/25/周精益分享-后端开发/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Swift学习之二 - 张超耀深度理解”?” &amp;amp;&amp;amp; “!” 1Optional其实是个enum，里面有None和Some两种类型。 nil就是Optional.None, 非nil就是Optional.Some, 然后会通过Some(T)包装（wrap）原始值，这也是为什么在使用Optional的时候要拆包（从enum里取出来原始值）的原因。声明为Optional只需要在类型后面紧">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9360037/11319390/0ad964a8-90b0-11e5-90aa-9d2ca1fa548e.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9360037/11436829/4b2d95f2-9523-11e5-8d66-8745354c0e99.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周精益分享 - 后端开发">
+<meta name="twitter:description" content="Swift学习之二 - 张超耀深度理解”?” &amp;amp;&amp;amp; “!” 1Optional其实是个enum，里面有None和Some两种类型。 nil就是Optional.None, 非nil就是Optional.Some, 然后会通过Some(T)包装（wrap）原始值，这也是为什么在使用Optional的时候要拆包（从enum里取出来原始值）的原因。声明为Optional只需要在类型后面紧">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-周精益分享-后端开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/周精益分享-后端开发/" class="article-date">
+  	<time datetime="2015-11-25T10:30:00.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      周精益分享 - 后端开发
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Swift学习之二_-_张超耀">Swift学习之二 - 张超耀</h2><h3 id="深度理解”?”_&amp;&amp;_“!”">深度理解”?” &amp;&amp; “!”</h3> <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Optional</span>其实是个<span class="keyword">enum</span>，里面有<span class="type">None</span>和Some两种类型。 nil就是<span class="type">Optional</span>.<span class="type">None</span>, 非nil就是<span class="type">Optional</span>.Some, 然后会通过Some(T)包装（wrap）原始值，这也是为什么在使用<span class="type">Optional</span>的时候要拆包（从<span class="keyword">enum</span>里取出来原始值）的原因。声明为<span class="type">Optional</span>只需要在类型后面紧跟一个<span class="string">"?"</span>即可</span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> strValue</span>: String?  <span class="comment">//?相当于下面这种写法的语法糖</span></span><br><span class="line"><span class="variable"><span class="keyword">var</span> strValue1</span>: Optional<span class="type">&lt;Int&gt;</span></span><br></pre></td></tr></table></figure>
+<p> 一旦声明为Optional的，如果不显式的赋值就会有个默认值nil。判断一个Optional的值是否有值，可以用if来判断：</p>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (strValue != nil) &#123;</span><br><span class="line">    //<span class="keyword">do</span> sth <span class="keyword">with</span> strValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>怎么使用Optional值呢？<br>在使用Optional值的时候只前面需要加上一个”?”，就是这么简单。 </p>
+<ul>
+<li>这个”？”什么意思？：<br> 1、  询问是否响应后面这个方法，如果是nil值，也就是Optional.None，就不响应后面的方法，直接跳过，<br> 2、 如果有值，就是Optional.Some，可能就会拆包(unwrap)，然后对拆包后的值执行后面的操作，比如</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">hash</span>Value = strValue?.hashValue</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>strValue是Optional的字符串，如果strValue是nil，则hashValue也为nil，如果strValue不为nil，hashValue就是strValue字符串的值</p>
+</li>
+<li><p>到这里我们看到了?的两种使用场景:</p>
+<pre><code><span class="number">1.</span>声明<span class="type">Optional</span>值变量
+<span class="number">2.</span>用在对<span class="type">Optional</span>值操作中，用来判断是否能响应后面的操作
+</code></pre></li>
+<li>对于Optional值，不能直接进行操作，否则会报错</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">hash</span>Value1 = strValue!.hashValue</span><br></pre></td></tr></table></figure>
+<p> 上面错误提示需要拆包(unwrap)后才能得到值，然后才能对其操作，那怎么来拆包呢？拆包提到了几种方法，一种是Optional Binding</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">str =</span> strValue &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">hashValue =</span> str.hashValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还有一种是在具体的操作前添加”!”符号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> <span class="built_in">hash</span>Value2 = strValue!.hashValue</span><br></pre></td></tr></table></figure>
+<p> 这里的”!”表示<strong>我确定肯定这里的的strValue一定是非nil的，随便用吧，木事de</strong> 就像下面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (strValue != nil) &#123;</span><br><span class="line">    <span class="built_in">let</span> <span class="built_in">hash</span>Value = strValue!.hashValue</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&#123;&#125;</span>里的strValue一定是非<span class="keyword">nil</span>的，所以就能直接加上!，强制拆包(unwrap)并执行后面的操作。</span><br><span class="line">当然如果不加判断，strValue不小心为<span class="keyword">nil</span>的话，就会出错，crash掉。</span><br></pre></td></tr></table></figure>
+<p><strong><em> 51offer例子解释『隐式拆包的Optional』</em></strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这种是特殊的<span class="type">Optional</span>，称为Implicitly Unwrapped Optionals, 直译就是隐式拆包的<span class="type">Optional</span>，就等于说你每次对这种类型的值操作时，都会自动在操作前补上一个<span class="comment">!进行拆包，然后在执行后面的操作，当然如果该值是nil，也一样会报错crash掉。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>“!”也有两种使用场景<pre><code><span class="number">1</span>、强制对<span class="type">Optional</span>值进行拆包(unwrap)
+<span class="number">2</span>、声明Implicitly Unwrapped Optionals值，一般用于类中的属性
+</code></pre></li>
+</ul>
+<h3 id="swift_断言">swift 断言</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">断言（Assertions）</span><br><span class="line">Optionals可以让我们检测值是否存在。在某些情况下，如果某个值不存在或者没有提供特定的满足条件，代码不应该继续往下执行。</span><br><span class="line">在这些情况下，可以使用触发断言来终止执行并提供调试。</span><br><span class="line">断言是在运行时检测条件是否为<span class="literal">true</span>,如果为<span class="literal">true</span>,就继续往下执行，否则就在这里中断。</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">var</span> jobs = <span class="string">"我是一个好人"</span></span><br><span class="line"><span class="function"><span class="title">assert</span><span class="params">(jobs == <span class="string">"我是一个好人"</span>, <span class="string">"我是一个好人"</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">assert</span><span class="params">(jobs == <span class="string">"我是一个坏人"</span>, <span class="string">"我是一个坏人么？"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">什么时候使用断言呢？</span><br><span class="line">包含下面的情况时使用断言：</span><br><span class="line">        <span class="number">1</span>、整型下标索引作为值传给自定义索引实现的参数时，但下标索引值不能太低也不能太高时，使用断言</span><br><span class="line">      **<span class="number">2</span>、传值给函数但如果这个传过来的值无效时，函数就不能完成功能时，使用断言。</span><br><span class="line">        <span class="number">3</span>、Optional值当前为<span class="keyword">nil</span>，但是后面的代码成功执行的条件是要求这个值不能为<span class="keyword">nil</span>，使用断言</span><br></pre></td></tr></table></figure>
+<h2 id="IM中输入框的优化方案实现">IM中输入框的优化方案实现</h2><p><code>以下图的输入框为例</code></p>
+<p><img src="https://cloud.githubusercontent.com/assets/9360037/11319390/0ad964a8-90b0-11e5-90aa-9d2ca1fa548e.png" alt="stand"></p>
+<h4 id="输入框的呈现方式选择">输入框的呈现方式选择</h4><p><code>以下两个方法对比</code></p>
+<ul>
+<li>Keyboard的inputAccessoryView</li>
+</ul>
+<blockquote>
+<p>相对推荐的方法，有更好的丰富的交互效果</p>
+<p>可以与scrollView的一些属性直接绑定</p>
+</blockquote>
+<ul>
+<li>InputView的frame适应</li>
+</ul>
+<blockquote>
+<p>传统的方法</p>
+<p>优点：灵活控制显示位置</p>
+<p>缺点：过多的计算frame</p>
+</blockquote>
+<h3 id="InputAccessoryView方式">InputAccessoryView方式</h3><p><a href="https://github.com/ZhipingYang/UUKeyboardInputView" target="_blank" rel="external">案例见GitHub的Demo</a></p>
+<blockquote>
+<p>iOS的输入源都有输入源（keyboard及keyboard的配件InputAccessoryView），那通常的方法是输入源控件（Textfield、TextView等）使用一般的<code>InputView的frame适应</code></p>
+</blockquote>
+<p><strong>解释几个技巧点</strong></p>
+<ul>
+<li>InputView（ 输入源 ）的父视图作为该InputView的InputAccessoryView，要避免相互引用</li>
+<li>巧用第三方不可见的InputView在适当时间点转移第一响应者给可见的InputView</li>
+<li>完成编辑时去除第一响应者（注意iOS9下键盘响应逻辑视图层级都发生了变化）</li>
+</ul>
+<p><strong>主要代码</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/9360037/11436829/4b2d95f2-9523-11e5-8d66-8745354c0e99.png" alt="simulator screen shot nov 27 2015 4 17 38 pm"></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单例初始化</span></span><br><span class="line">+ (U<span class="built_in">UInputAccessoryView</span>*)sharedView &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> once;</span><br><span class="line">    <span class="keyword">static</span> U<span class="built_in">UInputAccessoryView</span> *sharedView;</span><br><span class="line">    <span class="built_in">dispatch_once</span>(&amp;once, ^ &#123;</span><br><span class="line">        sharedView = [[U<span class="built_in">UInputAccessoryView</span> alloc] init];</span><br><span class="line">        sharedView-&gt;btnBack = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">        sharedView-&gt;btnBack<span class="variable">.frame</span> = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, U<span class="built_in">UIAV_MAIN_W</span>, U<span class="built_in">UIAV_MAIN_H</span>);</span><br><span class="line">        [sharedView-&gt;btnBack addTarget:sharedView action:<span class="keyword">@selector</span>(dismiss) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">        sharedView-&gt;btnBack<span class="variable">.backgroundColor</span>=[<span class="built_in">UIColor</span> clearColor];</span><br><span class="line">        <span class="built_in">UIToolbar</span> *toolbar = [[<span class="built_in">UIToolbar</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, U<span class="built_in">UIAV_MAIN_W</span>, <span class="number">44</span>)];</span><br><span class="line">        sharedView-&gt;inputView = [[<span class="built_in">UITextField</span> alloc]initWithFrame:<span class="built_in">CGRectMake</span>(U<span class="built_in">UIAV_Edge_Hori</span>, U<span class="built_in">UIAV_Edge_Vert</span>, U<span class="built_in">UIAV_MAIN_W</span>-U<span class="built_in">UIAV_Btn_W</span>-<span class="number">4</span>*U<span class="built_in">UIAV_Edge_Hori</span>, U<span class="built_in">UIAV_Btn_H</span>)];</span><br><span class="line">        sharedView-&gt;inputView<span class="variable">.borderStyle</span> = <span class="built_in">UITextBorderStyleRoundedRect</span>;</span><br><span class="line">        sharedView-&gt;inputView<span class="variable">.returnKeyType</span> = <span class="built_in">UIReturnKeyDone</span>;</span><br><span class="line">        sharedView-&gt;inputView<span class="variable">.clearButtonMode</span> = <span class="built_in">UITextFieldViewModeWhileEditing</span>;</span><br><span class="line">        sharedView-&gt;inputView<span class="variable">.enablesReturnKeyAutomatically</span> = <span class="literal">YES</span>;</span><br><span class="line">        sharedView-&gt;inputView<span class="variable">.delegate</span> = sharedView;</span><br><span class="line">        [toolbar addSubview:sharedView-&gt;inputView];</span><br><span class="line">        sharedView-&gt;assistView = [[<span class="built_in">UITextField</span> alloc]init];</span><br><span class="line">        sharedView-&gt;assistView<span class="variable">.delegate</span> = sharedView;</span><br><span class="line">        sharedView-&gt;assistView<span class="variable">.returnKeyType</span> = <span class="built_in">UIReturnKeyDone</span>;</span><br><span class="line">        sharedView-&gt;assistView<span class="variable">.enablesReturnKeyAutomatically</span> = <span class="literal">YES</span>;</span><br><span class="line">        [sharedView-&gt;btnBack addSubview:sharedView-&gt;assistView];</span><br><span class="line">        sharedView-&gt;assistView<span class="variable">.inputAccessoryView</span> = toolbar;</span><br><span class="line">        sharedView-&gt;BtnSave = [<span class="built_in">UIButton</span> buttonWithType:<span class="built_in">UIButtonTypeCustom</span>];</span><br><span class="line">        sharedView-&gt;BtnSave<span class="variable">.frame</span> = <span class="built_in">CGRectMake</span>(U<span class="built_in">UIAV_MAIN_W</span>-U<span class="built_in">UIAV_Btn_W</span>-<span class="number">2</span>*U<span class="built_in">UIAV_Edge_Hori</span>, U<span class="built_in">UIAV_Edge_Vert</span>, U<span class="built_in">UIAV_Btn_W</span>, U<span class="built_in">UIAV_Btn_H</span>);</span><br><span class="line">        sharedView-&gt;BtnSave<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> clearColor];</span><br><span class="line">        [sharedView-&gt;BtnSave setTitle:<span class="string">@"确定"</span> forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">        [sharedView-&gt;BtnSave setTitleColor:[<span class="built_in">UIColor</span> redColor] forState:<span class="built_in">UIControlStateNormal</span>];</span><br><span class="line">        [sharedView-&gt;BtnSave addTarget:sharedView action:<span class="keyword">@selector</span>(Done) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</span><br><span class="line">        [toolbar addSubview:sharedView-&gt;BtnSave];</span><br><span class="line">    &#125;);</span><br><span class="line">	<span class="built_in">CGRectGetHeight</span>([<span class="built_in">UIScreen</span> mainScreen]<span class="variable">.bounds</span>);</span><br><span class="line">	<span class="keyword">return</span> sharedView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>实现逻辑代码</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)showKeyboardType:(<span class="built_in">UIKeyboardType</span>)type content:(<span class="built_in">NSString</span> *)content Block:(U<span class="built_in">UInputAccessoryBlock</span>)block</span><br><span class="line">&#123;</span><br><span class="line">    [[U<span class="built_in">UInputAccessoryView</span> sharedView] show:block</span><br><span class="line">                               keyboardType:type</span><br><span class="line">                                    content:content];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)show:(U<span class="built_in">UInputAccessoryBlock</span>)block keyboardType:(<span class="built_in">UIKeyboardType</span>)type content:(<span class="built_in">NSString</span> *)content</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">UIWindow</span> *window=[<span class="built_in">UIApplication</span> sharedApplication]<span class="variable">.keyWindow</span>;</span><br><span class="line">    [window addSubview:btnBack];</span><br><span class="line"></span><br><span class="line">    inputBlock = block;</span><br><span class="line">    inputView<span class="variable">.text</span> = content;</span><br><span class="line">    inputView<span class="variable">.keyboardType</span> = type;</span><br><span class="line">    assistView<span class="variable">.keyboardType</span> = type;</span><br><span class="line">    [assistView becomeFirstResponder];</span><br><span class="line">    shouldDismiss = <span class="literal">NO</span>;</span><br><span class="line">    </span><br><span class="line">    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] addObserverForName:<span class="built_in">UIKeyboardDidShowNotification</span></span><br><span class="line">                                                      object:<span class="literal">nil</span></span><br><span class="line">                                                       queue:<span class="literal">nil</span></span><br><span class="line">                                                  usingBlock:^(<span class="built_in">NSNotification</span> * _Nonnull note) &#123;</span><br><span class="line">                                                      <span class="keyword">if</span> (!shouldDismiss) &#123;</span><br><span class="line">                                                          [inputView becomeFirstResponder];</span><br><span class="line">                                                      &#125;</span><br><span class="line">                                                  &#125;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)Done</span><br><span class="line">&#123;</span><br><span class="line">    [inputView resignFirstResponder];</span><br><span class="line">    !inputBlock ?: inputBlock(inputView<span class="variable">.text</span>);</span><br><span class="line">    [<span class="keyword">self</span> dismiss];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)textFieldShouldReturn:(<span class="built_in">UITextField</span> *)textField</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">self</span> Done];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)dismiss</span><br><span class="line">&#123;</span><br><span class="line">    shouldDismiss = <span class="literal">YES</span>;</span><br><span class="line">    [inputView resignFirstResponder];</span><br><span class="line">    [btnBack removeFromSuperview];</span><br><span class="line">    [[<span class="built_in">NSNotificationCenter</span> defaultCenter] removeObserver:<span class="keyword">self</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="InputView的frame适应">InputView的frame适应</h3><p><a href="https://github.com/ZhipingYang/UUChatSwift/blob/master/UUChatTableViewSwift/ChatTableViewController.swift#L123" target="_blank" rel="external">案例见GitHub的Demo</a></p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 键盘响应布局</span></span><br><span class="line">@objc func keyboardFrameChanged<span class="params">(notification: NSNotification)</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">let</span> dict = NSDictionary<span class="params">(dictionary: notification.userInfo!)</span></span><br><span class="line">    <span class="built_in">let</span> keyboardValue = dict.objectForKey<span class="params">(UIKeyboardFrameEndUserInfoKey)</span> as<span class="built_in">!</span> NSValue</span><br><span class="line">    <span class="built_in">let</span> bottomDistance = mainScreenSize<span class="params">()</span>.height - keyboardValue.CGRectValue<span class="params">()</span>.origin.y</span><br><span class="line">    <span class="built_in">let</span> duration = Double<span class="params">(dict.objectForKey<span class="params">(UIKeyboardAnimationDurationUserInfoKey)</span> as! NSNumber)</span></span><br><span class="line">    </span><br><span class="line">    UIView.animateWithDuration<span class="params">(duration, animations: &#123;</span><br><span class="line">        self.inputViewConstraint!.constant = -bottomDistance</span><br><span class="line">        self.view.layoutIfNeeded<span class="params">()</span></span><br><span class="line">        &#125;, completion: &#123;</span><br><span class="line">            <span class="params">(value: Bool)</span> in</span><br><span class="line">            self.chatTableView.scrollToBottom<span class="params">(animation: <span class="literal">true</span>)</span></span><br><span class="line">    &#125;)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ScrollView下拉动态修改keyboard（InputView）的frame">ScrollView下拉动态修改keyboard（InputView）的frame</h3><p><strong>常见隐藏keyboard的一些方式</strong></p>
+<ul>
+<li>TouchBeigin</li>
+<li>DidDrag</li>
+<li>EndDrag</li>
+<li>Interactive</li>
+</ul>
+<p><strong>iOS7 开始，ScrollView提供</strong></p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@available</span>(iOS <span class="number">7.0</span>, *)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> UIScrollViewKeyboardDismissMode : Int &#123;</span><br><span class="line">    <span class="keyword">case</span> None</span><br><span class="line">    <span class="keyword">case</span> OnDrag <span class="comment">// dismisses the keyboard when a drag begins</span></span><br><span class="line">    <span class="keyword">case</span> Interactive <span class="comment">// the keyboard follows the dragging touch off screen, and may be pulled upward again to cancel the dismiss</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以在ScrollView上添加<code>scrollView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.Interactive</code>就可以了。<br>效果详见iOS7及以上原生设备的短信滑动消失键盘的交互</p>
+<h2 id="写负责任的代码之异常处理_-_曾铭">写负责任的代码之异常处理 - 曾铭</h2><blockquote>
+<p>千万不要以为你可以忽视这个特殊的返回值，因为它是一种“可能性”。代码漏掉任何一种可能出现的情况，都可能产生意想不到的灾难性结果。</p>
+</blockquote>
+<ul>
+<li>重视代码（及业务）逻辑的异常情况，将其视为『正常流程』的一部分。</li>
+</ul>
+<ul>
+<li>重视函数的抛出异常，将其视为返回值之一（union类型）。</li>
+</ul>
+<h3 id="政策之后的对策">政策之后的对策</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">foo</span><span class="params">()</span> <span class="keyword">throws</span> MyException </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>catch 全部异常</li>
+</ul>
+<ul>
+<li>try 全部代码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">  ... foo() ...</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="我们_API_为什么难调试">我们 API 为什么难调试</h4><ul>
+<li>Service 层未声明抛出异常，也会抛出异常</li>
+<li>抛出的异常 API 层记入日志，向上抛时却丢弃了异常信息</li>
+<li>API 层方法代码全部 try，很难定位到是哪一行出问题</li>
+</ul>
+<h3 id="推荐的对策">推荐的对策</h3><ul>
+<li>只 catch 指定的 exception</li>
+<li>try 进可能的小</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  foo();</span><br><span class="line">&#125; <span class="keyword">catch</span> (MyException e) &#123;</span><br><span class="line">  Log.warning(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>源头思考全部可能性，内部的问题不抛给别人</li>
+<li>不要试图忽略（隐藏）错误，每次出错都是优化代码（反思自己局限）的好机会。否则，你终将付出代价。</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/02/周精益分享- 前端入门篇/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          周精益分享 - 前端入门篇
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/18/周精益分享-动画/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周精益分享 - 动画</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="周精益分享-后端开发" data-title="周精益分享 - 后端开发" data-url="http://yoursite.com/2015/11/25/周精益分享-后端开发/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

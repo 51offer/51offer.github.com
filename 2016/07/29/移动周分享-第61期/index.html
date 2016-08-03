@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第61期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CloudKit初探 - 刘康什么是CloudKit
+iCloud
+Documents
+iCloud Drive
+CloudKit
+
+CloudKit 基础对象类型
+CKContainer: Containers 就像应用运行的沙盒一样，一个应用只能访问自己沙盒中的内容而不能访问其他应用的。Containers 就是最外层容器，每个应用有且仅有一个属于自己的 container。
+
+CKDatab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第61期">
+<meta property="og:url" content="http://yoursite.com/2016/07/29/移动周分享-第61期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="CloudKit初探 - 刘康什么是CloudKit
+iCloud
+Documents
+iCloud Drive
+CloudKit
+
+CloudKit 基础对象类型
+CKContainer: Containers 就像应用运行的沙盒一样，一个应用只能访问自己沙盒中的内容而不能访问其他应用的。Containers 就是最外层容器，每个应用有且仅有一个属于自己的 container。
+
+CKDatab">
+<meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/hoko-blog/universal_links.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第61期">
+<meta name="twitter:description" content="CloudKit初探 - 刘康什么是CloudKit
+iCloud
+Documents
+iCloud Drive
+CloudKit
+
+CloudKit 基础对象类型
+CKContainer: Containers 就像应用运行的沙盒一样，一个应用只能访问自己沙盒中的内容而不能访问其他应用的。Containers 就是最外层容器，每个应用有且仅有一个属于自己的 container。
+
+CKDatab">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第61期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/29/移动周分享-第61期/" class="article-date">
+  	<time datetime="2016-07-29T14:30:00.000Z" itemprop="datePublished">2016-07-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第61期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CloudKit初探_-_刘康">CloudKit初探 - 刘康</h2><h3 id="什么是CloudKit">什么是CloudKit</h3><ul>
+<li>iCloud</li>
+<li>Documents</li>
+<li>iCloud Drive</li>
+<li>CloudKit</li>
+</ul>
+<h3 id="CloudKit_基础对象类型">CloudKit 基础对象类型</h3><ul>
+<li><p><code>CKContainer</code>: Containers 就像应用运行的沙盒一样，一个应用只能访问自己沙盒中的内容而不能访问其他应用的。Containers 就是最外层容器，每个应用有且仅有一个属于自己的 container。</p>
+</li>
+<li><p><code>CKDatabase</code>: Database 即数据库，私有数据库用来存储敏感信息，比如说用户的性别年龄等，用户只能访问自己的私有数据库。应用也有一个公开的数据库来存储公共信息，例如你在构建一个基于地理位置的应用，那么地理位置信息就应该存储在公共数据库里以便所有用户都能访问到。</p>
+</li>
+<li><p><code>CKRecord</code>: 即数据库中的一条数据记录。CloudKit 使用 record 通过 key-value 结构来存储结构化数据。关于键值存储，目前值的架构支持 NSString、NSNumber、NSData、NSDate、CLLocation，和 CKReference、CKAsset（这两个下面我们会说明），以及存储以上数据类型的数组。</p>
+</li>
+<li><p><code>CKRecordZone</code>: Record 不是以零散的方式存在于 database 之中的，它们位于 record zones 里。每个应用都有一个 default record zone，你也可以有自定义的 record zone。</p>
+</li>
+<li><p><code>CKRecordIdentifier</code>: 是一条 record 的唯一标识，用于确定该 record 在数据库中的唯一位置。</p>
+</li>
+<li><p><code>CKReference</code>: Reference 一种引用关系。以地理位置签到应用为例，每个地理位置可以包含很多用户在该位置的签到，那么位置与签到之间就形成了这样一种包含式的从属关系。</p>
+</li>
+<li><p><code>CKAsset</code>: 即资源文件，例如二进制文件。还是以签到应用为例，用户签到时可能还包含一张照片，那么这张照片就会以 asset 形式存储起来。</p>
+</li>
+</ul>
+<h3 id="有哪些Api（Diary_Demo）">有哪些Api（Diary Demo）</h3><h4 id="增">增</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">updateRecord</span><span class="params">(diary: Diary, record: CKRecord)</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    record.setObject(diary.content, forKey: <span class="string">"Content"</span>)</span><br><span class="line">    </span><br><span class="line">    record.setObject(diary.created_at, forKey: <span class="string">"Created_at"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> location = diary.location &#123;</span><br><span class="line">        record.setObject(location, forKey: <span class="string">"Location"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> title = diary.title &#123;</span><br><span class="line">        record.setObject(title, forKey: <span class="string">"Title"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    record.setObject(diary.id, forKey: <span class="string">"id"</span>)</span><br><span class="line">    </span><br><span class="line">    privateDB.saveRecord(record, completionHandler: &#123; (newDiary, error) -&gt; <span class="type">Void</span> <span class="keyword">in</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">debugPrint</span>(<span class="string">"Diary Updated"</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> error = error &#123;</span><br><span class="line">            <span class="built_in">debugPrint</span>(<span class="string">"error <span class="subst">\(error.description)</span>"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="删">删</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">deleteCloudRecord</span><span class="params">(record: CKRecord)</span></span> &#123;</span><br><span class="line">    privateDB.deleteRecordWithID(record.recordID) &#123; (recordID, error) -&gt; <span class="type">Void</span> <span class="keyword">in</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Delete <span class="subst">\(recordID?.recordName)</span> <span class="subst">\(error?.description)</span>"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="改">改</h4><p>查询 -&gt; 修改 -&gt; 更新</p>
+<h4 id="查">查</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">fetchCloudRecordWithTitle</span><span class="params">(title: String , complete: <span class="params">([CKRecord]?)</span></span></span> -&gt; <span class="type">Void</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> predicate = <span class="type">NSPredicate</span>(format: <span class="string">"Title == %@"</span>, title)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> query = <span class="type">CKQuery</span>(recordType: <span class="string">"Diary"</span>,</span><br><span class="line">                        predicate: predicate )</span><br><span class="line">    </span><br><span class="line">    privateDB.performQuery(query, inZoneWithID: <span class="literal">nil</span>) &#123;</span><br><span class="line">        results, error <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> results = results &#123;</span><br><span class="line">            complete(results)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            complete(<span class="literal">nil</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="碰到的问题(踩到的坑)">碰到的问题(踩到的坑)</h3><ol>
+<li><code>Saving CloudKit Record “Not Authenticated” (9/1002)“ ”This request requires an authenticated account</code><br>原因：使用模拟器或者设备没有启用iCloud</li>
+<li><code>Couldn&#39;t get container configuration from the server for container</code><br>原因：container’s identifier错误，可能是使用默认值，也可能是与代码里初始化container时的identifier不一致；<br>另外，需要与开发者中心<code>Certificates, Identifiers &amp; Profiles</code>的iCloud Containers保持一致。<strong>需要5分钟左右才可以使用</strong></li>
+<li><code>Invalid Arguments(12/2015); server message = Field &#39;___recordID&#39; is not marked queryable</code><br>原因：未设置<code>Metadata Indexes</code>.需要前往CloudKit Dashboard -&gt; Record Types -&gt; Metedata Indexes设置</li>
+</ol>
+<h3 id="收费">收费</h3><p>等不及要试试 CloudKit 了？它能让你从编写服务端代码、监控服务器压力、长期维护大量的 CDN、租用服务器等等等等的事情中解脱出来。等等！CloudKit 怎么收费呢，会很贵吗？答案是：免费。目前苹果允许你使用 CloudKit 存储 10 GB 资源，100 M 数据库存储，每天 2 GB 流量；当你的用户数量增加的时候，这些免费额度也相应地增加到 1 PB 存储、10 TB 数据库存储，以及每天 200 TB 流量。</p>
+<h3 id="参考">参考</h3><p><a href="https://developer.apple.com/library/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/EnablingiCloudandConfiguringCloudKit/EnablingiCloudandConfiguringCloudKit.html#//apple_ref/doc/uid/TP40014987-CH2-SW1" target="_blank" rel="external">https://developer.apple.com/library/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/EnablingiCloudandConfiguringCloudKit/EnablingiCloudandConfiguringCloudKit.html#//apple_ref/doc/uid/TP40014987-CH2-SW1</a></p>
+<p><a href="https://icloud.developer.apple.com/dashboard" target="_blank" rel="external">https://icloud.developer.apple.com/dashboard</a></p>
+<p><a href="http://nshipster.cn/cloudkit/" target="_blank" rel="external">http://nshipster.cn/cloudkit/</a></p>
+<h3 id="通用链接（_Universal_Links_）-_杨志平">通用链接（ Universal Links ）- 杨志平</h3><p>@(iOS)[universal links, 通用链接]</p>
+<blockquote>
+<ul>
+<li>通过唯一的网址, 就可以链接一个特定的视图到你的 APP 里面, 不需要特别的 schema</li>
+<li>不再需要JavaScript检查平台，跳转也不需要js去做特定处理</li>
+<li>比scheme更灵活更安全的匹配URL跳转</li>
+</ul>
+<p>注意：不能使用模拟器调试</p>
+</blockquote>
+<p><img src="https://s3-eu-west-1.amazonaws.com/hoko-blog/universal_links.png" alt="image"></p>
+<blockquote>
+<p>工作原理：When the app is installed, the system downloads and verifies the site association file for each of its associated domains. If the verification is successful, the app is associated with the domain.</p>
+</blockquote>
+<h4 id="Configure_your_file_server">Configure your file server</h4><ul>
+<li><a href="https://api-pre.51offer.com/apple-app-site-association" target="_blank" rel="external">我们的根路径配置文件</a></li>
+<li><a href="https://branch.io/resources/universal-links/" target="_blank" rel="external">根路径配置有效性验证</a><h5 id="要求如下：">要求如下：</h5><blockquote>
+<p>Alright! So you have your signed apple-app-site-association file. Now you just need to configure your file server to host this for you. There are a few caveats:</p>
+</blockquote>
+</li>
+<li>It must be sent with the header ‘application/pkcs7-mime’</li>
+<li>It must be sent from the endpoint youdomain.com/apple-app-site-association</li>
+<li>It must return a 200 http code.</li>
+</ul>
+<blockquote>
+<p>We set up the one for all Branch integrated apps using our Node+Express link servers. Here’s the code we used in case that’s helpful:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aasa = fs.readFileSync(__dirname + <span class="string">'/static/apple-app-site-association'</span>);</span><br><span class="line">app.get(<span class="string">'/apple-app-site-association'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">     res.set(<span class="string">'Content-Type'</span>, <span class="string">'application/pkcs7-mime'</span>);</span><br><span class="line">     res.status(<span class="number">200</span>).send(aasa);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>可以从原有的scheme过渡过来<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application openURL:(<span class="built_in">NSURL</span> *)url sourceApplication:(<span class="built_in">NSString</span> *)sourceApplication annotation:(<span class="keyword">id</span>)annotation &#123;</span><br><span class="line">    [<span class="keyword">self</span> handleRouting:url];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *)userActivity restorationHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span> *))restorationHandler &#123;</span><br><span class="line">    <span class="keyword">if</span> ([userActivity<span class="variable">.activityType</span> isEqualToString:<span class="built_in">NSUserActivityTypeBrowsingWeb</span>]) &#123;</span><br><span class="line">        [<span class="keyword">self</span> handleRouting:userActivity<span class="variable">.webpageURL</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)handleRouting:(<span class="built_in">NSURL</span> *)url &#123;</span><br><span class="line">....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>视频</strong>优先推荐<br><a href="https://developer.apple.com/videos/play/wwdc2015/509/" target="_blank" rel="external">https://developer.apple.com/videos/play/wwdc2015/509/</a></p>
+<p><strong>优秀博客</strong><br><a href="https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9" target="_blank" rel="external">https://blog.branch.io/how-to-setup-universal-links-to-deep-link-on-apple-ios-9</a></p>
+<p><a href="https://blog.branch.io/ios-9.2-deep-linking-guide-transitioning-to-universal-links" target="_blank" rel="external">https://blog.branch.io/ios-9.2-deep-linking-guide-transitioning-to-universal-links</a></p>
+<p><a href="http://blog.hokolinks.com/how-to-implement-apple-universal-links-on-ios-9/" target="_blank" rel="external">http://blog.hokolinks.com/how-to-implement-apple-universal-links-on-ios-9/</a></p>
+<p><strong>可能出现的bug</strong>（巨坑，也可能是配置问题）<br><a href="http://stackoverflow.com/questions/32751225/ios9-universal-links-does-not-work" target="_blank" rel="external">http://stackoverflow.com/questions/32751225/ios9-universal-links-does-not-work</a></p>
+<h2 id="结合实例介绍_nginx_配置_-_曾铭">结合实例介绍 nginx 配置 - 曾铭</h2><h3 id="默认配置">默认配置</h3><p>DNS, nginx, tomcat, application</p>
+<p><a href="https://api-pre.51offer.com/mobile/user/login" target="_blank" rel="external">https://api-pre.51offer.com/mobile/user/login</a></p>
+<p>DNS: api-pre.51offer.com(host) -&gt; IP(nginx)</p>
+<p>nginx: IP(nginx):80 -&gt; IP(tomcat):8080</p>
+<p>tomcat: /mobile</p>
+<p>application: /user/login (controller, function)</p>
+<p>看 nginx 配置</p>
+<h3 id="两个问题">两个问题</h3><h4 id="调试_Universal_Link">调试 Universal Link</h4><p><a href="https://api-pre.51offer.com/xyz.html" target="_blank" rel="external">https://api-pre.51offer.com/xyz.html</a><br><a href="https://api-pre.51offer.com/apple-site-app-config" target="_blank" rel="external">https://api-pre.51offer.com/apple-site-app-config</a></p>
+<ul>
+<li>调整 tomcat content_path <a href="http://gitlab.51offer.inner/tool/tool-tms/commit/24b8c6f69ea0029b8cea8b7cbc46f3c2f355271d" target="_blank" rel="external">http://gitlab.51offer.inner/tool/tool-tms/commit/24b8c6f69ea0029b8cea8b7cbc46f3c2f355271d</a></li>
+<li>调整 application 静态文件路径</li>
+<li>改 header: nginx</li>
+</ul>
+<h3 id="线上_fixbug">线上 fixbug</h3><p><a href="http://www.51offer.com/aboutus/server.html?in_app=1" target="_blank" rel="external">http://www.51offer.com/aboutus/server.html?in_app=1</a></p>
+<p>api.51offer.com</p>
+<p><a href="https://api.51offer.com/aboutus/server.html?in_app=1" target="_blank" rel="external">https://api.51offer.com/aboutus/server.html?in_app=1</a><br><a href="https://api.51offer.com/aboutus/protocol.html?in_app=1" target="_blank" rel="external">https://api.51offer.com/aboutus/protocol.html?in_app=1</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/22/移动周分享-第60期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第60期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第61期" data-title="移动周分享-第61期" data-url="http://yoursite.com/2016/07/29/移动周分享-第61期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

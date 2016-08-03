@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>周精益分享 - 前端入门篇2期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="博客地址Swift柯里化 Curring 学习什么是Curring
+维基百科解释在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
+
+概念看上去还是有点抽象，直接看代码
+例子注：所有swift代码都可以放到playgroun中运行查看输出1234567">
+<meta property="og:type" content="article">
+<meta property="og:title" content="周精益分享 - 前端入门篇2期">
+<meta property="og:url" content="http://yoursite.com/2015/12/11/周精益分享- 前端入门篇2期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="博客地址Swift柯里化 Curring 学习什么是Curring
+维基百科解释在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
+
+概念看上去还是有点抽象，直接看代码
+例子注：所有swift代码都可以放到playgroun中运行查看输出1234567">
+<meta property="og:image" content="http://yoursite.com/./1449756974449.png">
+<meta property="og:image" content="http://yoursite.com/./1449768288128.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周精益分享 - 前端入门篇2期">
+<meta name="twitter:description" content="博客地址Swift柯里化 Curring 学习什么是Curring
+维基百科解释在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
+
+概念看上去还是有点抽象，直接看代码
+例子注：所有swift代码都可以放到playgroun中运行查看输出1234567">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-周精益分享- 前端入门篇2期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/11/周精益分享- 前端入门篇2期/" class="article-date">
+  	<time datetime="2015-12-11T10:30:00.000Z" itemprop="datePublished">2015-12-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      周精益分享 - 前端入门篇2期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="博客地址"><a href="">博客地址</a></h3><h2 id="Swift柯里化_Curring_学习">Swift柯里化 Curring 学习</h2><h3 id="什么是Curring">什么是Curring</h3><blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96" target="_blank" rel="external">维基百科解释</a><br>在计算机科学中，柯里化（英语：Currying），又译为卡瑞化或加里化，是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
+</blockquote>
+<p>概念看上去还是有点抽象，直接看代码</p>
+<p><strong>例子</strong><br>注：所有swift代码都可以放到playgroun中运行查看输出<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="type">UIKit</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个普通求sum函数</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">add</span><span class="params">(a: Int, b: Int, <span class="built_in">c</span>: Int)</span></span> -&gt; <span class="type">Int</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"<span class="subst">\(a)</span> + <span class="subst">\(b)</span> + <span class="subst">\(<span class="built_in">c</span>)</span> = <span class="subst">\(a + b + <span class="built_in">c</span>)</span>"</span>)</span><br><span class="line">    <span class="keyword">return</span> a + b + <span class="built_in">c</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(<span class="number">1</span>, b: <span class="number">2</span>,<span class="built_in">c</span>: <span class="number">3</span>) <span class="comment">// 打印1 + 2 + 3 = 6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 柯里化版本的求sum函数</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">addCur</span><span class="params">(a: Int)</span></span>(b: <span class="type">Int</span>)(<span class="built_in">c</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"<span class="subst">\(a)</span> + <span class="subst">\(b)</span> + <span class="subst">\(<span class="built_in">c</span>)</span> = <span class="subst">\(a + b + <span class="built_in">c</span>)</span>"</span>)</span><br><span class="line">    <span class="keyword">return</span> a + b + <span class="built_in">c</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addCur(<span class="number">1</span>)(b: <span class="number">2</span>)(<span class="built_in">c</span>: <span class="number">3</span>) <span class="comment">// 打印1 + 2 + 3 = 6</span></span><br></pre></td></tr></table></figure></p>
+<p>你也许觉得Curring只是用一个特殊的写法<br>其他与普通函数无异<br>那么换一种curring的调用方式</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// curring 另类调用方式</span></span><br><span class="line">let funcWithA = <span class="function"><span class="title">addCur</span><span class="params">(<span class="number">1</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"funcWithA type : \(funcWithA.dynamicType)"</span>)</span></span></span><br><span class="line">let funcWithAB = <span class="function"><span class="title">funcWithA</span><span class="params">(b: <span class="number">2</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"funcWithAB type : \(funcWithAB.dynamicType)"</span>)</span></span></span><br><span class="line">let resultCurring = <span class="function"><span class="title">funcWithAB</span><span class="params">(c: <span class="number">3</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"resultCurring type : \(resultCurring.dynamicType)"</span>)</span></span></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">此时你还是会觉得这只是把一个函数拆开来调用了 那么我们打印一下 每个调用步骤中变量的类型</span><br></pre></td></tr></table></figure>
+<p>let funcWithA = addCur(1)<br>print(“funcWithA type : (funcWithA.dynamicType)”) //<br>let funcWithAB = funcWithA(b: 2)<br>print(“funcWithAB type : (funcWithAB.dynamicType)”)<br>let resultCurring = funcWithAB(c: 3)<br>print(“resultCurring type : (resultCurring.dynamicType)”)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">打印结果为</span><br></pre></td></tr></table></figure></p>
+<p>1 + 2 + 3 = 6<br>funcWithA type : Int -&gt; Int -&gt; Int<br>funcWithAB type : Int -&gt; Int<br>1 + 2 + 3 = 6<br>resultCurring type : Int<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">可以看到 变量funcWithA 为 Int -&gt; Int -&gt; Int 类型</span><br><span class="line">funcWithAB 为Int -&gt; Int</span><br><span class="line"></span><br><span class="line">这说明 curring函数在绑定最后一个参数之前 每个步骤返回的值都是一个函数</span><br><span class="line"></span><br><span class="line"><span class="header">###Curring实现原理</span></span><br><span class="line"></span><br><span class="line">Swift实现Curring的基础有两个</span><br><span class="line"><span class="bullet">- </span>函数是一级公民</span><br><span class="line"><span class="bullet">- </span>闭包</span><br><span class="line"></span><br><span class="line">[<span class="link_label">啊崢的Swift Curring文章</span>](<span class="link_url">http://www.jianshu.com/p/6eaacadafa1a</span>)代码例子解释的已经很清楚了</span><br></pre></td></tr></table></figure></p>
+<p>class Currying<br>{<br>    /<strong><em> uncurried:普通函数 </em></strong>/<br>    // 接收多个参数的函数<br>    func add(a: Int, b: Int, c: Int) -&gt; Int{<br>        println(“(a) + (b) + (c)”)<br>        return a + b + c<br>    }</p>
+<pre><code><span class="comment">/*** 手动实现柯里化函数 ***/</span>
+<span class="comment">// 把上面的函数转换为柯里化函数，首先转成接收第一个参数a，并且返回接收余下第一个参数b的新函数（采用闭包）</span>
+<span class="comment">// 为了让大家都能看懂,我帮你们拆解来看下</span>
+<span class="comment">// (a: Int) : 参数</span>
+<span class="comment">// (b:Int) -&gt; (c: Int) -&gt; Int : 函数返回值（一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数)</span>
+
+<span class="comment">// 定义一个接收参数a,并且返回一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数</span>
+<span class="func"><span class="keyword">func</span> <span class="title">add</span><span class="params">(a: Int)</span></span> -&gt; (b:<span class="type">Int</span>) -&gt; (<span class="built_in">c</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span>{
+
+    <span class="comment">// 一个接收参数b的函数,并且这个函数又返回一个接收参数c,返回值为Int类型的函数</span>
+    <span class="keyword">return</span> { (b:<span class="type">Int</span>) -&gt; (<span class="built_in">c</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span>
+
+        <span class="comment">// 返回一个接收余下第一个参数c，并且有返回结果为Int类型的函数</span>
+        <span class="keyword">return</span> { (<span class="built_in">c</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span>
+
+            <span class="keyword">return</span> a + b + <span class="built_in">c</span>;
+
+ 注解： 这里为什么能使用参数a,b,<span class="built_in">c</span>?
+       利用闭包的值捕获特性，即使这些值作用域不在了，也可以捕获到他们的值。
+       闭包会自动判断捕获的值是值拷贝还是值引用，如果修改了，就是值引用，否则值拷贝。
+
+       注意只有在闭包中才可以，a,b,<span class="built_in">c</span>都在闭包中。
+
+        }
+
+    }
+
+}
+
+
+<span class="comment">/*** curried: 系统自带的柯里化函数 ***/</span>
+<span class="func"><span class="keyword">func</span> <span class="title">addCur</span><span class="params">(a: Int)</span></span>(b: <span class="type">Int</span>)(<span class="built_in">c</span>: <span class="type">Int</span>) -&gt; <span class="type">Int</span>{
+    <span class="built_in">println</span>(<span class="string">"<span class="subst">\(a)</span> + <span class="subst">\(b)</span> + <span class="subst">\(<span class="built_in">c</span>)</span>"</span>)
+    <span class="keyword">return</span> a + b + <span class="built_in">c</span>
+}
+</code></pre><p>}<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="header">###OC版的Curring</span></span><br><span class="line"></span><br><span class="line">大部分的iOS程序员都还是习惯写OC 找了一个[<span class="link_label">OC版本的Curring</span>](<span class="link_url">https://gist.github.com/lukhnos/1771842</span>)实现 我们可以理解的更深刻</span><br></pre></td></tr></table></figure></p>
+<h1 id="include">include <stdio.h></stdio.h></h1><p>int f(int x, int y)<br>{<br>    return x + y;<br>}</p>
+<p>int main()<br>{<br>    // 闭包1 绑定第一个参数<br>    typedef int (^int_to_int_t)(int);<br>    // 闭包2 绑定第二个参数<br>    typedef int_to_int_t (^int_to_int_to_int_t)(int);</p>
+<pre><code><span class="keyword">int_to_int_to_int_t</span> h = ^(<span class="keyword">int</span> x) {
+    <span class="keyword">int_to_int_t</span> g = ^(<span class="keyword">int</span> y) {
+        <span class="comment">// 将两个闭包持有的参数做处理 返回结果</span>
+        <span class="keyword">return</span> f(x, y);  
+    };
+
+    <span class="keyword">return</span> g;        
+};
+
+<span class="comment">// 第一个闭包持有 5</span>
+<span class="keyword">int_to_int_t</span> g = h(<span class="number">5</span>);
+
+<span class="keyword">int</span> z;
+<span class="comment">// 第二个闭包持有10 并返回结果</span>
+z = g(<span class="number">10</span>);
+<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, z);
+</code></pre><p>}<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="header">###什么？你觉得然并卵！</span></span><br><span class="line"></span><br><span class="line">你一定觉得这是一个然并卵的东西</span><br><span class="line"></span><br><span class="line">好吧 我第一个看到的时候 只是觉得有趣 其实也没有想到较好的应用场景 </span><br><span class="line"></span><br><span class="line">[<span class="link_label">为什么要柯里化</span>](<span class="link_url">https://gist.github.com/jcouyang/b56a830cd55bd230049f</span>)这篇文章提供的例子给了很多启发</span><br><span class="line"></span><br><span class="line">用Swift重新实现了一遍 又加了一点打印 豁然开朗</span><br><span class="line"></span><br><span class="line">上代码</span><br></pre></td></tr></table></figure></p>
+<p>// 拼接字符<br>func concat(chars: Array<string>) {<br>    var resultString = “”<br>    for char in chars {<br>        resultString += char<br>    }<br>    print(resultString)<br>}</string></p>
+<p>concat([“1”,”2”,”3”])<br>print(“<strong><strong><strong>**</strong></strong></strong>“)</p>
+<p>// 每个字符代表的数字 + 1 后再拼接<br>func concatAdd(chars: Array<string>, addNum: Int) {<br>    var resultString = “”<br>    for char in chars {<br>        var num = Int(char)!<br>        num = num + addNum<br>        let newChar = String(num)<br>        resultString += newChar<br>    }<br>    print(resultString)<br>}</string></p>
+<p>concatAdd([“1”,”2”,”3”], addNum: 1)<br>concatAdd([“1”,”2”,”3”], addNum: 2)<br>concatAdd([“1”,”2”,”3”], addNum: 3)</p>
+<p>print(“<strong><strong><strong>**</strong></strong></strong>“)<br>// 每个字符代表的数字 <em>10 后再拼接<br>func concatMultiply(chars: Array<string>, multiplyNum: Int) {<br>    var resultString = “”<br>    for char in chars {<br>        var num = Int(char)!<br>        num = num </string></em> multiplyNum<br>        let newChar = String(num)<br>        resultString += newChar<br>    }<br>    print(resultString)<br>}</p>
+<p>concatMultiply([“1”,”2”,”3”], multiplyNum: 1)<br>concatMultiply([“1”,”2”,”3”], multiplyNum: 2)<br>concatMultiply([“1”,”2”,”3”], multiplyNum: 3)</p>
+<p>print(“<strong><strong><strong>**</strong></strong></strong>“)<br>/<strong><strong><br>让我们使用柯里化吧<br>*</strong></strong>/<br>func add(a: Int)(b: Int) -&gt; Int{<br>    return a + b<br>}</p>
+<p>func multiply(a: Int)(b: Int) -&gt; Int{<br>    return a * b<br>}</p>
+<p>func concatByCurring(chars: Array<string>)(caculateFunc: (Int)-&gt;Int) {<br>    var resultString = “”<br>    for char in chars {<br>        var num = Int(char)!<br>        var newNum = caculateFunc(num)<br>        let newChar = String(newNum)<br>        resultString += newChar<br>    }<br>    print(resultString)<br>}</string></p>
+<p>concatByCurring([“1”,”2”,”3”])(caculateFunc: add(1))<br>concatByCurring([“1”,”2”,”3”])(caculateFunc: add(2))<br>concatByCurring([“1”,”2”,”3”])(caculateFunc: add(3))</p>
+<p>print(“<strong><strong><strong>**</strong></strong></strong>“)<br>concatByCurring([“1”,”2”,”3”])(caculateFunc: multiply(1))<br>concatByCurring([“1”,”2”,”3”])(caculateFunc: multiply(2))<br>concatByCurring([“1”,”2”,”3”])(caculateFunc: multiply(3))</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">以上的代码用普通的函数 和 Curring函数 处理了同一个功能</span><br><span class="line"></span><br><span class="line">Curring优势明显</span><br><span class="line"><span class="bullet">- </span>重用了拼接代码</span><br><span class="line"><span class="bullet">- </span>支持更为灵活的算法替换</span><br><span class="line"><span class="bullet">- </span>写功能扩展的人不用怎么关心老代码的实现</span><br><span class="line"></span><br><span class="line"><span class="header">###iOS开发中可以应用的场景</span></span><br><span class="line"></span><br><span class="line"><span class="strong">**使用Curring处理selector**</span></span><br><span class="line">这个例子是我在看[<span class="link_label">王巍的Swifter</span>](<span class="link_url">https://selfstore.io/~onevcat</span>)时候看到的一个例子</span><br><span class="line"></span><br><span class="line">不废话 直接上代码</span><br></pre></td></tr></table></figure>
+<p>// 打印func类型<br>class People: NSObject {<br>    func speak(){<br>        print(“hello”)<br>    }</p>
+<pre><code><span class="func"><span class="keyword">func</span> <span class="title">printSpeak</span><span class="params">()</span></span> {
+    <span class="built_in">print</span>(<span class="string">"People func speak  : <span class="subst">\(People.speak.<span class="keyword">dynamicType</span>)</span>"</span>)
+}
+</code></pre><p>}</p>
+<p>People().printSpeak()<br>// 打印结果为 People func speak  : People -&gt; () -&gt; ()<br>// 可见实例的方法就是一个Curring结构<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下面是[<span class="link_label">Instance Methods are Curried Functions in Swift</span>](<span class="link_url">http://oleb.net/blog/2014/07/swift-instance-methods-curried-functions/?utm_campaign=iOS_Dev_Weekly_Issue_157&amp;utm_medium=email&amp;utm_source=iOS%2BDev%2BWeekly</span>)中的例子 很开脑洞</span><br></pre></td></tr></table></figure></p>
+<p>//Selector demo<br>protocol TargetAction {<br>    func performAction()<br>}</p>
+<p>struct TargetActionWrapper<t: anyobject=""> : TargetAction {<br>    weak var target: T?</t:></p>
+<pre><code><span class="comment">// 此处的action类型是不是和我上面代码中打印的结构一致</span>
+<span class="built_in">let</span> action: <span class="params">(T)</span> -&gt; <span class="params">()</span> -&gt; <span class="params">()</span>
+
+func performAction<span class="params">()</span> -&gt; <span class="params">()</span> {
+    <span class="keyword">if</span> <span class="built_in">let</span> t = target {
+        <span class="comment">// Curring调用</span>
+        action<span class="params">(t)</span><span class="params">()</span>
+    }
+}
+</code></pre><p>}</p>
+<p>enum ControlEvent {<br>    case TouchUpInside<br>    case ValueChanged<br>}</p>
+<p>class Control {<br>    var actions = <a href="">ControlEvent: TargetAction</a></p>
+<pre><code><span class="func"><span class="keyword">func</span> <span class="title">setTarget</span><span class="generics">&lt;T: AnyObject&gt;</span><span class="params">(target: T, action: <span class="params">(T)</span></span></span> -&gt; () -&gt; (), controlEvent: <span class="type">ControlEvent</span>) {
+    actions[controlEvent] = <span class="type">TargetActionWrapper</span>(target: target, action: action)
+}
+
+<span class="func"><span class="keyword">func</span> <span class="title">removeTargetForControlEvent</span><span class="params">(controlEvent: ControlEvent)</span></span> {
+    actions[controlEvent] = <span class="literal">nil</span>
+}
+
+<span class="func"><span class="keyword">func</span> <span class="title">performActionForControlEvent</span><span class="params">(controlEvent: ControlEvent)</span></span> {
+    actions[controlEvent]?.performAction()
+}
+</code></pre><p>}</p>
+<p>class MyViewController {<br>    let button = Control()</p>
+<pre><code><span class="func"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> {
+    button.setTarget(<span class="keyword">self</span>, action: <span class="type">MyViewController</span>.onButtonTap, controlEvent: .<span class="type">TouchUpInside</span>)
+}
+
+<span class="func"><span class="keyword">func</span> <span class="title">onButtonTap</span><span class="params">()</span></span> {
+    <span class="built_in">print</span>(<span class="string">"Button was tapped"</span>)
+}
+</code></pre><p>}</p>
+<p>// 调用<br>MyViewController().onButtonTap()<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="header">###小结</span></span><br><span class="line"><span class="bullet">- </span>Curring让计算过程更清晰 函数式编程的有点初见端倪</span><br><span class="line"><span class="bullet">- </span>Curring让计算过程更独立 可重用</span><br><span class="line"><span class="bullet">- </span>Curring让计算功能扩展更方便</span><br><span class="line"><span class="bullet">- </span>Curring让Swift中Selector的重构可以实现</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">## Umeng分享遇到的小坑 -- 张超耀</span></span><br><span class="line"><span class="header">### 写在前面的话</span></span><br><span class="line"><span class="bullet">- </span>在iOS9下，系统默认会拦截对http协议接口的访问，因此无法获取http协议接口的数据。对Umeng来说，具体表现可能是，无法授权、分享、获取用户信息等。</span><br><span class="line"><span class="bullet">- </span>iOS9新建项目默认需要支持bitcode，而不支持bitcode的SDK会导致无法编译运行。[<span class="link_label">App Thining</span>](<span class="link_url">https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AppThinning/AppThinning.html#//apple_ref/doc/uid/TP40012582-CH35</span>)）</span><br><span class="line"></span><br><span class="line">[<span class="link_label">Umeng适配iOS9</span>](<span class="link_url">http://dev.umeng.com/social/ios/ios9</span>)</span><br><span class="line"></span><br><span class="line"><span class="header">### 针对iOS9的Https特性，解决方案</span></span><br><span class="line"><span class="bullet">- </span>Plan A: 暂时退回到http协议:</span><br><span class="line"></span><br><span class="line">&gt;<span class="strong">**1**</span>、在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。</span><br><span class="line">&gt;<span class="strong">**2**</span>、然后给它添加一个Key：NSAllowsArbitraryLoads，类型为Boolean类型，值为YES；</span><br><span class="line"></span><br><span class="line"><span class="bullet">- </span>Plan B：设置域。可以简单理解成，把不支持https协议的接口设置成http的接口</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;<span class="strong">**1**</span>、在项目的info.plist中添加一个Key：NSAppTransportSecurity，类型为字典类型。</span><br><span class="line"></span><br><span class="line">&gt;<span class="strong">**2**</span>、然后给它添加一个NSExceptionDomains，类型为字典类型；</span><br><span class="line"></span><br><span class="line">&gt;<span class="strong">**3**</span>、把需要的支持的域添加給NSExceptionDomains。其中域作为Key，类型为字典类型。</span><br><span class="line"></span><br><span class="line">&gt;<span class="strong">**4**</span>、每个域下面需要设置3个属性：NSIncludesSubdomains、		NSExceptionRequiresForwardSecrecy、		NSExceptionAllowsInsecureHTTPLoads。</span><br><span class="line"><span class="code">	均为Boolean类型，值分别为YES、NO、YES。</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="header">### 针对App Thinning</span></span><br><span class="line"></span><br><span class="line"><span class="header">### 添加Scheme白名单实现应用跳转（SSO等）</span></span><br><span class="line"><span class="bullet">- </span>问题描述：在iOS 9下涉及到平台客户端跳转，系统会自动到项目info.plist下检测是否设置平台Scheme。对于需要配置的平台，如果没有配置，就无法正常跳转平台客户端。因此要支持客户端的分享和授权等，需要配置Scheme名单。</span><br><span class="line"><span class="bullet">- </span>解决方案：</span><br><span class="line"></span><br><span class="line">具体方法：</span><br><span class="line">&gt;1、在项目的info.plist中添加一LSApplicationQueriesSchemes，类型为Array。</span><br><span class="line"></span><br><span class="line">&gt;2、然后给它添加一个需要支持的项目，类型为字符串类型</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">### 注意</span></span><br><span class="line"><span class="bullet">- </span>由于苹果审核政策需求，需要对未安装客户端平台进行隐藏，在设置QQ、微信AppID之后调用下面的方法，</span><br></pre></td></tr></table></figure></p>
+<p>[UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"> - but  这个接口只对默认分享面板平台有隐藏功能，自定义分享面板或登录按钮需要自己处理</span><br><span class="line"> </span><br><span class="line"><span class="bullet">- </span>对于自定义分享面板处理：</span><br><span class="line"><span class="code">	- UmengSDK已经嵌入相关API，直接用就好</span></span><br><span class="line"></span><br><span class="line"><span class="header">### 只要按照官方文档来，基本上就能马到成功（）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="header">##MarkDown 的 CSS 实现配置 - 杨志平</span></span><br><span class="line"></span><br><span class="line"><span class="header">####题目灵感来源</span></span><br><span class="line"><span class="blockquote">&gt; 起源于我们现有的博客引擎主题交互很不错，但是排版烂的要死 ，我水平有限这里只是浅显介绍实现修改我们的markdown编译器的一些排版样式</span></span><br><span class="line"></span><br><span class="line"><span class="header">#### 研究方向</span></span><br><span class="line"><span class="blockquote">&gt; 自定义一个非标准化，有其他多元素的MarkDown解析器 如下几点:</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-  </span>可选框</span><br><span class="line"> <span class="code">`- [ ] `</span></span><br><span class="line"><span class="bullet">- </span>本地图片索引，可控制对齐及大小 </span><br><span class="line"><span class="code">`![Alt text](http://path/to/img.jpg "optional title" 100x200)`</span></span><br><span class="line"><span class="code">`![Alt text](./1449756974449.png)`</span></span><br><span class="line"><span class="bullet">- </span>标签功能</span><br><span class="line"><span class="code">`@(Share)[css, Markdown]`</span></span><br><span class="line"><span class="bullet">- </span>代码高亮（不同语言）</span><br><span class="line"></span><br><span class="line"><span class="code">`swift`</span></span><br><span class="line"></span><br><span class="line"><span class="code">```</span> swift</span><br><span class="line"><span class="code">    private var majorModel = PickMajorModel()</span></span><br><span class="line"><span class="code">    private var subjectModel = OFFKeyNameModel()</span></span><br><span class="line"><span class="code">    required init?(coder aDecoder: NSCoder) &#123;</span></span><br><span class="line"><span class="code">        super.init(coder: aDecoder)</span></span><br><span class="line"><span class="code">    &#125;</span></span><br></pre></td></tr></table></figure>
+<p><code>objectivec</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIScrollView</span> *scrollView = [[<span class="built_in">UIScrollView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, kScreenW, kScreenH)];</span><br><span class="line">scrollView<span class="variable">.showsVerticalScrollIndicator</span> = <span class="literal">NO</span>;</span><br><span class="line">[scrollView addSubview:<span class="keyword">self</span><span class="variable">.downMainView</span>];</span><br></pre></td></tr></table></figure>
+<p><strong>有一种惨不忍睹的即视感</strong><br><img src="./1449756974449.png" alt="Alt text"></p>
+<h3 id="MarkDown来源及实现">MarkDown来源及实现</h3><blockquote>
+<p>Markdown is a plain text format for writing structured documents, based on conventions used for indicating formatting in email and usenet posts. It was developed in 2004 by John Gruber, who wrote the first markdown-to-html converter in Perl, and it soon became widely used in websites. By 2014 there were dozens of implementations in many languages.</p>
+</blockquote>
+<p><code>见知乎上回答</code><br><a href="http://www.zhihu.com/question/28756456" target="_blank" rel="external">实现一个markdown解析器需要具备那些知识</a></p>
+<h3 id="如何简单的改善文字编排的效果">如何简单的改善文字编排的效果</h3><h5 id="更换博客主题（简单粗暴）">更换博客主题（简单粗暴）</h5><blockquote>
+<p>我们使用的博客引擎Hexo来举例，列举下面三个主题</p>
+<ul>
+<li>landscape</li>
+<li>hexo-theme-vno-master</li>
+<li>hexo-theme-yilia-master</li>
+</ul>
+</blockquote>
+<h5 id="更换MarkDown编译器的主题">更换MarkDown编译器的主题</h5><blockquote>
+<p>以 <strong><em>Mou</em></strong> 举例子，它提供了多套markdown语法下的排版样式<br>手动新创建一个CSS文本布局配置 <strong><em>Blog</em></strong><br><img src="./1449768288128.png" alt="Alt text"></p>
+</blockquote>
+<h4 id="CSS配置文件修改">CSS配置文件修改</h4><p>详细配置参数如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">html</span> <span class="rules">&#123; <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">62.5%</span></span></span>; &#125;</span></span><br><span class="line"><span class="tag">html</span>, <span class="tag">body</span> <span class="rules">&#123; <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">body</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Helvetica, Arial, sans-serif</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">150%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">1.3</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#f6e6cc</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">700px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">margin</span>:<span class="value"> auto</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#27221a</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span> <span class="number">30px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>多级标题配置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">28px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value"> black</span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">h2</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value"> black</span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">h3</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">18px</span></span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">h4</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">16px</span></span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">h5</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">h6</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#777777</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>; &#125;</span></span><br></pre></td></tr></table></figure>
+<p>表格</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">table</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;<span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>; &#125;</span></span><br><span class="line">  <span class="tag">table</span> <span class="tag">tr</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> white</span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>; &#125;</span></span><br><span class="line">    <span class="tag">table</span> <span class="rule"><span class="attribute">tr</span>:<span class="value"><span class="function">nth-child</span>(<span class="number">2</span>n) &#123;</span><br><span class="line">      background-color: <span class="hexcolor">#f8f8f8</span></span></span>; &#125;</span><br><span class="line">    <span class="tag">table</span> <span class="tag">tr</span> <span class="tag">th</span> <span class="rules">&#123;</span><br><span class="line">      <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> bold</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">6px</span> <span class="number">13px</span></span></span>; &#125;</span></span><br><span class="line">    <span class="tag">table</span> <span class="tag">tr</span> <span class="tag">td</span> <span class="rules">&#123;</span><br><span class="line">      <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cccccc</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">6px</span> <span class="number">13px</span></span></span>; &#125;</span></span><br><span class="line">    <span class="tag">table</span> <span class="tag">tr</span> <span class="rule"><span class="attribute">th </span>:<span class="value">first-child, table tr td :first-child &#123;</span><br><span class="line">      margin-top: <span class="number">0</span></span></span>; &#125;</span><br><span class="line">    <span class="tag">table</span> <span class="tag">tr</span> <span class="rule"><span class="attribute">th </span>:<span class="value">last-child, table tr td :last-child &#123;</span><br><span class="line">      margin-bottom: <span class="number">0</span></span></span>; &#125;</span><br></pre></td></tr></table></figure>
+<p>代码高亮</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">code</span>, <span class="tag">tt</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="number">2px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span> <span class="number">5px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#eaeaea</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#f8f8f8</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">3px</span></span></span>; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">pre</span> <span class="tag">code</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">white-space</span>:<span class="value"> pre</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">border</span>:<span class="value"> none</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> transparent</span></span>; &#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/18/移动周分享-第40期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第40期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/02/周精益分享- 前端入门篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周精益分享 - 前端入门篇</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="周精益分享- 前端入门篇2期" data-title="周精益分享 - 前端入门篇2期" data-url="http://yoursite.com/2015/12/11/周精益分享- 前端入门篇2期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

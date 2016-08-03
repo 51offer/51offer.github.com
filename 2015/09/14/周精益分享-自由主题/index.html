@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>周精益分享-自由主题 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="浅拷贝与深拷贝 - 杨志平
+ 程序中经常会遇到集合类的传值   坑： 数组操作时对于数组中的对象拷贝
+
+目的：观察array1、mArrayCopy、mArrayCopy2 三者区别
+123NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&quot;a&quot;],@&quot;b&quot;,@&quot;c&quot;,nil];NSArra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="周精益分享-自由主题">
+<meta property="og:url" content="http://yoursite.com/2015/09/14/周精益分享-自由主题/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="浅拷贝与深拷贝 - 杨志平
+ 程序中经常会遇到集合类的传值   坑： 数组操作时对于数组中的对象拷贝
+
+目的：观察array1、mArrayCopy、mArrayCopy2 三者区别
+123NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&quot;a&quot;],@&quot;b&quot;,@&quot;c&quot;,nil];NSArra">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周精益分享-自由主题">
+<meta name="twitter:description" content="浅拷贝与深拷贝 - 杨志平
+ 程序中经常会遇到集合类的传值   坑： 数组操作时对于数组中的对象拷贝
+
+目的：观察array1、mArrayCopy、mArrayCopy2 三者区别
+123NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&quot;a&quot;],@&quot;b&quot;,@&quot;c&quot;,nil];NSArra">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-周精益分享-自由主题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/14/周精益分享-自由主题/" class="article-date">
+  	<time datetime="2015-09-14T12:00:00.000Z" itemprop="datePublished">2015-09-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      周精益分享-自由主题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="浅拷贝与深拷贝_-_杨志平">浅拷贝与深拷贝 - 杨志平</h2><blockquote>
+<p> 程序中经常会遇到集合类的传值 <br><br> <strong> 坑：</strong> 数组操作时对于数组中的对象拷贝</p>
+</blockquote>
+<h3 id="目的：">目的：</h3><p>观察array1、mArrayCopy、mArrayCopy2 三者区别</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSArray</span> *array1 = [<span class="built_in">NSArray</span> arrayWithObjects:[<span class="built_in">NSMutableString</span> stringWithString:<span class="string">@"a"</span>],<span class="string">@"b"</span>,<span class="string">@"c"</span>,<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSArray</span> *mArrayCopy = [[<span class="built_in">NSArray</span> alloc] initWithArray:array1 copyItems:<span class="literal">YES</span>];</span><br><span class="line"><span class="built_in">NSArray</span>* mArrayCopy2 = [<span class="built_in">NSKeyedUnarchiver</span> unarchiveObjectWithData:[<span class="built_in">NSKeyedArchiver</span> archivedDataWithRootObject: array1]];</span><br></pre></td></tr></table></figure>
+<h3 id="首先了解copy与retain的区别">首先了解copy与retain的区别</h3><p><strong> OC对象引用计数器：屋里开灯规则 </strong></p>
+<blockquote>
+<p>copy是创建一个新对象，retain是创建一个指针，引用对象计数加1。Copy属性表示两个对象内容相同，新的对象retain为1 ，与旧有对象的引用计数无关，旧有对象没有变化。</p>
+<p>retain属性表示两个对象地址相同（建立一个指针，指针拷贝），内容当然相同，这个对象的retain值+1也就是说，retain 是指针拷贝，copy 是内容拷贝。</p>
+</blockquote>
+<h3 id="主角：copy、mutableCopy">主角：copy、mutableCopy</h3><p><strong><em>注意：可变和不可变对象使用copy、mutableCopy的区别</em></strong></p>
+<blockquote>
+<p>遵守NSCopying 协议的类可以发送copy消息，<br>遵守NSMutableCopying 协议的类才可以发送mutableCopy消息。</p>
+<p>默认的ios类并没有遵守这两个协议<br>自定义copy 必须遵守NSCopying,并且实现 copyWithZone: 方法<br>自定义mutableCopy 那么就必须遵守NSMutableCopying,并且实现 mutableCopyWithZone: 方法</p>
+</blockquote>
+<h3 id="实例">实例</h3><h5 id="系统的非容器类对象">系统的非容器类对象</h5><blockquote>
+<p>这里指的是NSString,NSNumber等等一类的对象。</p>
+</blockquote>
+<p>示例1：<br>不可变string</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *string = <span class="string">@"origionStr"</span>;</span><br><span class="line"><span class="built_in">NSString</span> *string2 = string;</span><br><span class="line"><span class="built_in">NSString</span> *stringCopy = [string <span class="keyword">copy</span>];</span><br><span class="line"><span class="built_in">NSMutableString</span> *stringMCopy = [string mutableCopy];</span><br><span class="line">[stringMCopy appendString:<span class="string">@"!!!!"</span>];</span><br><span class="line"><span class="comment">// log</span></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"string      = %p %p %@ "</span>,string,&amp;string,string);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"string2     = %p %p %@ "</span>,string2,&amp;string2,string2);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"stringCopy  = %p %p %@ "</span>,stringCopy,&amp;stringCopy,stringCopy);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"stringMCopy = %p %p %@ "</span>,stringMCopy,&amp;stringMCopy,stringMCopy);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string      = <span class="number">0x1064e70</span>88		0x7fff<span class="number">597190a0</span> origionStr </span><br><span class="line">string2     = <span class="number">0x1064e70</span>88 		0x7fff<span class="number">59719098</span> origionStr </span><br><span class="line">stringCopy  = <span class="number">0x1064e70</span>88 		0x7fff<span class="number">59719090</span> origionStr </span><br><span class="line">stringMCopy = 0x7fafebdbb<span class="number">4b0	0x7</span>fff<span class="number">59719088</span> origionStr!!!!</span><br></pre></td></tr></table></figure>
+<p>示例2：<br>可变string</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">NSMutableString *<span class="built_in">string</span> = [NSMutableString stringWithStrin<span class="variable">g:</span> @<span class="string">"origion"</span>];</span><br><span class="line">NSString *stringCopy = [<span class="built_in">string</span> <span class="built_in">copy</span>];</span><br><span class="line">NSMutableString *mStringCopy = [<span class="built_in">string</span> <span class="built_in">copy</span>];</span><br><span class="line">NSMutableString *stringMCopy = [<span class="built_in">string</span> mutableCopy];</span><br><span class="line">[<span class="built_in">string</span> appendStrin<span class="variable">g:</span>@<span class="string">" origion!"</span>];</span><br><span class="line">[stringMCopy appendStrin<span class="variable">g:</span>@<span class="string">"!!"</span>];</span><br><span class="line">NSLog(@<span class="string">"string      = %p %@"</span>,<span class="built_in">string</span>,<span class="built_in">string</span>);</span><br><span class="line">NSLog(@<span class="string">"stringCopy  = %p %@"</span>,stringCopy,stringCopy);</span><br><span class="line">NSLog(@<span class="string">"stringMCopy = %p %@"</span>,mStringCopy,mStringCopy);</span><br><span class="line">NSLog(@<span class="string">"stringMCopy = %p %@"</span>,stringMCopy,stringMCopy);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string </span>     = <span class="number">0x7fafebdec820</span> origion origion!</span><br><span class="line"><span class="keyword">stringCopy </span> = <span class="number">0x7fafebdcb8c0</span> origion</span><br><span class="line"><span class="keyword">stringMCopy </span>= <span class="number">0x7fafebda4320</span> origion</span><br><span class="line"><span class="keyword">stringMCopy </span>= <span class="number">0x7fafebd32890</span> origion!!</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对于系统的非容器类对象，我们可以认为，如果对一不可变对象复制，copy是指针复制（浅拷贝）和mutableCopy就是对象复制（深拷贝）。如果是对可变对象复制，都是深拷贝，但是copy返回的对象是不可变的。</p>
+</blockquote>
+<h5 id="系统的容器类对象">系统的容器类对象</h5><blockquote>
+<p>指NSArray,NSSet,NSDictionary等。对于容器类本身，上面讨论的结论也是适用的，需要探讨的是复制后容器内对象的变化。</p>
+</blockquote>
+<p>示例1：<br>不可变数组</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//copy返回不可变对象，mutablecopy返回可变对象</span></span><br><span class="line"><span class="built_in">NSArray</span> *array1 = [<span class="built_in">NSArray</span> arrayWithObjects:<span class="string">@"a"</span>,<span class="string">@"b"</span>,<span class="string">@"c"</span>,<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSArray</span> *arrayCopy1 = [array1 <span class="keyword">copy</span>];</span><br><span class="line"><span class="built_in">NSMutableArray</span> *mArrayCopy1 = [array1 mutableCopy];</span><br><span class="line">[mArrayCopy1 addObject:<span class="string">@"de"</span>];</span><br><span class="line">[mArrayCopy1 removeObjectAtIndex:<span class="number">0</span>];</span><br><span class="line"><span class="comment">// log</span></span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"array1      = %p %@ %p %@"</span>,array1,array1,array1[<span class="number">1</span>],array1[<span class="number">1</span>]);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"arrayCopy1  = %p %@ %p %@"</span>,arrayCopy1,arrayCopy1,arrayCopy1[<span class="number">1</span>],arrayCopy1[<span class="number">1</span>]);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"mArrayCopy1 = %p %@ %p %@"</span>,mArrayCopy1,mArrayCopy1,mArrayCopy1[<span class="number">0</span>],mArrayCopy1[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array1      = <span class="number">0</span>x7fafebdeaed0 (<span class="tag">a</span>,<span class="tag">b</span>,c) 	<span class="number">0</span>x1064e7228 <span class="tag">b</span></span><br><span class="line">arrayCopy1  = <span class="number">0</span>x7fafebdeaed0 (<span class="tag">a</span>,<span class="tag">b</span>,c) 	<span class="number">0</span>x1064e7228 <span class="tag">b</span></span><br><span class="line">mArrayCopy1 = <span class="number">0</span>x7fafebdfc010 (<span class="tag">b</span>,c,de) 	<span class="number">0</span>x1064e7228 b</span><br></pre></td></tr></table></figure>
+<p>示例：<br>可变数组</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="name">NSArray</span> *<span class="atom">array1</span> = [<span class="name">NSArray</span> <span class="atom">arrayWithObjects</span>:@<span class="string">"a"</span>,@<span class="string">"b"</span>,@<span class="string">"c"</span>,<span class="atom">nil</span>];</span><br><span class="line"><span class="name">NSMutableArray</span> *<span class="atom">mArrayCopy</span> = [[<span class="name">NSMutableArray</span> <span class="atom">alloc</span>] <span class="atom">initWithArray</span>:<span class="atom">array1</span> <span class="atom">copyItems</span>:<span class="name">YES</span>];</span><br><span class="line"><span class="name">NSLog</span>(@<span class="string">"array1      = %p %@ %p %@ %p %@"</span>,<span class="atom">array1</span>,    <span class="atom">array1</span>,     <span class="atom">array1</span>[<span class="number">0</span>],      <span class="atom">array1</span>[<span class="number">0</span>],      <span class="atom">array1</span>[<span class="number">1</span>],      <span class="atom">array1</span>[<span class="number">1</span>]);</span><br><span class="line"><span class="name">NSLog</span>(@<span class="string">"arrayCopy1  = %p %@ %p %@ %p %@"</span>,<span class="atom">mArrayCopy</span>,<span class="atom">mArrayCopy</span>, <span class="atom">mArrayCopy</span>[<span class="number">0</span>],  <span class="atom">mArrayCopy</span>[<span class="number">0</span>],  <span class="atom">mArrayCopy</span>[<span class="number">1</span>],  <span class="atom">mArrayCopy</span>[<span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array1      = <span class="number">0</span>x7fafebcb5ae0 (<span class="tag">a</span>,<span class="tag">b</span>,c)	 <span class="number">0</span>x10afe1208 <span class="tag">a</span> <span class="number">0</span>x10afe1228 <span class="tag">b</span></span><br><span class="line">arrayCopy1  = <span class="number">0</span>x7fafebcb5b10 (<span class="tag">a</span>,<span class="tag">b</span>,c)	 <span class="number">0</span>x10afe1208 <span class="tag">a</span> <span class="number">0</span>x10afe1228 b</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSArray</span> *array1 = [<span class="built_in">NSArray</span> arrayWithObjects:[<span class="built_in">NSMutableString</span> stringWithString:<span class="string">@"a"</span>],<span class="string">@"b"</span>,<span class="string">@"c"</span>,<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSMutableArray</span> *mArrayCopy = [[<span class="built_in">NSMutableArray</span> alloc] initWithArray:array1 copyItems:<span class="literal">YES</span>];</span><br><span class="line"><span class="built_in">NSArray</span>* mArrayCopy2 = [<span class="built_in">NSKeyedUnarchiver</span> unarchiveObjectWithData:[<span class="built_in">NSKeyedArchiver</span> archivedDataWithRootObject: array1]];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>mArrayCopy2是完全意义上的深拷贝，而mArrayCopy则不是</p>
+<p>对于mArrayCopy内的不可变元素其还是指针复制。或者我们自己实现深拷贝的方法。因为如果容器的某一元素是不可变的，那你复制完后该对象仍旧是不能改变的，因此只需要指针复制即可。除非你对容器内的元素重新赋值，否则指针复制即已足够。</p>
+</blockquote>
+<h2 id="APP标注工具_-_王进">APP标注工具 - 王进</h2><ul>
+<li>第一个：马克鳗：<ul>
+<li><a href="http://www.getmarkman.com/" target="_blank" rel="external">http://www.getmarkman.com/</a></li>
+</ul>
+</li>
+<li>第二个：苦逼APPUI设计师的标注切图的利器—PxCook：<ul>
+<li><a href="http://www.fancynode.com.cn/pxcook/home" target="_blank" rel="external">http://www.fancynode.com.cn/pxcook/home</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="tracking-sdk之FMDB_&amp;_common字段简单分享_-_张超耀">tracking-sdk之FMDB &amp; common字段简单分享 - 张超耀</h2><h3 id="FMDB">FMDB</h3><ul>
+<li>cocoapods管理（优先考虑）</li>
+<li>libsqlite3.dylib函数库支持</li>
+<li>怎删改 &amp; 查简单实用</li>
+<li>object转string时有转义字符，需要客户端进一步处理</li>
+</ul>
+<h3 id="common字段">common字段</h3><ul>
+<li>IP &amp; 经纬度获取（不经意间的惊喜）<a href="http://ip-api.com" target="_blank" rel="external">IP查询</a></li>
+<li>其他字段（略）</li>
+</ul>
+<h3 id="获取经纬度遇到的问题">获取经纬度遇到的问题</h3><ul>
+<li>经纬度获取是异步，可能在实时数据上传前还没有获取到，所以暂时取巧用IP解析的地址作为经纬度处理。</li>
+</ul>
+<h3 id="tracking-sdk_分享_-_潘君">tracking-sdk 分享 - 潘君</h3><ul>
+<li>略</li>
+</ul>
+<h2 id="正则表达式入门_-_曾铭">正则表达式入门 - 曾铭</h2><h3 id="目标">目标</h3><ul>
+<li>原理我也不懂，但会用(知道能解决什么问题)能看懂(知道在解决什么问题)很重要</li>
+<li>高效</li>
+<li>碰到问题多”玩”, 玩玩就会了</li>
+</ul>
+<h3 id="罗列">罗列</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">\b 单词分割</span><br><span class="line">\<span class="keyword">d</span> 数字</span><br><span class="line">\s 空白符</span><br><span class="line">\w 字母、数字、下划线、汉字</span><br><span class="line">\B \<span class="keyword">D</span> \S \<span class="literal">W</span></span><br><span class="line">[^xyz] 非 xyz</span><br><span class="line">[abc0-9] 字符范围</span><br><span class="line">^ 起始</span><br><span class="line">$ 结束</span><br><span class="line">&#123;<span class="keyword">n</span>&#125; 重复 <span class="keyword">n</span> 次</span><br><span class="line">&#123;<span class="keyword">n</span>,&#125; 重复 <span class="keyword">n</span> 到无穷次</span><br><span class="line">&#123;<span class="keyword">n</span>,<span class="keyword">m</span>&#125; 重复 <span class="keyword">n</span> 到 <span class="keyword">m</span> 次</span><br><span class="line"><span class="comment">* 重复 0 到无穷次</span></span><br><span class="line">+ 重复 1 到无穷次</span><br><span class="line">? 重复 0 或 1 次</span><br><span class="line">| 或</span><br><span class="line">\\ 字符转义</span><br><span class="line">(exp) 捕获</span><br><span class="line">(?&lt;name&gt;exp) 捕获并命名</span><br><span class="line">(?:exp) 不捕获</span><br><span class="line">(?=exp) 匹配exp前面的位置</span><br><span class="line">(?&lt;=exp) 匹配exp后面的位置</span><br><span class="line">(?!exp) 匹配后面跟的不是exp的位置</span><br><span class="line">(?&lt;!exp) 匹配前面不是exp的位置</span><br></pre></td></tr></table></figure>
+<h3 id="推荐工具">推荐工具</h3><ul>
+<li><a href="http://www.regexbuddy.com/" target="_blank" rel="external">RegexBuddy for Win</a></li>
+<li><a href="http://krillapps.com/patterns/" target="_blank" rel="external">Patterns for Mac</a></li>
+<li><a href="http://www.regexlab.com/zh/regref.htm" target="_blank" rel="external">正则在线参考</a></li>
+</ul>
+<h3 id="参考">参考</h3><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2009/04/lorem_ipsum.html" target="_blank" rel="external">关于Lorem ipsum</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/18/周精益分享-自由主题 /" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          周精益分享-自由主题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/21/那些年我们用过的第三方库/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">那些年我们用过的第三方库</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="周精益分享-自由主题" data-title="周精益分享-自由主题" data-url="http://yoursite.com/2015/09/14/周精益分享-自由主题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

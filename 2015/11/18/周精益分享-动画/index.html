@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>周精益分享 - 动画 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android L动画  - 吴明
+Touch feedback（触摸反馈）
+波纹有边界
+波纹超出边界
+波纹颜色
+
+
+Reveal effect（揭露效果）
+liecap
+Circular Reveal动画
+
+
+Activity transitions（Activity转换效果）
+Enter（进入）
+普通Transition
+explode：从场景的中心移入或移出 
+slide：从场景的边缘移入或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="周精益分享 - 动画">
+<meta property="og:url" content="http://yoursite.com/2015/11/18/周精益分享-动画/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Android L动画  - 吴明
+Touch feedback（触摸反馈）
+波纹有边界
+波纹超出边界
+波纹颜色
+
+
+Reveal effect（揭露效果）
+liecap
+Circular Reveal动画
+
+
+Activity transitions（Activity转换效果）
+Enter（进入）
+普通Transition
+explode：从场景的中心移入或移出 
+slide：从场景的边缘移入或">
+<meta property="og:image" content="http://7xn0ue.com1.z0.glb.clouddn.com/Untitled123.gif">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2011/168097/2011120119191590.png">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/46760225.jpg">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/34906854.jpg">
+<meta property="og:image" content="http://7xohph.com1.z0.glb.clouddn.com/17272953.jpg">
+<meta property="og:image" content="https://github.com/xpleemoon/layer-list-shadow-demo/blob/master/gif/LayerShadow.gif?raw=true">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周精益分享 - 动画">
+<meta name="twitter:description" content="Android L动画  - 吴明
+Touch feedback（触摸反馈）
+波纹有边界
+波纹超出边界
+波纹颜色
+
+
+Reveal effect（揭露效果）
+liecap
+Circular Reveal动画
+
+
+Activity transitions（Activity转换效果）
+Enter（进入）
+普通Transition
+explode：从场景的中心移入或移出 
+slide：从场景的边缘移入或">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-周精益分享-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/18/周精益分享-动画/" class="article-date">
+  	<time datetime="2015-11-18T10:30:00.000Z" itemprop="datePublished">2015-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      周精益分享 - 动画
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android_L动画_-_吴明">Android L动画  - 吴明</h2><ul>
+<li>Touch feedback（触摸反馈）<ul>
+<li>波纹有边界</li>
+<li>波纹超出边界</li>
+<li>波纹颜色</li>
+</ul>
+</li>
+<li>Reveal effect（揭露效果）</li>
+<li>liecap<ul>
+<li>Circular Reveal动画</li>
+</ul>
+</li>
+<li>Activity transitions（Activity转换效果）<ul>
+<li>Enter（进入）<ul>
+<li>普通Transition<ul>
+<li>explode：从场景的中心移入或移出 </li>
+<li>slide：从场景的边缘移入或移出 </li>
+<li>fade：调整透明度产生渐变效果</li>
+</ul>
+</li>
+<li>Shared Elements Transition 共享元素转换:共享两个                acitivity中共同的元素<ul>
+<li>changeBounds -  改变目标视图的布局边界</li>
+<li>changeClipBounds - 裁剪目标视图边界</li>
+<li>changeTransform - 改变目标视图的缩放比例和旋转角度        changeImageTransform - 改变目标图片的大小和缩放比例</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exit（退出）</li>
+<li><a href="http://pan.baidu.com/s/1o6Kngnw" target="_blank" rel="external">demo地址</a><br><img src="http://7xn0ue.com1.z0.glb.clouddn.com/Untitled123.gif" alt="Markdown preferences pane"></li>
+</ul>
+</li>
+</ul>
+<h2 id="objectorAnimator_动画_王进">objectorAnimator 动画  王进</h2><h3 id="动画类型">动画类型</h3><ul>
+<li>View Animation(Tween Animation 补间动画)<br>只能支持简单的缩放、平移、旋转、透明度等基本的动画，且有一定的局限性<br>动画时View的真正的View的属性保持不变，实际位置未改变<br>原理：提供动画的起始和结束状态信息，中间的状态根据上述类里差值器算法填充</li>
+<li>Drawable Animation（Frame Animation 帧动画）</li>
+<li>Property Animation(属性动画)<br>它更改的是对象的实际属性，</li>
+</ul>
+<h3 id="Property_Animation属性">Property Animation属性</h3><ul>
+<li>Duration：动画的持续时间</li>
+<li>TimeInterpolation：属性值的计算方式，如先快后慢</li>
+<li>TypeEvaluator：根据属性的开始、结束值与TimeInterpolation计算出的因子计算出当前时间的属性值</li>
+<li>Repeat Count and behavoir：重复次数与方式，如播放3次、5次、无限循环，可以此动画一直重复，或播放完时再反向播放</li>
+<li>Animation sets：动画集合，即可以同时对一个对象应用几个动画，这些动画可以同时播放也可以对不同动画设置不同开始偏移</li>
+<li>Frame refreash delay：多少时间刷新一次，即每隔多少时间计算一次属性值，默认为10ms，最终刷新时间还受系统进程调度与硬件的影响</li>
+</ul>
+<h3 id="Property_Animation_动画流程">Property Animation 动画流程</h3><p><img src="http://pic002.cnblogs.com/images/2011/168097/2011120119191590.png" alt=""></p>
+<h3 id="ValueAnimator">ValueAnimator</h3><p>ValueAnimator包含Property Animation动画的所有核心功能，如动画时间，开始、结束属性值，相应时间属性值计算方法等。应用Property Animation有两个步聚：</p>
+<ol>
+<li>计算属性值</li>
+<li>根据属性值执行相应的动作，如改变对象的某一属性。（需要在onAnimationUpdate中传入执行动画的对象）<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ValueAnimator animation = ValueAnimator.ofFloat<span class="params">(<span class="number">0</span>f, <span class="number">1</span>f)</span>;</span><br><span class="line">animation.setDuration<span class="params">(<span class="number">1000</span>)</span>;</span><br><span class="line">animation.addUpdateListener<span class="params">(new AnimatorUpdateListener<span class="params">()</span> &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onAnimationUpdate<span class="params">(ValueAnimator animation)</span> &#123;</span><br><span class="line">        Log.i<span class="params">(<span class="string">"update"</span>, <span class="params">(<span class="params">(Float)</span> animation.getAnimatedValue<span class="params">()</span>)</span>.toString<span class="params">()</span>)</span>;</span><br><span class="line">        //这个函数中会传入ValueAnimator对象做为参数，通过这个ValueAnimator对象的getAnimatedValue<span class="params">()</span>函数可以得到当前的属性值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span>;</span><br><span class="line">animation.setInterpolator<span class="params">(new CycleInterpolator<span class="params">(<span class="number">3</span>)</span>)</span>;</span><br><span class="line">animation.start<span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="ObjectAnimator">ObjectAnimator</h3><p>ObjectAnimator继承自ValueAnimator，要指定一个对象及该对象的一个属性,例如</p>
+<ul>
+<li>常用方法有ofFloat()，ofInt()，ofObject()，ofArgb()，ofPropertyValuesHolder()。</li>
+<li><p>属性动画可用的属性<br>答案是：任何一切带有set开头的方法属性名字。可能我们常用的有：</p>
+<ul>
+<li>平移 translationX，translationY, X，Y。 </li>
+<li>缩放 scaleX，scaleY。 </li>
+<li>旋转 rotationX， rotationY。</li>
+<li>透明度 alpha。</li>
+</ul>
+<p>也就是说我们所有控件都有以上setTranslationX(),setScaleX(),setRotationX(),setAlpha()等方法。<br>我们不仅限于这几个属性，就拿TextView控件来说，只要是TextView有的属性都可以用来实现动画效果，比如 字体大小：“textColor”，字体颜色“textSize”等。</p>
+<blockquote>
+<p>限制：对象应该有一个setter函数：set<propertyname>（驼峰命名法）及要有相应属性的getter方法：get<propertyname><br>且应返回值类型应与相应的setter方法的参数类型一致。<br>如果上述条件不满足，则不能用ObjectAnimator，应用ValueAnimator代替。</propertyname></propertyname></p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofFloat<span class="params">(imageView, 'alpha', <span class="number">1.0</span>f, <span class="number">0.3</span>f, <span class="number">1.0</span>F)</span>;</span><br><span class="line">       animator.setDuration<span class="params">(<span class="number">2000</span>)</span>;<span class="comment">//动画时间</span></span><br><span class="line">       animator.setInterpolator<span class="params">(new BounceInterpolator<span class="params">()</span>)</span>;<span class="comment">//动画插值</span></span><br><span class="line">       animator.setRepeatCount<span class="params">(-<span class="number">1</span>)</span>;<span class="comment">//设置动画重复次数</span></span><br><span class="line">       animator.setRepeatMode<span class="params">(ValueAnimator.RESTART)</span>;<span class="comment">//动画重复模式</span></span><br><span class="line">       animator.setStartDelay<span class="params">(<span class="number">1000</span>)</span>;<span class="comment">//动画延时执行</span></span><br><span class="line">       animator.start<span class="params">()</span>;<span class="comment">//启动动画</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>根据应用动画的对象或属性的不同，可能需要在onAnimationUpdate函数中调用invalidate()函数刷新视图。</p>
+</blockquote>
+<h3 id="组合动画">组合动画</h3><ul>
+<li><p><strong>组合动画1–AnimatorSet的使用</strong><br>这个类提供了一个play()方法，如果我们向这个方法中传入一个Animator对象(ValueAnimator或ObjectAnimator)将会返回一个AnimatorSet.Builder的实例，AnimatorSet.Builder中包括以下四个方法：</p>
+<ul>
+<li>after(Animator anim) 将现有动画插入到传入的动画之后执行</li>
+<li>after(long delay) 将现有动画延迟指定毫秒后执行</li>
+<li>before(Animator anim) 将现有动画插入到传入的动画之前执行</li>
+<li>with(Animator anim) 将现有动画和传入的动画同时执行</li>
+</ul>
+<blockquote>
+<p>Android 除了提供play(),还有playSequentially(),playTogether() 可供使用，可传入一个或者多个动画对象（，隔开），或者动画集合</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ObjectAnimator animator = ObjectAnimator.ofInt(container, <span class="string">"backgroundColor"</span>, <span class="number">0xFFFF0000</span>, <span class="number">0xFFFF00FF</span>);</span><br><span class="line">             ObjectAnimator animator1 = ObjectAnimator.ofFloat(view, <span class="string">"translationX"</span>, <span class="number">0.0f</span>, <span class="number">200.0f</span>, <span class="number">0f</span>);</span><br><span class="line">             ObjectAnimator animator2 = ObjectAnimator.ofFloat(view, <span class="string">"scaleX"</span>, <span class="number">1.0f</span>, <span class="number">2.0f</span>);</span><br><span class="line">             ObjectAnimator animator3 = ObjectAnimator.ofFloat(view, <span class="string">"rotationX"</span>, <span class="number">0.0f</span>, <span class="number">90.0f</span>, <span class="number">0.0F</span>);</span><br><span class="line">             ObjectAnimator animator4 = ObjectAnimator.ofFloat(view, <span class="string">"alpha"</span>, <span class="number">1.0f</span>, <span class="number">0.2f</span>, <span class="number">1.0F</span>);</span><br><span class="line"></span><br><span class="line">             <span class="comment">//组合动画方式1</span></span><br><span class="line">             AnimatorSet <span class="built_in">set</span> = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">            ((<span class="built_in">set</span>.play(animator).with(animator1).before(animator2)).before(animator3)).after(animator4);</span><br><span class="line">             <span class="built_in">set</span>.setDuration(<span class="number">5000</span>);</span><br><span class="line">             <span class="built_in">set</span>.start();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><strong>组合动画2–PropertyValuesHolder的使用</strong><br>使用方法ObjectAnimator.ofPropertyValuesHolder(Object target,PropertyValuesHolder… values)；第一个参数是动画的目标对象，之后的参数是PropertyValuesHolder类的实例，可以有多个这样的实例。代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PropertyValuesHolder valuesHolder = PropertyValuesHolder.ofFloat(<span class="string">"translationX"</span>, <span class="number">0.0f</span>, <span class="number">300.0f</span>);</span><br><span class="line">                PropertyValuesHolder valuesHolder1 = PropertyValuesHolder.ofFloat(<span class="string">"scaleX"</span>, <span class="number">1.0f</span>, <span class="number">1.5f</span>);</span><br><span class="line">                PropertyValuesHolder valuesHolder2 = PropertyValuesHolder.ofFloat(<span class="string">"rotationX"</span>, <span class="number">0.0f</span>, <span class="number">90.0f</span>, <span class="number">0.0F</span>);</span><br><span class="line">                PropertyValuesHolder valuesHolder3 = PropertyValuesHolder.ofFloat(<span class="string">"alpha"</span>, <span class="number">1.0f</span>, <span class="number">0.3f</span>, <span class="number">1.0F</span>);</span><br><span class="line"></span><br><span class="line">                ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(view, valuesHolder, valuesHolder1, valuesHolder2, valuesHolder3);</span><br><span class="line">                objectAnimator.setDuration(<span class="number">2000</span>).start();</span><br><span class="line">                <span class="comment">//类似于AnimatorSet.playTogether(Animator... items);</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>组合动画3-ViewPropertyAnimator（多属性动画）</strong></p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ViewPropertyAnimator animator5 = imageView.animate<span class="params">()</span>;</span><br><span class="line">animator5.translationX<span class="params">(<span class="number">200</span>)</span>.scaleX<span class="params">(<span class="number">2</span>)</span>.setDuration<span class="params">(<span class="number">2000</span>)</span>.start<span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意：使用ViewPropertyAnimator类需要API&gt;=12</p>
+</blockquote>
+<h3 id="动画监听">动画监听</h3><ul>
+<li>animator.addListener(new Animator.AnimatorListener(){});//监听动画开始，结束，取消，重复（四种都包括）</li>
+<li>animator.addListener(new  AnimatorListenerAdapter(){});<br>推荐，可代替AnimatorListener，需要监听动画开始，结束，取消，重复那种就直接实现那种方法就行<br>其实AnimatorListenerAdapter的源码只是一个实现了AnimatorListener接口的抽象类而已</li>
+<li>animator.addUpdateListener(new  ValueAnimator.AnimatorUpdateListener(){});<br>更加精确的方法来时刻监听当前动画的执行情况，可以读取到动画的每个更新值了<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">animator.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">            @<span class="function">Override</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span>(<span class="params">ValueAnimator animation</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">float</span> <span class="keyword">value</span> = (<span class="keyword">float</span>) animation.getAnimatedValue();</span><br><span class="line">                <span class="comment">//可以根据自己的需要来获取动画更新值。</span></span><br><span class="line">                Log.e(<span class="string">'TAG'</span>, <span class="string">'the animation value is '</span> + <span class="keyword">value</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Keyframes">Keyframes</h3><p>keyFrame是一个 时间/值 对，通过它可以定义一个在特定时间的特定状态，即关键帧，而且在两个keyFrame之间可以定义不同的Interpolator，就好像多个动画的拼接，第一个动画的结束点是第二个动画的开始点。KeyFrame是抽象类，要通过ofInt(),ofFloat(),ofObject()获得适当的KeyFrame，然后通过PropertyValuesHolder.ofKeyframe获得PropertyValuesHolder对象，如以下例子：<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">*   动画效果：btn对象的width属性值使其：</span><br><span class="line">*   开始时 Width=400</span><br><span class="line">*   动画开始1/4时 Width=200</span><br><span class="line">*   动画开始1/2时 Width=400</span><br><span class="line">*   动画开始3/4时 Width=100</span><br><span class="line">*   动画结束时 Width=500</span><br><span class="line">*/</span></span><br><span class="line">Keyframe kf0 = Keyframe.ofInt<span class="params">(<span class="number">0</span>, <span class="number">400</span>)</span>;</span><br><span class="line">Keyframe kf1 = Keyframe.ofInt<span class="params">(<span class="number">0.25</span>f, <span class="number">200</span>)</span>;</span><br><span class="line">Keyframe kf2 = Keyframe.ofInt<span class="params">(<span class="number">0.5</span>f, <span class="number">400</span>)</span>;</span><br><span class="line">Keyframe kf4 = Keyframe.ofInt<span class="params">(<span class="number">0.75</span>f, <span class="number">100</span>)</span>;</span><br><span class="line">Keyframe kf3 = Keyframe.ofInt<span class="params">(<span class="number">1</span>f, <span class="number">500</span>)</span>;</span><br><span class="line">PropertyValuesHolder pvhRotation = PropertyValuesHolder.ofKeyframe<span class="params">(<span class="string">"width"</span>, kf0, kf1, kf2, kf4, kf3)</span>;</span><br><span class="line">ObjectAnimator rotationAnim = ObjectAnimator.ofPropertyValuesHolder<span class="params">(btn2, pvhRotation)</span>;</span><br><span class="line">rotationAnim.setDuration<span class="params">(<span class="number">2000</span>)</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Property_Animation在XML中使用">Property Animation在XML中使用</h3><ul>
+<li><p>xml文件放在res/animator/中</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">set</span> <span class="attribute">xmlns:android</span>=<span class="value">'http://schemas.android.com/apk/res/android'</span></span><br><span class="line">    <span class="attribute">android:duration</span>=<span class="value">'2000'</span></span><br><span class="line">    <span class="attribute">android:ordering</span>=<span class="value">'sequentially'</span>&gt;</span><span class="comment">&lt;!--动画执行顺序 sequentially：顺序执行；together：同时执行。 --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">objectAnimator</span></span><br><span class="line">        <span class="attribute">android:propertyName</span>=<span class="value">'translationX'</span></span><br><span class="line">        <span class="attribute">android:valueFrom</span>=<span class="value">'0'</span></span><br><span class="line">        <span class="attribute">android:valueTo</span>=<span class="value">'200'</span></span><br><span class="line">        <span class="attribute">android:valueType</span>=<span class="value">'floatType'</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">set</span> <span class="attribute">android:ordering</span>=<span class="value">'together'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">objectAnimator</span></span><br><span class="line">            <span class="attribute">android:propertyName</span>=<span class="value">'scaleX'</span></span><br><span class="line">            <span class="attribute">android:valueFrom</span>=<span class="value">'1'</span></span><br><span class="line">            <span class="attribute">android:valueTo</span>=<span class="value">'2'</span></span><br><span class="line">            <span class="attribute">android:valueType</span>=<span class="value">'floatType'</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">objectAnimator</span></span><br><span class="line">            <span class="attribute">android:propertyName</span>=<span class="value">'rotationX'</span></span><br><span class="line">            <span class="attribute">android:valueFrom</span>=<span class="value">'0'</span></span><br><span class="line">            <span class="attribute">android:valueTo</span>=<span class="value">'90'</span></span><br><span class="line">            <span class="attribute">android:valueType</span>=<span class="value">'floatType'</span> /&gt;</span><span class="comment">&lt;!--动画值的类型--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="title">set</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过AnimatorInflater.loadAnimator方法加载xml动画返回一个Animator的对象，然后调用setTarget方法给动画设置对象调用哪个start启动动画即可完成xml动画效果</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Animator animator = AnimatorInflater.loadAnimator(context, R.animator.anim_file)<span class="comment">;</span></span><br><span class="line">animator.setTarget(view)<span class="comment">;  </span></span><br><span class="line">animator.start()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="花花绿绿的ProgressBar_杨俊构">花花绿绿的ProgressBar  杨俊构</h2><p><em>参考<a href="http://www.runoob.com/w3cnote/android-tutorial-progressbar.html" target="_blank" rel="external">Android 基础入门教程</a></em></p>
+<ul>
+<li>ProgressBar(进度条)是Android基本UI控件，ProgressBar的应用场景很多，比如 用户登录时，后台在发请求，以及等待服务器返回信息，这个时候会用到进度条；或者当在进行一些比较 耗时的操作，需要等待一段较长的时间，这个时候如果没有提示，用户可能会以为程序Carsh或者手机死机 了，这样会大大降低用户体验，所以在需要进行耗时操作的地方，添加上进度条，让用户知道当前的程序 在执行中，也可以直观的告诉用户当前任务的执行进度等！使用进度条可以给我带来这样的便利！ </li>
+</ul>
+<ul>
+<li>ProgressBar<a href="http://androiddoc.qiniudn.com/reference/android/widget/ProgressBar.html" target="_blank" rel="external">官方API文档</a>，ProgressBar继承与View类，直接子类有AbsSeekBar和ContentLoadingProgressBar， 其中AbsSeekBar的子类有SeekBar和RatingBar，可见这二者也是基于ProgressBar实现的</li>
+</ul>
+<p><img src="http://7xohph.com1.z0.glb.clouddn.com/46760225.jpg" alt=""></p>
+<ul>
+<li>常用属性详解：</li>
+</ul>
+<blockquote>
+<ul>
+<li>android:max：进度条的最大值</li>
+<li>android:progress：进度条已完成进度值</li>
+<li>android:progressDrawable：设置轨道对应的Drawable对象</li>
+<li>android:indeterminate：如果设置成true，则进度条不精确显示进度</li>
+<li>android:indeterminateDrawable：设置不显示进度的进度条的Drawable对象</li>
+<li>android:indeterminateDuration：设置不精确显示进度的持续时间</li>
+<li>android:secondaryProgress：二级进度条，类似于视频播放的一条是当前播放进度，一条是缓冲进度，前者通过progress属性进行设置！</li>
+</ul>
+</blockquote>
+<ul>
+<li>对应的再Java中我们可调用下述方法：</li>
+</ul>
+<blockquote>
+<ul>
+<li>getMax()：返回这个进度条的范围的上限</li>
+<li>getProgress()：返回进度</li>
+<li>getSecondaryProgress()：返回次要进度</li>
+<li>incrementProgressBy(int diff)：指定增加的进度</li>
+<li>isIndeterminate()：指示进度条是否在不确定模式下</li>
+<li>setIndeterminate(boolean indeterminate)：设置不确定模式下</li>
+</ul>
+</blockquote>
+<ul>
+<li>系统默认进度条使用实例：</li>
+</ul>
+<p><img src="http://7xohph.com1.z0.glb.clouddn.com/34906854.jpg" alt=""></p>
+<h3 id="耀眼的IOS的ProgressBar_，参看开源中国IOS代码库">耀眼的IOS的ProgressBar ，参看<a href="http://www.oschina.net/ios/codingList/373/ios-progress" target="_blank" rel="external">开源中国IOS代码库</a></h3><h3 id="圆形进度条">圆形进度条</h3><blockquote>
+<p>网上一个简单的自定义圆形进度条！代码还是比较简单，容易理解，有兴趣可以看看，或者进行相关扩展~</p>
+</blockquote>
+<p><img src="http://7xohph.com1.z0.glb.clouddn.com/17272953.jpg" alt=""></p>
+<ul>
+<li>实现代码：自定义View类：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by Jay on 2015/8/5 0005.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CirclePgBar</span> <span class="keyword">extends</span> <span class="title">View</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Paint mBackPaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mFrontPaint;</span><br><span class="line">    <span class="keyword">private</span> Paint mTextPaint;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mStrokeWidth = <span class="number">50</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mHalfStrokeWidth = mStrokeWidth / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span> mRadius = <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">private</span> RectF mRect;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mProgress = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//目标值，想改多少就改多少</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mTargetProgress = <span class="number">90</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mMax = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mWidth;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mHeight;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CirclePgBar</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CirclePgBar</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CirclePgBar</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//完成相关参数初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        mBackPaint = <span class="keyword">new</span> Paint();</span><br><span class="line">        mBackPaint.setColor(Color.WHITE);</span><br><span class="line">        mBackPaint.setAntiAlias(<span class="keyword">true</span>);</span><br><span class="line">        mBackPaint.setStyle(Paint.Style.STROKE);</span><br><span class="line">        mBackPaint.setStrokeWidth(mStrokeWidth);</span><br><span class="line"></span><br><span class="line">        mFrontPaint = <span class="keyword">new</span> Paint();</span><br><span class="line">        mFrontPaint.setColor(Color.GREEN);</span><br><span class="line">        mFrontPaint.setAntiAlias(<span class="keyword">true</span>);</span><br><span class="line">        mFrontPaint.setStyle(Paint.Style.STROKE);</span><br><span class="line">        mFrontPaint.setStrokeWidth(mStrokeWidth);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        mTextPaint = <span class="keyword">new</span> Paint();</span><br><span class="line">        mTextPaint.setColor(Color.GREEN);</span><br><span class="line">        mTextPaint.setAntiAlias(<span class="keyword">true</span>);</span><br><span class="line">        mTextPaint.setTextSize(<span class="number">80</span>);</span><br><span class="line">        mTextPaint.setTextAlign(Paint.Align.CENTER);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//重写测量大小的onMeasure方法和绘制View的核心方法onDraw()</span></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onMeasure(widthMeasureSpec, heightMeasureSpec);</span><br><span class="line">        mWidth = getRealSize(widthMeasureSpec);</span><br><span class="line">        mHeight = getRealSize(heightMeasureSpec);</span><br><span class="line">        setMeasuredDimension(mWidth, mHeight);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</span><br><span class="line">        initRect();</span><br><span class="line">        <span class="keyword">float</span> angle = mProgress / (<span class="keyword">float</span>) mMax * <span class="number">360</span>;</span><br><span class="line">        canvas.drawCircle(mWidth / <span class="number">2</span>, mHeight / <span class="number">2</span>, mRadius, mBackPaint);</span><br><span class="line">        canvas.drawArc(mRect, -<span class="number">90</span>, angle, <span class="keyword">false</span>, mFrontPaint);</span><br><span class="line">        canvas.drawText(mProgress + <span class="string">"%"</span>, mWidth / <span class="number">2</span> + mHalfStrokeWidth, mHeight / <span class="number">2</span> + mHalfStrokeWidth, mTextPaint);</span><br><span class="line">        <span class="keyword">if</span> (mProgress &lt; mTargetProgress) &#123;</span><br><span class="line">            mProgress += <span class="number">1</span>;</span><br><span class="line">            invalidate();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getRealSize</span><span class="params">(<span class="keyword">int</span> measureSpec)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> mode = MeasureSpec.getMode(measureSpec);</span><br><span class="line">        <span class="keyword">int</span> size = MeasureSpec.getSize(measureSpec);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mode == MeasureSpec.AT_MOST || mode == MeasureSpec.UNSPECIFIED) &#123;</span><br><span class="line">            <span class="comment">//自己计算</span></span><br><span class="line">            result = (<span class="keyword">int</span>) (mRadius * <span class="number">2</span> + mStrokeWidth);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result = size;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initRect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mRect == <span class="keyword">null</span>) &#123;</span><br><span class="line">            mRect = <span class="keyword">new</span> RectF();</span><br><span class="line">            <span class="keyword">int</span> viewSize = (<span class="keyword">int</span>) (mRadius * <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">int</span> left = (mWidth - viewSize) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> top = (mHeight - viewSize) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> right = left + viewSize;</span><br><span class="line">            <span class="keyword">int</span> bottom = top + viewSize;</span><br><span class="line">            mRect.set(left, top, right, bottom);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后在布局文件中加上：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">com.jay.progressbardemo.CirclePgBar</span></span><br><span class="line">     <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">  <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="总结">总结</h3><ul>
+<li>progressbar是Android中的常用控件，在实际开发中和动画结合较多，好的进度条可以缓解使用者焦躁的情趣，自定义圆形进度条可以自行完善，然后用到实际开发中！</li>
+</ul>
+<h2 id="layer-list实现阴影效果——xpleemoon">layer-list实现阴影效果——xpleemoon</h2><ul>
+<li><p>为控件实现阴影效果，可以有多种方式：</p>
+<ul>
+<li>多个drawable层叠在一起（不好的实现是多个View层叠达到多个drawable的层叠效果，相对好的实现是在同一个View钟实现多个drawable的层叠）</li>
+<li>自定义view</li>
+<li>Material Design中设置Z轴的方式</li>
+</ul>
+</li>
+<li><p>本文的思路是多个drawable叠在一起，但是不额外使用View，通过layer-list可以将多个item按照顺序层叠在一起显示。首先来看效果图：</p>
+</li>
+</ul>
+<p><img src="https://github.com/xpleemoon/layer-list-shadow-demo/blob/master/gif/LayerShadow.gif?raw=true" alt="LayerShadow"></p>
+<ul>
+<li><p>第一个和第二个控件是用来展示layer-list实现阴影效果的基本款，而第三个控件是综合上述两个控件效果，再集合selector实现的。</p>
+</li>
+<li><p>默认状态：</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">layer-list</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 阴影：左偏移2dp，上偏移4dp --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span></span><br><span class="line">        <span class="attribute">android:left</span>=<span class="value">"2dp"</span></span><br><span class="line">        <span class="attribute">android:top</span>=<span class="value">"4dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">shape</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">solid</span> <span class="attribute">android:color</span>=<span class="value">"@android:color/holo_blue_dark"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">corners</span> <span class="attribute">android:radius</span>=<span class="value">"10dp"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">item</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 前景：：底偏移4dp，右偏移2dp --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span></span><br><span class="line">        <span class="attribute">android:bottom</span>=<span class="value">"4dp"</span></span><br><span class="line">        <span class="attribute">android:right</span>=<span class="value">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">shape</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">solid</span> <span class="attribute">android:color</span>=<span class="value">"@android:color/holo_blue_bright"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">corners</span> <span class="attribute">android:radius</span>=<span class="value">"10dp"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>点击状态：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">layer-list</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 为了达到点击的真实感，将原来默认状态的前景色设置为阴影，并将前景设为无透明--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span></span><br><span class="line">        <span class="attribute">android:left</span>=<span class="value">"2dp"</span></span><br><span class="line">        <span class="attribute">android:top</span>=<span class="value">"4dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">shape</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">solid</span> <span class="attribute">android:color</span>=<span class="value">"@android:color/holo_blue_bright"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">corners</span> <span class="attribute">android:radius</span>=<span class="value">"10dp"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span></span><br><span class="line">        <span class="attribute">android:bottom</span>=<span class="value">"4dp"</span></span><br><span class="line">        <span class="attribute">android:right</span>=<span class="value">"2dp"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">shape</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">corners</span> <span class="attribute">android:radius</span>=<span class="value">"10dp"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">shape</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">layer-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>layer-list的item可以通过以下属性设置偏移量：</p>
+<ul>
+<li>android:top 顶部的偏移量</li>
+<li>android:bottom 底部的偏移量</li>
+<li>android:left 左边的偏移量</li>
+<li>android:right 右边的偏移量</li>
+</ul>
+</blockquote>
+<ul>
+<li>selector，使用上述layer-list：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">selector</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/layer_list_btn_pressed"</span> <span class="attribute">android:state_pressed</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/layer_list_btn_pressed"</span> <span class="attribute">android:state_selected</span>=<span class="value">"true"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">item</span> <span class="attribute">android:drawable</span>=<span class="value">"@drawable/layer_list_btn"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">selector</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后再来看下，布局代码：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"vertical"</span></span><br><span class="line">    <span class="attribute">android:paddingBottom</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingLeft</span>=<span class="value">"@dimen/activity_horizontal_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingRight</span>=<span class="value">"@dimen/activity_horizontal_margin"</span></span><br><span class="line">    <span class="attribute">android:paddingTop</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">    <span class="attribute">tools:context</span>=<span class="value">".MainActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"100dp"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"50dp"</span></span><br><span class="line">        <span class="attribute">android:background</span>=<span class="value">"@drawable/layer_list_btn"</span></span><br><span class="line">        <span class="attribute">android:clickable</span>=<span class="value">"true"</span></span><br><span class="line">        <span class="attribute">android:gravity</span>=<span class="value">"center"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"默认状态"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"100dp"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"50dp"</span></span><br><span class="line">        <span class="attribute">android:layout_marginTop</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">        <span class="attribute">android:background</span>=<span class="value">"@drawable/layer_list_btn_pressed"</span></span><br><span class="line">        <span class="attribute">android:clickable</span>=<span class="value">"true"</span></span><br><span class="line">        <span class="attribute">android:gravity</span>=<span class="value">"center"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"点击状态"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="title">TextView</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"100dp"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"50dp"</span></span><br><span class="line">        <span class="attribute">android:layout_marginTop</span>=<span class="value">"@dimen/activity_vertical_margin"</span></span><br><span class="line">        <span class="attribute">android:background</span>=<span class="value">"@drawable/selector_btn"</span></span><br><span class="line">        <span class="attribute">android:clickable</span>=<span class="value">"true"</span></span><br><span class="line">        <span class="attribute">android:gravity</span>=<span class="value">"center"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"点我"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>第一个和第二个TextView分别引用了对应的layer-list（默认和点击）作为背景，第三个引用了selector</p>
+</li>
+<li><p><strong><em><a href="https://github.com/xpleemoon/layer-list-shadow-demo" target="_blank" rel="external">源码地址</a></em></strong></p>
+</li>
+</ul>
+<h2 id="零部署的云服务_-_王胜">零部署的云服务 - 王胜</h2><blockquote>
+<p>本周的分享主题是动画，但之前7月份我已经分享过一次，<a href="http://51offer.github.io/2015/07/07/%E7%A7%BB%E5%8A%A8%E7%BB%84%E5%91%A8%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB-%E7%9F%A5%E5%85%B6%E6%89%80%E4%BB%A5%E7%84%B6/" target="_blank" rel="external">知其所以然</a> 。再加上前面几位已经对android的动画介绍的很完整了，所以我就分享另一个话题『云平台下的零部署开发网站』。</p>
+</blockquote>
+<h3 id="牵扯的技能">牵扯的技能</h3><ul>
+<li>Git</li>
+<li>任何一门后端开发语言</li>
+</ul>
+<h3 id="搭建步骤">搭建步骤</h3><p><a href="https://tryappservice.azure.com/zh-cn" target="_blank" rel="external">AZURE</a> -&gt; 点击 <a href="https://azure.microsoft.com/zh-cn/services/app-service/web/" target="_blank" rel="external">Web应用模块</a> -&gt; 选择语言，点击<strong>创建Web应用</strong> -&gt; 选择模板，点击<strong>创建</strong>，至此，应用以创建，点击页面上站点url，就能看到新创建的Web站点了。</p>
+<h3 id="修改代码，Git提交自动完成部署">修改代码，Git提交自动完成部署</h3><p>复制创建成功页面『使用 Git 克隆或推送』里的Git地址，将初始化源码clone到本地，然后编辑代码，修改功能。完成后，直接push到远程，云平台自动完成部署。再看看网页是不是已经发生变化了。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Victors-MPB:azure wangsheng$ git clone https://$4f743e5d-0ee0-4-231-b9ee:WSc8Szx4Rf30apo3Ky7hpw6mXAadAZYvn1zagCvMaboj7mHFyJ2vzuYn9i12@4f743e5d-0ee0-4-231-b9ee.scm.azurewebsites.net/4f743e5d-0ee0-4-231-b9ee.git&#10;Cloning into &#39;4f743e5d-0ee0-4-231-b9ee&#39;...&#10;remote: Counting objects: 4, done.&#10;remote: Compressing objects: 100% (3/3), done.&#10;remote: Total 4 (delta 0), reused 0 (delta 0)&#10;Unpacking objects: 100% (4/4), done.&#10;Checking connectivity... done.&#10;Victors-MPB:azure wangsheng$ ls&#10;4f743e5d-0ee0-4-231-b9ee&#10;Victors-MPB:azure wangsheng$ cd 4f743e5d-0ee0-4-231-b9ee/&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ git br&#10;* master&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ git log&#10;commit cf6edda65210ef7254f9bc545c778489f123620e&#10;Author: windowsazure &#60;windowsazure&#62;&#10;Date:   Fri Nov 20 03:53:00 2015 +0000&#10;&#10;    Initial Commit&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ ls&#10;favicon.ico&#9;index.php&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ vi index.php&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ git st&#10;On branch master&#10;Your branch is up-to-date with &#39;origin/master&#39;.&#10;Changes not staged for commit:&#10;  (use &#34;git add &#60;file&#62;...&#34; to update what will be committed)&#10;  (use &#34;git checkout -- &#60;file&#62;...&#34; to discard changes in working directory)&#10;&#10;&#9;modified:   index.php&#10;&#10;no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ git diff&#10;diff --git a/index.php b/index.php&#10;&#60;?php&#10;index 712f825..50a17e7 100644&#10;--- a/index.php&#10;+++ b/index.php&#10;@@ -1,3 +1,4 @@&#10; &#60;?php&#10;     echo &#34;Hello World&#34;&#10;-?&#62;&#10;\ No newline at end of file&#10;+    echo &#34;hack it.&#34;&#10;+?&#62;&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ git ci -am &#34;add one line.&#34;&#10;[master 6c5551f] add one line.&#10; 1 file changed, 2 insertions(+), 1 deletion(-)&#10;Victors-MPB:4f743e5d-0ee0-4-231-b9ee wangsheng$ git push origin master&#10;Counting objects: 3, done.&#10;Delta compression using up to 4 threads.&#10;Compressing objects: 100% (3/3), done.&#10;Writing objects: 100% (3/3), 324 bytes | 0 bytes/s, done.&#10;Total 3 (delta 0), reused 0 (delta 0)&#10;remote: Updating branch &#39;master&#39;.&#10;remote: Updating submodules.&#10;remote: Preparing deployment for commit id &#39;6c5551f090&#39;.&#10;remote: Generating deployment script.&#10;remote: Generating deployment script for Web Site&#10;remote: Generated deployment script files&#10;remote: Running deployment command...&#10;remote: Handling Basic Web Site deployment.&#10;remote: Finished successfully.&#10;remote: Deployment successful.</span><br></pre></td></tr></table></figure>
+<p>对，后端开发可以如此简单快乐地开发部署！！！</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/25/周精益分享-后端开发/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          周精益分享 - 后端开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/13/周精益分享-Swift入门专题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周精益分享 - Swift入门专题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="周精益分享-动画" data-title="周精益分享 - 动画" data-url="http://yoursite.com/2015/11/18/周精益分享-动画/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

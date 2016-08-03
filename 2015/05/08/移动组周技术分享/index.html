@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>《无主题》 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2015.05.08构建基于Jenkins+github的持续集成环境 - 张超耀
+什么是持续集成
+
+持续集成的流程
+
+CI服务器控制持续集成的整个过程，轮询代码库更新，根据预定义的脚本进行项目的构建，服务器将任务分配到Slave端
+
+
+为什么采用Jenkins+github的持续集成环境
+
+Jenins是现在非常流行的持续集成CI服务器，Jenkins易于安装，不需要数据库的支持，直接通过Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《无主题》">
+<meta property="og:url" content="http://yoursite.com/2015/05/08/移动组周技术分享/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="2015.05.08构建基于Jenkins+github的持续集成环境 - 张超耀
+什么是持续集成
+
+持续集成的流程
+
+CI服务器控制持续集成的整个过程，轮询代码库更新，根据预定义的脚本进行项目的构建，服务器将任务分配到Slave端
+
+
+为什么采用Jenkins+github的持续集成环境
+
+Jenins是现在非常流行的持续集成CI服务器，Jenkins易于安装，不需要数据库的支持，直接通过Web">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《无主题》">
+<meta name="twitter:description" content="2015.05.08构建基于Jenkins+github的持续集成环境 - 张超耀
+什么是持续集成
+
+持续集成的流程
+
+CI服务器控制持续集成的整个过程，轮询代码库更新，根据预定义的脚本进行项目的构建，服务器将任务分配到Slave端
+
+
+为什么采用Jenkins+github的持续集成环境
+
+Jenins是现在非常流行的持续集成CI服务器，Jenkins易于安装，不需要数据库的支持，直接通过Web">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动组周技术分享" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/08/移动组周技术分享/" class="article-date">
+  	<time datetime="2015-05-08T23:04:29.000Z" itemprop="datePublished">2015-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《无主题》
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2015-05-08">2015.05.08</h2><h4 id="构建基于Jenkins+github的持续集成环境_-_张超耀">构建基于Jenkins+github的持续集成环境 - 张超耀</h4><ul>
+<li><p><a href="http://baike.baidu.com/link?url=a4772W-jg95m7RgEE3NL6wkELXlGUgCmJesUg2anLEmzzgbKHhwpodx2fvSDEOG2eFWB3NYfzeymvjn7Q4Ayxa#4" target="_blank" rel="external">什么是持续集成</a></p>
+</li>
+<li><p>持续集成的流程</p>
+<ul>
+<li>CI服务器控制持续集成的整个过程，轮询代码库更新，根据预定义的脚本进行项目的构建，服务器将任务分配到Slave端</li>
+</ul>
+</li>
+<li><p>为什么采用Jenkins+github的持续集成环境</p>
+<ul>
+<li>Jenins是现在非常流行的持续集成CI服务器，Jenkins易于安装，不需要数据库的支持，直接通过Web界面进行配置，而且集成了Email的通知机制，具有丰富的插件。</li>
+<li>对于版本控制，SVN &amp; Git，Jenkins都有提供插件支持</li>
+</ul>
+</li>
+<li><p><a href="http://jenkins-ci.org" target="_blank" rel="external">Jenkins安装</a></p>
+<ul>
+<li>安装成功，键入<a href="http://localhost:8080进入" target="_blank" rel="external">http://localhost:8080进入</a></li>
+</ul>
+</li>
+<li>丰富插件安装</li>
+<li>环境配置</li>
+<li>构建项目</li>
+<li>配置构建方法</li>
+</ul>
+<h4 id="Axure工具分享_-_吴明"><a href="http://www.webppd.com/thread-8161-1-1.html" target="_blank" rel="external">Axure工具分享</a> - 吴明</h4><ul>
+<li>Axure是什么？<ul>
+<li>Axure界面原型设计工具，无须懂得控制人机交互的事件处理，设计好后可以导出html格式跨平台开发使用。</li>
+</ul>
+</li>
+<li><p>原型工具对比：</p>
+<ul>
+<li>使用网页制作软件创建：可以直接操作HTML文件，更接近真实。缺点，你需要掌握HTML语法，掌握复杂的网页制作工具。操作复杂性高。</li>
+<li>visio，可以快速的创建单个页面，也可以用创建，缺点：最多只能做到页面直接的关联，按钮，链接上无法创建事件，死板。无法作出接近真实的效果，无法生成HTML文件。</li>
+<li>Axure，Axure可以以所见即所得的方式创建界面原型，优点：操作者无须懂的HTML语法，无须懂得控制人机交互的事件处理，例如页面跳转时、命令按钮按下时系统响应 程序脚本（JAVA Script）。因此很适合业务需求分析人员使用。生成的页面，串接在一起，可以进行操作，模拟场景，让系统“动”起来。</li>
+</ul>
+</li>
+<li><p>怎么下载安装Axure</p>
+<ul>
+<li>网上下载axure RP7.0安装(如果有需要的的话下中文包)</li>
+</ul>
+</li>
+<li>Axure的使用：<ul>
+<li><a href="http://www.luexiao.com/group/blog/111495" target="_blank" rel="external">axure工具界面介绍</a></li>
+<li>组件</li>
+<li><a href="http://jingyan.baidu.com/article/bea41d437015bcb4c51be615.html" target="_blank" rel="external">导入第三方组件</a>,下载IOS8的组件，android的组件</li>
+<li>常用组件使用:<ul>
+<li><a href="http://blog.163.com/summer_wang/blog/static/21470903220132675433741/" target="_blank" rel="external">Dynamic Pane(动态面板)</a>:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ARC_Welder_-王胜"><a href="https://chrome.google.com/webstore/detail/arc-welder/emfinbmielocnlhgmfkkmkngdoccbadn" target="_blank" rel="external">ARC Welder</a> -王胜</h4><ul>
+<li>ARC Welder是一个Chrome插件，可以直接运行原生的安卓APP应用程序</li>
+<li>该插件需要Chrome的版本在40.x以上</li>
+<li>目前还处于不断完善阶段，所以一些特大游戏类型的App可能跑不起来</li>
+</ul>
+<h4 id="前端开发上手工具介绍_-_曾铭">前端开发上手工具介绍 - 曾铭</h4><ul>
+<li>静态网页开发</li>
+<li>SublimeText<ul>
+<li>Editor vs IDE : 丢掉 Dreamweaver, 根据情况选择 SublimeText &amp; WebStorm</li>
+<li><a href="http://lucida.me/blog/sublime-text-complete-guide/" target="_blank" rel="external">Sublime Text 全程指南</a></li>
+<li><a href="http://www.zhihu.com/question/19976788" target="_blank" rel="external">实用技巧</a></li>
+<li><a href="http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/keyboard_shortcuts_osx.html" target="_blank" rel="external">快捷键</a></li>
+<li><a href="http://stackoverflow.com/questions/21190392/how-to-change-default-code-snippets-in-sublime-text-3" target="_blank" rel="external">查看默认支持语言配置文件</a></li>
+<li>插件<ul>
+<li>emmet: <a href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="external">cheat-sheet</a></li>
+<li>BracketHighlighter: 块高亮</li>
+<li>HTML5: snippet</li>
+<li>SublimeLinter: 校验</li>
+<li>livestyle: live edit css</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>powder<ul>
+<li><a href="http://pow.cx/" target="_blank" rel="external">pow</a> 37signals 出品，质量保证！</li>
+<li>零配置构建网站服务器，管理极轻量，支持局域网访问</li>
+<li><code>powder link web-name</code> 一条命令搞定</li>
+<li>适合静态网页开发，（或 ruby 动态网页开发）</li>
+</ul>
+</li>
+<li>Demo</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/15/移动组周技术分享/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          《无主题》
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/24/移动组周技术分享/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《无主题》</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动组周技术分享" data-title="《无主题》" data-url="http://yoursite.com/2015/05/08/移动组周技术分享/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第41期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python 脚本入门知识@(归纳中)
+
+如何写脚本
+和写程序一模一样….
+所以我讲一些周边知识…
+
+
+virtualenv
+python沙盒
+某些依赖2.7 有些依赖3.0
+创建 ： virtualenv test_env
+创建纯净的环境 ：virtualenv test_env —no-site-packages
+启动 ：source ./bin/activate
+关闭 ：deactivate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第41期">
+<meta property="og:url" content="http://yoursite.com/2015/12/25/移动周分享-第41期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Python 脚本入门知识@(归纳中)
+
+如何写脚本
+和写程序一模一样….
+所以我讲一些周边知识…
+
+
+virtualenv
+python沙盒
+某些依赖2.7 有些依赖3.0
+创建 ： virtualenv test_env
+创建纯净的环境 ：virtualenv test_env —no-site-packages
+启动 ：source ./bin/activate
+关闭 ：deactivate">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第41期">
+<meta name="twitter:description" content="Python 脚本入门知识@(归纳中)
+
+如何写脚本
+和写程序一模一样….
+所以我讲一些周边知识…
+
+
+virtualenv
+python沙盒
+某些依赖2.7 有些依赖3.0
+创建 ： virtualenv test_env
+创建纯净的环境 ：virtualenv test_env —no-site-packages
+启动 ：source ./bin/activate
+关闭 ：deactivate">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第41期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/25/移动周分享-第41期/" class="article-date">
+  	<time datetime="2015-12-25T10:30:00.000Z" itemprop="datePublished">2015-12-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第41期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/phython/">phython</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python_脚本入门知识">Python 脚本入门知识</h1><p>@(归纳中)</p>
+<ul>
+<li>如何写脚本<ul>
+<li>和写程序一模一样….</li>
+<li>所以我讲一些周边知识…</li>
+</ul>
+</li>
+<li>virtualenv<ul>
+<li>python沙盒</li>
+<li>某些依赖2.7 有些依赖3.0</li>
+<li>创建 ： virtualenv test_env</li>
+<li>创建纯净的环境 ：virtualenv test_env —no-site-packages</li>
+<li>启动 ：source ./bin/activate</li>
+<li>关闭 ：deactivate</li>
+</ul>
+</li>
+<li>setuptools<ul>
+<li>打包</li>
+<li>setup.py</li>
+<li>python setup.py bdist_egg</li>
+</ul>
+</li>
+<li>pip<ul>
+<li>安装打包工具</li>
+</ul>
+</li>
+<li>PyPI<ul>
+<li>the Python Package Index : Python Package Index</li>
+</ul>
+</li>
+</ul>
+<h2 id="The_Bash_Shell_变量(初级)">The Bash Shell 变量(初级)</h2><p>@(Share)[shell]</p>
+<p>[TOC]</p>
+<h3 id="前言">前言</h3><p><code>我有一个想法，希望通过学习脚本来实现blog的自动创建及发布等操作，</code><br><code>zm推荐shell，pj建议js</code></p>
+<h4 id="常见bash熟悉的特性：">常见bash熟悉的特性：</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#$：(关于本 shell 的 PID)</span></span><br><span class="line"><span class="comment">#钱字号本身也是个变量喔！这个咚咚代表的是『目前这个 Shell 的线程代号』，亦即是所谓的 PID (Process ID)。 更多的程序观念，我们会在第四篇的时候提及。想要知道我们的 shell 的 PID ，就可以用：『 echo $$ 』即可！出现的数字就是你的 PID 号码。</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$$</span></span><br><span class="line"><span class="number">10337</span></span><br><span class="line"><span class="comment">#?：(关于上个运行命令的回传值)</span></span><br><span class="line"><span class="comment">#问号也是一个特殊的变量？在 bash 里面这个变量可重要的很！ 这个变量是：『上一个运行的命令所回传的值』， 上面这句话的重点是『上一个命令』与『回传值』两个地方。当我们运行某些命令时， 这些命令都会回传一个运行后的代码。一般来说，如果成功的运行该命令， 则会回传一个 0 值，如果运行过程发生错误，就会回传『错误代码』才对！一般就是以非为 0 的数值来取代。</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo<span class="variable">$</span><br><span class="line"></span>-<span class="symbol">bash:</span> echo<span class="variable">$:</span> command <span class="keyword">not</span> found</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$?</span></span><br><span class="line"><span class="number">127</span>	<span class="comment"># &lt;== error</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$?</span></span><br><span class="line"><span class="number">0</span>	<span class="comment"># &lt;== success</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令编修能力 (history)：</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$HISTSIZE</span></span><br><span class="line"><span class="number">500</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令与文件补全功能： <blockquote>
+<p> [tab] 按键的好处</p>
+<ul>
+<li>一下和两下的区别</li>
+<li>命令与文件路径</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">XcodeYangdeMBP2:~ xcodeyang$ x</span><br><span class="line">xar              xcodebuild       xgettext5.<span class="number">18</span><span class="class">.pl</span>  xmllint          xslt-config</span><br><span class="line">xargs            xcodeproj        xip              xpath            xsltproc</span><br><span class="line">xattr            xcrun            xjc              xpath5.<span class="number">16</span>        xsubpp</span><br><span class="line">xattr-<span class="number">2.6</span>        xed              xml2-config      xpath5.<span class="number">18</span>        xsubpp5.<span class="number">16</span></span><br><span class="line">xattr-<span class="number">2.7</span>        xgettext<span class="class">.pl</span>      xml2man          xsanctl          xsubpp5.<span class="number">18</span></span><br><span class="line">xcode-select     xgettext5.<span class="number">16</span><span class="class">.pl</span>  xmlcatalog       xscertadmin      xxd</span><br><span class="line">XcodeYangdeMBP2:~ xcodeyang$ x</span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令别名配置功能： (alias)</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span><span class="keyword">alias</span> xcodedaniel=<span class="string">'ls'</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>cd <span class="constant">Documents</span>/</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:Documents</span> xcodeyang<span class="variable">$ </span>xcodedaniel</span><br><span class="line"><span class="constant">GItHub</span>		<span class="constant">Welcome</span>.itmz	bloodsugar	技术部分享</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:Documents</span> xcodeyang<span class="variable">$ </span>ls</span><br><span class="line"><span class="constant">GItHub</span>		<span class="constant">Welcome</span>.itmz	bloodsugar	技术部分享</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:Documents</span> xcodeyang$</span><br></pre></td></tr></table></figure>
+<p>可变性与方便性</p>
+<blockquote>
+<p>举例：MAIL 变量不同用户设置<br>yzp -&gt;  /var/spool/mail/yzp<br>cy   -&gt;  /var/spool/mail/cy<br>pj   -&gt;  /var/spool/mail/pj<br>zm  -&gt;  /var/spool/mail/zm</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$USER</span></span><br><span class="line">xcodeyang</span><br></pre></td></tr></table></figure>
+<h3 id="变量的取用与配置：echo,_变量配置守则,_unset">变量的取用与配置：echo, 变量配置守则, unset</h3><p><code>变量的取用就如同上面的范例，利用 echo 就能够读出，只是需要在变量名称前面加上 $ ， 或者是以 ${变量} 的方式来取用都可以</code></p>
+<h4 id="变量的配置守则">变量的配置守则</h4><ul>
+<li><p>变量与变量内容以一个等号『=』来连结，如下所示： </p>
+<blockquote>
+<p>『yname=zhipingyang』</p>
+</blockquote>
+</li>
+<li><p>等号两边不能直接接空格符，如下所示为错误： </p>
+<blockquote>
+<p>『myname = zhipingyang』或『myname=zhiping yang』</p>
+</blockquote>
+</li>
+<li><p>变量名称只能是英文字母与数字，但是开头字符不能是数字，如下为错误： </p>
+<blockquote>
+<p>『2myname=zhipingyang』</p>
+</blockquote>
+</li>
+<li><p>变量内容若有空格符可使用双引号『”』或单引号『’』将变量内容结合起来，但<br>双引号内的特殊字符如 $ 等，可以保有原本的特性，如下所示：</p>
+<blockquote>
+<p>『var=”lang is $LANG”』则『echo $var』可得『lang is en_US』</p>
+</blockquote>
+</li>
+<li><p>单引号内的特殊字符则仅为一般字符 (纯文本)，如下所示：</p>
+<blockquote>
+<p>『var=’lang is $LANG’』则『echo $var』可得『lang is $LANG』</p>
+</blockquote>
+</li>
+<li><p>可用跳脱字符『 \ 』将特殊符号(如 [Enter], $, \, 空格符, ‘等)变成一般字符；</p>
+<blockquote>
+<p>XcodeYangdeMBP2:~ xcodeyang$ myname=hello\ world</p>
+</blockquote>
+</li>
+<li><p>在一串命令中，还需要藉由其他的命令提供的信息，可以使用反单引号『<code>命令</code>』或 『$(命令)』。特别注意，那个 ` 是键盘上方的数字键 1 左边那个按键，而不是单引号！ 例如想要取得核心版本的配置：</p>
+<blockquote>
+<p>『version=$(uname -r)』再『echo $version』可得『2.6.18-128.el5』</p>
+</blockquote>
+</li>
+<li><p>若该变量为扩增变量内容时，则可用 “$变量名称” 或 ${变量} 累加内容，如下所示：</p>
+<blockquote>
+<p>『PATH=”$PATH”:/home/bin』</p>
+</blockquote>
+</li>
+<li><p>若该变量需要在其他子程序运行，则需要以 export 来使变量变成环境变量：</p>
+<blockquote>
+<p>『export PATH』</p>
+</blockquote>
+</li>
+<li><p>取消变量的方法为使用 unset ：『unset 变量名称』例如取消 myname 的配置：</p>
+<blockquote>
+<p>『unset myname』</p>
+</blockquote>
+</li>
+</ul>
+<p>设置myname变量</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 例子一</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$myname</span></span><br><span class="line"><span class="comment">#				&lt;==这里并没有任何数据～因为这个变量尚未被配置！是空的！</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>myname = <span class="constant">Daniel</span></span><br><span class="line">-<span class="symbol">bash:</span> <span class="symbol">myname:</span> command <span class="keyword">not</span> found</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>myname=<span class="constant">Daniel</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$myname</span></span><br><span class="line"><span class="constant">Daniel</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>bash</span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>echo <span class="variable">$myname</span></span><br><span class="line"><span class="comment">#				&lt;==这里并没有任何数据～因为这个变量是自定义变量（局部变量）</span></span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>exit</span><br><span class="line">exit</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>export myname	<span class="comment">#修改成环境变量(全局变量)</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>bash</span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>echo <span class="variable">$myname</span></span><br><span class="line"><span class="constant">Daniel</span></span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>unset myname</span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>echo <span class="variable">$myname</span></span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>exit</span><br><span class="line">exit</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$myname</span></span><br><span class="line"><span class="constant">Daniel</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span></span><br><span class="line"><span class="comment"># 例子二</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$HOME</span></span><br><span class="line">/<span class="constant">Users</span>/xcodeyang</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span><span class="constant">HOME</span>=<span class="variable">$HOME</span>/home/bin</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:xcodeyang</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$HOME</span></span><br><span class="line">/<span class="constant">Users</span>/xcodeyang/home/bin</span><br><span class="line"><span class="comment"># myname=$mynameyes  </span></span><br><span class="line"><span class="comment"># 如果没有双引号，name 的内容是 $nameyes 这个变量！</span></span><br><span class="line"><span class="comment"># tip：配错使用control+c取消继续，下面是正确的</span></span><br><span class="line"><span class="comment"># myname="$myname"yes</span></span><br><span class="line"><span class="comment"># myname=$&#123;myname&#125;yes	&lt;==以此例较佳！</span></span><br><span class="line"><span class="comment"># 猜测一下，那个是对/错</span></span><br><span class="line">myname=<span class="string">"myname's name"</span> </span><br><span class="line">myname=<span class="string">'myname'</span>s name<span class="string">' </span><br><span class="line">myname=myname\'s\ name</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$name</span></span><br><span class="line">yzp</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>name=<span class="string">"$name is daniel"</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$name</span></span><br><span class="line">yzp is daniel</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>name=<span class="string">'$name is daniel'</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$name</span></span><br><span class="line"><span class="variable">$name</span> is daniel</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang$</span><br></pre></td></tr></table></figure>
+<h3 id="环境变量的功能：_env_与常见环境变量说明,_set,_export">环境变量的功能： env 与常见环境变量说明, set, export</h3><p><code>bash 可不只有环境变量喔，还有一些与 bash 操作接口有关的变量，以及用户自己定义的变量存在的. set 除了环境变量之外， 还会将其他在 bash 内的变量通通显示出来哩！信息太多</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">XcodeYangdeMBP2:</span>~ xcodeyang$ newname=daniel</span><br><span class="line"><span class="string">XcodeYangdeMBP2:</span>~ xcodeyang$ name=xcodeyang</span><br><span class="line"><span class="string">XcodeYangdeMBP2:</span>~ xcodeyang$ export name</span><br><span class="line"><span class="string">XcodeYangdeMBP2:</span>~ xcodeyang$ env #&lt;==看这里</span><br><span class="line">TERM_PROGRAM=Apple_Terminal #使用&#123;大写的字母&#125;来配置的变量一般为系统内定需要的变量</span><br><span class="line">SHELL=<span class="regexp">/bin/</span>bash</span><br><span class="line">TERM=xterm-<span class="number">256</span>color</span><br><span class="line">TMPDIR=<span class="regexp">/var/</span>folders<span class="regexp">/1c/</span>hw10tv792_92fz5cswgmzqmc0000gn<span class="regexp">/T/</span></span><br><span class="line">Apple_PubSub_Socket_Render=<span class="regexp">/private/</span>tmp<span class="regexp">/com.apple.launchd.Zcy3n3bgYL/</span>Render</span><br><span class="line">TERM_PROGRAM_VERSION=<span class="number">361.1</span></span><br><span class="line">TERM_SESSION_ID=A7EE49FA-<span class="number">7</span>C48-<span class="number">49</span>A4-BA91-<span class="number">8144</span>FACFB146</span><br><span class="line">name=xcodeyang	#&lt;==看这里</span><br><span class="line">USER=xcodeyang</span><br><span class="line">SSH_AUTH_SOCK=<span class="regexp">/private/</span>tmp<span class="regexp">/com.apple.launchd.Sey2Soe8fS/</span>Listeners</span><br><span class="line">__CF_USER_TEXT_ENCODING=<span class="number">0x1F5</span>:<span class="number">0x0</span>:<span class="number">0x0</span></span><br><span class="line">PATH=<span class="regexp">/Users/</span>xcodeyang<span class="regexp">/.rbenv/</span><span class="string">shims:</span><span class="regexp">/Users/</span>xcodeyang<span class="regexp">/.rbenv/</span><span class="string">bin:</span><span class="regexp">/usr/</span>local<span class="regexp">/bin:/</span>usr<span class="regexp">/bin:/</span><span class="string">bin:</span><span class="regexp">/usr/</span><span class="string">sbin:</span><span class="regexp">/sbin:/</span>usr<span class="regexp">/local/</span>git/bin</span><br><span class="line">PWD=<span class="regexp">/Users/</span>xcodeyang</span><br><span class="line">XPC_FLAGS=<span class="number">0x0</span></span><br><span class="line">RBENV_SHELL=bash</span><br><span class="line">XPC_SERVICE_NAME=<span class="number">0</span></span><br><span class="line">SHLVL=<span class="number">1</span></span><br><span class="line">HOME=<span class="regexp">/Users/</span>xcodeyang</span><br><span class="line">LOGNAME=xcodeyang</span><br><span class="line">LC_CTYPE=UTF-<span class="number">8</span></span><br><span class="line">_=<span class="regexp">/usr/</span>bin/env</span><br><span class="line"><span class="string">XcodeYangdeMBP2:</span>~ xcodeyang$</span><br></pre></td></tr></table></figure>
+<h3 id="变量的有效范围">变量的有效范围</h3><p>环境变量=全局变量<br>自定义变量=局部变量    </p>
+<blockquote>
+<p>为什么环境变量的数据可以被子程序所引用呢？这是因为内存配置的关系！理论上是这样的：</p>
+<ul>
+<li>当启动一个 shell，操作系统会分配一记忆区块给 shell 使用，此内存内之变量可让子程序取用</li>
+<li>若在父程序利用 export 功能，可以让自定义变量的内容写到上述的记忆区块当中(环境变量)；</li>
+<li>当加载另一个 shell 时 (亦即启动子程序，而离开原本的父程序了)，子 shell 可以将父 shell 的环境变量所在的记忆区块导入自己的环境变量区块当中。</li>
+</ul>
+</blockquote>
+<h3 id="变量键盘读取、数组与宣告：_read,_declare,_array">变量键盘读取、数组与宣告： read, declare, array</h3><blockquote>
+<p>我们上面提到的变量配置功能，都是由命令列直接配置的，那么，可不可以让用户能够经由键盘输入？ 什么意思呢？是否记得某些程序运行的过程当中，会等待使用者输入 “yes/no” 之类的信息啊？</p>
+<h4 id="read">read</h4></blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$name</span></span><br><span class="line">zhipingyang</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>read name</span><br><span class="line">%^<span class="variable">$$</span>uhda asuh_uha!@<span class="comment">#~	#关键是没有之前那样的语法格式限制</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$name</span></span><br><span class="line">%^<span class="variable">$$</span>uhda asuh_uha!@<span class="comment">#~</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span></span><br><span class="line"><span class="comment">#-p  ：后面可以接提示字符！</span></span><br><span class="line"><span class="comment">#-t  ：后面可以接等待的『秒数！』这个比较有趣～不会一直等待使用者啦！</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>read -p <span class="string">"Please keyin your age: "</span> -t <span class="number">30</span> agenum</span><br><span class="line"><span class="constant">Please</span> keyin your <span class="symbol">age:</span> <span class="number">33</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$agenum</span></span><br><span class="line"><span class="number">33</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang$</span><br></pre></td></tr></table></figure>
+<h4 id="declare_/_typeset">declare / typeset</h4><blockquote>
+<p>declare 或 typeset 是一样的功能，就是在『宣告变量的类型』</p>
+<p>-a  ：将后面名为 variable 的变量定义成为数组 (array) 类型<br>-i  ：将后面名为 variable 的变量定义成为整数数字 (integer) 类型<br>-x  ：用法与 export 一样，就是将后面的 variable 变成环境变量；<br>-r  ：将变量配置成为 readonly 类型，该变量不可被更改内容，也不能 unset</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#示例1：</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>sum=<span class="number">10</span>+<span class="number">20</span>+<span class="number">30</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$sum</span></span><br><span class="line"><span class="number">10</span>+<span class="number">20</span>+<span class="number">30</span>		<span class="comment">#&lt;==默认类型是string</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>declare -i sum=<span class="number">10</span>+<span class="number">20</span>+<span class="number">30</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$sum</span></span><br><span class="line"><span class="number">60</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>declare -i sum=<span class="number">1</span>/<span class="number">3</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="variable">$sum</span></span><br><span class="line"><span class="number">0</span>	<span class="comment"># &lt;==bash 环境中的数值运算，默认最多仅能到达整数形态</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$</span><br><span class="line"></span><span class="comment">#示例2</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>declare -ixr sum=<span class="number">20</span>+<span class="number">30</span> <span class="comment">#只读整型环境变量</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>bash</span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>echo <span class="variable">$sum</span></span><br><span class="line"><span class="number">50</span>	<span class="comment">#子程序里依然可以访问</span></span><br><span class="line">bash-<span class="number">3.2</span><span class="variable">$ </span>exit</span><br><span class="line">exit</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>sum=<span class="number">30</span></span><br><span class="line">-<span class="symbol">bash:</span> <span class="symbol">sum:</span> readonly variable	<span class="comment">#不可修改</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span></span><br><span class="line"><span class="comment">#示例3: 建议直接以 $&#123;数组&#125; 的方式来读取</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>var[<span class="number">1</span>]=<span class="variable">$SHELL</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>var[<span class="number">2</span>]=<span class="variable">$sum</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>var[<span class="number">3</span>]=<span class="string">"helloworld"</span></span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang<span class="variable">$ </span>echo <span class="string">"$&#123;var[1]&#125;, $&#123;var[2]&#125;, $&#123;var[3]&#125;"</span></span><br><span class="line">/bin/bash, <span class="number">50</span>, helloworld</span><br><span class="line"><span class="constant">XcodeYangdeMBP2</span><span class="symbol">:~</span> xcodeyang$</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/06/Why-Git-Learn-It/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Why Git? Learn It!
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/18/移动周分享-第40期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第40期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第41期" data-title="移动周分享-第41期" data-url="http://yoursite.com/2015/12/25/移动周分享-第41期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

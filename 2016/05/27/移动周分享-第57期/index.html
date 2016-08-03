@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第57期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java Runtime 动态代理 - 王胜使用过Spring的朋友应该对AOP『Aspected Oriented Programe』很熟悉，那么是否被里面的前置增强、后置增强、环绕增强所震撼呢？有没有想过这背后的技术实现呢？其实JDK的动态代理就能实现。下面做一个简单的示例，来阐述如何在Runtime时，动态增强原有的方法。
+前提环境假设我们有一个Waiter类，里面含有两个方法:
+
+welc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第57期">
+<meta property="og:url" content="http://yoursite.com/2016/05/27/移动周分享-第57期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Java Runtime 动态代理 - 王胜使用过Spring的朋友应该对AOP『Aspected Oriented Programe』很熟悉，那么是否被里面的前置增强、后置增强、环绕增强所震撼呢？有没有想过这背后的技术实现呢？其实JDK的动态代理就能实现。下面做一个简单的示例，来阐述如何在Runtime时，动态增强原有的方法。
+前提环境假设我们有一个Waiter类，里面含有两个方法:
+
+welc">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第57期">
+<meta name="twitter:description" content="Java Runtime 动态代理 - 王胜使用过Spring的朋友应该对AOP『Aspected Oriented Programe』很熟悉，那么是否被里面的前置增强、后置增强、环绕增强所震撼呢？有没有想过这背后的技术实现呢？其实JDK的动态代理就能实现。下面做一个简单的示例，来阐述如何在Runtime时，动态增强原有的方法。
+前提环境假设我们有一个Waiter类，里面含有两个方法:
+
+welc">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第57期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/27/移动周分享-第57期/" class="article-date">
+  	<time datetime="2016-05-27T10:30:00.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第57期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Java_Runtime_动态代理_-_王胜">Java Runtime 动态代理 - 王胜</h2><p>使用过Spring的朋友应该对AOP『Aspected Oriented Programe』很熟悉，那么是否被里面的前置增强、后置增强、环绕增强所震撼呢？有没有想过这背后的技术实现呢？其实JDK的动态代理就能实现。下面做一个简单的示例，来阐述如何在Runtime时，动态增强原有的方法。</p>
+<h3 id="前提环境">前提环境</h3><p>假设我们有一个<code>Waiter</code>类，里面含有两个方法:</p>
+<ul>
+<li>welcome() // 欢迎光临!</li>
+<li>bye() // 谢谢惠顾!</li>
+</ul>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">欢迎光临!</span><br><span class="line">谢谢惠顾!</span><br><span class="line"></span><br><span class="line"><span class="keyword">Process</span> finished <span class="keyword">with</span> <span class="keyword">exit</span> code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>后来发现欢迎顾客和送别顾客不够礼貌，需要在欢迎之前说『您好！』，送别顾客后说『祝您愉快!』。但我们不希望动原有的业务类<code>Waiter</code>，那么如何实现呢？</p>
+<h3 id="实现步骤">实现步骤</h3><ol>
+<li><p>创建一个业务对象『必须要有接口』, 执行业务方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Receptor</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">welcome</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">bye</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Waiter</span> <span class="keyword">implements</span> <span class="title">Receptor</span></span>&#123;</span><br><span class="line">      <span class="annotation">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">welcome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"欢迎光临!"</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="annotation">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bye</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"谢谢惠顾!"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个具有公用代码的对象，并将这些公用代码声明成方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PoliteWords</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"您好!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHappy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"祝您愉快!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个可以使用公用代码对象的对象，这个对象可以对要被处理的目标对象实施方法拦截，执行公用代码对象中的方法。借助JDK提供的API『InvocationHandler』</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReceptorHandler</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 省略...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 重写invoke方法,从而达到增强目标对象的目的</span><br><span class="line">     *</span><br><span class="line">     * <span class="doctag">@param</span> proxy 增强后的对象</span><br><span class="line">     * <span class="doctag">@param</span> method 目标对象上正在被调用的方法</span><br><span class="line">     * <span class="doctag">@param</span> args 目标对象上正在被调用的方法所传递的参数</span><br><span class="line">     * <span class="doctag">@return</span> 目标对象正在被调用的方法执行的结果</span><br><span class="line">     * <span class="doctag">@throws</span> Throwable</span><br><span class="line">     */</span></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object result;</span><br><span class="line">        <span class="keyword">if</span> (method.getName().equals(<span class="string">"welcome"</span>)) &#123;<span class="comment">// welcome之前sayHello</span></span><br><span class="line">            interceptor.sayHello();</span><br><span class="line">            result = method.invoke(target, args);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.getName().equals(<span class="string">"bye"</span>)) &#123;<span class="comment">// bye之后sayHappy</span></span><br><span class="line">            result = method.invoke(target, args);</span><br><span class="line">            interceptor.sayHappy();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result = method.invoke(target, args);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个可以获取增强了功能之后对象的代理工厂，工厂的作用就是返回增强后的代理Proxy, 他的类型应该和目标对象的接口类型相同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReceptorProxyFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getProxy</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        ReceptorHandler handler = <span class="keyword">new</span> ReceptorHandler();</span><br><span class="line">        handler.setTarget(target);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), handler);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写测试类（可选）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestProxy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Waiter target = <span class="keyword">new</span> Waiter();</span><br><span class="line">        Receptor receptor = (Receptor) ReceptorProxyFactory.getProxy(target);</span><br><span class="line">        receptor.welcome();</span><br><span class="line">        receptor.bye();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>具体的示例源码，移步 <a href="https://github.com/wangsheng/helloJavaSE" target="_blank" rel="external">Github-helloJavaSE</a></p>
+<h3 id="执行结果">执行结果</h3><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">您好<span class="exclamation_mark">!</span></span><br><span class="line">欢迎光临<span class="exclamation_mark">!</span></span><br><span class="line">谢谢惠顾<span class="exclamation_mark">!</span></span><br><span class="line">祝您愉快<span class="exclamation_mark">!</span></span><br><span class="line"></span><br><span class="line"><span class="variable">Process</span> <span class="function_or_atom">finished</span> <span class="function_or_atom">with</span> <span class="function_or_atom">exit</span> <span class="function_or_atom">code</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意:</strong> JDK动态代理只能代理接口类型的对象，并且返回接口类型。如果要增强那些没有接口的对象，JDK动态代理不能实现，要依赖 <a href="https://github.com/cglib/cglib" target="_blank" rel="external">CGLIB</a> 技术。</p>
+<h2 id="Android转场动画">Android转场动画</h2><ul>
+<li><p>startActivity()</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	Intent intent = new Intent<span class="list">(<span class="keyword">MainActivity</span>.this,OtherActivity.class)</span><span class="comment">;</span></span><br><span class="line">startActivity<span class="list">(<span class="keyword">intent</span>)</span><span class="comment">;</span></span><br><span class="line">overridePendingTransition<span class="list">(<span class="keyword">R</span>.anim.push_up_in,R.anim.push_up_out)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ActivityCompat</p>
+</li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ActivityCompat.startActivity<span class="params">(<span class="params">(Activity)</span> context, intent, null)</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> static void startActivity(Activity activity, <span class="type">Intent</span> <span class="type">intent</span>, @Nullable Bundle options) &#123;</span><br><span class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">16</span>) &#123;</span><br><span class="line">        ActivityCompatJB.startActivity(activity, <span class="type">intent</span>, options);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        activity.startActivity(<span class="type">intent</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Android 4.1（API16)以下转场动画</li>
+</ul>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AIntent intent = new Intent<span class="list">(<span class="keyword">MainActivity</span>.this,OtherActivity.class)</span><span class="comment">;</span></span><br><span class="line">startActivity<span class="list">(<span class="keyword">intent</span>)</span><span class="comment">;</span></span><br><span class="line">overridePendingTransition<span class="list">(<span class="keyword">R</span>.anim.push_up_in,R.anim.push_up_out)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Android 4.1（API16）以上转场动画</p>
+<ul>
+<li><a href="https://developer.android.com/reference/android/app/ActivityOptions.html" target="_blank" rel="external">ActivityOptions</a><ul>
+<li>Android 4.1（API16）提供了一个新类ActivityOptions,用来实现Activity的切换动画。</li>
+</ul>
+</li>
+<li><p>ActivityOptions常用使用 </p>
+<ul>
+<li><p>makeClipRevealAnimation(View source, int startX, int startY, int width, int height)</p>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Added <span class="keyword">in</span> API level <span class="number">23</span></span><br><span class="line"><span class="string">``</span><span class="string">``</span> </span><br><span class="line">- makeCustomAnimation(Context context, <span class="keyword">int</span> enterResId, <span class="keyword">int</span> exitResId)</span><br></pre></td></tr></table></figure>
+<p>Added in API level 16</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- makeScaleUpAnimation(View source, <span class="built_in">int</span> startX, <span class="built_in">int</span> startY, <span class="built_in">int</span> <span class="variable">width</span>, <span class="built_in">int</span> <span class="variable">height</span>)</span><br></pre></td></tr></table></figure>
+<p>Added in API level 16</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="subst">-</span> makeSceneTransitionAnimation(Activity activity, <span class="built_in">Pair</span><span class="attribute">...</span><span class="subst">&lt;</span>View, <span class="built_in">String</span><span class="subst">&gt;</span> sharedElements)</span><br></pre></td></tr></table></figure>
+<p>Added in API level 21</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="function"><span class="title">makeSceneTransitionAnimation</span><span class="params">(Activity activity, View sharedElement, String sharedElementName)</span></span></span><br></pre></td></tr></table></figure>
+<p>Added in API level 21</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="function"><span class="title">makeTaskLaunchBehind</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>Added in API level 21</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- makeThumbnailScaleUpAnimation(View <span class="keyword">source</span>, Bitmap thumbnail, <span class="keyword">int</span> startX, <span class="keyword">int</span> startY)</span><br></pre></td></tr></table></figure>
+<p>Added in API level 16</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">-<span class="ruby"> <span class="constant">ActivityOptions</span>兼容包：<span class="constant">ActivityOptionsCompat</span></span><br><span class="line"></span>	-<span class="ruby"> 自定义动画<span class="symbol">:makeCustomAnimation</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>public static ActivityOptions makeCustomAnimation(Context context,</p>
+<pre><code><span class="keyword">int</span> enterResId, <span class="keyword">int</span> exitResId) {
+</code></pre><p>return makeCustomAnimation(context, enterResId, exitResId, null, null);</p>
+<pre><code>}
+</code></pre><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">		</span><br><span class="line">enterResId:开启的动画</span><br><span class="line">exitResId：退出的动画</span><br><span class="line">		</span><br><span class="line">-<span class="ruby"> makeThumbnailAspectScaleDownAnimation</span><br><span class="line"></span>-<span class="ruby"> makeClipRevealAnimation</span><br><span class="line"></span>		-<span class="ruby"> <span class="constant">Android</span> <span class="constant">API19</span>以上使用</span><br><span class="line"></span>-<span class="ruby"> makeScaleUpAnimation</span><br><span class="line"></span>		-<span class="ruby"> 放大动画，从指定view的指定位置开始放大 </span><br><span class="line"></span>-<span class="ruby"> makeSceneTransitionAnimation</span><br><span class="line"></span>		-<span class="ruby"> 共享view放大效果，仅支持<span class="constant">API</span>&gt;=<span class="number">21</span> </span><br><span class="line"></span>-<span class="ruby"> 底层实现动画：什么动画实现？</span></span><br></pre></td></tr></table></figure>
+<p>ActivityTransitionState</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
+<p>public void startExitOutTransition(Activity activity, Bundle options) {<br>  if (!activity.getWindow().hasFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)) {</p>
+<pre><code><span class="keyword">return</span>;
+</code></pre><p>  }<br>  ActivityOptions activityOptions = new ActivityOptions(options);<br>  mEnterTransitionCoordinator = null;<br>  //是否转场动画<br>  if (activityOptions.getAnimationType() == ActivityOptions.ANIM_SCENE_TRANSITION) {</p>
+<pre><code>int key = activityOptions.getExitCoordinatorKey<span class="params">()</span>;
+int index = mExitTransitionCoordinators.indexOfKey<span class="params">(key)</span>;
+<span class="keyword">if</span> <span class="params">(index &gt;= <span class="number">0</span>)</span> {
+    mCalledExitCoordinator = mExitTransitionCoordinators.valueAt<span class="params">(index)</span>.get<span class="params">()</span>;
+    mExitTransitionCoordinators.removeAt<span class="params">(index)</span>;
+    <span class="keyword">if</span> <span class="params">(mCalledExitCoordinator != null)</span> {
+        mExitingFrom = mCalledExitCoordinator.getAcceptedNames<span class="params">()</span>;
+        mExitingTo = mCalledExitCoordinator.getMappedNames<span class="params">()</span>;
+        mExitingToView = mCalledExitCoordinator.copyMappedViews<span class="params">()</span>;
+        mCalledExitCoordinator.startExit<span class="params">()</span>;
+    }
+}
+</code></pre><p>  }<br>}</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	-<span class="ruby"> <span class="constant">Transition</span>解析</span><br><span class="line"></span>		-<span class="ruby"> [<span class="constant">Android</span>最新动画框架完全解析（二）——<span class="constant">Transitions</span> <span class="constant">Framework</span>](<span class="symbol">http:</span>/<span class="regexp">/blog.csdn.net/l</span>664675249/article/details/<span class="number">50195847</span><span class="comment">#t0)</span></span><br><span class="line"></span>		-<span class="ruby"> [<span class="constant">Android</span>最新动画框架完全解析（一）—— <span class="constant">Animator</span>(<span class="constant">Property</span> <span class="constant">Animation</span>)](<span class="symbol">http:</span>/<span class="regexp">/blog.csdn.net/l</span>664675249/article/details/<span class="number">50204503</span>)</span><br><span class="line"></span>-<span class="ruby"> <span class="constant">FragmentTransaction</span>动画</span><br><span class="line"></span>	-<span class="ruby"> setCustomAnimations(int enter, int exit, int popEnter, int popExit)</span></span><br></pre></td></tr></table></figure>
+<p>Added in API level 13</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- setCustomAnimations(<span class="keyword">int</span> enter, <span class="keyword">int</span> <span class="built_in">exit</span>)</span><br></pre></td></tr></table></figure>
+<p>Added in API level 11</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- <span class="function"><span class="title">setTransition</span><span class="params">(int transit)</span></span></span><br></pre></td></tr></table></figure>
+<p>Added in API level 1<br>TRANSIT_NONE, TRANSIT_FRAGMENT_OPEN, or TRANSIT_FRAGMENT_CLOSE</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>底层源码:什么动画实现？</span><br></pre></td></tr></table></figure>
+<p>BackStackState</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
+<p>public void run() {<br>  if (FragmentManagerImpl.DEBUG) Log.v(TAG, “Run: “ + this);</p>
+<p>  if (mAddToBackStack) {</p>
+<pre><code><span class="keyword">if</span> (mIndex &lt; <span class="number">0</span>) {
+    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"addToBackStack() called after commit()"</span>);
+}
+</code></pre><p>  }</p>
+<p>  bumpBackStackNesting(1);</p>
+<p>  TransitionState state = null;<br>  SparseArray<fragment> firstOutFragments = null;<br>  SparseArray<fragment> lastInFragments = null;<br>  if (SUPPORTS_TRANSITIONS &amp;&amp; mManager.mCurState &gt;= Fragment.CREATED) {</fragment></fragment></p>
+<pre><code>firstOutFragments = new SparseArray<span class="variable">&lt;Fragment&gt;</span>();
+lastInFragments = new SparseArray<span class="variable">&lt;Fragment&gt;</span>();
+
+calculateFragments(firstOutFragments, lastInFragments);
+
+<span class="keyword">state</span> = beginTransition(firstOutFragments, lastInFragments, false);
+</code></pre><p>  }</p>
+<p>  int transitionStyle = state != null ? 0 : mTransitionStyle;<br>  int transition = state != null ? 0 : mTransition;<br>  Op op = mHead;<br>  while (op != null) {</p>
+<pre><code><span class="typename">int</span> enterAnim = state != <span class="literal">null</span> ? 0 : op.enterAnim;
+<span class="typename">int</span> exitAnim = state != <span class="literal">null</span> ? 0 : op.exitAnim;
+<span class="keyword">switch</span> (op.cmd) {
+    <span class="keyword">case</span> <span class="string">OP_ADD:</span> {
+        Fragment f = op.fragment;
+        f.mNextAnim = enterAnim;
+        mManager.addFragment(f, <span class="literal">false</span>);
+    } <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">OP_REPLACE:</span> {
+        Fragment f = op.fragment;
+        <span class="typename">int</span> containerId = f.mContainerId;
+        <span class="keyword">if</span> (mManager.mAdded != <span class="literal">null</span>) {
+            <span class="keyword">for</span> (<span class="typename">int</span> i = mManager.mAdded.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {
+                Fragment old = mManager.mAdded.get(i);
+                <span class="keyword">if</span> (FragmentManagerImpl.DEBUG) Log.v(TAG,
+                        <span class="string">"OP_REPLACE: adding="</span> + f + <span class="string">" old="</span> + old);
+                <span class="keyword">if</span> (old.mContainerId == containerId) {
+                    <span class="keyword">if</span> (old == f) {
+                        op.fragment = f = <span class="literal">null</span>;
+                    } <span class="keyword">else</span> {
+                        <span class="keyword">if</span> (op.removed == <span class="literal">null</span>) {
+                            op.removed = <span class="keyword">new</span> ArrayList&lt;Fragment&gt;();
+                        }
+                        op.removed.add(old);
+                        old.mNextAnim = exitAnim;
+                        <span class="keyword">if</span> (mAddToBackStack) {
+                            old.mBackStackNesting += <span class="number">1</span>;
+                            <span class="keyword">if</span> (FragmentManagerImpl.DEBUG) Log.v(TAG, <span class="string">"Bump nesting of "</span>
+                                    + old + <span class="string">" to "</span> + old.mBackStackNesting);
+                        }
+                        mManager.removeFragment(old, transition, transitionStyle);
+                    }
+                }
+            }
+        }
+        <span class="keyword">if</span> (f != <span class="literal">null</span>) {
+            f.mNextAnim = enterAnim;
+            mManager.addFragment(f, <span class="literal">false</span>);
+        }
+    } <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">OP_REMOVE:</span> {
+        Fragment f = op.fragment;
+        f.mNextAnim = exitAnim;
+        mManager.removeFragment(f, transition, transitionStyle);
+    } <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">OP_HIDE:</span> {
+        Fragment f = op.fragment;
+        f.mNextAnim = exitAnim;
+        mManager.hideFragment(f, transition, transitionStyle);
+    } <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">OP_SHOW:</span> {
+        Fragment f = op.fragment;
+        f.mNextAnim = enterAnim;
+        mManager.showFragment(f, transition, transitionStyle);
+    } <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">OP_DETACH:</span> {
+        Fragment f = op.fragment;
+        f.mNextAnim = exitAnim;
+        mManager.detachFragment(f, transition, transitionStyle);
+    } <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="string">OP_ATTACH:</span> {
+        Fragment f = op.fragment;
+        f.mNextAnim = enterAnim;
+        mManager.attachFragment(f, transition, transitionStyle);
+    } <span class="keyword">break</span>;
+<span class="label">    default:</span> {
+        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Unknown cmd: "</span> + op.cmd);
+    }
+}
+op = op.next;
+</code></pre><p>  }</p>
+<p>  mManager.moveToState(mManager.mCurState, transition, transitionStyle, true);</p>
+<p>  if (mAddToBackStack) {</p>
+<pre><code>mManager.addBackStackState(<span class="keyword">this</span>);
+</code></pre><p>  }<br>}<br>````</p>
+</li>
+<li><a href="http://www.jianshu.com/p/fd71d65f0ec6" target="_blank" rel="external">为什么不建议用FragmentTransaction动画</a></li>
+<li><a href="http://blog.csdn.net/guolin_blog/article/details/43536355" target="_blank" rel="external">Android动画</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/17/移动周分享-第58期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第58期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/20/移动周分享-第56期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第56期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第57期" data-title="移动周分享-第57期" data-url="http://yoursite.com/2016/05/27/移动周分享-第57期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

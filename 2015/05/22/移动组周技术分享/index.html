@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>《无主题》 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2015.05.22友盟自定义事件统计 - 王胜
+应用上线后发现注册转换率很低，如何办？
+注册流程繁琐？那么具体哪一步流失量最大？
+友盟提供了自定义事件埋点功能，需要在对应的点击事件发生时，调用onEvent方法进行埋点。
+友盟同时提供了事件转换率，可以创建漏斗，每个漏斗是一个操作路径，由一系列自定义事件组成，这样可以观察每一步具体的点击量，从而有了事件的转换率。
+
+Android像素转换与Bit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《无主题》">
+<meta property="og:url" content="http://yoursite.com/2015/05/22/移动组周技术分享/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="2015.05.22友盟自定义事件统计 - 王胜
+应用上线后发现注册转换率很低，如何办？
+注册流程繁琐？那么具体哪一步流失量最大？
+友盟提供了自定义事件埋点功能，需要在对应的点击事件发生时，调用onEvent方法进行埋点。
+友盟同时提供了事件转换率，可以创建漏斗，每个漏斗是一个操作路径，由一系列自定义事件组成，这样可以观察每一步具体的点击量，从而有了事件的转换率。
+
+Android像素转换与Bit">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《无主题》">
+<meta name="twitter:description" content="2015.05.22友盟自定义事件统计 - 王胜
+应用上线后发现注册转换率很低，如何办？
+注册流程繁琐？那么具体哪一步流失量最大？
+友盟提供了自定义事件埋点功能，需要在对应的点击事件发生时，调用onEvent方法进行埋点。
+友盟同时提供了事件转换率，可以创建漏斗，每个漏斗是一个操作路径，由一系列自定义事件组成，这样可以观察每一步具体的点击量，从而有了事件的转换率。
+
+Android像素转换与Bit">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动组周技术分享" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/22/移动组周技术分享/" class="article-date">
+  	<time datetime="2015-05-22T23:04:29.000Z" itemprop="datePublished">2015-05-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《无主题》
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2015-05-22">2015.05.22</h2><h4 id="友盟自定义事件统计_-_王胜"><a href="http://dev.umeng.com/analytics/android-doc/integration#3_1" target="_blank" rel="external">友盟自定义事件统计</a> - 王胜</h4><ul>
+<li>应用上线后发现注册转换率很低，如何办？</li>
+<li>注册流程繁琐？那么具体哪一步流失量最大？</li>
+<li>友盟提供了自定义事件埋点功能，需要在对应的点击事件发生时，调用onEvent方法进行埋点。</li>
+<li>友盟同时提供了事件转换率，可以创建漏斗，每个漏斗是一个操作路径，由一系列自定义事件组成，这样可以观察每一步具体的点击量，从而有了事件的转换率。</li>
+</ul>
+<h4 id="Android像素转换与Bitmap_Config_-_李仙鹏">Android像素转换与Bitmap Config - 李仙鹏</h4><ul>
+<li><p>屏幕显示单位</p>
+<ul>
+<li>屏幕的px与dp转换公式：px = dp * (dpi / 160)</li>
+<li>（dp：Density-independent pixel，独立密度像素；dpi：dots per inch）</li>
+</ul>
+<p>6种常见dpi:</p>
+<ul>
+<li>ldpi (low) ~120dpi<ul>
+<li>mdpi (medium) ~160dpi</li>
+<li>hdpi (high) ~240dpi</li>
+<li>xhdpi (extra-high) ~320dpi</li>
+<li>xxhdpi (extra-extra-high) ~480dpi</li>
+<li>xxxhdpi (extra-extra-extra-high) ~640dpi</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bitmap Config</p>
+<ul>
+<li>四种配置：ALPHA_8，RGB_565，ARGB_4444，ARGB_8888。其配置信息后面的数字相加表示图片在被编码为Bitmap后，原来图片的一个像素点所占的内存空间大小。以ARGB_8888为例，其一个像素点所占的内存空间为32个byte。</li>
+<li>Bitmap Config配置越高，图片显示越清晰，ARGB_8888为目前android的图片多默认编码方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="说说_LeanCloud_-_曾铭">说说 LeanCloud - 曾铭</h4><ul>
+<li>数据存储<ul>
+<li><a href="https://leancloud.cn/docs/start.html" target="_blank" rel="external">demo</a></li>
+<li>移动开发后端的革命 ；）</li>
+<li><a href="https://parse.com/" target="_blank" rel="external">parse.com</a></li>
+</ul>
+</li>
+<li>公司历史<ul>
+<li>陈士骏</li>
+<li>Youtube -&gt; Delicious -&gt; AVOS -&gt; mixbit.com -&gt; AVOSCloud -&gt; LeanCloud</li>
+<li>开放资源<ul>
+<li><a href="https://github.com/leancloud" target="_blank" rel="external">Github</a></li>
+<li><a href="http://open.leancloud.cn/" target="_blank" rel="external">牛 X 开放文档</a></li>
+</ul>
+</li>
+<li>Bigger 很重要</li>
+</ul>
+</li>
+</ul>
+<h4 id="Android_Studio分享_-_吴明">Android Studio分享 - 吴明</h4><ul>
+<li>android studio是google的亲儿子，肯定以后是必然形势。</li>
+<li>android studio总体运行速度比Eclipse快。</li>
+<li><p>android studio和Eclipse对比：</p>
+<ul>
+<li><p>比Eclipse漂亮</p>
+<pre><code>- <span class="keyword">android </span>studio可以设置开发代码的背景，而Eclipse只能用那一直到死用的开发背景，有时候想换换背景换换心情都不行。<span class="keyword">Android </span>Stuido自带的Darcula主题的炫酷黑界面都还可以。想换别的主题也可以自己下载导入的。
+</code></pre><ul>
+<li><p>比Eclipse速度快</p>
+<ul>
+<li>android studio的启动速度，响应速度，内存占用等等全面领先与Eclipse。</li>
+</ul>
+</li>
+<li><p>提示，补全更加智能，更加人性化。</p>
+<ul>
+<li>自动提示补全(有点开发ios的味道)，现在android studio可以把快捷键设置为Eclipse的快捷方式</li>
+</ul>
+</li>
+<li><p>整合了Gradle构建工具</p>
+<ul>
+<li>gradle是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。它使用一种基于Groovy的特定领域语言来声明项目设置，而不是传统的XML。gradle能够完成构建、测试、发布和其他诸如软件打包、生成注释文档等等功能</li>
+</ul>
+</li>
+<li><p>支持Google Cloud Platform</p>
+<ul>
+<li>Android Studio支持本地的Google Cloud Platform(谷歌的云平台)，就是说你可以运行服务器端的代码。</li>
+</ul>
+</li>
+<li><p>强大的UI编辑器</p>
+<ul>
+<li>Android Studio的编辑器非常的智能。比如新建一个控件，控件的width和height属性会自动的补全，不用每次都要手动的打上两行 android:layout_width和android:layout_height。还有定义颜色后会自动把颜色显示在旁边（这个对我超级好用）。等等还有其他很多小细节做的都非常不错，大大提高了编辑UI的效率。</li>
+</ul>
+</li>
+<li><p>更完善的插件系统</p>
+<ul>
+<li>Android Studio中可以像Apple store那样浏览所有的插件，直接搜索，下载和管理它.</li>
+</ul>
+</li>
+<li><p>完美的整合版本控制软件</p>
+<ul>
+<li>安装的时候就自带了如GitHub, CVN等等流行的版本控制工具</li>
+</ul>
+</li>
+<li><p>Android Studio是Google推出的</p>
+<ul>
+<li>Android Stuido是Google推出，专门为ANDROID“量身订做”的，Google的亲儿子。作为Android Developer大腿一定要抱紧。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="平时闲暇时间喜欢看的微信公众号分享_-_张超耀">平时闲暇时间喜欢看的微信公众号分享 - 张超耀</h4><ul>
+<li><p>CocoaChina</p>
+<ul>
+<li>微信号：cocoachinabbs</li>
+<li>功能介绍：CocoaChina苹果开发中文社区官方微信，提供教程资源、app推广营销、招聘、外包以及培训信息、各类沙龙交流活动以及更多开发者服务。</li>
+</ul>
+</li>
+<li><p>iOS开发，唐巧</p>
+<ul>
+<li>微信号：iosDevTips</li>
+<li>功能介绍：唐巧，Info编辑，《iOS开发进阶》作者，现在在猿题库创业。开发过有道云笔记和猿题库的iOS客户端。该账号主要分享唐巧的博客文章以及他整理的一些iOS开发技巧。</li>
+</ul>
+</li>
+<li><p>悟空的心灵花园</p>
+<ul>
+<li>微信号：wukong_000</li>
+<li>功能介绍：发现源自内心的喜悦！祝福你早日开启探索心灵和生命的旅程。</li>
+</ul>
+</li>
+<li><p>36氪</p>
+<ul>
+<li>微信号：wow36kr</li>
+<li>功能介绍：36氪（36Kr.com）是中国领先的科技新媒体，报道最新的互联网科技新闻以及最有潜力的互联网创业企业。</li>
+</ul>
+</li>
+</ul>
+<h4 id="iOS_物理引擎的简单运用_-_杨志平">iOS 物理引擎的简单运用 - 杨志平</h4><h5 id="iOS端的Demo">iOS端的<a href="https://github.com/ZhipingYang/UIKitDynamics" target="_blank" rel="external">Demo</a></h5><table>
+<thead>
+<tr>
+<th>UIKitDynamics</th>
+<th>作用及用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UIDynamicAnimator</td>
+<td>引擎载体</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZhipingYang/UIKitDynamics/blob/master/DynamicsDemo/GravityViewController.m" target="_blank" rel="external">UIGravityBehavior</a></td>
+<td>重力行为</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZhipingYang/UIKitDynamics/blob/master/DynamicsDemo/CollosionViewController.m" target="_blank" rel="external">UICollisionBehavior</a></td>
+<td>碰撞行为</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZhipingYang/UIKitDynamics/blob/master/DynamicsDemo/AttachmentViewController.m" target="_blank" rel="external">UIAttachmentBehavior</a></td>
+<td>链接行为（弹簧效果）</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZhipingYang/UIKitDynamics/blob/master/DynamicsDemo/SnapViewController.m" target="_blank" rel="external">UISnapBehavior</a></td>
+<td>吸附行为</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZhipingYang/UIKitDynamics/blob/master/DynamicsDemo/PushViewController.m" target="_blank" rel="external">UIPushBehavior</a></td>
+<td>受力行为</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/29/移动组周技术分享-游戏开发/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          游戏开发
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/15/移动组周技术分享/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《无主题》</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动组周技术分享" data-title="《无主题》" data-url="http://yoursite.com/2015/05/22/移动组周技术分享/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

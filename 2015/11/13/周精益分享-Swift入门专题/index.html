@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>周精益分享 - Swift入门专题 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Swift初见 — 张超耀宏12345678910// in objective-c, but in swift, #define can&apos;t be used any more  // use let keyword to define a macro, look up original document:  /*  Simple Macros  Where you typically used">
+<meta property="og:type" content="article">
+<meta property="og:title" content="周精益分享 - Swift入门专题">
+<meta property="og:url" content="http://yoursite.com/2015/11/13/周精益分享-Swift入门专题/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Swift初见 — 张超耀宏12345678910// in objective-c, but in swift, #define can&apos;t be used any more  // use let keyword to define a macro, look up original document:  /*  Simple Macros  Where you typically used">
+<meta property="og:image" content="http://yoursite.com/./Simulator Screen Shot Nov 12, 2015, 8.11.12 PM.png">
+<meta property="og:image" content="http://yoursite.com/./Simulator Screen Shot Nov 12, 2015, 8.16.30 PM.png">
+<meta property="og:image" content="http://yoursite.com/./1447343597718.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="周精益分享 - Swift入门专题">
+<meta name="twitter:description" content="Swift初见 — 张超耀宏12345678910// in objective-c, but in swift, #define can&apos;t be used any more  // use let keyword to define a macro, look up original document:  /*  Simple Macros  Where you typically used">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-周精益分享-Swift入门专题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/13/周精益分享-Swift入门专题/" class="article-date">
+  	<time datetime="2015-11-13T10:30:00.000Z" itemprop="datePublished">2015-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      周精益分享 - Swift入门专题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Swift初见_—_张超耀">Swift初见 — 张超耀</h2><h3 id="宏">宏</h3><figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in objective-c, but in swift, #define can't be used any more  </span></span><br><span class="line"><span class="comment">// use let keyword to define a macro, look up original document:  </span></span><br><span class="line">/*  </span><br><span class="line">Simple Macros  </span><br><span class="line">Where you typically used the #define directive <span class="keyword">to</span> define a primitive constant <span class="keyword">in</span> C <span class="keyword">and</span> Objective-C, <span class="keyword">in</span> Swift you <span class="keyword">use</span> a <span class="keyword">global</span> constant instead. For example, the constant definition #define FADE_ANIMATION_DURATION <span class="number">0.35</span> can be better expressed <span class="keyword">in</span> Swift <span class="keyword">with</span> <span class="keyword">let</span> FADE_ANIMATION_DURATION = <span class="number">0.35</span>. Because simple constant-like macros map directly <span class="keyword">to</span> Swift <span class="keyword">global</span> variables, the compiler automatically imports simple macros defined <span class="keyword">in</span> C <span class="keyword">and</span> Objective-C source files.  </span><br><span class="line">*/  </span><br><span class="line"><span class="comment">// in objective-c  </span></span><br><span class="line"><span class="comment">// #define kCommonAPI @"http://<span class="doctag"><span class="keyword">xxx</span></span><span class="doctag"><span class="keyword">xxx</span></span>x"  </span></span><br><span class="line"><span class="comment">// but in swift, no #define, just use let to define  </span></span><br><span class="line"><span class="keyword">let</span> kCommonAPI = <span class="string">"http://xxxxxxx"</span></span><br></pre></td></tr></table></figure>
+<h3 id="注释_&amp;_分号">注释 &amp; 分号</h3><ul>
+<li>在Swift中，注释跟C/OC语言中的注释很像，但最大的不同点就是在Swift中多行注释可以嵌套</li>
+</ul>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 这是单行注释  </span><br><span class="line">  </span><br><span class="line">/<span class="keyword">*</span> 这也是注释，但是多行注释   </span><br><span class="line">  /<span class="keyword">*</span>多行注释在swift中是可以嵌套的<span class="keyword">*</span>/  </span><br><span class="line">  /<span class="keyword">*</span>原官方指导教程上说嵌套多行注释可以快速、简单地把大的代码块分成多块来注释 <span class="keyword">*</span>/  </span><br><span class="line"><span class="keyword">*</span>/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>与其它开发语言不同的时，swift是不要求写分号的，当然如果想写，也是可以的。当你想把多个语句写到同一行时，这种情况下就一定要使用分号来隔开不同的语句了</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dog = <span class="string">"a gog"</span> <span class="comment">// 可以不添加分号  </span></span><br><span class="line"><span class="keyword">let</span> cat = <span class="string">"a cat"</span>; <span class="built_in">print</span>(cat)<span class="comment">// 除了最后一条语句可以不添加分号外，其它都需要添加分号来隔开  </span></span><br><span class="line"><span class="keyword">let</span> catTwo = <span class="string">"two cats"</span>; <span class="keyword">let</span> name = <span class="string">"Jobs"</span>; <span class="built_in">print</span>(<span class="string">"<span class="subst">\(name)</span> has <span class="subst">\(catTwos)</span>"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="类型转换">类型转换</h3><ul>
+<li>Swift不会像C、OC那样自动<strong>隐式转换</strong>类型，所以我们需要手动进行类型转换 </li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> twoThousand: UInt16 = <span class="number">2000</span>   </span><br><span class="line"><span class="comment">// one是UInt8类型  </span></span><br><span class="line"><span class="built_in">let</span> one: UInt8 = <span class="number">1</span>  </span><br><span class="line"><span class="comment">// twoThousand是UInt16类型，one是UInt8类型，如果要执行相加，那么就需要进行类型转换   </span></span><br><span class="line"><span class="comment">// 否则会报错的。  </span></span><br><span class="line"><span class="built_in">let</span> twoThousandAndOne = twoThousand + UInt16<span class="params">(one)</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">*</span><span class="built_in">*</span> 浮点值转换成整型时，会截尾<span class="built_in">*</span><span class="built_in">*</span></span><br></pre></td></tr></table></figure>
+<h3 id="类型别名(Typealias)">类型别名(Typealias)</h3><ul>
+<li>类型别名也就是给已经存在的类型起一个别名。定义类型别名是使用关键字typealias。 类型别名一般是为了让开发者更容易看出变量或者常量的类型或者是更好地归类某一个模块中需要使用到的类型，让开发者见名知意。</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面是给UInt16起一个别名，叫mySample  </span></span><br><span class="line"><span class="comment">// 然后就可以在其它地方使用这个mySample声明变量或者常量  </span></span><br><span class="line">typealias mySample = UInt16  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// 由于前面已经定义了类型别名，那么这里使用AudioSample也相当于使用UInt16  </span></span><br><span class="line">所以mySample<span class="class">.min</span> = UInt16<span class="class">.min</span>,也就是<span class="number">0</span> </span><br><span class="line"><span class="tag">var</span> maxAmplitudeFound = mySample.min</span><br></pre></td></tr></table></figure>
+<h3 id="“?”_和_“!”">“?” 和 “!”</h3><ul>
+<li>Swift语言使用var定义变量，但和别的语言不同，Swift里不会自动给变量赋初始值， 也就是说变量不会有默认值，所以要求使用变量之前必须要对其初始化<br>。如果在使用变量之前不进行初始化就会报错.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stringValue : <span class="type">String</span>?</span><br><span class="line">stringValue = <span class="literal">nil</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"<span class="subst">\(stringValue)</span>"</span>)</span><br><span class="line"><span class="keyword">let</span> hashValue = stringValue?.hashValue</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这就是optional, strValue自动得到默认值：nil</span></span><br><span class="line"><span class="comment">// 这个nil跟Objective-C中的nil不同，不是指针，而是表示值不存在。</span></span><br><span class="line"><span class="keyword">var</span> strValue: <span class="type">String</span>?</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断optional是否有值</span></span><br><span class="line"><span class="keyword">if</span> (strValue != <span class="literal">nil</span>) &#123;</span><br><span class="line">    <span class="comment">// do what you need to do here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="下期预告">下期预告</h2><h3 id="深度理解Swift的”?”和”!”">深度理解Swift的”?”和”!”</h3><h3 id="Swift之断言">Swift之断言</h3><h3 id="浅谈Swift的closure">浅谈Swift的closure</h3><h2 id="Dubbo_上手_—_陈奎">Dubbo 上手 — 陈奎</h2><h2 id="『图像和滤镜』_-_图像选择器">『图像和滤镜』 - 图像选择器</h2><p><code>我们可以使用以下常规的图像获取方式</code></p>
+<p><img src="./Simulator Screen Shot Nov 12, 2015, 8.11.12 PM.png" alt="Alt text"></p>
+<p><code>图库与相册</code></p>
+<p><img src="./Simulator Screen Shot Nov 12, 2015, 8.16.30 PM.png" alt="Alt text"></p>
+<h4 id="系统自带">系统自带</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="func"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(touches: Set&lt;UITouch&gt;, withEvent event: UIEvent?)</span></span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> sheet = <span class="type">UIAlertController</span>(title: <span class="string">"图片选择"</span>, message: <span class="string">"简单版的三种选择"</span>, preferredStyle: .<span class="type">ActionSheet</span>)</span><br><span class="line">    <span class="comment">// 判断设备是否支持相机（iPod &amp; Simulator）</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="type">UIImagePickerController</span>.isSourceTypeAvailable(.<span class="type">Camera</span>)) &#123;</span><br><span class="line">        sheet.addAction(<span class="type">UIAlertAction</span>.<span class="keyword">init</span>(title: <span class="string">"Camera"</span>, style: .<span class="type">Default</span>, handler: &#123; <span class="number">_</span> <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">self</span>.showPhotoes(.<span class="type">Camera</span>)</span><br><span class="line">        &#125;))</span><br><span class="line">    &#125;</span><br><span class="line">    sheet.addAction(<span class="type">UIAlertAction</span>.<span class="keyword">init</span>(title: <span class="string">"PhotoLibrary"</span>, style: .<span class="type">Default</span>, handler: &#123; <span class="number">_</span> <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">self</span>.showPhotoes(.<span class="type">PhotoLibrary</span>)</span><br><span class="line">    &#125;))</span><br><span class="line">    sheet.addAction(<span class="type">UIAlertAction</span>.<span class="keyword">init</span>(title: <span class="string">"SavedPhotosAlbum"</span>, style: .<span class="type">Default</span>, handler: &#123; <span class="number">_</span> <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">self</span>.showPhotoes(.<span class="type">SavedPhotosAlbum</span>)</span><br><span class="line">    &#125;))</span><br><span class="line">    sheet.addAction(<span class="type">UIAlertAction</span>.<span class="keyword">init</span>(title: <span class="string">"Cancel"</span>, style: .<span class="type">Cancel</span>, handler: <span class="literal">nil</span>))</span><br><span class="line">    presentViewController(sheet, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">showPhotoes</span><span class="params">(source: UIImagePickerControllerSourceType)</span></span> &#123;</span><br><span class="line">    <span class="keyword">let</span> controller = <span class="type">UIImagePickerController</span>()</span><br><span class="line">    controller.delegate = <span class="keyword">self</span></span><br><span class="line">    controller.sourceType = source</span><br><span class="line">    controller.allowsEditing = source == .<span class="type">SavedPhotosAlbum</span> ? <span class="literal">true</span>:<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">self</span>.presentViewController(controller, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>UIImagePickerController的代理</code><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">imagePickerControllerDidCancel</span><span class="params">(picker: UIImagePickerController)</span></span> &#123;</span><br><span class="line">    dismissViewControllerAnimated(<span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 非常坑，这个方法废弃了但代码提示只有它</span></span><br><span class="line"><span class="comment">//	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) &#123;</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">imagePickerController</span><span class="params">(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])</span></span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="info字典介绍"><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIImagePickerControllerDelegate_Protocol/#//apple_ref/doc/constant_group/Editing_Information_Keys" target="_blank" rel="external">info字典介绍</a></h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIImagePickerControllerMediaType</span>: String</span><br><span class="line"><span class="built_in">UIImagePickerControllerOriginalImage</span>: <span class="built_in">UIImage</span></span><br><span class="line"><span class="built_in">UIImagePickerControllerEditedImage</span>: <span class="built_in">UIImage</span></span><br><span class="line"><span class="built_in">UIImagePickerControllerCropRect</span>: <span class="built_in">NSValue</span> -&gt; <span class="built_in">CGRect</span></span><br><span class="line"><span class="comment">// MediaURL只为视频提供</span></span><br><span class="line"><span class="built_in">UIImagePickerControllerMediaURL</span>:  <span class="built_in">NSURL</span></span><br><span class="line"><span class="comment">// LivePhoto是一张图片，保留那个moment的前后动作和声音</span></span><br><span class="line"><span class="built_in">UIImagePickerControllerLivePhoto</span>: String</span><br><span class="line"><span class="comment">// 摄像摄影时返回media的信息字典</span></span><br><span class="line"><span class="built_in">UIImagePickerControllerMediaMetadata</span>: <span class="built_in">NSDictionary</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SavedPhotosAlbum 的 info 示例</span></span><br><span class="line"></span><br><span class="line">▿ 5 elements</span><br><span class="line">  ▿ [0] : 2 elements</span><br><span class="line">    -<span class="ruby"> .<span class="number">0</span> <span class="symbol">:</span> <span class="string">"UIImagePickerControllerCropRect"</span></span><br><span class="line"></span>  ▿ [1] : 2 elements</span><br><span class="line">    -<span class="ruby"> .<span class="number">0</span> <span class="symbol">:</span> <span class="string">"UIImagePickerControllerOriginalImage"</span></span><br><span class="line"></span>  ▿ [2] : 2 elements</span><br><span class="line">    -<span class="ruby"> .<span class="number">0</span> <span class="symbol">:</span> <span class="string">"UIImagePickerControllerReferenceURL"</span></span><br><span class="line"></span>    -<span class="ruby"> .<span class="number">1</span> <span class="symbol">:</span> assets-<span class="symbol">library:</span>/<span class="regexp">/asset/asset</span>.<span class="constant">JPG</span>?id=<span class="number">99</span>D53A1F-<span class="constant">FEEF</span>-<span class="number">40</span>E1-<span class="number">8</span>BB3-<span class="number">7</span>DD55A43C8B7&amp;ext=<span class="constant">JPG</span></span><br><span class="line"></span>  ▿ [3] : 2 elements</span><br><span class="line">    -<span class="ruby"> .<span class="number">0</span> <span class="symbol">:</span> <span class="string">"UIImagePickerControllerMediaType"</span></span><br><span class="line"></span>    -<span class="ruby"> .<span class="number">1</span> <span class="symbol">:</span> public.image</span><br><span class="line"></span>  ▿ [4] : 2 elements</span><br><span class="line">    -<span class="ruby"> .<span class="number">0</span> <span class="symbol">:</span> <span class="string">"UIImagePickerControllerEditedImage"</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义">自定义</h3><p><img src="./1447343597718.png" alt="Alt text"></p>
+<p>遍历相册的所有图片<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// AssetsLibrary.framework</span></span><br><span class="line"><span class="comment">// ALAssetsLibrary 的使用,但是它慢慢的被放弃了</span></span><br><span class="line">    <span class="func"><span class="keyword">func</span> <span class="title">loadLocalPhotoes</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">var</span> countOne = <span class="number">0</span></span><br><span class="line">        <span class="comment">//ALAssetsGroupSavedPhotos表示只读取相机胶卷（ALAssetsGroupAll则读取全部相簿）</span></span><br><span class="line">        assetsLibrary.enumerateGroupsWithTypes(<span class="type">ALAssetsGroupSavedPhotos</span>, usingBlock: &#123;</span><br><span class="line">            (group: <span class="type">ALAssetsGroup</span>!, stop) <span class="keyword">in</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"is goin"</span>)</span><br><span class="line">            <span class="keyword">if</span> group != <span class="literal">nil</span> &#123;</span><br><span class="line">                <span class="keyword">let</span> assetBlock : <span class="type">ALAssetsGroupEnumerationResultsBlock</span> = &#123;</span><br><span class="line">                    (result: <span class="type">ALAsset</span>!, index: <span class="type">Int</span>, stop) <span class="keyword">in</span></span><br><span class="line">                    <span class="keyword">if</span> result != <span class="literal">nil</span> &#123;</span><br><span class="line">                        <span class="keyword">self</span>.assets.append(result)</span><br><span class="line">                        countOne++</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                group.enumerateAssetsUsingBlock(assetBlock)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"assets:<span class="subst">\(countOne)</span>"</span>)</span><br><span class="line">                <span class="keyword">self</span>.startChangeLocalImages(<span class="number">0</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;, failureBlock: &#123; (fail) <span class="keyword">in</span></span><br><span class="line">                <span class="built_in">print</span>(fail)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 展现本地图片</span></span><br><span class="line"><span class="func"><span class="keyword">func</span> <span class="title">startChangeLocalImages</span><span class="params">(<span class="keyword">var</span> index: Int)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> index==assets.<span class="built_in">count</span> &#123;</span><br><span class="line">            index = <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> myAsset = assets[index]</span><br><span class="line">        <span class="keyword">let</span> image = <span class="type">UIImage</span>(<span class="type">CGImage</span>:myAsset.thumbnail().takeUnretainedValue())</span><br><span class="line">        <span class="keyword">self</span>.backImageView.image = image</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> popTime = dispatch_time(<span class="type">DISPATCH_TIME_NOW</span>, <span class="type">Int64</span>(<span class="number">1</span> * <span class="type">Double</span>(<span class="type">NSEC_PER_SEC</span>)))</span><br><span class="line">        dispatch_after(popTime, dispatch_get_main_queue()) &#123;</span><br><span class="line">            <span class="keyword">self</span>.startChangeLocalImages(index+<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>iOS9 开始使用新库<br><a href="https://developer.apple.com/library/prerelease/ios/documentation/Photos/Reference/PHPhotoLibrary_Class/index.html" target="_blank" rel="external">PHPhotoLibrary</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/18/周精益分享-动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          周精益分享 - 动画
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/04/周精益分享-装逼指南二期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">周精益分享 - 程序员装逼指南二期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="周精益分享-Swift入门专题" data-title="周精益分享 - Swift入门专题" data-url="http://yoursite.com/2015/11/13/周精益分享-Swift入门专题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

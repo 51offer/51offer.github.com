@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简单谈谈计算机网络 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RESTful API 设计介绍 - 曾铭WHAT
+API 概念
+其它方案 SOAP 等
+HTTP 无状态
+RESTful 概念 REpresentational State Transfer 表征性状态传输
+复用 HTTP 本身的协议定义
+带来的好处：通用，动词，code，缓存，安全
+
+例子123456BAD/getProduct/addProduct/deleteProduct/listPro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单谈谈计算机网络">
+<meta property="og:url" content="http://yoursite.com/2015/07/24/2015-07-24简单谈谈计算机网络/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="RESTful API 设计介绍 - 曾铭WHAT
+API 概念
+其它方案 SOAP 等
+HTTP 无状态
+RESTful 概念 REpresentational State Transfer 表征性状态传输
+复用 HTTP 本身的协议定义
+带来的好处：通用，动词，code，缓存，安全
+
+例子123456BAD/getProduct/addProduct/deleteProduct/listPro">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/387401/2012070810010373.jpg">
+<meta property="og:image" content="http://hiphotos.baidu.com/exp/pic/item/90cebeec08fa513dd74179353f6d55fbb3fbd937.jpg">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/387401/2012072116365656.png">
+<meta property="og:image" content="http://pic002.cnblogs.com/images/2012/387401/2012072116311034.png">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz/NVvB3l3e9aESeCKMfdLmzic5mS9DReZ3ecGqraIDhDam4NmtRiceSzXCpICsu2keyhg1pMwxZVJBWTIvnwpkL6CA/640?wxfrom=5">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简单谈谈计算机网络">
+<meta name="twitter:description" content="RESTful API 设计介绍 - 曾铭WHAT
+API 概念
+其它方案 SOAP 等
+HTTP 无状态
+RESTful 概念 REpresentational State Transfer 表征性状态传输
+复用 HTTP 本身的协议定义
+带来的好处：通用，动词，code，缓存，安全
+
+例子123456BAD/getProduct/addProduct/deleteProduct/listPro">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2015-07-24简单谈谈计算机网络" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/24/2015-07-24简单谈谈计算机网络/" class="article-date">
+  	<time datetime="2015-07-24T09:46:13.000Z" itemprop="datePublished">2015-07-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简单谈谈计算机网络
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="RESTful_API_设计介绍_-_曾铭">RESTful API 设计介绍 - 曾铭</h2><h3 id="WHAT">WHAT</h3><ul>
+<li>API 概念</li>
+<li>其它方案 SOAP 等</li>
+<li>HTTP 无状态</li>
+<li>RESTful 概念 REpresentational State Transfer 表征性状态传输</li>
+<li>复用 HTTP 本身的协议定义</li>
+<li>带来的好处：通用，动词，code，缓存，安全</li>
+</ul>
+<h3 id="例子">例子</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BAD</span><br><span class="line"></span>/getProduct</span><br><span class="line">/<span class="keyword">addProduct</span><br><span class="line"></span>/deleteProduct</span><br><span class="line">/listProducts</span><br><span class="line">/productShop?productId<span class="number">=1</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对单一实体的重复</li>
+<li>多个实体对操作的重复</li>
+<li>实体之间逻辑接口的重复定义</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GOOD</span><br><span class="line">GET /<span class="string">products :</span> will <span class="keyword">return</span> the list of all products</span><br><span class="line">GET <span class="regexp">/products/</span><span class="number">4</span> : will retrieve product #<span class="number">4</span></span><br><span class="line">POST /<span class="string">products :</span> will add a product to the collection</span><br><span class="line">PUT <span class="regexp">/products/</span><span class="number">4</span> : will update product #<span class="number">4</span></span><br><span class="line">DELETE <span class="regexp">/products/</span><span class="number">4</span> : will delete product #<span class="number">4</span></span><br><span class="line"></span><br><span class="line">GET <span class="regexp">/products/</span><span class="number">4</span>/shop</span><br><span class="line">GET <span class="regexp">/users/</span><span class="number">3</span>/favorite_schools</span><br><span class="line">POST <span class="regexp">/users/</span><span class="number">3</span>/favorite_schools</span><br><span class="line">PUT <span class="regexp">/users/</span><span class="number">3</span><span class="regexp">/favorite_schools/</span><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>好的 API 定义清晰，可预期。</li>
+</ul>
+<h3 id="总结">总结</h3><ul>
+<li>重复的实现或设计，嗅嗅不好的味道</li>
+<li>重复制造轮子，而不是重复发明轮子 （如用户授权，加密，缓存等）</li>
+<li>RESTful 不仅仅适用于 APP，重点是 C/S</li>
+<li>各端实现：<a href="http://www.zhihu.com/question/28557115/answer/48094438" target="_blank" rel="external">参考覃超的知乎回答</a></li>
+</ul>
+<hr>
+<h2 id="IP网段划分_-_王胜">IP网段划分 - 王胜</h2><h3 id="三大类IP段">三大类IP段</h3><ul>
+<li><p>A类地址</p>
+<ul>
+<li>第1字节为<a href="http://baike.baidu.com/view/547479.htm" target="_blank" rel="external">网络地址</a>，其他3个字节为主机地址。另外，第1个字节的最高位固定为0。</li>
+<li>地址范围：1.0.0.0到126.255.255.255。</li>
+<li>默认子网掩码：255.0.0.0，一个子网最多可以容纳1677万多台电脑。</li>
+<li>保留地址：127.0.0.0到127.255.255.255是保留地址，用做循环测试用。</li>
+<li>私有地址：10.0.0.0到10.255.255.255。【0000 1010】</li>
+</ul>
+</li>
+<li><p>B类地址</p>
+<ul>
+<li>第1字节和第2字节为网络地址，其他2个字节为主机地址。另外1个字节的前2位固定为10。</li>
+<li>地址范围：128.0.0.0到191.255.255.255。</li>
+<li>默认子网掩码：255.255.0.0　一个子网最多可以容纳6万台电脑。</li>
+<li>保留地址：169.254.0.0到169.254.255.255是保留地址。如果你的IP地址是自动获取IP地址，而你在网络上又没有找到可用的DHCP服务器，这时你将会从169.254.0.1到169.254.255.254中临时获得一个IP地址。</li>
+<li>私有地址：在B类地址中，172.16.0.0到172.31.255.255是私有地址。</li>
+</ul>
+</li>
+<li><p>C类地址</p>
+<ul>
+<li>第1字节、第2字节和第3个字节为网络地址，第4个字节为主机地址。另外第1个字节的前三位固定为110。</li>
+<li>地址范围：192.0.0.0到223.255.255.255。</li>
+<li>默认子网掩码　255.255.255.0　一个子网最多可以容纳254台电脑。</li>
+<li>私有地址：192.168.0.0到192.168.255.255是私有地址。</li>
+</ul>
+</li>
+</ul>
+<h3 id="两个特殊地址">两个特殊地址</h3><ul>
+<li>0.0.0.0 <a href="http://www.cnblogs.com/hnrainll/archive/2011/10/13/2210101.html" target="_blank" rel="external">全网地址</a>，三界之外的收容器</li>
+<li>255.255.255.255 广播地址</li>
+</ul>
+<hr>
+<h2 id="OSI七层模型详解_-_吴明">OSI七层模型详解 - 吴明</h2><p><a href="http://blog.csdn.net/yaopeng_2005/article/details/7064869" target="_blank" rel="external">OSI七层模型详解</a></p>
+<ul>
+<li>物理层：<ul>
+<li>相关协议：IEEE802.2,Ethernet v.2,Internetwork</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>相关协议：MPLS，XTP,DCAP</li>
+</ul>
+</li>
+<li>网络层</li>
+<li>传输层<ul>
+<li>相关协议：EGP,NHRP</li>
+</ul>
+</li>
+<li>会话层：</li>
+<li>表示层：</li>
+<li>应用层:</li>
+</ul>
+<hr>
+<h2 id="网络分层协议模型_-_张超耀">网络分层协议模型 - 张超耀</h2><h3 id="网络分层协议模型">网络分层协议模型</h3><ul>
+<li><p>根据 TCP/IP协议簇的协议来命名</p>
+<ul>
+<li>应用层　　数据         　 泛指应用层使用的</li>
+<li>传输层　　数据段　　　　　传输层</li>
+<li>网络层　　数据包　　　　　网络层</li>
+<li>链路层　　帧　　　　　　　网络接入层</li>
+<li>物理层　　比特(位)　　　 通过介质实际传输数据时使用的</li>
+</ul>
+</li>
+<li><p>OSI七成协议模型</p>
+<ul>
+<li>应用层:例如HTTP、SMTP、SNMP、FTP、Telnet、SIP、SSH、NFS、RTSP、XMPP、Whois、ENRP</li>
+<li>表示层:例如XDR、ASN.1、SMB、AFP、NCP</li>
+<li>会话层:例如ASAP、TLS、SSH、ISO 8327 / CCITT X.225、RPC、NetBIOS、ASP、Winsock、BSD sockets</li>
+<li>传输层:例如TCP、UDP、RTP、SCTP、SPX、ATP、IL</li>
+<li>网络层:例如IP、ICMP、IGMP、IPX、BGP、OSPF、RIP、IGRP、EIGRP、ARP、RARP、X.25</li>
+<li>数据链路层:例如以太网、令牌环、HDLC、帧中继、ISDN、ATM、IEEE 802.11、FDDI、PPP</li>
+<li>物理层:例如线路、无线电、光纤</li>
+</ul>
+</li>
+<li><p>分层的好处:</p>
+<ul>
+<li>各层之间是独立的</li>
+<li>灵活性好</li>
+<li>结构上可分割开</li>
+<li>易于实现和维护</li>
+<li>能促进标准化工作</li>
+</ul>
+</li>
+</ul>
+<h3 id="协议模型:">协议模型:</h3><p><img src="http://pic002.cnblogs.com/images/2012/387401/2012070810010373.jpg" alt=""></p>
+<h3 id="包装数据包的过程">包装数据包的过程</h3><ul>
+<li>TCP传给IP的数据单元称作TCP报文段或简称为TCP段(TCP segment)，传给网络接口层的数据单元称作IP数据报(IPdatagram).通过以太网传输的比特流称作帧(Frame)<br><img src="http://hiphotos.baidu.com/exp/pic/item/90cebeec08fa513dd74179353f6d55fbb3fbd937.jpg" alt=""></li>
+</ul>
+<h3 id="分用即解包的过程">分用即解包的过程</h3><p><img src="http://pic002.cnblogs.com/images/2012/387401/2012072116365656.png" alt=""></p>
+<h3 id="不同层直接协议关系">不同层直接协议关系</h3><p><img src="http://pic002.cnblogs.com/images/2012/387401/2012072116311034.png" alt=""></p>
+<hr>
+<h2 id="TCP/IP三次握手与四次挥手_-_李仙鹏">TCP/IP三次握手与四次挥手 - 李仙鹏</h2><p><img src="http://mmbiz.qpic.cn/mmbiz/NVvB3l3e9aESeCKMfdLmzic5mS9DReZ3ecGqraIDhDam4NmtRiceSzXCpICsu2keyhg1pMwxZVJBWTIvnwpkL6CA/640?wxfrom=5" alt="TCP/IP三次握手与四次挥手"></p>
+<blockquote>
+<p>引用自<a href="http://mp.weixin.qq.com/s?__biz=MzA3MDMyMjkzNg==&amp;mid=210133499&amp;idx=1&amp;sn=d56455712de557b74ce17997fe29c06f&amp;scene=1&amp;key=0acd51d81cb052bc42a5850a900340ace87cb6cc26440e97233d7fab5311d8b5021ca25b901ab1d0434b3a23ead87ef2&amp;ascene=0&amp;uin=MTg4NDcxOTMyMQ%3D%3D&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.4+build(14E46" target="_blank" rel="external">图解 TCP/IP 协议</a>&amp;version=11020012&amp;pass_ticket=Mh3kdFcxrCoIa0yIg1d7eLqJGuQkBQLzt2YIYx5poC%2BLzaWWMRZ5D1Vl6Pobd8ui)</p>
+</blockquote>
+<hr>
+<h2 id="计算机网络安全_-_杨志平">计算机网络安全 - 杨志平</h2><h3 id="2015网络安全事件">2015网络安全事件</h3><ul>
+<li>携程网内部员工误删除代码 网站整体宕机12小时</li>
+<li>支付宝机房电缆被挖断 部分区域服务中断</li>
+<li>网易骨干网遭攻击 百万用户无法打游戏</li>
+<li>海康威视被黑客植入代码 导致被远程监控</li>
+</ul>
+<h3 id="敏感数据（账号、密码等）">敏感数据（账号、密码等）</h3><ul>
+<li>账号密码（post明文显示）</li>
+<li>重要资源数据（防爬虫）</li>
+<li>多重账号威胁（网络账号通用）</li>
+<li>通讯协议破解（iMessage）</li>
+</ul>
+<h3 id="网络传输加密">网络传输加密</h3><ul>
+<li><p>数据加密算法</p>
+<ul>
+<li>对称式加密技术    (加密-解密)<ul>
+<li>DES（Data Encryption Standard）<blockquote>
+<p>数据加密标准，速度较快，适用于加密大量数据的场合。</p>
+</blockquote>
+</li>
+<li>3DES（Triple DES）<blockquote>
+<p>是基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高。</p>
+</blockquote>
+</li>
+<li>AES（Advanced Encryption Standard）<blockquote>
+<p>高级加密标准，是下一代的加密算法标准，速度快，安全级别高；</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>-<span class="ruby"> 非对称式加密技术（公钥-私钥）
+</span>    -<span class="ruby"> <span class="constant">RSA</span>
+</span>    &gt;是一个支持变长密钥的公共密钥算法，需要加密的文件块的长度也是可变的；
+    -<span class="ruby"> <span class="constant">DSA</span>（<span class="constant">Digital</span> <span class="constant">Signature</span> <span class="constant">Algorithm</span>）
+</span>    &gt;数字签名算法，是一种标准的 DSS（数字签名标准）；
+    -<span class="ruby"> <span class="constant">ECC</span>（<span class="constant">Elliptic</span> <span class="constant">Curves</span> <span class="constant">Cryptography</span>）
+</span>    &gt;椭圆曲线密码编码学。
+
+-<span class="ruby"> 散列算法 （不可逆）
+</span>    -<span class="ruby"> <span class="constant">MD5</span>（<span class="constant">Message</span> <span class="constant">Digest</span> <span class="constant">Algorithm</span> <span class="number">5</span>）
+</span>    &gt;是RSA数据安全公司开发的一种单向散列算法，非可逆，相同的明文产生相同的密文。
+    -<span class="ruby"> <span class="constant">SHA</span>（<span class="constant">Secure</span> <span class="constant">Hash</span> <span class="constant">Algorithm</span>）
+</span>    &gt;可以对任意长度的数据运算生成一个160位的数值；
+</code></pre><p><a href="http://www.iplaysoft.com/encrypt-arithmetic.html" target="_blank" rel="external">3个著名加密算法(MD5、RSA、DES)的解析</a></p>
+<h3 id="简单加密演示">简单加密演示</h3><ul>
+<li>简单位移式加密（经典：凯撒加密）</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">“恺撒密码”据传是古罗马恺撒大帝用来保护重要军情的加密系统。它是一种替代密码，通过将字母按顺序推后起3位起到加密作用，</span><br><span class="line">如将字母A换作字母<span class="keyword">D</span>，将字母B换作字母<span class="keyword">E</span>。据说恺撒是率先使用加密函的古代将领之一，因此这种加密方法被称为恺撒密码。</span><br><span class="line">假如有这样一条指令：</span><br><span class="line"><span class="keyword">RETURN</span> TO ROME</span><br><span class="line">用恺撒密码加密后就成为：</span><br><span class="line">UHWXUA WR URPH</span><br></pre></td></tr></table></figure>
+<ul>
+<li>置换加密</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">令明文m=m1,m2,...mL。令置换矩阵所决定的置换为pi，则加密置换c=<span class="function"><span class="title">Ek</span><span class="params">(m)</span></span>=(c1,c2,...cL)=<span class="function"><span class="title">mpi</span><span class="params">(<span class="number">1</span>)</span></span>,<span class="function"><span class="title">mpi</span><span class="params">(<span class="number">2</span>)</span></span>,...,<span class="function"><span class="title">mpi</span><span class="params">(L)</span></span></span><br><span class="line">解密置换</span><br><span class="line">d=<span class="function"><span class="title">Dk</span><span class="params">(c)</span></span>=(cn^-<span class="number">1</span>(<span class="number">1</span>),cn^-<span class="number">1</span>(<span class="number">2</span>),...cn^-<span class="number">1</span>(L))</span><br><span class="line">例，置换密码。给定明文为the simplest possible transposition ciphers,</span><br><span class="line">将明文分成长为L=<span class="number">5</span>的段，</span><br><span class="line">m1=thesi, m2=mples m3=tposs m4=iblet,</span><br><span class="line">m5=ransp, m6=ositi m7=oncip m8=hersx</span><br><span class="line">最后一段长不足<span class="number">5</span>，加添一个字母x。将隔断的字母序号按下述置换矩阵进行换位：</span><br><span class="line">Ek= <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">3</span> <span class="number">0</span> <span class="number">4</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">得到密文如下</span><br><span class="line">STIEH EMSLP STSOP EITLB SRPNA TOIIS IOPCN SHXRE</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Alamofire文档阅读_-_潘君">Alamofire文档阅读 - 潘君</h2><p><code>AFNetworking的继承者</code></p>
+<p>摘录自<a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire 官方文档</a></p>
+<h3 id="Feature">Feature</h3><ul>
+<li>Chainable Request / Response methods<br>  链式 request / response<br>   Complete Documentation</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Response handlers can even be chained:</span></span><br><span class="line">Alamofire.request(.GET, <span class="string">"http://httpbin.org/get"</span>)</span><br><span class="line">         .responseString &#123; _, _, <span class="built_in">string</span>, _ <span class="keyword">in</span></span><br><span class="line">             println(<span class="built_in">string</span>)</span><br><span class="line">         &#125;</span><br><span class="line">         .responseJSON &#123; _, _, <span class="built_in">JSON</span>, _ <span class="keyword">in</span></span><br><span class="line">             println(<span class="built_in">JSON</span>)</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>URL / JSON / plist Parameter Encoding<br> 除了以上几种 还可以自定义<br> Alamofire provides built-in response serialization for strings, JSON, and property lists, but others can be added in extensions on Alamofire.Request.</p>
+<ul>
+<li>Upload File / Data / Stream / MultipartFormData<br>多种文件上传方式</li>
+</ul>
+</li>
+<li><p>Download using Request or Resume data</p>
+</li>
+<li><p>Authentication with NSURLCredential</p>
+</li>
+<li><p>HTTP Response Validation</p>
+</li>
+<li><p>Progress Closure &amp; NSProgress</p>
+</li>
+<li>cURL Debug Output</li>
+<li>Comprehensive Unit Test Coverage</li>
+</ul>
+<h3 id="某些点">某些点</h3><ul>
+<li>url编码<br>GET<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET Request With URL-Encoded Parameters</span><br><span class="line">Alamofire.<span class="function"><span class="title">request</span><span class="params">(.GET, <span class="string">"http://httpbin.org/get"</span>, parameters: [<span class="string">"foo"</span>: <span class="string">"bar"</span>])</span></span></span><br><span class="line"><span class="comment">// http://httpbin.org/get?foo=bar</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>POST<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="atom">let</span> <span class="atom">parameters</span> = [</span><br><span class="line">    <span class="string">"foo"</span>: <span class="string">"bar"</span>,</span><br><span class="line">    <span class="string">"baz"</span>: [<span class="string">"a"</span>, <span class="number">1</span>],</span><br><span class="line">    <span class="string">"qux"</span>: [</span><br><span class="line">        <span class="string">"x"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">"y"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="string">"z"</span>: <span class="number">3</span></span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="name">Alamofire</span>.<span class="atom">request</span>(.<span class="name">POST</span>, <span class="string">"http://httpbin.org/post"</span>, <span class="atom">parameters</span>: <span class="atom">parameters</span>)</span><br><span class="line">// <span class="name">HTTP</span> <span class="atom">body</span>: <span class="atom">foo</span>=<span class="atom">bar</span>&amp;<span class="atom">baz</span>[]=<span class="atom">a</span>&amp;<span class="atom">baz</span>[]=<span class="number">1</span>&amp;<span class="atom">qux</span>[<span class="atom">x</span>]=<span class="number">1</span>&amp;<span class="atom">qux</span>[<span class="atom">y</span>]=<span class="number">2</span>&amp;<span class="atom">qux</span>[<span class="atom">z</span>]=<span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>转object<br>Generic Response Object Serialization</p>
+</li>
+<li><p>校验</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Manual Validation</span><br><span class="line"></span><br><span class="line">Alamofire.<span class="built_in">request</span>(.<span class="keyword">GET</span>, <span class="string">"http://httpbin.org/get"</span>, parameters: [<span class="string">"foo"</span>: <span class="string">"bar"</span>])</span><br><span class="line">         .validate(statusCode: <span class="number">200.</span>.&lt;<span class="number">300</span>)</span><br><span class="line">         .validate(contentType: [<span class="string">"application/json"</span>])</span><br><span class="line">         .<span class="built_in">response</span> &#123; _, _, _, <span class="keyword">error</span> <span class="keyword">in</span></span><br><span class="line">                  println(<span class="keyword">error</span>)</span><br><span class="line">         &#125;</span><br><span class="line">Automatic Validation</span><br><span class="line"></span><br><span class="line">Automatically validates status code within <span class="number">200.</span>..<span class="number">299</span> range, <span class="keyword">and</span> that the Content-Type header of the <span class="built_in">response</span> matches the Accept header of the <span class="built_in">request</span>, <span class="keyword">if</span> one <span class="keyword">is</span> provided.</span><br><span class="line"></span><br><span class="line">Alamofire.<span class="built_in">request</span>(.<span class="keyword">GET</span>, <span class="string">"http://httpbin.org/get"</span>, parameters: [<span class="string">"foo"</span>: <span class="string">"bar"</span>])</span><br><span class="line">         .validate()</span><br><span class="line">         .<span class="built_in">response</span> &#123; _, _, _, <span class="keyword">error</span> <span class="keyword">in</span></span><br><span class="line">             println(<span class="keyword">error</span>)</span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方便打印<br>Printable</p>
+</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let request = Alamofire.<span class="function"><span class="title">request</span><span class="params">(.GET, <span class="string">"http://httpbin.org/ip"</span>)</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">(request)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// GET http://httpbin.org/ip (200)</span></span><br></pre></td></tr></table></figure>
+<p>DebugPrintable</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let request = Alamofire.<span class="function"><span class="title">request</span><span class="params">(.GET, <span class="string">"http://httpbin.org/get"</span>, parameters: [<span class="string">"foo"</span>: <span class="string">"bar"</span>])</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">debugPrintln</span><span class="params">(request)</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>支持暂停/恢复/取消</li>
+</ul>
+<ol>
+<li>suspend(): Suspends the underlying task and dispatch queue</li>
+<li>resume(): Resumes the underlying task and dispatch queue. If the owning manager does not have startRequestsImmediately set to true, the request must call resume() in order to start.</li>
+<li>cancel(): Cancels the underlying task, producing an error that is passed to any registered response handlers.</li>
+</ol>
+<ul>
+<li>自定义response serializer</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/26/上海-Android-小伙伴一起来-51offer-玩吧/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          [上海] Android 小伙伴一起来 51offer 玩吧
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/19/技术部分享-微信公众号开发/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信公众号开发</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015-07-24简单谈谈计算机网络" data-title="简单谈谈计算机网络" data-url="http://yoursite.com/2015/07/24/2015-07-24简单谈谈计算机网络/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

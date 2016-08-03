@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>无主题 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android中ListView的垃圾回收 - 王胜ListView中ItemView的复用为了提高ListView的加载速度和用户操作的流畅度，ListView底层做了ItemView的复用，避免重复地为每一个ItemView开辟空间。
+
+ActiveView
+激活view，当期显示在屏幕上的激活的view
+
+ScrapView废弃view，被删除的ActiveView会被自动加入ScrapVi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无主题">
+<meta property="og:url" content="http://yoursite.com/2015/08/07/ 随意“无主题”/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="Android中ListView的垃圾回收 - 王胜ListView中ItemView的复用为了提高ListView的加载速度和用户操作的流畅度，ListView底层做了ItemView的复用，避免重复地为每一个ItemView开辟空间。
+
+ActiveView
+激活view，当期显示在屏幕上的激活的view
+
+ScrapView废弃view，被删除的ActiveView会被自动加入ScrapVi">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746192883238.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746198569160.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746292521779.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746298451922.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746303762302.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746441674887.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746486894390.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746549577563.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746559645647.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438754793930792.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746778185472.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746713384297.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746720646421.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438746992747487.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438747007172007.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438747013959192.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438753923658504.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438753975480751.gif">
+<meta property="og:image" content="http://cc.cocimg.com/api/uploads/20150805/1438754028476558.gif">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/5317671/9132657/a49bf7ae-3d27-11e5-8db1-d7753dde5931.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/5317671/9132677/c17b8e66-3d27-11e5-8cd5-deb17c84e39b.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无主题">
+<meta name="twitter:description" content="Android中ListView的垃圾回收 - 王胜ListView中ItemView的复用为了提高ListView的加载速度和用户操作的流畅度，ListView底层做了ItemView的复用，避免重复地为每一个ItemView开辟空间。
+
+ActiveView
+激活view，当期显示在屏幕上的激活的view
+
+ScrapView废弃view，被删除的ActiveView会被自动加入ScrapVi">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post- 随意“无主题”" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/07/ 随意“无主题”/" class="article-date">
+  	<time datetime="2015-08-07T14:08:35.000Z" itemprop="datePublished">2015-08-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      无主题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android中ListView的垃圾回收_-_王胜">Android中ListView的垃圾回收 - 王胜</h2><h3 id="ListView中ItemView的复用">ListView中ItemView的复用</h3><p>为了提高ListView的加载速度和用户操作的流畅度，ListView底层做了ItemView的复用，避免重复地为每一个ItemView开辟空间。</p>
+<ul>
+<li><p>ActiveView</p>
+<p>激活view，当期显示在屏幕上的激活的view</p>
+</li>
+<li>ScrapView<br>废弃view，被删除的ActiveView会被自动加入ScrapView</li>
+</ul>
+<h3 id="ListView的ItemView中大图片的覆盖显示">ListView的ItemView中大图片的覆盖显示</h3><p>由于复用机制，当Item中包含大图时，由于Java GC的回收机制不够及时，造成ScrapView中图片资源不能立即释放，当用户上拉加载新的item内容时，却看到了之前加载的图片，直到新图从网络下载完毕，才会刷新view正确显示图片。</p>
+<p>考虑到这种情况，Android 在API Level1中已经为ListView和GridView添加了RecyclerListener回调接口。开发者只需为ListView注册回调，重写onMovedToScrapHeap方法即可。</p>
+<p>示例：</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mListView.setRecyclerListener(<span class="keyword">new</span> RecyclerListener() &#123;</span><br><span class="line">        <span class="annotation">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onMovedToScrapHeap</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">            <span class="comment">// Release strong reference when a view is recycled</span></span><br><span class="line">            <span class="keyword">final</span> ImageView imageView = (ImageView) view.findViewById(android.R.id.icon);</span><br><span class="line">            imageView.setImageBitmap(<span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="参考资料：">参考资料：</h3><ul>
+<li><a href="http://www.cnblogs.com/qiengo/p/3628235.html" target="_blank" rel="external">ListView回收机制相关分析</a></li>
+<li><a href="http://stackoverflow.com/questions/14238532/listview-items-remove-bitmaps-from-memory-when-the-user-scrolls" target="_blank" rel="external">Listview items remove bitmaps from memory when the user scrolls</a></li>
+</ul>
+<h2 id="提升用户体验的7大微交互_-_张超耀">提升用户体验的7大微交互 - 张超耀</h2><hr>
+<p>众所周知，我们总是依据封面来判断书的好坏，聪明的设计师会创造实用有吸引力的界面。潜在用户可能会被吸引，但如何一直黏住他们呢？</p>
+<p>要试着回答这个问题，所有一切都指向人本设计，其中用户是最主要的考量。以人为本：你的应用应该使用日常用语，包括情绪、口语，外观还要有一丝“诱惑力”。界面应当成为你的好朋友，时刻准备给出建议提升你的体验，让你会心一笑。</p>
+<ul>
+<li><p>是微交互在起作用。精确的说，这主要是界面附带的交互动画，使它更具表现力。优秀的动画能够：</p>
+<blockquote>
+<ul>
+<li>表达状态并提供反馈</li>
+<li>提升直接的操纵感</li>
+<li>将操作结果可视化</li>
+</ul>
+</blockquote>
+</li>
+<li><p>在用户体验中，关键是你如何对待用户，还有他们使用产品时的感受。极小的细节都值得加倍留心。微交互提供了用户所需的反馈，表达了当前运行状况。无论背后逻辑有多么复杂，都能使界面更亲切。</p>
+</li>
+</ul>
+<h3 id="显示系统状态">显示系统状态</h3><p>Jakob Nielsen在<a href="http://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" rel="external">可用性原则启示</a>第一条中描述：让用户始终知晓当前在发生什么。用户希望立马得到回应，但总有些情况下，网站需要一点时间等待操作完成。</p>
+<p>那么，界面就应当在背景处显示图形，反映完成百分比。或是播放声音，让用户了解当前发生的事情。这个原则也关系到文件传输：不要让用户觉得无聊，给他们看进度条。即使是不太令人愉快的通知，比如传输失败，也应该以令人喜爱的方式展现。让你的用户微笑！<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746192883238.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746198569160.gif" alt=""></p>
+<h3 id="突出显示变化">突出显示变化</h3><p>通常为了节省空间，应用会在需要时把某个按钮替换掉。有时我们需要展现通知，确保用户注意到了。动画可以吸引他们注意，不至于忽略你认为重要的信息。<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746292521779.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746298451922.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746303762302.gif" alt=""></p>
+<h3 id="保持前后关联">保持前后关联</h3><p>在这个智能手机和小屏幕智能手表的时代，难以在屏幕上展现大量信息。有一种处理方式，是在不同页面之间保持清晰的导航。让用户理解什么东西来自何处，便能轻易回溯。有多种方式可以实现：<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746441674887.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746486894390.gif" alt=""></p>
+<h3 id="非标准布局">非标准布局</h3><p>继续之前的例子，微交互应当帮助用户理解如何操作非标准的布局，去除不必要的疑惑。照片前后滑动、滚动式图表和旋转角色都是很棒的选择:<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746549577563.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746559645647.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438754793930792.gif" alt=""></p>
+<h3 id="行动号召">行动号召</h3><p>除了帮助用户有效地操作应用，微交互也有鼓励用户操作的能力：持续浏览、点赞或分享内容，只因为这很有吸引力，用户不舍离去：<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746778185472.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746713384297.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746720646421.gif" alt=""></p>
+<h3 id="输入的视觉化">输入的视觉化</h3><p>所有应用中，数据录入都是最重要的元素之一。数据录入决定了用户所得结果的质量。通常，这部分很无趣，但微交互可以使它与众不同：<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438746992747487.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438747007172007.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438747013959192.gif" alt=""></p>
+<h3 id="使教程生动形象">使教程生动形象</h3><p>当然，在应用发布后，动画可以教育用户。它突出一些基本功能和控件，排除用户在未来的使用中的障碍。<br><img src="http://cc.cocimg.com/api/uploads/20150805/1438753923658504.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438753975480751.gif" alt=""><br><img src="http://cc.cocimg.com/api/uploads/20150805/1438754028476558.gif" alt=""></p>
+<h3 id="结论">结论</h3><p>所以，如果你重视用户体验，就应该从头到尾精细打磨界面，通过微交互与动画为它增色添彩。它会为你的项目赋予生命。</p>
+<h3 id="注意每个细节，是使人机交互易用的成功要诀">注意每个细节，是使人机交互易用的成功要诀</h3><p><a href="http://www.cocoachina.com/design/20150806/12916.html" target="_blank" rel="external">原文链接</a></p>
+<h2 id="曾铭">曾铭</h2><h3 id="CLI_上手">CLI 上手</h3><h3 id="CLI_vs_GUI">CLI vs GUI</h3><ul>
+<li>Command Line Interface VS Graphical User Interface</li>
+<li>分别是给工程师用的和给人（包含工程师）用的</li>
+<li>哪个方便用哪个，哪个好玩用哪个</li>
+</ul>
+<h3 id="CLI_能干什么？（for_me）">CLI 能干什么？（for me）</h3><ul>
+<li>快速安装软件</li>
+<li>CLI 开发：工具、服务，如 jenkins, sonar, ssh-key,</li>
+</ul>
+<h3 id="CLI_如何上手">CLI 如何上手</h3><ul>
+<li>不要畏惧，把命令行当做大一上的 C 语言，是最简单，逻辑最清晰的。（鬼知道 GUI 背后都做了什么）</li>
+<li>理解环境变量 profile_load_path env echo，知道 shell 怎么去找一个命令即可</li>
+<li>安装软件，了解常见的包管理工具即可：<a href="http://brew.sh/" target="_blank" rel="external">homebrew</a>（常用软件）, <a href="https://rubygems.org/" target="_blank" rel="external">gem</a>（ruby 软件）, <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> （node.js 软件）<ul>
+<li>基本都是 search install list ，会这三个参数就行了</li>
+<li>思想都是想通的，比如 <a href="https://cocoapods.org/" target="_blank" rel="external">pod</a> (for iOS/OSX dev)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 在终端输入试试</span><br><span class="line"><span class="keyword">say</span> <span class="string">"hi"</span></span><br><span class="line"># 还有王胜推荐的 sl</span><br><span class="line">brew install sl</span><br><span class="line">sl</span><br></pre></td></tr></table></figure>
+<h1 id="Sonar_学习">Sonar 学习</h1><ul>
+<li>Sonar不叫Sonar 叫SonarQube</li>
+<li>开源的 刁刁的 <a href="https://github.com/SonarSource/sonarqube" target="_blank" rel="external">项目地址</a></li>
+<li>管理平台代码质量<br><img src="https://cloud.githubusercontent.com/assets/5317671/9132657/a49bf7ae-3d27-11e5-8db1-d7753dde5931.png" alt=""></li>
+<li><p>支持plugin</p>
+<ul>
+<li>通过插件形式，可以支持包括    java,C#,C/C++,PL/SQL,Cobol,JavaScrip,Groovy等等二十几种编程语言的代码质量管理与检测</li>
+<li><a href="http://docs.sonarqube.org/display/PLUG/Plugin+Library" target="_blank" rel="external">插件库</a></li>
+<li>大部分免费 OC不免费 有<a href="https://github.com/octo-technology/sonar-objective-c" target="_blank" rel="external">第三方免费的</a></li>
+</ul>
+</li>
+<li><p>Sonar的3个组成部分<br><img src="https://cloud.githubusercontent.com/assets/5317671/9132677/c17b8e66-3d27-11e5-8cd5-deb17c84e39b.png" alt=""></p>
+<ul>
+<li>Database (支持多种类型的数据库MySQL/Oracle) 配置sonar实例 存储分析结果</li>
+<li>Web Server 浏览代码质量分析结果</li>
+<li>Analyzers 分析代码的分析器</li>
+</ul>
+</li>
+<li><p>Sonar Notes</p>
+<ul>
+<li>SonarQube的web server和database只能有一个</li>
+<li>从性能上考虑 三个组件应该放在三个专有的电脑上,但是Database和Web Server可以安装在同一台电脑上</li>
+<li>Datatbase和Analyzers不应该安装在同一台电脑上</li>
+<li>Analyzers可以通过加电脑扩展</li>
+<li>Database和Analyzers必须存在同一个网络内</li>
+<li>所有的机子必须时间同步</li>
+</ul>
+</li>
+<li><p>Analyzers</p>
+<ul>
+<li><code>SonarQube Runner</code>: recommended for all non-Maven projects</li>
+<li><code>Maven</code>: recommended for all projects built with Maven</li>
+<li><code>SonarQube Ant Task</code>: to integrate with projects built with Ant</li>
+<li><code>Gradle</code>: to integrate with projects built with Gradle</li>
+<li><code>CI Engine</code>: see Jenkins plugin or Hudson plugin or Bamboo plugin or AnthillPro plugin. Note that other CI engines can be used even if there is no SonarQube plugin available.</li>
+</ul>
+</li>
+<li><p>Mac下跑通sonar所有流程需要的东西</p>
+<ul>
+<li>a Mac with Xcode</li>
+<li>SonarQube</li>
+<li>SonarQube Runner</li>
+<li>xctool<ul>
+<li>xctool是facebook开源的一个命令行工具，用来替代苹果的xcodebuild工具</li>
+</ul>
+</li>
+<li>OCLint<ul>
+<li>OCLint是一个静态代码分析器，可以检测的Objective-C代码（同时支持Ç和c + +），发现常见的问题：例如的if / else / try / catch和/最后声明出错，未被使用的本地实例和参数，过度复杂（有效值代码行数状语从句：常循环复杂度太高），冗余代码，代码异味，以及其他不好的代码。</li>
+</ul>
+</li>
+<li>gcovr<ul>
+<li>代码覆盖率分析工具</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用配置文件">常用配置文件</h3><h4 id="配置Sonar-Runner">配置Sonar-Runner</h4><ul>
+<li><p>路径  &lt;放置sonar的目录&gt;/sonar-runner/2.4/libexec/conf/sonar-runner.properties</p>
+</li>
+<li><p>只摘录相关项</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#----- Default SonarQube server </span><br><span class="line">sonar<span class="class">.host</span><span class="class">.url</span>=http:<span class="comment">//localhost:9000</span></span><br><span class="line"></span><br><span class="line">#----- MySQL</span><br><span class="line">sonar<span class="class">.jdbc</span><span class="class">.url</span>=jdbc:mysql:<span class="comment">//192.168.22.22:3306/sonar?useUnicode=true&amp;amp;characterEncoding=utf8</span></span><br><span class="line"></span><br><span class="line">#----- Global database settings</span><br><span class="line">sonar<span class="class">.jdbc</span><span class="class">.username</span>=sonar</span><br><span class="line">sonar<span class="class">.jdbc</span><span class="class">.password</span>=sonar</span><br><span class="line"></span><br><span class="line">#----- Security (when <span class="string">'sonar.forceAuthentication'</span> is set to <span class="string">'true'</span>)</span><br><span class="line">sonar.login=admin</span><br><span class="line">sonar.password=admin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="配置Database和web_server">配置Database和web server</h4><p><code>sonar.properties</code> </p>
+<ul>
+<li>路径  &lt;放置sonarqube的目录&gt;/sonarqube-5.1.2/conf/sonar.properties</li>
+<li>只摘录相关项<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sonar<span class="class">.jdbc</span><span class="class">.username</span>=sonar  <span class="comment">// 数据库账号</span></span><br><span class="line">sonar<span class="class">.jdbc</span><span class="class">.password</span>=sonar  <span class="comment">// 数据库密码</span></span><br><span class="line"></span><br><span class="line">sonar<span class="class">.jdbc</span><span class="class">.url</span>=jdbc:mysql:<span class="comment">//192.168.22.22:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</span></span><br><span class="line"> <span class="comment">// MySql路径</span></span><br><span class="line"></span><br><span class="line">sonar<span class="class">.web</span><span class="class">.host</span>=<span class="number">0.0</span>.<span class="number">0.0</span>  <span class="comment">// web host</span></span><br><span class="line">sonar<span class="class">.web</span><span class="class">.context</span>=/sonar  <span class="comment">// web 路径</span></span><br><span class="line">sonar<span class="class">.web</span><span class="class">.port</span>=<span class="number">9000</span> <span class="comment">// 端口号</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="配置需要分析的项目_(需放置在项目根目录下)">配置需要分析的项目 (需放置在项目根目录下)</h4><p><code>run-sonar.sh</code> 分析项目的脚本 </p>
+<ul>
+<li>未做修改 直接拿来用</li>
+</ul>
+<p><code>sonar-project.properties</code>  项目的必要参数<br>只摘录相关项<br>看注释</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="preprocessor">##########################</span></span><br><span class="line"><span class="preprocessor"># Required configuration #</span></span><br><span class="line"><span class="preprocessor">##########################</span></span><br><span class="line"></span><br><span class="line">sonar.projectKey=<span class="number">51</span>offer</span><br><span class="line">sonar.projectName=<span class="number">51</span>offer</span><br><span class="line">sonar.projectVersion=<span class="number">1.9</span></span><br><span class="line">sonar.language=objc</span><br><span class="line"> </span><br><span class="line"><span class="preprocessor"># Project description</span></span><br><span class="line">sonar.projectDescription=test</span><br><span class="line"> </span><br><span class="line"><span class="preprocessor"># Path to source directories </span></span><br><span class="line">sonar.sources=<span class="number">51</span>offer</span><br><span class="line"><span class="preprocessor"># Path to test directories (comment if no test)</span></span><br><span class="line">sonar.tests=<span class="number">51</span>offerTests</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="preprocessor"># Xcode project configuration (.xcodeproj or .xcworkspace)</span></span><br><span class="line"><span class="preprocessor"># -&gt; If you have a project: configure only sonar.objectivec.project</span></span><br><span class="line"><span class="preprocessor"># -&gt; If you have a workspace: configure sonar.objectivec.workspace and sonar.objectivec.project</span></span><br><span class="line"><span class="preprocessor"># and use the later to specify which project(s) to include in the analysis (comma separated list)</span></span><br><span class="line">sonar.objectivec.project=<span class="number">51</span>offer.xcodeproj</span><br><span class="line">sonar.objectivec.workspace=<span class="number">51</span>offer.xcworkspace</span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># Scheme to build your application</span></span><br><span class="line">sonar.objectivec.appScheme=<span class="number">51</span>offer</span><br><span class="line"><span class="preprocessor"># Scheme to build and run your tests (comment following line of you don't have any tests)</span></span><br><span class="line"><span class="preprocessor"># sonar.objectivec.testScheme=myApplicationTests</span></span><br><span class="line"> </span><br><span class="line"><span class="preprocessor">##########################</span></span><br><span class="line"><span class="preprocessor"># Optional configuration #</span></span><br><span class="line"><span class="preprocessor">##########################</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># Encoding of the source code</span></span><br><span class="line">sonar.sourceEncoding=UTF-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># JUnit report generated by run-sonar.sh is stored in sonar-reports/TEST-report.xml</span></span><br><span class="line"><span class="preprocessor"># Change it only if you generate the file on your own</span></span><br><span class="line"><span class="preprocessor"># The XML files have to be prefixed by TEST- otherwise they are not processed </span></span><br><span class="line"><span class="preprocessor"># sonar.junit.reportsPath=sonar-reports/</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># Cobertura report generated by run-sonar.sh is stored in sonar-reports/coverage.xml</span></span><br><span class="line"><span class="preprocessor"># Change it only if you generate the file on your own</span></span><br><span class="line"><span class="preprocessor"># sonar.objectivec.coverage.reportPattern=sonar-reports/coverage*.xml</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># OCLint report generated by run-sonar.sh is stored in sonar-reports/oclint.xml</span></span><br><span class="line"><span class="preprocessor"># Change it only if you generate the file on your own</span></span><br><span class="line"><span class="preprocessor"># sonar.objectivec.oclint.report=sonar-reports/oclint.xml</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># Paths to exclude from coverage report (tests, 3rd party libraries etc.)</span></span><br><span class="line"><span class="preprocessor"># sonar.objectivec.excludedPathsFromCoverage=pattern1,pattern2</span></span><br><span class="line">sonar.objectivec.excludedPathsFromCoverage=.*Tests.*</span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># Project SCM settings</span></span><br><span class="line"><span class="preprocessor"># sonar.scm.enabled=true</span></span><br><span class="line"><span class="preprocessor"># sonar.scm.url=scm:git:https://...</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="参考资料:">参考资料:</h3><ul>
+<li><a href="http://www.cnblogs.com/ishawn/p/3959521.html" target="_blank" rel="external">http://www.cnblogs.com/ishawn/p/3959521.html</a>   </li>
+<li><a href="https://github.com/octo-technology/sonar-objective-c" target="_blank" rel="external">https://github.com/octo-technology/sonar-objective-c</a>   </li>
+<li><a href="http://chapter31.com/2013/05/02/installing-sonar-source-on-mac-osx/" target="_blank" rel="external">http://chapter31.com/2013/05/02/installing-sonar-source-on-mac-osx/</a> </li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/14/ 聊聊提高代码质量/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          聊聊提高代码质量
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/31/网络信息安全/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络信息安全</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=" 随意“无主题”" data-title="无主题" data-url="http://yoursite.com/2015/08/07/ 随意“无主题”/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

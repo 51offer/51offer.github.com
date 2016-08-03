@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第44期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从右到左布局（RTL Layout）- 王进从Android 4.2开始，Android SDK支持一种从右到左（RTL，Right-to-Left）UI布局的方式，尽管这种布局方式经常被使用在诸如阿拉伯语、希伯来语等环境中，中国用户很少使用。不过在某些特殊用途中还是很方便的。
+使用：
+
+要在AndroidManifest.xml文件中将标签的android:supportsRtl属性值设为”tr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第44期">
+<meta property="og:url" content="http://yoursite.com/2016/02/19/移动周分享-第44期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="从右到左布局（RTL Layout）- 王进从Android 4.2开始，Android SDK支持一种从右到左（RTL，Right-to-Left）UI布局的方式，尽管这种布局方式经常被使用在诸如阿拉伯语、希伯来语等环境中，中国用户很少使用。不过在某些特殊用途中还是很方便的。
+使用：
+
+要在AndroidManifest.xml文件中将标签的android:supportsRtl属性值设为”tr">
+<meta property="og:image" content="http://s1.51cto.com/wyfs01/M02/32/CE/wKioJlKPZyjzCdeVAAAxAmZW9ww089.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/193400-8cc366cac68827a1.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/193400-e39edac8e3bc4f83.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/193400-3b1c3955db25b781.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/193400-0ee5f5d36671ca5a.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/193400-babf2f9371c45ec7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/193400-52cd22630c1cd2c2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://7xn0ue.com1.z0.glb.clouddn.com/youtube%E6%9C%80%E8%BF%91%E6%90%9C%E7%B4%A2%E8%AE%B0%E5%BD%95.jpg">
+<meta property="og:image" content="http://7xn0ue.com1.z0.glb.clouddn.com/bilibilihistory.jpg">
+<meta property="og:image" content="http://7xn0ue.com1.z0.glb.clouddn.com/mysuggestion.jpg">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第44期">
+<meta name="twitter:description" content="从右到左布局（RTL Layout）- 王进从Android 4.2开始，Android SDK支持一种从右到左（RTL，Right-to-Left）UI布局的方式，尽管这种布局方式经常被使用在诸如阿拉伯语、希伯来语等环境中，中国用户很少使用。不过在某些特殊用途中还是很方便的。
+使用：
+
+要在AndroidManifest.xml文件中将标签的android:supportsRtl属性值设为”tr">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第44期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/19/移动周分享-第44期/" class="article-date">
+  	<time datetime="2016-02-19T10:30:00.000Z" itemprop="datePublished">2016-02-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第44期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="从右到左布局（RTL_Layout）-_王进">从右到左布局（RTL Layout）- 王进</h2><p>从Android 4.2开始，Android SDK支持一种从右到左（RTL，Right-to-Left）UI布局的方式，尽管这种布局方式经常被使用在诸如阿拉伯语、希伯来语等环境中，中国用户很少使用。不过在某些特殊用途中还是很方便的。</p>
+<p>使用：</p>
+<ul>
+<li><p>要在AndroidManifest.xml文件中将<application>标签的android:supportsRtl属性值设为”true”，</application></p>
+</li>
+<li><p>将布局中”left/right”改成”start/end” </p>
+</li>
+</ul>
+<p>例如</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">android:</span>paddingStart  </span><br><span class="line"></span><br><span class="line"><span class="label">android:</span>layout_marginStart  </span><br><span class="line"></span><br><span class="line"><span class="label">android:</span>paddingEnd  </span><br><span class="line"></span><br><span class="line"><span class="label">android:</span>layout_marginEnd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置显示方向，改为从右向左</li>
+</ul>
+<p>xml中</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">android:</span>layoutDirection=<span class="string">"rtl"</span></span><br><span class="line"></span><br><span class="line"><span class="label">android:</span>textDirection</span><br><span class="line"></span><br><span class="line"><span class="label">android:</span>textAlignment</span><br></pre></td></tr></table></figure>
+<p>Java中</p>
+<ul>
+<li><p>getLayoutDirectionFromLocale</p>
+</li>
+<li><p>View.isLayoutRtl()</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="keyword">if</span>  this  class is <span class="operator">the</span> subclass <span class="operator">of</span> View, <span class="keyword">then</span> <span class="keyword">it</span> can use  <span class="keyword">if</span> (isLayoutRtl()) &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Configuration.getLayoutDirection()</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">import</span> android.content.res.Configuration; Configuration config = getResources<span class="params">()</span>.getConfiguratin<span class="params">()</span>; <span class="keyword">if</span> <span class="params">(config.getLayoutDirection<span class="params">()</span> == View.LAYOUT_DIRECTIN_RTL)</span> &#123; &#125;</span><br></pre></td></tr></table></figure>
+<p>加载特定从右到左布局，图片等</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res<span class="regexp">/ drawable-hdpi /</span><span class="regexp">/ Default drawable-ldltr-hdpi /</span><span class="regexp">/ LTR drawable-ldrtl-hpid /</span><span class="regexp">/ RTL</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://s1.51cto.com/wyfs01/M02/32/CE/wKioJlKPZyjzCdeVAAAxAmZW9ww089.jpg" alt="wKioJlKPZyjzCdeVAAAxAmZW9ww089.jpg (269×215)"></p>
+<h2 id="玩《Ori_and_the_Blind_Forest》-_曾铭">玩《Ori and the Blind Forest》- 曾铭</h2><p>先上百科：<a href="https://zh.wikipedia.org/wiki/%E5%A5%A7%E9%87%8C%E8%88%87%E8%BF%B7%E5%A4%B1%E6%A3%AE%E6%9E%97" target="_blank" rel="external">奥里与迷失森林 - 维基百科，自由的百科全书</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/193400-8cc366cac68827a1.jpg" alt="Ori And The Blind Forest 封面"></p>
+<h3 id="画面美">画面美</h3><p>画面美是最容易直观感受的第一印象，随便上个图就能感受到。用朋友的话来说『随便一张截图就是精美的壁纸』</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/193400-e39edac8e3bc4f83.jpg" alt="Ori And The Blind Forest 画面美"></p>
+<h3 id="音乐燃">音乐燃</h3><p>音乐一直是游戏容易被忽略的一块，特别是 ori 这类『小制作』很容易重视画面而忽视音乐。不过其已经拿下了 2015 年金摇杆奖的最佳游戏音效奖，这方面自然了得。<br>上手一会走过两个剧情你就会发现，音乐与音效与剧情衔接的十分自然。而洪水漫上来的那一段，我随着音乐不禁『燃』了起来，一段音乐已值回票价。<br>对音乐的分析见这里：<a href="https://www.zhihu.com/question/29471127/answer/62215550" target="_blank" rel="external">如何评价《Ori and the Blind Forest 》的配乐水平？ - 舟行的回答 - 知乎</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/193400-3b1c3955db25b781.jpg" alt="Ori And The Blind Forest 音乐燃"></p>
+<h3 id="剧情沉浸">剧情沉浸</h3><p>奥瑞希望拯救『养母』，挣扎许久竟然发现悲剧都是自己酿成的，黑子的暴虐也有其苦衷。通关一刻，竟不知如何是好。<br>于剧情，我没能理解更深。而从序幕到最后一刻，过场动画所陈诉的剧情都如游戏一般令我沉浸其中。这是令人沉浸的好剧情。<br>想看大师的剧情分析看这里：<a href="http://tieba.baidu.com/p/3646461185?share=9105&amp;fr=share" target="_blank" rel="external">对奥里这款游戏的细节、故事以及人物的一些看法。奥日与黑暗森林吧</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/193400-0ee5f5d36671ca5a.png" alt="Ori And The Blind Forest 剧情沉浸"></p>
+<h3 id="地图赞">地图赞</h3><p>Ori 属于横版过关游戏，地图设计比较复杂。特别是随着剧情的进展，主角逐步有二段跳，滑翔，贴墙等技能。最难的点就这个『逐步』。</p>
+<ul>
+<li>主角能力未到时，有些地图是去不了的，随着剧情变化，能到的『自然』能到</li>
+<li>一条路线跑过去，活得了某项能力，同样路线跑回来，新能力在这条路线上神奇的延伸的新玩法。滑翔那段尤其明显。</li>
+<li>地图很大，游戏没设传送门。剧情整体路线不重复，而部分的路线重复，确因角色能力的不同有了新的『跑路方式』，这点地图和场景结合得特好</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/193400-babf2f9371c45ec7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Ori And The Blind Forest 全地图"></p>
+<h3 id="总结_-_系统平衡_-_神作">总结 - 系统平衡 - 神作</h3><p>大学游戏大神魏巍有句话：『做游戏就是做平衡，你画面音乐剧情战斗任一方面做得完美都没有意义，只要有一点做得很不平衡，短板明显，就会毁掉这个游戏。』</p>
+<p>Ori 难能可贵的就是这一点，角色能力设计、操控、地图、画面、音乐。每一点设计都很『完美』，更完美的是这些方面衔接的是如此之好，互为衬映提升游戏的整体感受。在我心中，他是又一款神作。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/193400-52cd22630c1cd2c2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="像不像古堡迷踪与 Yorda 一起吃西瓜 ; ) 懂的自然懂~ "></p>
+<h2 id="ClassyShark_-_李仙鹏">ClassyShark - 李仙鹏</h2><h3 id="引言">引言</h3><ul>
+<li><a href="https://github.com/google/android-classyshark" target="_blank" rel="external">ClassyShark</a>并非Google官方产品。</li>
+<li><a href="https://github.com/google/android-classyshark" target="_blank" rel="external">ClassyShark</a>是针对Android开发者的独立工具。它能够可靠的浏览任何Android可执行文件，并且显示apk的重要信息，比如类、接口和成员，以及dex数量和依赖。它还支持多种格式，比如库（.dex，.aar，.so），可执行文件（.apk，.jar，.class）和AndroidManifest</li>
+</ul>
+<h3 id="使用">使用</h3><ul>
+<li>打开APK（GUI展现）<ul>
+<li>java -jar ClassyShark.jar -open YOUR_APK.apk</li>
+</ul>
+</li>
+<li>检测APK<ul>
+<li>java -jar ClassyShark.jar -inspect YOUR_APK.apk</li>
+</ul>
+</li>
+<li>以文本形式存储APK中classes.dex的字符串表<ul>
+<li>java -jar ClassyShark.jar -stringdump YOUR_APK.apk</li>
+</ul>
+</li>
+</ul>
+<h2 id="Google_Protocol_Buffer_介绍与使用">Google Protocol Buffer 介绍与使用</h2><h3 id="简介">简介</h3><ul>
+<li><p>官网<a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="external">https://developers.google.com/protocol-buffers/</a></p>
+</li>
+<li><p>Google Protocol Buffer( 以下简称PB) 是 Google 公司内部的混合语言数据标准，目前已经正在使用的有超过 48,162 种报文格式定义和超过 12,183 个 .proto 文件。他们用于 RPC 系统和持续数据存储系统。PB是一种轻便高效的结构化数据存储格式，可以用于结构化数据串行化，或者说序列化。它很适合做数据存储或 RPC 数据交换格式。可用于通讯协议、数据存储等领域的语言无关、平台无关、可扩展的序列化结构数据格式。</p>
+<blockquote>
+<p>“Protocol Buffers是一种以有效并可扩展的格式编码结构化数据的方式。”</p>
+<pre><code>message <span class="keyword">Person</span> {
+  required int32 id = 1;
+  required string name = 2;
+  optional string email = 3;
+}
+</code></pre></blockquote>
+</li>
+</ul>
+<h3 id="PB_的优点">PB 的优点</h3><ul>
+<li>性能好，效率高</li>
+</ul>
+<blockquote>
+<p>同 XML 相比， PB 的主要优点在于性能高。它以高效的二进制方式存储，比 XML 小 3 到 10 倍，快 20 到 100 倍。Protobuf 序列化后所生成的二进制消息非常紧凑，这得益于 Protobuf 采用的非常巧妙的 <a href="https://developers.google.com/protocol-buffers/docs/encoding" target="_blank" rel="external">Encoding</a> 方法。</p>
+<p>Total Time 指一个对象操作的整个时间，包括创建对象，将对象序列化为内存中的字节序列，然后再反序列化的整个过程。从测试结果可以看到 Protobuf 的成绩很好，感兴趣的读者可以自行到<a href="http://code.google.com/p/thrift-protobuf-compare/wiki/Benchmarking" target="_blank" rel="external">网站</a>上了解更详细的测试结果。</p>
+</blockquote>
+<ul>
+<li>代码生成机制，数据解析类自动生成</li>
+</ul>
+<blockquote>
+<p>PB 语义更清晰，无需类似 XML 解析器的东西（因为 PB 编译器会将 .proto 文件编译生成对应的数据访问类以对 PB数据进行序列化、反序列化操作）。使用 PB无需学习复杂的文档对象模型，PB 的编程模式比较友好，简单易学，同时它拥有良好的文档和示例，对于喜欢简单事物的人们而言，PB 比其他的技术更加有吸引力</p>
+</blockquote>
+<ul>
+<li>支持向后兼容和向前兼容</li>
+</ul>
+<blockquote>
+<p>它有一个非常棒的特性，即“向后”兼容性好，人们不必破坏已部署的、依靠“老”数据格式的程序就可以对数据结构进行升级。这样您的程序就可以不必担心因为消息结构的改变而造成的大规模的代码重构或者迁移的问题。因为添加新的消息中的 field 并不会引起已经发布的程序的任何改变。</p>
+</blockquote>
+<h3 id="PB_使用(java)">PB 使用(java)</h3><ul>
+<li>step1： 下载protobuf</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/google/protobuf" target="_blank" rel="external">下载</a>并编译获得proto.exe和protobuf-java.jar<br>也可以直接从网上下载proto.exe <a href="http://repo1.maven.org/maven2/com/google/protobuf/protoc/" target="_blank" rel="external">下载</a>和protobuf-java-2.4.1.jar（<a href="https://github.com/google/protobuf/releases" target="_blank" rel="external">下载</a>）</p>
+</blockquote>
+<ul>
+<li>step2：编写.proto文件，eg：</li>
+</ul>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">option</span> java_package = <span class="string">"com.jeson.roster.proto"</span>;  </span><br><span class="line"><span class="keyword">option</span> java_outer_classname = <span class="string">"Roster"</span>;  </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">message</span> <span class="title">Student</span></span>&#123;  </span><br><span class="line"><span class="keyword">required</span> <span class="built_in">int32</span> id = <span class="number">1</span>;  </span><br><span class="line"><span class="keyword">required</span> <span class="built_in">string</span> name = <span class="number">2</span>;   </span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Sex</span></span>&#123;  </span><br><span class="line"><span class="constant">MALE</span> = <span class="number">0</span>;  </span><br><span class="line"><span class="constant">FEMALE</span> = <span class="number">1</span>;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">required</span> Sex sex = <span class="number">3</span>;  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">message</span> <span class="title">StudentRoster</span></span>&#123;  </span><br><span class="line"><span class="keyword">repeated</span> Student student = <span class="number">1</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>step3：编译.proto文件生成 java类文件：在proto.exe目录下：protoc  —java_out=./src   ./proto/msg.proto</li>
+</ul>
+<blockquote>
+<p>在所使用的proto文件路径下打开cmd窗口执行以下命令</p>
+</blockquote>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc <span class="variable">-I=</span>源地址 <span class="variable">--java_out=</span>目标地址  源地址/xxx.proto</span><br></pre></td></tr></table></figure>
+<ul>
+<li>step4：导入java类文件和依赖包直接使用</li>
+</ul>
+<blockquote>
+<p>Android Studio eg :   <a href="https://github.com/bingxuebage/testpb" target="_blank" rel="external">完整demo地址</a></p>
+<blockquote>
+<p>1 添加依赖包 compile ‘com.google.protobuf:protobuf-java:3.0.0-beta-2’</p>
+<p>2 导入生成的 Roster 到对应的package下</p>
+<p>3 使用Roster 序列化或反序列化数据</p>
+</blockquote>
+</blockquote>
+<pre><code>package com.jeson.testpb;
+
+<span class="built_in">import</span> com.jeson.roster.proto.Roster.Student;
+<span class="built_in">import</span> com.jeson.roster.proto.Roster.Student.Sex;
+<span class="built_in">import</span> com.jeson.roster.proto.Roster.StudentRoster;
+
+<span class="built_in">import</span> java.io.FileInputStream;
+<span class="built_in">import</span> java.io.FileNotFoundException;
+<span class="built_in">import</span> java.io.FileOutputStream;
+<span class="built_in">import</span> java.io.IOException;
+<span class="built_in">import</span> java.util.ArrayList;
+<span class="built_in">import</span> java.util.List;
+
+public class InfoHelper {
+
+
+    public static final String FILE_NAME = <span class="string">"/mnt/sdcard/roster.dat"</span>;
+
+
+    <span class="comment">/**
+     * 反序列化
+     */</span>
+
+    public static List&lt;StudentInfo&gt; getStudentsFromFile<span class="params">()</span> {
+
+        ArrayList&lt;StudentInfo&gt; list = new ArrayList&lt;StudentInfo&gt;<span class="params">()</span>;
+        FileInputStream fis = null;
+
+        try {
+            fis = new FileInputStream<span class="params">(FILE_NAME)</span>;
+            StudentRoster roster = StudentRoster.parseFrom<span class="params">(fis)</span>;
+            int student_count = roster.getStudentCount<span class="params">()</span>;
+
+            <span class="keyword">for</span> <span class="params">(int i = <span class="number">0</span>; i &lt; student_count; i++)</span> {
+                Student student = roster.getStudent<span class="params">(i)</span>;
+                StudentInfo info = new StudentInfo<span class="params">()</span>;
+                info.setId<span class="params">(student.getId<span class="params">()</span>)</span>;
+                info.setName<span class="params">(student.getName<span class="params">()</span>)</span>;
+                info.setSex<span class="params">(student.getSex<span class="params">()</span>.toString<span class="params">()</span>)</span>;
+                list.add<span class="params">(info)</span>;
+            }
+
+        } catch <span class="params">(FileNotFoundException e)</span> {
+            <span class="comment">// <span class="doctag">TODO</span> Auto-generated catch block</span>
+            e.printStackTrace<span class="params">()</span>;
+        } catch <span class="params">(IOException e)</span> {
+            <span class="comment">// <span class="doctag">TODO</span> Auto-generated catch block</span>
+            e.printStackTrace<span class="params">()</span>;
+        } finally {
+            <span class="keyword">if</span> <span class="params">(null != fis)</span> {
+                try {
+                    fis.close<span class="params">()</span>;
+                } catch <span class="params">(IOException e)</span> {
+                    <span class="comment">// <span class="doctag">TODO</span> Auto-generated catch block</span>
+                    e.printStackTrace<span class="params">()</span>;
+                }
+            }
+        }
+
+        return list;
+    }
+
+
+    <span class="comment">/**
+     * 序列化
+     */</span>
+
+    public static void saveStudentIntoFile<span class="params">(int id, String name, String sex)</span> {
+        FileOutputStream fos = null;
+
+        StudentRoster.Builder rosterBuid = StudentRoster.newBuilder<span class="params">()</span>;
+
+
+        Student.Builder student = Student.newBuilder<span class="params">()</span>;
+        student.setId<span class="params">(id)</span>;
+        student.setName<span class="params">(name)</span>;
+        <span class="keyword">if</span> <span class="params">(<span class="string">"MALE"</span>.equalsIgnoreCase<span class="params">(sex)</span>)</span> {
+            student.setSex<span class="params">(Sex.MALE)</span>;
+        } <span class="keyword">else</span> {
+            student.setSex<span class="params">(Sex.FEMALE)</span>;
+        }
+
+        rosterBuid.addStudent<span class="params">(student.build<span class="params">()</span>)</span>;
+
+        try {
+            fos = new FileOutputStream<span class="params">(FILE_NAME, <span class="literal">true</span>)</span>;
+            rosterBuid.build<span class="params">()</span>.writeTo<span class="params">(fos)</span>;
+            fos.close<span class="params">()</span>;
+        } catch <span class="params">(FileNotFoundException e)</span> {
+            <span class="comment">// <span class="doctag">TODO</span> Auto-generated catch block</span>
+            e.printStackTrace<span class="params">()</span>;
+        } catch <span class="params">(IOException e)</span> {
+            <span class="comment">// <span class="doctag">TODO</span> Auto-generated catch block</span>
+            e.printStackTrace<span class="params">()</span>;
+        }
+
+
+    }
+
+}
+</code></pre><h2 id="Andoid最近搜索记录">Andoid最近搜索记录</h2><ul>
+<li>原生搜<ul>
+<li><img src="http://7xn0ue.com1.z0.glb.clouddn.com/youtube%E6%9C%80%E8%BF%91%E6%90%9C%E7%B4%A2%E8%AE%B0%E5%BD%95.jpg" alt="Alt Image Text"></li>
+<li><a href="http://developer.android.com/intl/zh-cn/guide/topics/search/search-dialog.html" target="_blank" rel="external">Android搜索记录(需翻墙)</a> </li>
+<li>问题:没有清除历史记录界面</li>
+</ul>
+</li>
+<li>APP最近搜索记录<ul>
+<li><img src="http://7xn0ue.com1.z0.glb.clouddn.com/bilibilihistory.jpg" alt="Alt Image Text"></li>
+</ul>
+</li>
+<li>实现<ul>
+<li>SearchView+ListPopupWindow+SQLite</li>
+<li><img src="http://7xn0ue.com1.z0.glb.clouddn.com/mysuggestion.jpg" alt="Alt Image Text"></li>
+<li><a href="https://github.com/milin411/TestProject.git" target="_blank" rel="external">托管代码</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/02/26/移动周分享-第45期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第45期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/29/移动周分享-第43期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第43期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第44期" data-title="移动周分享-第44期" data-url="http://yoursite.com/2016/02/19/移动周分享-第44期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

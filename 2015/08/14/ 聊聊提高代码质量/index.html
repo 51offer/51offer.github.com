@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>聊聊提高代码质量 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么样的代码才是好的——李仙鹏我所理解的好代码
+代码规范——可读性
+
+统一命名方式（Google Java代码风格）
+尽量不要出现magic number
+清晰的代码注释文档（改善Java文档的理由、建议和技巧）
+控制方法或者函数的细粒度
+减少代码冗余
+
+
+代码耦合低——可扩展性、可移植性
+
+尽量采用接口实现，减少继承
+通用功能尽量抽取作为一个独立的方法，避免重复造轮子
+设计模式并不能提高代码执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊提高代码质量">
+<meta property="og:url" content="http://yoursite.com/2015/08/14/ 聊聊提高代码质量/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="什么样的代码才是好的——李仙鹏我所理解的好代码
+代码规范——可读性
+
+统一命名方式（Google Java代码风格）
+尽量不要出现magic number
+清晰的代码注释文档（改善Java文档的理由、建议和技巧）
+控制方法或者函数的细粒度
+减少代码冗余
+
+
+代码耦合低——可扩展性、可移植性
+
+尽量采用接口实现，减少继承
+通用功能尽量抽取作为一个独立的方法，避免重复造轮子
+设计模式并不能提高代码执行">
+<meta property="og:image" content="http://magenic.com/Portals/0/xBlog/uploads/2015/4/10/presenter-view-model-1-mvp-pattern-for-android-jeff-angellini.png">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/7cc829d3jw1dpx6ahcgfuj.jpg">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="聊聊提高代码质量">
+<meta name="twitter:description" content="什么样的代码才是好的——李仙鹏我所理解的好代码
+代码规范——可读性
+
+统一命名方式（Google Java代码风格）
+尽量不要出现magic number
+清晰的代码注释文档（改善Java文档的理由、建议和技巧）
+控制方法或者函数的细粒度
+减少代码冗余
+
+
+代码耦合低——可扩展性、可移植性
+
+尽量采用接口实现，减少继承
+通用功能尽量抽取作为一个独立的方法，避免重复造轮子
+设计模式并不能提高代码执行">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post- 聊聊提高代码质量" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/14/ 聊聊提高代码质量/" class="article-date">
+  	<time datetime="2015-08-14T13:08:35.000Z" itemprop="datePublished">2015-08-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      聊聊提高代码质量
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么样的代码才是好的——李仙鹏">什么样的代码才是好的——李仙鹏</h2><h3 id="我所理解的好代码">我所理解的好代码</h3><ul>
+<li><p>代码规范——可读性</p>
+<ul>
+<li>统一命名方式（<a href="http://www.hawstein.com/posts/google-java-style.html" target="_blank" rel="external">Google Java代码风格</a>）</li>
+<li>尽量不要出现magic number</li>
+<li>清晰的代码注释文档（<a href="http://www.importnew.com/16459.html#rd?sukey=fc78a68049a14bb28cbb47b788e9ade0d111f3c2348d187194837eb45a0be9421f2e0aad0fec6b2290f2a561779caea1" target="_blank" rel="external">改善Java文档的理由、建议和技巧</a>）</li>
+<li>控制方法或者函数的细粒度</li>
+<li>减少代码冗余</li>
+</ul>
+</li>
+<li><p>代码耦合低——可扩展性、可移植性</p>
+<ul>
+<li>尽量采用接口实现，减少继承</li>
+<li>通用功能尽量抽取作为一个独立的方法，避免重复造轮子</li>
+<li>设计模式并不能提高代码执行效率，但容易对代码进行模块切分，从而进行代码的解耦合。设计模式也可以算是程序员的一种通用“语言“，方便程序员之间的沟通.<ul>
+<li>根据不同OS或者语言特性，从大的架构上遵循MVC或者MVP或者其它类似的层次分明的设计模式。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>严格的code review</p>
+<ul>
+<li>能够发现潜在的bug、不合理的实现和是否遵从代码规范</li>
+<li>有助于代码提交人员对自身代码质量的要求——面子问题</li>
+</ul>
+</li>
+<li><p>性能</p>
+</li>
+</ul>
+<blockquote>
+<p>以上这些点都是为了程序的健壮性、可扩展性、可移植性。最终目标，在核心开发人员变动或者产品需求变动后，都不会对代码维护、版本迭代和程序稳定性造成重大影响。</p>
+</blockquote>
+<h3 id="51offer-v2-5-0重写中，我们是如何做的">51offer-v2.5.0重写中，我们是如何做的</h3><ul>
+<li><p>整体架构上采用<a href="http://baike.baidu.com/view/3456444.htm" target="_blank" rel="external">MVP模式</a></p>
+<ul>
+<li>V和P通过接口实现交互，M只被P处理，P处理完后通过接口反馈给V<br><img src="http://magenic.com/Portals/0/xBlog/uploads/2015/4/10/presenter-view-model-1-mvp-pattern-for-android-jeff-angellini.png" alt="MVP"></li>
+</ul>
+</li>
+<li><p>代码可移植性和可扩展性</p>
+<ul>
+<li>按照是否通用原则，命名包名——非通用包名，放在offer包下；通用功能模块，放在非offer包下。这样有利于快速移植，或者打成JAR包</li>
+<li>接口实现，减少继承——在类的继承中，减少继承体系中每层父类的职责范围</li>
+</ul>
+</li>
+<li><p>HTTP请求</p>
+<ul>
+<li>底层请求采用<a href="http://square.github.io/okhttp/" target="_blank" rel="external">OkHttp</a>，<a href="http://square.github.io/okhttp/" target="_blank" rel="external">OkHttp</a>默认实现的功能为：<ul>
+<li>支持协议——<a href="http://baike.baidu.com/view/11521153.htm" target="_blank" rel="external">HTTP/2</a>和<a href="http://baike.baidu.com/view/2984528.htm" target="_blank" rel="external">SPDY</a>, 可以合并多个到同一个主机的请求<ul>
+<li>使用连接池技术减少请求的延迟</li>
+<li>使用GZIP压缩减少传输的数据量</li>
+<li>报文缓存响应，避免重复的网络请求</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>json解析</p>
+<ul>
+<li><a href="https://sites.google.com/site/gson/gson-user-guide" target="_blank" rel="external">Gson</a>，这是<a href="http://www.open-open.com/lib/view/open1434377191317.html" target="_blank" rel="external">综合考虑Json使用场景后的选择结果</a>——方便json字符串到对象之间的转换、<a href="https://sites.google.com/site/gson/gson-user-guide" target="_blank" rel="external">Gson</a>在处理短的json时速度比较快、<a href="https://sites.google.com/site/gson/gson-user-guide" target="_blank" rel="external">Gson</a>不需要太多的注解</li>
+</ul>
+</li>
+<li><p>图片加载</p>
+<ul>
+<li><p>采用<a href="https://github.com/nostra13/Android-Universal-Image-Loader" target="_blank" rel="external">Android-Universal-Image-Loader</a></p>
+<ul>
+<li>多线程图片加载</li>
+<li>可自定义的加载器</li>
+<li>可自定义的图片显示回调</li>
+<li>图片三级缓存——内存和硬盘缓存的图片通过多种数据结构管理</li>
+<li>监听加载过程</li>
+</ul>
+</li>
+<li><p>bitmap显示质量设置为RGB_565——一个像素需要16位表示，Android中默认为ARGB_8888——一个像素需要32位表示。这种方式在<strong><em>基本保障图片质量要求</em></strong>的同时，还能够大大减少手机的内存占用</p>
+</li>
+</ul>
+</li>
+<li><p>数据存储</p>
+<ul>
+<li>由于目前客户端还未涉及到大量数据和离线加载模式，所以我们暂不使用数据库（以后在做IM或者离线加载时，会考虑使用ORM来访问数据库），综合速度考虑使用Android的SharedPreference</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件通信库EventBus_-_吴强">组件通信库EventBus - 吴强</h2><p>  EventBus是一个Android端优化的publish/subscribe消息总线，简化了应用程序内各组件间、组件与后台线程间的通信。</p>
+<h3 id="三个主要元素：">三个主要元素：</h3><ul>
+<li>Event：事件<blockquote>
+<p>Event可以是任意类型的对象</p>
+</blockquote>
+</li>
+<li>Subscriber：事件订阅者，接收特定的事件<blockquote>
+<p>在EventBus中，使用约定来指定事件订阅者以简化使用。即所有事件订阅都都是以onEvent开头的函数，具体来说，函数的名字是onEvent，onEventMainThread，onEventBackgroundThread，onEventAsync这四个</p>
+</blockquote>
+</li>
+<li>Publisher:事件发布者，用于通知Subscriber有事件发生<blockquote>
+<p>可以在任意线程任意位置发送事件，直接调用EventBus的post(Object)方法，可以自己实例化EventBus对象，但一般使用默认的单例就好了：EventBus.getDefault()，根据post函数参数的类型，会自动调用订阅相应类型事件的函数。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="ThreadMode">ThreadMode</h3><p>  Subscriber函数的名字只能是那4个，因为每个事件订阅函数都是和一个ThreadMode相关联的，ThreadMode指定了会调用的函数。有以下四个ThreadMode：</p>
+<ul>
+<li>PostThread:<br>事件的处理在和事件的发送在相同的进程，所以事件处理时间不应太长，不然影响事件的发送线程，而这个线程可能是UI线程。对应的函数名是onEvent。</li>
+<li>MainThread:<br>事件的处理会在UI线程中执行。事件处理时间不能太长，这个不用说的，长了会ANR的，对应的函数名是onEventMainThread。</li>
+<li>BackgroundThread:<br>事件的处理会在一个后台线程中执行，对应的函数名是onEventBackgroundThread，虽然名字是BackgroundThread，事件处理是在后台线程，但事件处理时间还是不应该太长，因为如果发送事件的线程是后台线程，会直接执行事件，如果当前线程是UI线程，事件会被加到一个队列中，由一个线程依次处理这些事件，如果某个事件处理时间太长，会阻塞后面的事件的派发或处理。</li>
+<li>Async:<br>事件处理会在单独的线程中执行，主要用于在后台线程中执行耗时操作，每个事件会开启一个线程（有线程池），但最好限制线程的数目。</li>
+</ul>
+<h3 id="注册事件与解除注册">注册事件与解除注册</h3><ul>
+<li>通过EventBus.getDefault().register方法可以向EventBus注册来订阅事件</li>
+<li>通过registerSticky可以注册Stick事件处理函数</li>
+<li>通过EventBus.getDefault().unregister方法解除EventBus事件订阅</li>
+</ul>
+<h3 id="Post事件">Post事件</h3><ul>
+<li>直接调用EventBus.getDefault().post(Event)就可以发送事件，根据Event的类型就可以发送到相应事件的订阅者。</li>
+<li>当通过postSticky发送一个事件时，这个类型的事件的最后一次事件会被缓存起来，当有订阅者通过registerSticky注册时，会把之前缓存起来的这个事件直接发送给它</li>
+</ul>
+<h3 id="缺点">缺点</h3><p>  无法进程间通信，如果一个应用内有多个进程的话就没办法了</p>
+<h3 id="注意事项及要点">注意事项及要点</h3><ul>
+<li>同一个onEvent函数不能被注册两次，所以不能在一个类中注册同时还在父类中注册</li>
+<li>当Post一个事件时，这个事件类的父类的事件也会被Post。</li>
+<li>Post的事件无Subscriber处理时会Post <code>NoSubscriberEvent</code>事件，当调用Subscriber失败时会Post <code>SubscriberExceptionEvent</code>事件。</li>
+</ul>
+<h3 id="其他">其他</h3><p>  EventBus中还有个Util包，主要作用是可以通过AsyncExecutor执行一个Runnable，通过内部的RunnableEx(可以搜索异常的Runnable)当Runnable抛出异常时通过EventBus发消息显示错误对话框。</p>
+<p>参考资料：<a href="http://www.cnblogs.com/angeldevil/p/3715934.html" target="_blank" rel="external">快速Android开发系列通信篇之EventBus</a></p>
+<h2 id="如何提高代码质量——吴明">如何提高代码质量——吴明</h2><p><img src="http://ww4.sinaimg.cn/large/7cc829d3jw1dpx6ahcgfuj.jpg" alt="Alt text"></p>
+<ul>
+<li>code review</li>
+<li><a href="http://www.hawstein.com/posts/google-java-style.html" target="_blank" rel="external">命名规范</a><ul>
+<li>java命名规范:<ul>
+<li>java类：m+模块+功能(如:mLoginRegester)</li>
+<li>控件类：m+模块+功能+控件缩写(如:mLoginRegesterBtn)</li>
+<li>常量:模块+功能(如:SCHOOL_COUNT_MAX)</li>
+</ul>
+</li>
+<li>xml命名规范<ul>
+<li>id:模块+功能+控件缩写</li>
+</ul>
+</li>
+<li>color，string，dimen，drawable</li>
+<li>图片：模块<em>功能</em>备注_状态</li>
+<li>注释</li>
+</ul>
+</li>
+<li>好的框架<ul>
+<li>okhttp</li>
+<li>Gson</li>
+</ul>
+</li>
+<li>设计模式:<ul>
+<li><a href="http://cantellow.iteye.com/blog/838473" target="_blank" rel="external">单例模式</a></li>
+<li>工厂模式</li>
+<li>策略模式</li>
+<li>代理模式</li>
+<li><a href="http://blog.csdn.net/cym492224103/article/details/38776873" target="_blank" rel="external">mvp模式</a></li>
+</ul>
+</li>
+<li>处理异常</li>
+<li><p>优化性能</p>
+</li>
+<li><p>代码测试工具:静态代码分析</p>
+</li>
+</ul>
+<h2 id="如何写一份好的代码_-_张超耀">如何写一份好的代码 - 张超耀</h2><h3 id="数据结构和核心算法">数据结构和核心算法</h3><ul>
+<li><p>数据结构的重要性：低水平程序员总在考虑代码，高水平程序员总在考虑数据结构及其之间的关系</p>
+</li>
+<li><p>数据结构决定算法,数据结构考虑清楚了，核心的算法自然就出来了，这就是关于每个类的每个方法如何实现的问题</p>
+</li>
+</ul>
+<h3 id="功能实现">功能实现</h3><ul>
+<li><p>思路确定后，实现过程也需要大量的构思活动。碰到比较熟悉有经验的领域，自然可以轻车熟路，但难免会有一些你不太熟悉的技术需要尝试。作为一个程序员，最大的挑战也是最大的乐趣所在，就是不断学习新的技术，没有这样的心态，很快就会落后。</p>
+</li>
+<li><p>那么遇到不熟悉的技术怎么办？Demo先行，这样做的好处是把单个技术问题和其他潜在的bug隔离开来，便于快速学习新技术。否则，直接在项目里写代码出错以后，要判断问题的源头都要多费好几倍的精力。</p>
+</li>
+</ul>
+<h3 id="测试">测试</h3><ul>
+<li>测试很重要，设计测试用例就像开发时设计数据结构一样，也是很关键的。</li>
+</ul>
+<h3 id="代码可读性">代码可读性</h3><ul>
+<li><p>要想自己满意，代码的可读性一定要好。要做到一年后甚至几年后你拿到自己写的代码，还能很容易看明白当时的思路和实现。这就涉及到命名和注释的问题</p>
+</li>
+<li><p>命名就像超市里的商品标签一样，要让看得人一目了然就知道这是个什么东西</p>
+</li>
+<li><p>注释也是很重要的，它可以用来说明一段代码的作用，算法的设计思想，或者是方法调用的参数格式要求等</p>
+</li>
+</ul>
+<h3 id="最后总结一下：">最后总结一下：</h3><ul>
+<li>技术水平是可以慢慢提高的，但是好的编程习惯需要从一开始就养成，它会让你在前进的道路上事半功倍，受益终生。</li>
+</ul>
+<h2 id="怎样写好的代码_-_曾铭">怎样写好的代码 - 曾铭</h2><blockquote>
+<p>有两种方式构建软件设计：一种是把软件做得很简单以至于明显找不到缺陷；另一种是把它做得很复杂以至于找不到明显的缺陷<br>——C.A.R. Hoare</p>
+</blockquote>
+<h3 id="谁来写？角色的定义">谁来写？角色的定义</h3><ul>
+<li>程序员 vs 工程师</li>
+<li>实现功能 vs 解决问题</li>
+<li>搭个帐篷 vs 照顾孩子</li>
+</ul>
+<h3 id="好的代码？">好的代码？</h3><blockquote>
+<p>一个程序员更希望接手一个有bug但是看的懂的工程，还是一个没bug但是看不懂的工程？</p>
+</blockquote>
+<ul>
+<li>代码跟人聊天，解释做什么，注释解释为什么这么做，要注意什么</li>
+<li>面向接口而不仅仅面向对象</li>
+</ul>
+<p>举例：在 APP 开发和 API 开发之间，面向 API 文档做开发</p>
+<h3 id="写的过程？（推荐开发过程）">写的过程？（推荐开发过程）</h3><ul>
+<li>需求明确（理解来源及演进）</li>
+<li>整体设计（外在联系，临界条件，错误处理）</li>
+<li>实现（验证思路，解决问题及优化）<strong>切记不要拿到需求直接跳到这一步</strong></li>
+</ul>
+<h3 id="好？目标">好？目标</h3><ul>
+<li>可运行，可读，可维护，可测试</li>
+<li>参见 TDD，BDD</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/21/那些年我们用过的第三方库/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          那些年我们用过的第三方库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/07/ 随意“无主题”/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">无主题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key=" 聊聊提高代码质量" data-title="聊聊提高代码质量" data-url="http://yoursite.com/2015/08/14/ 聊聊提高代码质量/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

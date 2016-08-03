@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第60期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="微信-支付宝-银联支付对比 - 王胜微信支付业务流程
+支付宝业务流程
+银联业务流程
+结论
+
+
+支付平台
+流程图
+文档
+接口设计
+demo
+测试相关
+
+
+
+
+微信
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hear">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第60期">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/移动周分享-第60期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="微信-支付宝-银联支付对比 - 王胜微信支付业务流程
+支付宝业务流程
+银联业务流程
+结论
+
+
+支付平台
+流程图
+文档
+接口设计
+demo
+测试相关
+
+
+
+
+微信
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hear">
+<meta property="og:image" content="https://pay.weixin.qq.com/wiki/doc/api/img/chapter8_3_1.png">
+<meta property="og:image" content="https://img.alicdn.com/top/i1/LB1n8NYKVXXXXbbXpXXXXXXXXXX">
+<meta property="og:image" content="https://open.unionpay.com/upload/image/1416394316921062523.png">
+<meta property="og:image" content="http://oaclergq7.bkt.clouddn.com/hit-testing.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第60期">
+<meta name="twitter:description" content="微信-支付宝-银联支付对比 - 王胜微信支付业务流程
+支付宝业务流程
+银联业务流程
+结论
+
+
+支付平台
+流程图
+文档
+接口设计
+demo
+测试相关
+
+
+
+
+微信
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;
+&amp;hearts;&amp;hearts;&amp;hearts;&amp;hearts;&amp;hear">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第60期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/22/移动周分享-第60期/" class="article-date">
+  	<time datetime="2016-07-22T14:45:00.000Z" itemprop="datePublished">2016-07-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第60期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="微信-支付宝-银联支付对比_-_王胜">微信-支付宝-银联支付对比 - 王胜</h2><h3 id="微信支付"><a href="https://pay.weixin.qq.com" target="_blank" rel="external">微信支付</a></h3><h4 id="业务流程"><a href="https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_3" target="_blank" rel="external">业务流程</a></h4><p><img src="https://pay.weixin.qq.com/wiki/doc/api/img/chapter8_3_1.png" alt="pay-weixin-timeline"></p>
+<h3 id="支付宝"><a href="https://open.alipay.com" target="_blank" rel="external">支付宝</a></h3><h4 id="业务流程-1"><a href="https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.8NhMga&amp;treeId=59&amp;articleId=103658&amp;docType=1" target="_blank" rel="external">业务流程</a></h4><p><img src="https://img.alicdn.com/top/i1/LB1n8NYKVXXXXbbXpXXXXXXXXXX" alt="pay-alipay-timeline"></p>
+<h3 id="银联"><a href="https://open.unionpay.com" target="_blank" rel="external">银联</a></h3><h4 id="业务流程-2"><a href="https://open.unionpay.com/ajweb/product/detail?id=3" target="_blank" rel="external">业务流程</a></h4><p><img src="https://open.unionpay.com/upload/image/1416394316921062523.png" alt="pay-unionpay-timeline"></p>
+<h3 id="结论">结论</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">支付平台</th>
+<th style="text-align:left">流程图</th>
+<th style="text-align:left">文档</th>
+<th style="text-align:left">接口设计</th>
+<th style="text-align:left">demo</th>
+<th style="text-align:left">测试相关</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">微信</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;</td>
+</tr>
+<tr>
+<td style="text-align:left">支付宝</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;</td>
+</tr>
+<tr>
+<td style="text-align:left">银联</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;</td>
+<td style="text-align:left">&hearts;&hearts;&hearts;&hearts;</td>
+</tr>
+</tbody>
+</table>
+<p>说明：</p>
+<ul>
+<li><p>路程图</p>
+<p>从全面性和完整性看，微信 &gt; 支付宝 &gt; 银联</p>
+</li>
+<li><p>文档：</p>
+<p>微信更简洁，清晰，完整；其他两家还是相对传统的风格，尤其是银联</p>
+</li>
+<li><p>接口设计：</p>
+<p>微信的接口设计更简洁灵活易用，支付宝次之，银联的字段说明另类。</p>
+</li>
+<li><p>demo:</p>
+<p>微信demo还算清楚，但是美中不足项目编码非utf-8，还得用Notepad++才正确编码显示；支付宝和银联的demo看起来晕。</p>
+</li>
+<li><p>测试：</p>
+<p>微信的测试环境是通过添加沙箱sandbox路径实现；另外，微信提供了测试用例，赞一个。支付宝没有看到有测试环境。银联在sdk的API参数中，提供了环境参数设置。</p>
+</li>
+</ul>
+<h2 id="iOS响应者链与hit-testing_-_刘康">iOS响应者链与hit-testing - 刘康</h2><p>今天我们来探索一下，当我们点击微信扫一扫就能打开扫码视图，当我们点击屏幕的时候。背后发生了些什么？</p>
+<p>当用户通过以上方式触发一个事件时，会将相应的事件对象添加到<code>UIApplication</code>的事件队列中。<code>UIApplication</code>会循环的从队列中拿出第一个事件来处理。首先将该事件分发给<code>UIApplication</code>的主窗口对象(<strong>KeyWindow</strong>)，然后由主窗口决定如何将事件交给最合适的响应者(<code>UIResponder</code>)来处理取决于事件的类型。这里主要分两种情况：</p>
+<h3 id="触摸事件">触摸事件</h3><p><code>UIApplication</code>通过一个触摸检测来决定最合适来处理该事件的响应者，一般情况下，这个响应者是<code>UIView</code>对象。<br>对于触摸事件，window对象会尝试着首先将事件传递给触摸事件发生点得View。这个View被视为“<code>命中测试view</code>” (hit-test view)。</p>
+<h3 id="手势和远程控制事件">手势和远程控制事件</h3><p>UIApplication寻找UIWindow中的第一响应者。找到第一响应者(<code>The First Responder</code>)后，会将该事件对象派发给该响应者以便处理。</p>
+<h3 id="事件传递响应链">事件传递响应链</h3><p>最终所有的事件响应路径都是为了去寻找那个能够响应并处理该事件的对象。因此，UIkit会首先发送该事件给最适合处理该事件的对象。对于触摸事件，这个最适合处理的对象就是 hit-test view既“命中测试view”,并且对于其它事件，这个对象就是“第一响应者”。</p>
+<h4 id="命中测试返回触摸事件发生点的view">命中测试返回触摸事件发生点的view</h4><p>系统检测到手指触摸(<code>Touch</code>)操作时会将其放入当前活动Application的事件队列，UIApplication会从事件队列中取出触摸事件并传递给<code>key window</code>处理,window对象首先会使用<code>hitTest:withEvent:</code>方法寻找此次Touch操作初始点所在的视图(View),即需要将触摸事件传递给其处理的视图:</p>
+<p>为了去阐明这个过程，假设用户触摸 view E 如图所示。iOS会以这样的顺序去寻找命中测试view通过检测所有的子view.<br><img src="http://oaclergq7.bkt.clouddn.com/hit-testing.png" alt="Alt text"></p>
+<ol>
+<li><p>触摸点是否在view A的边界之内，如果是它会检测子视图B和C.</p>
+</li>
+<li><p>触摸点不在view B的边界之内，但是它在view C的边界之内，因此它就去检测C的子视图D和E。</p>
+</li>
+<li><p>触摸事件不在view D的边界之内，但是在view E的边界之内。view E是整个包含触摸事件的view层级中最底端的view，因此view E就名正言顺的成为了“命中测试view”。</p>
+</li>
+</ol>
+<p><strong>例外</strong><br>不满足一下三个条件的Responder是不能接收触摸事件的：</p>
+<ul>
+<li>不允许交互：userInteractionEnabled = NO</li>
+<li>隐藏：如果把父控件隐藏，那么子控件也会隐藏，隐藏的控件不能接受事件</li>
+<li>透明度：如果设置一个控件的透明度&lt;0.01，会直接影响子控件的透明度。alpha：0.0~0.01为透明。</li>
+</ul>
+<p><strong>注意点</strong><br>一个触摸事件对象将会被关联于命中测试view的整个生命周期，即使这个触摸后来移到了view的边界之外。</p>
+<h3 id="实例">实例</h3><ol>
+<li>在此例子中button,scrollview同为topView的子视图，但scrollview覆盖在button之上，这样在在button上的触摸操作返回的hit-test view为scrollview,button无法响应，可以修改topView的hitTest:withEvent:方法如下:</li>
+</ol>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">UIView</span> *)hitTest:(<span class="type">CGPoint</span>)point withEvent:(<span class="type">UIEvent</span> *)event</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">UIView</span>* <span class="literal">result</span> = [super hitTest:point withEvent:event];</span><br><span class="line">    <span class="type">CGPoint</span> buttonPoint = [_checkedButton convertPoint:point fromView:self];</span><br><span class="line">    <span class="keyword">if</span> ([_checkedButton pointInside:buttonPoint withEvent:event]) &#123;</span><br><span class="line">        <span class="keyword">return</span> _checkedButton;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>放弃自身响应，让子视图去响应事件：</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span>*)hitTest:(<span class="built_in">CGPoint</span>)point withEvent:(<span class="built_in">UIEvent</span> *)event&#123;</span><br><span class="line">    <span class="comment">//当事件是传递给此View内部的子View时，让子View自己捕获事件，如果是传递给此View自己时，放弃事件捕获</span></span><br><span class="line">    <span class="built_in">UIView</span>* __tmpView = [<span class="keyword">super</span> hitTest:point withEvent:event];</span><br><span class="line">    <span class="keyword">if</span> (__tmpView == <span class="keyword">self</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> __tmpView;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>扩大按钮可点击区域：</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span>*)hitTest:(<span class="built_in">CGPoint</span>) point withEvent:(<span class="built_in">UIEvent</span>*) event</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">CGRect</span> rect = [<span class="keyword">self</span> enlargedRect];</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">CGRectEqualToRect</span>(rect, <span class="keyword">self</span><span class="variable">.bounds</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="keyword">super</span> hitTest:point withEvent:event];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CGRectContainsPoint</span>(rect, point) ? <span class="keyword">self</span> : <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="加速库在数学运算中的使用_-_杨志平">加速库在数学运算中的使用 - 杨志平</h2><p>@(iOS)[加速|Accelerate]</p>
+<blockquote>
+<p>除了加减乘除外还有好多好多数学运算需要我们处理，但我们很多都没有用到，感觉low爆了</p>
+</blockquote>
+<h3 id="Apple：加速框架文档"><a href="https://developer.apple.com/library/ios/documentation/Accelerate/Reference/vDSPRef/index.html#//apple_ref/doc/uid/TP40009464-CH13-12342" target="_blank" rel="external">Apple：加速框架文档</a></h3><blockquote>
+<p>Any time you’ve got to make some numbers happen, it’s probably worth it to consider using Accelerate</p>
+</blockquote>
+<h3 id="示例">示例</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 模拟随机数据</span></span><br><span class="line"><span class="keyword">var</span> doubles  = (<span class="number">0</span>...<span class="number">10000</span>).<span class="built_in">map</span> &#123;<span class="number">_</span> <span class="keyword">in</span> <span class="type">Double</span>(arc4random()%<span class="number">10000</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求和</span></span><br><span class="line"><span class="comment">// 常见的加法求和</span></span><br><span class="line"><span class="keyword">let</span> reduceSum = doubles.<span class="built_in">reduce</span>(<span class="number">0</span>) &#123; $<span class="number">0</span>+$<span class="number">1</span> &#125;</span><br><span class="line"><span class="comment">// Accelerate 封装</span></span><br><span class="line"><span class="keyword">let</span> accSum = sum(doubles)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求最大值（最小值也一样）</span></span><br><span class="line"><span class="keyword">let</span> maxOfArr = <span class="built_in">max</span>(doubles)</span><br><span class="line"><span class="keyword">let</span> maxOfArr2 = doubles.<span class="built_in">sort</span>(&gt;).first</span><br><span class="line"></span><br><span class="line"><span class="comment">// 平均值,哈哈大数据统计，可以测试准确率</span></span><br><span class="line"><span class="keyword">let</span> meanValue = mean(doubles)</span><br><span class="line"><span class="keyword">let</span> meanValue2 = doubles.<span class="built_in">reduce</span>(<span class="number">0</span>) &#123; $<span class="number">0</span> + $<span class="number">1</span>/<span class="type">Double</span>(doubles.<span class="built_in">count</span>) &#125;</span><br><span class="line">meanValue2</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向量加减乘积</span></span><br><span class="line"><span class="keyword">let</span> vector1 = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>] <span class="keyword">as</span> [<span class="type">Double</span>]</span><br><span class="line"><span class="keyword">let</span> vector2 = [<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>] <span class="keyword">as</span> [<span class="type">Double</span>]</span><br><span class="line"><span class="keyword">let</span> sumArrs = add(vector1, y: vector2)</span><br></pre></td></tr></table></figure>
+<p>耗时上对比是不是<code>reduce，map</code>等系统的高阶函数被<code>“加速库”</code>秒了，但使用上貌似reduce，map是比较灵活的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> newReduceSum = (<span class="number">0</span>...<span class="number">1000</span>).reduce(<span class="number">0</span>) &#123; <span class="variable">$0</span>+<span class="variable">$1</span> &#125;</span><br><span class="line">newReduceSum</span><br></pre></td></tr></table></figure></p>
+<h3 id="其他计算的一点的应用">其他计算的一点的应用</h3><blockquote>
+<p>函数混合示例: 使用中文变量😄</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 函数点阵密度 = <span class="number">64</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 频率<span class="number">1</span> = <span class="number">4.0</span></span><br><span class="line"><span class="keyword">let</span> 相位<span class="number">1</span> = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">let</span> 幅度<span class="number">1</span> = <span class="number">1.0</span></span><br><span class="line"><span class="keyword">let</span> 正弦函数<span class="number">1</span> = (<span class="number">0</span>..&lt;函数点阵密度).<span class="built_in">map</span> &#123;</span><br><span class="line">    幅度<span class="number">1</span> * sin(<span class="number">2.0</span> * <span class="type">M_PI</span> / <span class="type">Double</span>(函数点阵密度) * <span class="type">Double</span>($<span class="number">0</span>) * 频率<span class="number">1</span> + 相位<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 频率<span class="number">2</span> = <span class="number">1.0</span></span><br><span class="line"><span class="keyword">let</span> 相位<span class="number">2</span> = <span class="type">M_PI</span> / <span class="number">2.0</span></span><br><span class="line"><span class="keyword">let</span> 幅度<span class="number">2</span> = <span class="number">2.0</span></span><br><span class="line"><span class="keyword">let</span> 正弦函数<span class="number">2</span> = (<span class="number">0</span>..&lt;函数点阵密度).<span class="built_in">map</span> &#123;</span><br><span class="line">    幅度<span class="number">2</span> * sin(<span class="number">2.0</span> * <span class="type">M_PI</span> / <span class="type">Double</span>(函数点阵密度) * <span class="type">Double</span>($<span class="number">0</span>) * 频率<span class="number">2</span> + 相位<span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 频率<span class="number">3</span> = <span class="number">10.0</span></span><br><span class="line"><span class="keyword">let</span> 相位<span class="number">3</span> = <span class="type">M_PI</span> / <span class="number">3.0</span></span><br><span class="line"><span class="keyword">let</span> 幅度<span class="number">3</span> = <span class="number">4.0</span></span><br><span class="line"><span class="keyword">let</span> 正弦函数<span class="number">3</span> = (<span class="number">0</span>..&lt;函数点阵密度).<span class="built_in">map</span> &#123;</span><br><span class="line">    幅度<span class="number">3</span> * sin(<span class="number">2.0</span> * <span class="type">M_PI</span> / <span class="type">Double</span>(函数点阵密度) * <span class="type">Double</span>($<span class="number">0</span>) * 频率<span class="number">3</span> + 相位<span class="number">3</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 新函数<span class="number">1</span> = add(正弦函数<span class="number">1</span>, y: 正弦函数<span class="number">2</span>)</span><br><span class="line"><span class="keyword">let</span> 新函数<span class="number">2</span> = add(新函数<span class="number">1</span>, y: 正弦函数<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Xcode 分栏查看图形排布，尤其是新函数的图形</span></span><br><span class="line">新函数<span class="number">1</span>.forEach &#123; <span class="type">XCPlaygroundPage</span>.currentPage.captureValue($<span class="number">0</span>, withIdentifier:<span class="string">"新函数1"</span>) &#125;</span><br><span class="line">新函数<span class="number">2</span>.forEach &#123; <span class="type">XCPlaygroundPage</span>.currentPage.captureValue($<span class="number">0</span>, withIdentifier:<span class="string">"新函数2"</span>) &#125;</span><br><span class="line"></span><br><span class="line">正弦函数<span class="number">2</span>.forEach &#123; <span class="type">XCPlaygroundPage</span>.currentPage.captureValue($<span class="number">0</span>, withIdentifier:<span class="string">"正弦函数2"</span>) &#125;</span><br><span class="line"></span><br><span class="line">正弦函数<span class="number">1</span>.forEach &#123; <span class="type">XCPlaygroundPage</span>.currentPage.captureValue($<span class="number">0</span>, withIdentifier:<span class="string">"正弦函数1"</span>) &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="傅里叶变换通俗篇讲解">傅里叶变换通俗篇<a href="https://www.douban.com/note/164400821" target="_blank" rel="external">讲解</a></h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看图像发现‘新函数2’左右有三对波峰，得出它由三个正弦波组成（可对应得出振幅、频率及相位）</span></span><br><span class="line"><span class="keyword">let</span> 快速傅里叶转换 = fft(新函数<span class="number">2</span>)</span><br><span class="line">快速傅里叶转换.forEach &#123; <span class="type">XCPlaygroundPage</span>.currentPage.captureValue($<span class="number">0</span>, withIdentifier:<span class="string">"快速傅里叶转换"</span>) &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="矩阵计算">矩阵计算</h3><blockquote>
+<p>很多图像处理是根据矩阵做处理的，像素越大，处理性能要求越高</p>
+</blockquote>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 简单矩阵示例</span><br><span class="line"></span><br><span class="line">// ⎛ <span class="number">1</span>  <span class="number">2</span> ⎞      ⎛ <span class="number">3</span>  <span class="number">2</span> ⎞       ⎛ <span class="number">5</span>  <span class="number">6</span> ⎞</span><br><span class="line">// ⎢      ⎟  *   ⎢      ⎟   =   ⎢      ⎟</span><br><span class="line">// ⎝ <span class="number">3</span> -<span class="number">4</span> ⎠      ⎝ <span class="number">1</span>  <span class="number">2</span> ⎠       ⎝ <span class="number">5</span> -<span class="number">2</span> ⎠</span><br><span class="line"></span><br><span class="line">let A = Matrix(<span class="string">[[1, 2], [3, -4]]</span>)</span><br><span class="line">let B = Matrix(<span class="string">[[3, 2], [1, 2]]</span>)</span><br><span class="line">let C = A * B</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 利用逆矩阵求解</span><br><span class="line">// ⎛ <span class="number">1</span>  <span class="number">1</span> ⎞        ⎛ <span class="number">3</span> ⎞           ⎛ <span class="number">2</span> ⎞</span><br><span class="line">// ⎢      ⎟ * CC = ⎢   ⎟    CC =   ⎢   ⎟</span><br><span class="line">// ⎝ <span class="number">1</span> -<span class="number">1</span> ⎠        ⎝ <span class="number">1</span> ⎠           ⎝ <span class="number">1</span> ⎠</span><br><span class="line"></span><br><span class="line">let AA = Matrix(<span class="string">[[1, 1], [1, -1]]</span>)</span><br><span class="line">let BB = Matrix(<span class="string">[[3], [1]]</span>)</span><br><span class="line">let CC = inv(AA) * BB</span><br></pre></td></tr></table></figure>
+<h3 id="应用的加速库函数">应用的加速库函数</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="type">Accelerate</span></span><br><span class="line"></span><br><span class="line">public <span class="func"><span class="keyword">func</span> <span class="title">sum</span><span class="params">(x: [Double])</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result: <span class="type">Double</span> = <span class="number">0.0</span></span><br><span class="line">    vDSP_sveD(x, <span class="number">1</span>, &amp;result, vDSP_Length(x.<span class="built_in">count</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="func"><span class="keyword">func</span> <span class="title">max</span><span class="params">(x: [Double])</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result: <span class="type">Double</span> = <span class="number">0.0</span></span><br><span class="line">    vDSP_maxvD(x, <span class="number">1</span>, &amp;result, vDSP_Length(x.<span class="built_in">count</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="func"><span class="keyword">func</span> <span class="title">mean</span><span class="params">(x: [Double])</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> result: <span class="type">Double</span> = <span class="number">0.0</span></span><br><span class="line">    vDSP_meanvD(x, <span class="number">1</span>, &amp;result, vDSP_Length(x.<span class="built_in">count</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="func"><span class="keyword">func</span> <span class="title">add</span><span class="params">(x: [Double], y: [Double])</span></span> -&gt; [<span class="type">Double</span>] &#123;</span><br><span class="line">    <span class="keyword">var</span> results = [<span class="type">Double</span>](y)</span><br><span class="line">    cblas_daxpy(<span class="type">Int32</span>(x.<span class="built_in">count</span>), <span class="number">1.0</span>, x, <span class="number">1</span>, &amp;results, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="func"><span class="keyword">func</span> <span class="title">fft</span><span class="params">(input: [Double])</span></span> -&gt; [<span class="type">Double</span>] &#123;</span><br><span class="line">    <span class="keyword">var</span> real = [<span class="type">Double</span>](input)</span><br><span class="line">    <span class="keyword">var</span> imaginary = [<span class="type">Double</span>](<span class="built_in">count</span>: input.<span class="built_in">count</span>, repeatedValue: <span class="number">0.0</span>)</span><br><span class="line">    <span class="keyword">var</span> splitComplex = <span class="type">DSPDoubleSplitComplex</span>(realp: &amp;real, imagp: &amp;imaginary)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> length = vDSP_Length(floor(log2(<span class="type">Float</span>(input.<span class="built_in">count</span>))))</span><br><span class="line">    <span class="keyword">let</span> radix = <span class="type">FFTRadix</span>(kFFTRadix2)</span><br><span class="line">    <span class="keyword">let</span> weights = vDSP_create_fftsetupD(length, radix)</span><br><span class="line">    vDSP_fft_zipD(weights, &amp;splitComplex, <span class="number">1</span>, length, <span class="type">FFTDirection</span>(<span class="type">FFT_FORWARD</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> magnitudes = [<span class="type">Double</span>](<span class="built_in">count</span>: input.<span class="built_in">count</span>, repeatedValue: <span class="number">0.0</span>)</span><br><span class="line">    vDSP_zvmagsD(&amp;splitComplex, <span class="number">1</span>, &amp;magnitudes, <span class="number">1</span>, vDSP_Length(input.<span class="built_in">count</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> normalizedMagnitudes = [<span class="type">Double</span>](<span class="built_in">count</span>: input.<span class="built_in">count</span>, repeatedValue: <span class="number">0.0</span>)</span><br><span class="line">    vDSP_vsmulD(sqrt(magnitudes), <span class="number">1</span>, [<span class="number">2.0</span> / <span class="type">Double</span>(input.<span class="built_in">count</span>)], &amp;normalizedMagnitudes, <span class="number">1</span>, vDSP_Length(input.<span class="built_in">count</span>))</span><br><span class="line"></span><br><span class="line">    vDSP_destroy_fftsetupD(weights)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> normalizedMagnitudes</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/29/移动周分享-第61期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第61期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/15/移动周分享-第59期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第59期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第60期" data-title="移动周分享-第60期" data-url="http://yoursite.com/2016/07/22/移动周分享-第60期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

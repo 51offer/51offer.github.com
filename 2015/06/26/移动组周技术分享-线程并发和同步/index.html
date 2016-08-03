@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>扯扯线程并发和同步的那些事 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="扯扯线程并发和同步的那些事 2015.6.26线程基础的那些事——李仙鹏线程线程俗称为轻量级进程。在现代OS中，通常以线程作为基本的调度单位。线程会共享进程范围内的资源，例如内存句柄和文件句柄，但每个线程又有各自的程序计数器、栈以及局部变量等。因此，再配合多核CPU，多个线程方可被并发执行。
+线程的上下文切换如果当前运行线程数与CPU核数相同，那么这些线程将不会被系统调度出去。
+但是，如果可运行的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扯扯线程并发和同步的那些事">
+<meta property="og:url" content="http://yoursite.com/2015/06/26/移动组周技术分享-线程并发和同步/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="扯扯线程并发和同步的那些事 2015.6.26线程基础的那些事——李仙鹏线程线程俗称为轻量级进程。在现代OS中，通常以线程作为基本的调度单位。线程会共享进程范围内的资源，例如内存句柄和文件句柄，但每个线程又有各自的程序计数器、栈以及局部变量等。因此，再配合多核CPU，多个线程方可被并发执行。
+线程的上下文切换如果当前运行线程数与CPU核数相同，那么这些线程将不会被系统调度出去。
+但是，如果可运行的">
+<meta property="og:image" content="http://www.51cto.com/files/uploadimg/20061010/1202170.gif">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="扯扯线程并发和同步的那些事">
+<meta name="twitter:description" content="扯扯线程并发和同步的那些事 2015.6.26线程基础的那些事——李仙鹏线程线程俗称为轻量级进程。在现代OS中，通常以线程作为基本的调度单位。线程会共享进程范围内的资源，例如内存句柄和文件句柄，但每个线程又有各自的程序计数器、栈以及局部变量等。因此，再配合多核CPU，多个线程方可被并发执行。
+线程的上下文切换如果当前运行线程数与CPU核数相同，那么这些线程将不会被系统调度出去。
+但是，如果可运行的">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动组周技术分享-线程并发和同步" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/26/移动组周技术分享-线程并发和同步/" class="article-date">
+  	<time datetime="2015-06-26T23:04:29.000Z" itemprop="datePublished">2015-06-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      扯扯线程并发和同步的那些事
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/同步异步/">同步异步</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="扯扯线程并发和同步的那些事_2015-6-26">扯扯线程并发和同步的那些事 2015.6.26</h2><h3 id="线程基础的那些事——李仙鹏">线程基础的那些事——李仙鹏</h3><h4 id="线程">线程</h4><p>线程俗称为轻量级进程。在现代OS中，通常以线程作为基本的调度单位。线程会共享进程范围内的资源，例如内存句柄和文件句柄，但每个线程又有各自的程序计数器、栈以及局部变量等。因此，再配合多核CPU，多个线程方可被并发执行。</p>
+<h5 id="线程的上下文切换">线程的上下文切换</h5><p>如果当前运行线程数与CPU核数相同，那么这些线程将不会被系统调度出去。</p>
+<p>但是，如果可运行的线程数量大于CPU核数，那么系统会通过上下文切换，将某个正在运行的线程调度出来，从而使其他线程能够获得CPU的时间片，从而得到运行。</p>
+<p><strong>上下文切换需要一定的开销：</strong></p>
+<ol>
+<li>系统和应用程序都使用一组相同的CPU，线程调度需要访问系统资源。系统代码消耗越多的CPU时间，分配到应用程序的可用CPU时间就越少。</li>
+<li>上下文切换会导致处理器的一些缓存缺失</li>
+</ol>
+<blockquote>
+<p>线程的以上特性，促使了现代编程的并发和同步问题：</p>
+<ul>
+<li>安全性问题。安全性的含义是“永远不会发生糟糕的事情”</li>
+<li>活跃性问题。活跃性关注的目标为“某件正确的事情最终会发生”</li>
+<li>性能问题。性能关注的点事“正确的事情尽快发生”</li>
+</ul>
+</blockquote>
+<h4 id="超线程（Hyper-Threading）">超线程（Hyper-Threading）</h4><p>为何我们会经常听到宣传说：四核八线程并行（如I5处理器）、八核十六线程并行（如I7）。原因是，这些CPU使用了超线程技术。超线程最早由因特尔研发，并在奔腾四处理器将技术主流化。</p>
+<p>超线程技术是在CPU内部仅复制必要的资源、让CPU模拟成两个线程；也就是一个实体核心，两个逻辑线程，在一单位时间内处理两个线程的工作，模拟实体双核心、双线程运作。</p>
+<p>虽然采用超线程技术能同时执行两个线程，但它并不象两个真正的CPU那样，每个CPU都具有独立的资源。当两个线程都同时需要某一个资源时，其中一个要暂时停止，并让出资源，直到这些资源闲置后才能继续。因此超线程的性能并不等于两颗CPU的性能。</p>
+<h4 id="GUI为什么都是单线程">GUI为什么都是单线程</h4><p>许多人曾经尝试过编写多线程的GUI来处理事件，但最终都由于竞态条件和死锁导致的稳定性而重回到单线程的事件队列模型：使用UI线程从队列中抽取事件，并将事件分发给事件处理器（消费者）。</p>
+<p>另一个重要原因是MVC会导致多线程的GUI因为不一致的锁定顺序而发生死锁。<br><img src="http://www.51cto.com/files/uploadimg/20061010/1202170.gif" alt="MVC模式图"></p>
+<h4 id="推荐两本书">推荐两本书</h4><blockquote>
+<p><strong>值得一看：</strong></p>
+<ul>
+<li><a href="http://book.douban.com/subject/5333562/" target="_blank" rel="external">深入理解计算机系统</a></li>
+<li><a href="http://book.douban.com/subject/10484692/" target="_blank" rel="external">Java并发编程实战</a></li>
+</ul>
+</blockquote>
+<h3 id="JAVA多线程中的单例——贾学涛">JAVA多线程中的单例——贾学涛</h3><h4 id="常见单利模写法">常见单利模写法</h4><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Singleton</span> {  
+
+    <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance；
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span>(<span class="params"></span>)</span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span>(<span class="params"></span>)</span>{
+        <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) {
+            mInstance = <span class="keyword">new</span> Singleton();
+        }
+        <span class="keyword">return</span> mInstance;
+    }
+}
+</code></pre><ul>
+<li>缺点：非线程安全的，在多线程并发的情况下容易出现多个实例存在的情况</li>
+</ul>
+<h4 id="改为线程安全的单例模式">改为线程安全的单例模式</h4><p>通过添加synchronized关键字  </p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>{  
+
+    <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance；
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>{
+        <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) {
+            mInstance = <span class="keyword">new</span> Singleton();
+        }
+        <span class="keyword">return</span> mInstance;
+    }
+}
+</code></pre><ul>
+<li>缺点：每次都要进行同步检查，实际上需要检查的时机是在首次创建实例的时候。</li>
+</ul>
+<h4 id="改为双重检查锁单例模式">改为双重检查锁单例模式</h4><pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>{  
+
+    <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance；
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>{
+        <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) {          <span class="comment">//Single Checked</span>
+            <span class="keyword">synchronized</span>(Singleton.class) {
+                <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) {        <span class="comment">//Double Checked</span>
+                    mInstance = <span class="keyword">new</span> Singleton();
+                }
+            }
+        }
+        <span class="keyword">return</span> mInstance;
+    }
+}
+</code></pre><ul>
+<li><p>instance = new Singleton()这句，并非是一个原子操作，事实上在 JVM 中这句话大概做了下面 3 件事情  </p>
+<blockquote>
+<p>1.给 instance 分配内存<br>2.调用 Singleton 的构造函数来初始化成员变量<br>3.将instance对象指向分配的内存空间（执行完这步 instance 就为非 null 了）  </p>
+</blockquote>
+<p>  但是在 JVM 的即时编译器中存在指令重排序的优化。也就是说上面的第二步和第三步的顺序是不能保证的.可能会出现第一次检测是mInstance为非null时，有可能实例还未创建。所以线程二会直接返回 instance，然后使用，然后顺理成章地报错。</p>
+</li>
+</ul>
+<h4 id="为实例变量增加volatile关键字">为实例变量增加volatile关键字</h4><pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>{  
+
+    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton mInstance；    <span class="comment">// 增加volatile关键字</span>
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>{
+        <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) {          <span class="comment">//Single Checked</span>
+            <span class="keyword">synchronized</span>(Singleton.class) {
+                <span class="keyword">if</span> (mInstance == <span class="keyword">null</span>) {        <span class="comment">//Double Checked</span>
+                    mInstance = <span class="keyword">new</span> Singleton();
+                }
+            }
+        }
+        <span class="keyword">return</span> mInstance;
+    }
+}
+</code></pre><ul>
+<li><p>使用 volatile 的主要原因是其另一个特性：禁止指令重排序优化。也就是说，在 volatile 变量的赋值操作后面会有一个内存屏障，读操作不会被重排序到内存屏障之前</p>
+</li>
+<li><p>Java 5 以前的版本使用了 volatile 的双检锁还是有问题的。其原因是 Java 5 以前的 JMM （Java 内存模型）是存在缺陷的，即时将变量声明成 volatile 也不能完全避免重排序</p>
+</li>
+</ul>
+<h4 id="饿汉加载单例模式">饿汉加载单例模式</h4><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Singleton</span> {  
+
+    <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance ＝ <span class="keyword">new</span> Singleton()；
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span>(<span class="params"></span>)</span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> mInstance;
+    }
+}
+</code></pre><p>变种的饿汉加载单例模式</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Singleton</span> {
+
+    <span class="keyword">private</span> <span class="keyword">static</span> Singleton mInstance；
+
+    <span class="keyword">static</span> {
+        mInstance = <span class="keyword">new</span> Singleton();
+    }
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span>(<span class="params"></span>)</span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> mInstance;
+    }
+}
+</code></pre><ul>
+<li>缺点：在类被加载的时候就会去创建实例，牺牲空间来保证时间，与之前的单例模式相反，懒汉加载是牺牲时间，来保证空间，在需要的时候再去创建实例。</li>
+</ul>
+<h4 id="通过静态内部类来创建单例">通过静态内部类来创建单例</h4><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Singleton</span> {
+
+    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span>(<span class="params"></span>)</span>{
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span>(<span class="params"></span>)</span>{
+        <span class="keyword">return</span> InnerClass.mInstance;
+    }
+
+    <span class="keyword">private</span> staitc <span class="keyword">class</span> <span class="title">InnerClass</span>{
+        <span class="keyword">public</span> <span class="keyword">static</span> Singleton mInstance = <span class="keyword">new</span> Singleton();
+    }
+}
+</code></pre><ul>
+<li>与前者一样，通过classloader机制来保证线程安全，区别是，前者当Singleton类被加载时，就会创建实例，而后者是在需要调用getInstance的时候去加载内部类的时候，来创建实例。</li>
+</ul>
+<h4 id="通过枚举来创建单例">通过枚举来创建单例</h4><pre><code>public <span class="class"><span class="keyword">enum</span> <span class="title">Singleton</span> </span>{
+    INSTANCE;
+}
+</code></pre><p>访问实例对象 Singleton.INSTANCE</p>
+<p>*默认枚举实例的创建是线程安全的，但是在枚举中的其他任何方法由程序员自己负责。</p>
+<h3 id="为什么要有线程同步之喂金鱼问题——曾铭">为什么要有线程同步之喂金鱼问题——曾铭</h3><h4 id="喂金鱼问题">喂金鱼问题</h4><ul>
+<li>金鱼一天不吃会饿死，一天吃两次会撑死；</li>
+<li>张三、李四，每天每人分别会去执行这件事一次；</li>
+</ul>
+<h4 id="方案_1">方案 1</h4><p>两人执行一致</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">if</span> (<span class="built_in">no</span>Feed) &#123;</span><br><span class="line">	<span class="title">feed</span> fish</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>张三</th>
+<th>李四</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if (noFeed) {</td>
+<td>.</td>
+</tr>
+<tr>
+<td>.</td>
+<td>if (noFeed) {</td>
+</tr>
+<tr>
+<td>.</td>
+<td>feed fish</td>
+</tr>
+<tr>
+<td>feed fish</td>
+<td>.</td>
+</tr>
+<tr>
+<td>fish died</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="结论">结论</h5><ul>
+<li>feed fish 时间越长，鱼被撑死可能性越大</li>
+<li>没解决问题</li>
+</ul>
+<h4 id="方案_2">方案 2</h4><p>两人执行一致</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">if</span> (<span class="built_in">no</span>Note) &#123;</span><br><span class="line">	<span class="title">leave</span> note</span><br><span class="line"></span><br><span class="line">	if (<span class="built_in">no</span>Feed) &#123;</span><br><span class="line">		<span class="title">feed</span> fish</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	remove note</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>张三</th>
+<th>李四</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if (noNote) {</td>
+<td>.</td>
+</tr>
+<tr>
+<td>.</td>
+<td>if (noNote) {</td>
+</tr>
+<tr>
+<td>.</td>
+<td>leave note</td>
+</tr>
+<tr>
+<td>leave note</td>
+<td>.</td>
+</tr>
+<tr>
+<td>if (noFeed) {</td>
+<td>.</td>
+</tr>
+<tr>
+<td>.</td>
+<td>if (noFeed) {</td>
+</tr>
+<tr>
+<td>.</td>
+<td>feed fish</td>
+</tr>
+<tr>
+<td>feed fish</td>
+<td>.</td>
+</tr>
+<tr>
+<td>fish died</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="结论-1">结论</h5><ul>
+<li>noNote, noFeed 按特定顺序执行才会出问题</li>
+<li>noNote 多了一层保护，如果 leave note 时间很短，出问题可能性很小</li>
+<li>没解决问题</li>
+</ul>
+<h4 id="方案_3">方案 3</h4><p>张三执行</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">leave <span class="label">note3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="comment">(noNote4)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="comment">(noFeed)</span> &#123;</span><br><span class="line">		feed fish</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">remove <span class="label">note3</span></span><br></pre></td></tr></table></figure>
+<p>李四执行</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">leave <span class="label">note4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="comment">(noNote3)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="comment">(noFeed)</span> &#123;</span><br><span class="line">		feed fish</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">remove <span class="label">note4</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>张三</th>
+<th>李四</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leave note3</td>
+<td>.</td>
+</tr>
+<tr>
+<td>.</td>
+<td>leave note4</td>
+</tr>
+<tr>
+<td>.</td>
+<td>if (noNote3) {</td>
+</tr>
+<tr>
+<td>if (noNote4) {</td>
+<td>.</td>
+</tr>
+<tr>
+<td>remove note3</td>
+<td>.</td>
+</tr>
+<tr>
+<td>.</td>
+<td>remove note4</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>fish died</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="结论-2">结论</h5><ul>
+<li>不会被撑死了，可能会被饿死……</li>
+<li>没解决问题</li>
+</ul>
+<h4 id="方案_4">方案 4</h4><p>张三执行</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">leave <span class="label">note3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="comment">(noNote4)</span></span><br><span class="line">&#123;</span><br><span class="line">	sleep <span class="comment">(1)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="comment">(noFeed)</span> &#123;</span><br><span class="line">	feed fish</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">remove <span class="label">note3</span></span><br></pre></td></tr></table></figure>
+<p>李四执行</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">leave <span class="label">note4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="comment">(noNote3)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="comment">(noFeed)</span> &#123;</span><br><span class="line">		feed fish</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">remove <span class="label">note4</span></span><br></pre></td></tr></table></figure>
+<h5 id="结论-3">结论</h5><ul>
+<li>的确解决了问题</li>
+<li>能优化么？<ul>
+<li>程序不不对称</li>
+<li>循环等待的浪费</li>
+</ul>
+</li>
+</ul>
+<h4 id="方案_5">方案 5</h4><p>两人执行一致</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lock<span class="params">()</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="params">(noFeed)</span> &#123;</span><br><span class="line">	feed fish</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unlock<span class="params">()</span></span><br></pre></td></tr></table></figure>
+<h5 id="总结">总结</h5><ul>
+<li>能解决问题</li>
+<li>程序对称</li>
+<li>持有锁需要等待，未解决浪费问题<ul>
+<li>生产者与消费者问题</li>
+</ul>
+</li>
+</ul>
+<h4 id="END">END</h4><p><strong>全部内容来自<a href="http://book.douban.com/subject/3670621/" target="_blank" rel="external">《计算机的心智·操作系统之哲学原理》——邹恒明</a> 第七章</strong></p>
+<h3 id="iOS并发相关的概念介绍——潘君">iOS并发相关的概念介绍——潘君</h3><p>@(归纳中)[iOS]</p>
+<h4 id="基础概念">基础概念</h4><h5 id="竞态条件">竞态条件</h5><p>竞态条件（race condition），从多进程间通信的角度来讲，是指两个或多个进程对共享的数据进行读或写的操作时，最终的结果取决于这些进程的执行顺序。<br>竞态条件（race condition）是指设备或系统出现不恰当的执行时序，而得到不正确的结果。</p>
+<p>注: <code>atomic</code> 可以解决竞态竞争 但是无法保证类是<code>线程安全</code>的</p>
+<h4 id="iOS中的相关概念">iOS中的相关概念</h4><h5 id="atomic属性">atomic属性</h5><blockquote>
+<p>property 修饰符</p>
+</blockquote>
+<p>加了atomic后生成的setter,类似如下代码:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (void)setProp:(NSString *)newValue &#123;</span><br><span class="line">    [_prop <span class="operator"><span class="keyword">lock</span>];</span></span><br><span class="line">    _prop = newValue;</span><br><span class="line">    [_prop <span class="operator"><span class="keyword">unlock</span>];</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="@synchronized指令">@synchronized指令</h5><blockquote>
+<p>引用自<a href="http://www.xuebuyuan.com/1682784.html" target="_blank" rel="external">@synchronized(id anObject) ｛｝定义和使用</a><br>1.作用：创建了一个互斥锁，它的作用和其他语言中的互斥锁作用一样</p>
+<p>2.解释：这个是OBC中的一个锁定令牌，防止｛｝里的内容在同一时间内被其他线程访问，起到了线程保护的作用</p>
+<p>3.使用范围：一般在单例模式或者操作类的static变量的时候使用，即共用的变量的时候</p>
+<p>4.外延：这个令牌隐式的包含了异常处理，如果你不想使用的话，就使用锁吧</p>
+<p>5.它的参数是id类型，如果用<br>@synchronized(1) {<br>}<br>编译器提示<br>@synchronzied requires an Objective-C object type.<br>也就是说需要一个objective C的对象类型。</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@synchronized</span>(id anObject)&#123;</span><br><span class="line">	 <span class="comment">// test code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="NSLock">NSLock</h5><p>使用样例:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//主线程中</span><br><span class="line">TestObj *obj = [[TestObj alloc] init];</span><br><span class="line">NSLock *<span class="operator"><span class="keyword">lock</span> = [[NSLock alloc] init];</span></span><br><span class="line"></span><br><span class="line">//线程1</span><br><span class="line">dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">    [<span class="operator"><span class="keyword">lock</span> <span class="keyword">lock</span>];</span></span><br><span class="line">    [obj method1];</span><br><span class="line">    sleep(10);</span><br><span class="line">    [<span class="operator"><span class="keyword">lock</span> <span class="keyword">unlock</span>];</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//线程2</span><br><span class="line">dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">    sleep(1);//以保证让线程2的代码后执行</span><br><span class="line">    [<span class="operator"><span class="keyword">lock</span> <span class="keyword">lock</span>];</span></span><br><span class="line">    [obj method2];</span><br><span class="line">    [<span class="operator"><span class="keyword">lock</span> <span class="keyword">unlock</span>];</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="iOS多线程_-_杨志平"><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html" target="_blank" rel="external">iOS多线程</a> - 杨志平</h3><h4 id="简介">简介</h4><p>iOS有三种多线程编程的技术，分别是：</p>
+<ul>
+<li><h4 id="NSThread">NSThread</h4></li>
+<li><h4 id="Cocoa_NSOperation">Cocoa NSOperation</h4></li>
+<li><h4 id="GCD_（全称：Grand_Central_Dispatch）">GCD <strong><em>（全称：Grand Central Dispatch）</em></strong></h4></li>
+</ul>
+<blockquote>
+<p> <em>这三种编程方式从上到下，抽象度层次是从低到高的，抽象度越高的使用越简单，也是Apple最推荐使用的</em></p>
+</blockquote>
+<h4 id="三种方式的介绍：">三种方式的介绍：</h4><h5 id="NSThread_-_文档">NSThread - <a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSThread_Class/" target="_blank" rel="external">文档</a></h5><blockquote>
+<p>优点：NSThread 比其他两个轻量级<br>缺点：需要自己管理线程的生命周期，线程同步。线程同步对数据的加锁会有一定的系统开销</p>
+</blockquote>
+<h5 id="NSOperation_-_文档">NSOperation - <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOperation_class/" target="_blank" rel="external">文档</a></h5><blockquote>
+<p>优点：不需要关心线程管理，数据同步的事情，可以把精力放在自己需要执行的操作上。<br>创建NSOperation子类的对象，把对象添加到NSOperationQueue队列里执行。</p>
+</blockquote>
+<h5 id="GCD_-_文档">GCD - <a href="https://developer.apple.com/library/prerelease/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/index.html" target="_blank" rel="external">文档</a></h5><blockquote>
+<p>Grand Central Dispatch (GCD)是Apple开发的一个多核编程的解决方法。在iOS4.0开始之后才能使用。GCD是一个替代诸如NSThread, NSOperationQueue, NSInvocationOperation等技术的很高效和强大的技术。</p>
+<p>GCD的底层依然是用线程实现，不过这样可以让程序员不用关注实现的细节。</p>
+</blockquote>
+<h4 id="创建线程的开销_-_查看文档">创建线程的开销 - <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/Multithreading/CreatingThreads/CreatingThreads.html" target="_blank" rel="external">查看文档</a></h4><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Approximate cost</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kernel data structures</td>
+<td>Approximately 1 KB</td>
+<td>This memory is used to store the thread data structures and attributes, much of which is allocated as wired memory and therefore cannot be paged to disk.</td>
+</tr>
+<tr>
+<td>Stack space</td>
+<td>512 KB (secondary threads)  8 MB (OS X main thread)  1 MB (iOS main thread)</td>
+<td>The minimum allowed stack size for secondary threads is 16 KB and the stack size must be a multiple of 4 KB. The space for this memory is set aside in your process space at thread creation time, but the actual pages associated with that memory are not created until they are needed.</td>
+</tr>
+<tr>
+<td>Creation time</td>
+<td>Approximately 90 microseconds</td>
+<td>This value reflects the time between the initial call to create the thread and the time at which the thread’s entry point routine began executing. The figures were determined by analyzing the mean and median values generated during thread creation on an Intel-based iMac with a 2 GHz Core Duo processor and 1 GB of RAM running OS X v10.5.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="替代线程的一些技术">替代线程的一些技术</h4><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Approximate cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operation objects</td>
+<td>Introduced in OS X v10.5, an operation object is a wrapper for a task that would normally be executed on a secondary thread. This wrapper hides the thread management aspects of performing the task, leaving you free to focus on the task itself. You typically use these objects in conjunction with an operation queue object, which actually manages the execution of the operation objects on one or more threads.For more information on how to use operation objects, see <a href="https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008091" target="_blank" rel="external">Concurrency Programming Guide</a>.</td>
+</tr>
+<tr>
+<td>Grand Central Dispatch (GCD)</td>
+<td>Introduced in Mac OS x v10.6, Grand Central Dispatch is another alternative to threads that lets you focus on the tasks you need to perform rather than on thread management. With GCD, you define the task you want to perform and add it to a work queue, which handles the scheduling of your task on an appropriate thread. Work queues take into account the number of available cores and the current load to execute your tasks more efficiently than you could do yourself using threads.For information on how to use GCD and work queues, see <a href="https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008091" target="_blank" rel="external">Concurrency Programming Guide</a></td>
+</tr>
+<tr>
+<td>Idle-time notifications</td>
+<td>For tasks that are relatively short and very low priority, idle time notifications let you perform the task at a time when your application is not as busy. Cocoa provides support for idle-time notifications using the NSNotificationQueue object. To request an idle-time notification, post a notification to the default <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/occ/cl/NSNotificationQueue" target="_blank" rel="external">NSNotificationQueue</a> object using the <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationQueue_Class/index.html#//apple_ref/c/econst/NSPostWhenIdle" target="_blank" rel="external">NSPostWhenIdle</a> option. The queue delays the delivery of your notification object until the run loop becomes idle. For more information, see <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Notifications/Introduction/introNotifications.html#//apple_ref/doc/uid/10000043i" target="_blank" rel="external">Notification Programming Topics</a>.</td>
+</tr>
+<tr>
+<td>Asynchronous functions</td>
+<td>The system interfaces include many asynchronous functions that provide automatic concurrency for you. These APIs may use system daemons and processes or create custom threads to perform their task and return the results to you. (The actual implementation is irrelevant because it is separated from your code.) As you design your application, look for functions that offer asynchronous behavior and consider using them instead of using the equivalent synchronous function on a custom thread</td>
+</tr>
+<tr>
+<td>Timers</td>
+<td>You can use timers on your application’s main thread to perform periodic tasks that are too trivial to require a thread, but which still require servicing at regular intervals. For information on timers, see <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html#//apple_ref/doc/uid/10000057i-CH16-SW21" target="_blank" rel="external">Timer Sources</a></td>
+</tr>
+<tr>
+<td>Separate processes</td>
+<td>Although more heavyweight than threads, creating a separate process might be useful in cases where the task is only tangentially related to your application. You might use a process if a task requires a significant amount of memory or must be executed using root privileges. For example, you might use a 64-bit server process to compute a large data set while your 32-bit application displays the results to the user</td>
+</tr>
+</tbody>
+</table>
+<h4 id="线程安全_-_文档">线程安全 - <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html#//apple_ref/doc/uid/10000057i-CH12-SW1" target="_blank" rel="external">文档</a></h4><h5 id="原则">原则</h5><ul>
+<li>Immutable objects are generally thread-safe. Once you create them, you can safely pass these objects to and from threads. On the other hand, mutable objects are generally not thread-safe. To use mutable objects in a threaded application, the application must synchronize appropriately.</li>
+<li>Many objects deemed “thread-unsafe” are only unsafe to use from multiple threads. Many of these objects can be used from any thread as long as it is only one thread at a time. Objects that are specifically restricted to the main thread of an application are called out as such</li>
+<li>The main thread of the application is responsible for handling events. Although the Application Kit continues to work if other threads are involved in the event path, operations can occur out of sequence</li>
+<li>If you want to use a thread to draw to a view, bracket all drawing code between the <strong><em>lockFocusIfCanDraw</em></strong> and <strong><em>unlockFocus</em></strong> methods of NSView</li>
+</ul>
+<h5 id="Thread-Safe_Classes_and_Functions">Thread-Safe Classes and Functions</h5><p>The following classes and functions are generally considered to be thread-safe. You can use the same instance from multiple threads without first acquiring a lock.</p>
+<blockquote>
+<p>NSArray<br>NSAssertionHandler<br>NSAttributedString<br>NSCalendarDate<br>NSCharacterSet<br>NSConditionLock<br>NSConnection<br>NSData<br>NSDate<br>NSDecimal functions<br>NSDecimalNumber<br>NSDecimalNumberHandler<br>NSDeserializer<br>NSDictionary<br>NSDistantObject<br>NSDistributedLock<br>NSDistributedNotificationCenter<br>NSException<br>NSFileManager (in OS X v10.5 and later)<br>NSHost<br>NSLock<br>NSLog/NSLogv<br>NSMethodSignature<br>NSNotification<br>NSNotificationCenter<br>NSNumber<br>NSObject<br>NSPortCoder<br>NSPortMessage<br>NSPortNameServer<br>NSProtocolChecker<br>NSProxy<br>NSRecursiveLock<br>NSSet<br>NSString<br>NSThread<br>NSTimer<br>NSTimeZone<br>NSUserDefaults<br>NSValue</p>
+</blockquote>
+<h5 id="Thread-Unsafe_Classes">Thread-Unsafe Classes</h5><p>The following classes and functions are generally not thread-safe. In most cases, you can use these classes from any thread as long as you use them from only one thread at a time.</p>
+<blockquote>
+<p>NSArchiver<br>NSAutoreleasePool<br>NSBundle<br>NSCalendar<br>NSCoder<br>NSCountedSet<br>NSDateFormatter<br>NSEnumerator<br>NSFileHandle<br>NSFormatter<br>NSHashTable functions<br>NSInvocation<br>NSJavaSetup functions<br>NSMapTable functions<br>NSMutableArray<br>NSMutableAttributedString<br>NSMutableCharacterSet<br>NSMutableData<br>NSMutableDictionary<br>NSMutableSet<br>NSMutableString<br>NSNotificationQueue<br>NSNumberFormatter<br>NSPipe<br>NSPort<br>NSProcessInfo<br>NSRunLoop<br>NSScanner<br>NSSerializer<br>NSTask<br>NSUnarchiver<br>NSUndoManager</p>
+</blockquote>
+<h5 id="Main_Thread_Only_Classes">Main Thread Only Classes</h5><p>The following class must be used only from the main thread of an application.</p>
+<blockquote>
+<p>NSAppleScript</p>
+</blockquote>
+<h3 id="多线程的死锁_-_张超耀">多线程的死锁 - 张超耀</h3><ul>
+<li>俗话说，人多好办事！在程序里也是这样，如果是同一个应用程序需要并行处理多件任务，那就可以创建多条线程。但是人多了，往往会出现冲突，使得这个工作无法再进行下去了(正所谓三个和尚没水喝)，这就是“死锁”。</li>
+</ul>
+<h4 id="死锁的产生">死锁的产生</h4><ul>
+<li><a href="http://baike.baidu.com/link?url=OgOrpH_xTP7U0C0tM59aBhq83uaKe0Ck9MQEL1G41A3q-D1hVuynm3ra-U93RoQICKbmqhs7nTuCoN_elydnr_" target="_blank" rel="external">哲学家进餐问题</a></li>
+</ul>
+<p><strong>那么我们如何来消除“死锁”呢？首先，让我们来看看产生“死锁”的必要条件：</strong></p>
+<ul>
+<li><p>互斥：就是说多个线程不能同时使用同一资源</p>
+</li>
+<li><p>请求和保持：就是某线程必须同时拥有多个资源才能完成任务，否则它将占用已经拥有的资源直到拥有他所需的所有资源为止</p>
+</li>
+<li><p>不剥夺：就是说所有线程的优先级都相同，不能在别的线程没有释放资源的情况下，夺走其已占有的资源</p>
+</li>
+<li><p>循环等待，就是没有资源满足的线程无限期地等待</p>
+</li>
+</ul>
+<p><strong>有的朋友可能已经明白了，只要打破这这几个必要条件，就能打破“死锁”！</strong></p>
+<ul>
+<li><p>互斥：就是要让多个线程能共享资源</p>
+</li>
+<li><p>请求和保持：只要当检测到自己所需的资源仍被别的线程占用，即释放自己已占有的资源（毫不利己，专门利人），或者在经过一段时间的等待后，还未得到所需资源，才释放，这都能打破请求和保持</p>
+</li>
+<li><p>不剥夺：只要给线程制定一个优先级即可</p>
+</li>
+<li><p>最后的循环等待的解决方法其实和<code>请求和保持</code>是一样的，都是等待一段时间后释放资源。</p>
+</li>
+</ul>
+<p><strong>好了，希望通过这个例子能让不了解死锁的朋友对“死锁”能有一定的认识</strong></p>
+<h2 id="集合的并行操作_-_王胜">集合的并行操作 - 王胜</h2><p>用for循环操作一个集合，即读取集合元素，同时又删除集合中的元素，会发生什么事情呢？</p>
+<p>上代码【号外，号外，此示例来源于我们项目中的真实代码哦~】</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Target class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Target</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> id;<span class="comment">// ID</span></span><br><span class="line">	String type;<span class="comment">// 类型</span></span><br><span class="line">	<span class="keyword">int</span> count;<span class="comment">// 未读消息数</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Target</span><span class="params">(<span class="keyword">int</span> id, String type, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.type = type;</span><br><span class="line">		<span class="keyword">this</span>.count = count;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="annotation">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"Target [id="</span> + id + <span class="string">", type="</span> + type + <span class="string">", count="</span> + count + <span class="string">"]"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下是模拟一组target集合，target包含group、room、user类型。</span></span><br><span class="line">List&lt;Target&gt; sessions = <span class="keyword">new</span> ArrayList&lt;Target&gt;();</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">1</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">2</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">3</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">4</span>, <span class="string">"room"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">5</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">6</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">7</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">8</span>, <span class="string">"user"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">9</span>, <span class="string">"user"</span>, <span class="number">1</span>));</span><br><span class="line">sessions.add(<span class="keyword">new</span> Target(<span class="number">10</span>, <span class="string">"group"</span>, <span class="number">1</span>));</span><br><span class="line">System.out.println(<span class="string">"before size:"</span>+sessions.size()+<span class="string">", sessions:"</span>+humanPrintList(sessions));</span><br><span class="line"><span class="keyword">int</span> totalUnread = <span class="number">0</span>;<span class="comment">// 统计集合中类型为group的target未读消息数量</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sessions.size();i++) &#123;</span><br><span class="line">	System.out.println(<span class="string">"read index:"</span> + i + <span class="string">", session:"</span>+sessions.get(i));</span><br><span class="line">	<span class="keyword">if</span> (sessions.get(i).type.equals(<span class="string">"group"</span>)) &#123;<span class="comment">// 如果是group类型，则累加未读消息数</span></span><br><span class="line">		System.out.println(<span class="string">"==&gt; add totalUnread"</span>);</span><br><span class="line">		totalUnread += sessions.get(i).count;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;<span class="comment">// 否则，将target移除集合</span></span><br><span class="line">		System.out.println(<span class="string">"==&gt; remove"</span>);</span><br><span class="line">		sessions.remove(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">"after size:"</span>+sessions.size()+<span class="string">", totalUnread:"</span>+totalUnread+<span class="string">",sessions:"</span>+humanPrintList(sessions));</span><br></pre></td></tr></table></figure>
+<p>至此，示例代码结束。大家可以猜测下最后的输出中sessions的长度，内容以及总共的未读消息数据。</p>
+<p>项目中的代码，期望结果是剩余集合只包含group类型的target，而且totalUnread的值是类型为group的target的未读消息数之和。可是，运行的结果却是：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">before <span class="built_in">size</span>:<span class="number">10</span>, sessions:</span><br><span class="line">========== List content: ===========</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">1</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">2</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">3</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">4</span>, <span class="keyword">type</span>=room, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">5</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">6</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">7</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">8</span>, <span class="keyword">type</span>=user, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">9</span>, <span class="keyword">type</span>=user, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">10</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">====================================</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">0</span>, session:<span class="type">Target</span> [id=<span class="number">1</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; add totalUnread</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">1</span>, session:<span class="type">Target</span> [id=<span class="number">2</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; add totalUnread</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">2</span>, session:<span class="type">Target</span> [id=<span class="number">3</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; add totalUnread</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">3</span>, session:<span class="type">Target</span> [id=<span class="number">4</span>, <span class="keyword">type</span>=room, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; remove</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">4</span>, session:<span class="type">Target</span> [id=<span class="number">6</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; add totalUnread</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">5</span>, session:<span class="type">Target</span> [id=<span class="number">7</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; add totalUnread</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">6</span>, session:<span class="type">Target</span> [id=<span class="number">8</span>, <span class="keyword">type</span>=user, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; remove</span><br><span class="line">read <span class="built_in">index</span>:<span class="number">7</span>, session:<span class="type">Target</span> [id=<span class="number">10</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">==&gt; add totalUnread</span><br><span class="line">after <span class="built_in">size</span>:<span class="number">8</span>, totalUnread:<span class="number">6</span>,sessions:</span><br><span class="line">========== List content: ===========</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">1</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">2</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">3</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">5</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">6</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">7</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">9</span>, <span class="keyword">type</span>=user, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line"><span class="type">Target</span> [id=<span class="number">10</span>, <span class="keyword">type</span>=group, <span class="built_in">count</span>=<span class="number">1</span>]</span><br><span class="line">====================================</span><br></pre></td></tr></table></figure>
+<p>为什么结果完全不是预期的呢？原因是程序走到else时，将元素移除，后面的元素自动往前移动，所以继续取下一个下标时，被移除的后一个元素悄悄溜走了，成了漏网之鱼。</p>
+<p><strong>解决方法</strong> : 最简单的就是在remove后执行 <code>i--;</code></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/07/移动组周技术分享-知其所以然/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          知其所以然
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/19/移动组周技术分享-代码效率/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">代码开发效率提升方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动组周技术分享-线程并发和同步" data-title="扯扯线程并发和同步的那些事" data-url="http://yoursite.com/2015/06/26/移动组周技术分享-线程并发和同步/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

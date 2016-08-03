@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>游戏开发 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="2015.05.29 - 游戏开发主题Unity集成开发工具简介 - 李仙鹏
+Unity IDE界面介绍
+Unity IDE扩展介绍
+
+run-zombie-run HTML5 游戏 - 曾铭
+HTML5 网页游戏，僵尸围攻对战游戏。支持局域网两名玩家，一名用键盘已经用手机打开手柄网页体感控制。
+技术关键词: web-socket, HTML5 Canvas
+柏茲模型算法参考 - 混沌邊緣的藝術－">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏开发">
+<meta property="og:url" content="http://yoursite.com/2015/05/29/移动组周技术分享-游戏开发/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="2015.05.29 - 游戏开发主题Unity集成开发工具简介 - 李仙鹏
+Unity IDE界面介绍
+Unity IDE扩展介绍
+
+run-zombie-run HTML5 游戏 - 曾铭
+HTML5 网页游戏，僵尸围攻对战游戏。支持局域网两名玩家，一名用键盘已经用手机打开手柄网页体感控制。
+技术关键词: web-socket, HTML5 Canvas
+柏茲模型算法参考 - 混沌邊緣的藝術－">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.650Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="游戏开发">
+<meta name="twitter:description" content="2015.05.29 - 游戏开发主题Unity集成开发工具简介 - 李仙鹏
+Unity IDE界面介绍
+Unity IDE扩展介绍
+
+run-zombie-run HTML5 游戏 - 曾铭
+HTML5 网页游戏，僵尸围攻对战游戏。支持局域网两名玩家，一名用键盘已经用手机打开手柄网页体感控制。
+技术关键词: web-socket, HTML5 Canvas
+柏茲模型算法参考 - 混沌邊緣的藝術－">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动组周技术分享-游戏开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/29/移动组周技术分享-游戏开发/" class="article-date">
+  	<time datetime="2015-05-29T23:04:29.000Z" itemprop="datePublished">2015-05-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      游戏开发
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏/">游戏</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="2015-05-29_-_游戏开发主题">2015.05.29 - 游戏开发主题</h2><h4 id="Unity集成开发工具简介_-_李仙鹏">Unity集成开发工具简介 - 李仙鹏</h4><ul>
+<li>Unity IDE界面介绍</li>
+<li>Unity IDE扩展介绍</li>
+</ul>
+<h4 id="run-zombie-run_HTML5_游戏_-_曾铭">run-zombie-run HTML5 游戏 - 曾铭</h4><ul>
+<li>HTML5 网页游戏，僵尸围攻对战游戏。支持局域网两名玩家，一名用键盘已经用手机打开手柄网页体感控制。<ul>
+<li>技术关键词: web-socket, HTML5 Canvas</li>
+<li>柏茲模型算法参考 - <a href="http://redbug0314.blogspot.com/2009/06/blog-post.html" target="_blank" rel="external">混沌邊緣的藝術－人工生命</a></li>
+</ul>
+</li>
+<li>移动开发前端开发不分家，推荐阅读：<ul>
+<li><a href="http://developer.51cto.com/art/201103/247880_all.htm" target="_blank" rel="external">HTML5 设计原理</a> 极其经典的一篇文章，从根本上理解 HTML5 来龙去脉。网上竟然找不到原始链接，神奇！</li>
+</ul>
+</li>
+<li><a href="https://github.com/mithvv/run-zombie-run" target="_blank" rel="external">Open Source</a></li>
+<li>链接有干货 ；）</li>
+</ul>
+<h4 id="Cocos2d闲扯与手游推荐_-_潘君">Cocos2d闲扯与手游推荐 - 潘君</h4><h5 id="Cocos2d">Cocos2d</h5><ul>
+<li><p>最早版本为oc版本，为cocos2d-iphone，<a href="https://code.google.com/p/cocos2d-iphone/" target="_blank" rel="external">源码地址</a>  </p>
+</li>
+<li><p>现在C++移植版本cocos2d-x为手游两大跨平台手游开发引擎之一（另外一个为Unity）,<a href="http://www.cocos2d-x.org/" target="_blank" rel="external">下载地址</a></p>
+</li>
+<li><p>现在cocos2d-x维护主要为中国团队,触动科技</p>
+</li>
+<li><p>cocos2d基于<a href="https://www.khronos.org/opengles/" target="_blank" rel="external">OpenGL ES</a>,与苹果官方游戏开发引擎Sprite一致</p>
+</li>
+</ul>
+<p>其他参考资料：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/lingzhao/p/4165335.html" target="_blank" rel="external">App Store中开源游戏汇总</a></li>
+<li><a href="https://www.khronos.org/opengles/" target="_blank" rel="external">泰然论坛</a></li>
+<li><a href="http://www.cocoachina.com/bbs/thread.php?fid=48" target="_blank" rel="external">cocochina cocos讨论区</a></li>
+</ul>
+<h5 id="小游戏推荐">小游戏推荐</h5><ul>
+<li><p><a href="https://itunes.apple.com/us/app/shadowmatic/id775888026?mt=8" target="_blank" rel="external">Shadowmatic</a><br>  益智类3D游戏，通过对物体投射在墙上的影子拼凑构成生活中某一样事物。</p>
+</li>
+<li><p><a href="https://itunes.apple.com/us/app/framed/id886565180?mt=8" target="_blank" rel="external">FRAMED</a><br>  拼图类过关游戏，你必须自己观察游戏中的拼图，只有完成正确的拼图，主人公才能通过关卡中敌人的拦截。</p>
+</li>
+</ul>
+<h4 id="游戏的起源与发展_-_张超耀">游戏的起源与发展 - 张超耀</h4><ul>
+<li><a href="http://www.tudou.com/programs/view/cqT8Z-nZvn8/?from=timeline&amp;isappinstalled=0" target="_blank" rel="external">游戏的故事：揭秘电子游戏诞生史</a><ul>
+<li>穿越时空，拯救世界，成为英雄……这些飘渺无际的虚幻想法，在这个时代，终于可以在“电子游戏”的世界中得以实现。而当我们在享受这个人类智慧结晶给我们带来的奇妙体验之时，有没有想过，是谁创造了如此这种娱乐方式？电子游戏又是如何发展蜕变的？</li>
+</ul>
+</li>
+<li><a href="http://www.tudou.com/programs/view/cpwCix2sI48/?from=timeline&amp;isappinstalled=0" target="_blank" rel="external">游戏的故事：从“硅与神经键”到动视暴雪</a><ul>
+<li>暴雪出品，必属精品。这句流传在玩家中的8个字，是人们对暴雪这家游戏公司的肯定和赞美。暴雪为何能成为全球谈论最多的游戏公司之一？它又是否实至名归？游久网游戏的故事带你揭秘——从“硅与神经键”到动视暴雪。</li>
+</ul>
+</li>
+</ul>
+<h4 id="游戏（APP）开发学习网站小游戏分享_-_杨志平">游戏（APP）开发学习网站小游戏分享 - 杨志平</h4><ul>
+<li><p><a href="https://www.udemy.com" target="_blank" rel="external">udemy 全功能在线教育网站</a></p>
+<p><code>udemy = you + academy</code></p>
+<p>Udemy目前有超过500万名注册用户，和超过22000门课程。与其他在线教育平台不同的是，Udemy不仅开放各种课程，更开放了教学的机会</p>
+</li>
+<li><p><a href="http://www.raywenderlich.com" target="_blank" rel="external">Ray Wenderlich iOS开发的百科全书</a></p>
+</li>
+</ul>
+<p><code>包含最新的iOS技术、最新语言等教程</code></p>
+<p>随便提一下程序员学习利器 <a href="http://www.codecademy.com" target="_blank" rel="external">Codecademy</a> 免费, 起码做的比MOOC好</p>
+<h5 id="小游戏分享">小游戏分享</h5><ul>
+<li>Flappy Bird - 已下架</li>
+<li><a href="https://itunes.apple.com/cn/app/mr-jump/id955157084?mt=8&amp;ign-mpt=uo%3D4" target="_blank" rel="external">Mr Jump</a> - 推荐</li>
+<li><a href="https://itunes.apple.com/th/app/angry-birds-fight!/id933958078?mt=8" target="_blank" rel="external">fight!</a> - 愤怒的小鸟新品，存在不足</li>
+</ul>
+<h4 id="2015_Google_I/O_大会_-_王胜">2015 Google I/O 大会 - 王胜</h4><p>北京时间5月29日00:30，谷歌在美国旧金山召开了一年一度的开发者大会，发布了Android M等新品。</p>
+<ul>
+<li>Android M 预览版<br>Android M此次没有大规模新的API发布，而是回到质量上，改善用户体验。具体变动如下：<ul>
+<li>应用程序权限控制<br>应用程序在使用功能时才会询问用户是否通过权限，包括位置、相机、联系人、短信、麦克风或日历等。</li>
+<li>Chrome 浏览器改善<br>用户可根据需求对Chrome进行改善，用户可将自动填充密码保存在手机中。</li>
+<li>APP关联<br>例如：用户手机邮箱收到内容中有Twitter链接的邮件，点击该链接可直接跳到Twitter应用。</li>
+<li>安卓支付<br>Android是个开放平台，用户可以选择各种支付方式。Android Pay支持4.4以后系统的设备。</li>
+<li>指纹支持<br>令手机厂商兴奋的是，谷歌官方开始i支持指纹识别功能，还可以保证支付安全。</li>
+<li>电量管理<br>电池管理更加智能，可以分辨出睡眠还是活动，如果长时间不移动时，可以自动关闭一些APP。</li>
+</ul>
+</li>
+<li>其他产品线<ul>
+<li>物联网操作系统 Brillo【能够在32MB或者64MB内存的设备上运行】</li>
+<li>Google Now 更加智能【能够识别上下文、音乐搜索等】</li>
+<li>离线地图服务</li>
+<li>新产品：Google Photos</li>
+<li>虚拟现实【纸板VR眼镜Cardboard，支持Android和iOS双系统】</li>
+<li>JUMP 虚拟现实相机</li>
+<li>Android Studio 1.3版发布</li>
+<li>发布Polymer网页应用开发包V1.0版</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/06/05/移动组周技术分享-博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          博客分享主题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/22/移动组周技术分享/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《无主题》</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动组周技术分享-游戏开发" data-title="游戏开发" data-url="http://yoursite.com/2015/05/29/移动组周技术分享-游戏开发/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

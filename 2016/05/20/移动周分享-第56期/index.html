@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动周分享-第56期 | 51offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="RunTime简介及实践 - 刘康前言今年年初的面试中，基本上超过了60%的公司会问RunTime的一些用法。在很多开源项目中用到了RunTime的方法，使我们理解起来比较吃力。RunTime确实很强大，借助它可以实现很酷的功能。比如JSPatch。我本身对于RunTime的理解也没有很深入，所以这里讨论的主要是RunTime的具体应用场景。此番探索希望能起到抛砖引玉的作用，大家可以将RunTim">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动周分享-第56期">
+<meta property="og:url" content="http://yoursite.com/2016/05/20/移动周分享-第56期/index.html">
+<meta property="og:site_name" content="51offer">
+<meta property="og:description" content="RunTime简介及实践 - 刘康前言今年年初的面试中，基本上超过了60%的公司会问RunTime的一些用法。在很多开源项目中用到了RunTime的方法，使我们理解起来比较吃力。RunTime确实很强大，借助它可以实现很酷的功能。比如JSPatch。我本身对于RunTime的理解也没有很深入，所以这里讨论的主要是RunTime的具体应用场景。此番探索希望能起到抛砖引玉的作用，大家可以将RunTim">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Jp5DG28Mj668TyylbnjcCjNvzh-9-IjxT1IixnKrOziswXJzQZZ8GUpRobmQPba0vvINC8c6GymEni3UYcAX3uLVdHFz0Z_x=s1600">
+<meta property="og:image" content="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-create-project.png">
+<meta property="og:image" content="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-console-dashboard.png">
+<meta property="og:image" content="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-add-to-app.png">
+<meta property="og:image" content="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-feature-libs-list.png">
+<meta property="og:updated_time" content="2016-08-03T06:58:06.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动周分享-第56期">
+<meta name="twitter:description" content="RunTime简介及实践 - 刘康前言今年年初的面试中，基本上超过了60%的公司会问RunTime的一些用法。在很多开源项目中用到了RunTime的方法，使我们理解起来比较吃力。RunTime确实很强大，借助它可以实现很酷的功能。比如JSPatch。我本身对于RunTime的理解也没有很深入，所以这里讨论的主要是RunTime的具体应用场景。此番探索希望能起到抛砖引玉的作用，大家可以将RunTim">
+  
+    <link rel="alternative" href="/atom.xml" title="51offer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">移动组团队</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">MobileBlogs</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Chrome/" style="font-size: 10px;">Chrome</a> <a href="/tags/JUnit4/" style="font-size: 10px;">JUnit4</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/shell/" style="font-size: 20px;">shell</a> <a href="/tags/tablayout/" style="font-size: 10px;">tablayout</a> <a href="/tags/weui/" style="font-size: 10px;">weui</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/坑/" style="font-size: 10px;">坑</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">移动组团队</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">移动组团队</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">MobileBlogs</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/51offer" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/ming.z@51offer.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-移动周分享-第56期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/20/移动周分享-第56期/" class="article-date">
+  	<time datetime="2016-05-20T14:35:00.000Z" itemprop="datePublished">2016-05-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动周分享-第56期
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="RunTime简介及实践_-_刘康">RunTime简介及实践 - 刘康</h2><h4 id="前言">前言</h4><p>今年年初的面试中，基本上超过了60%的公司会问RunTime的一些用法。<br>在很多开源项目中用到了RunTime的方法，使我们理解起来比较吃力。<br>RunTime确实很强大，借助它可以实现很酷的功能。比如<code>JSPatch</code>。<br>我本身对于RunTime的理解也没有很深入，所以这里讨论的主要是RunTime的具体应用场景。此番探索希望能起到抛砖引玉的作用，大家可以将RunTime应用起来。</p>
+<h4 id="简介">简介</h4><ul>
+<li>RunTime简称运行时。是一套底层的<code>C语言API</code>，包含很多强大实用的C语言数据类型和C语言函数，平时我们编写的ObjC代码，底层都是基于runtime实现的。ObjC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。比如：</li>
+</ul>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>发送消息<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span></span><br><span class="line">Person<span class="keyword">*</span> p = [[Person alloc] init];</span><br><span class="line"></span><br><span class="line">// 调用对象方法</span><br><span class="line">[p eat];</span><br><span class="line">// 本质是向对象发送消息： objc_msgSend(p, <span class="comment">@selector(eat));</span></span><br><span class="line"></span><br><span class="line">// 调用类方法的方式有两种</span><br><span class="line">// 第一种通过类名调用</span><br><span class="line">[Person eat];</span><br><span class="line">// 第二种通过类对象调用</span><br><span class="line">[[Person class] eat];</span><br><span class="line">// 用类名调用类方法，底层会自动把类名转换成类对象调用</span><br><span class="line">// 本质：让类对象发送消息：objc_msgSend([Person class], <span class="comment">@selector(eat));</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对于C语言，函数的调用在编译的时候会决定调用哪个函数。</li>
+<li>对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。</li>
+<li>事实证明：<ul>
+<li>在编译阶段，OC可以<strong>调用任何函数</strong>，即使这个函数并未实现，只要声明过就不会报错。</li>
+<li>在编译阶段，C语言调用<strong>未实现的函数</strong>就会报错。</li>
+</ul>
+</li>
+</ul>
+<h4 id="实践">实践</h4><h5 id="一-_方法交换">一. 方法交换</h5><ul>
+<li>开发使用场景:系统自带的方法功能不够，给系统自带的方法扩展一些功能，并且保持原有的功能。<ul>
+<li>方式一:继承系统的类，重写方法.</li>
+<li>方式二:使用runtime，交换方法.</li>
+</ul>
+</li>
+</ul>
+<p>例如，有需求如下：<br><strong>给imageNamed方法提供功能，每次加载图片就判断图片是否加载成功。</strong></p>
+<p>runtime实现思路：</p>
+<ol>
+<li>写一个UIImage分类，在分类中定义一个能加载图片并且能打印的方法+ (instancetype)imageWithName:(NSString *)name;</li>
+<li>交换imageNamed和imageWithName的实现，就能调用imageWithName，间接调用imageWithName的实现。</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIImage</span> (<span class="title">image</span>)</span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 交换方法</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取imageWithName方法地址</span></span><br><span class="line">    Method imageWithName = class_getClassMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(imageWithName:));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取imageWithName方法地址</span></span><br><span class="line">    Method imageName = class_getClassMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(imageNamed:));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 交换方法地址，相当于交换实现方式</span></span><br><span class="line">    method_exchangeImplementations(imageWithName, imageName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 既能加载图片又能打印</span></span><br><span class="line">+ (instancetype)imageWithName:(<span class="built_in">NSString</span> *)name</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 这里调用imageWithName，相当于调用imageName</span></span><br><span class="line">    <span class="built_in">UIImage</span> *image = [<span class="keyword">self</span> imageWithName:name];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (image == <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"加载空的图片"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> image;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h5 id="二-_动态添加方法">二. 动态添加方法</h5><ul>
+<li>开发使用场景：如果一个类，方法非常多，加载类到内存的时候也比较耗费资源，因为需要给每个方法生成映射表。可以使用动态给某个类添加方法解决。</li>
+<li>面试题：有没有使用<code>performSelector</code>，其实主要想问你有没有动态添加过方法。</li>
+</ul>
+<p>例如，给person类增加walk的功能， 默认person，没有实现walk方法，通过performSelector调用会报错。但当我动态添加了方法调用<code>[p performSelector:@selector(walk)]</code>就不会报错了：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认方法都有两个隐式参数</span></span><br><span class="line"><span class="keyword">void</span> walk(<span class="keyword">id</span> <span class="keyword">self</span>, SEL sel)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ %@"</span>,<span class="keyword">self</span>,<span class="built_in">NSStringFromSelector</span>(sel));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当一个对象调用未实现的方法，会调用这个方法处理,并且会把对应的方法列表传过来.</span></span><br><span class="line"><span class="comment">// 这儿可以用来判断，未实现的方法是不是我们想要动态添加的方法</span></span><br><span class="line">+ (<span class="built_in">BOOL</span>)resolveInstanceMethod:(SEL)sel</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (sel == <span class="keyword">@selector</span>(walk)) &#123;</span><br><span class="line">        <span class="comment">// 动态添加walk方法</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 第一个参数：给哪个类添加方法</span></span><br><span class="line">        <span class="comment">// 第二个参数：添加方法的方法编号</span></span><br><span class="line">        <span class="comment">// 第三个参数：添加方法的函数实现（函数地址）</span></span><br><span class="line">        <span class="comment">// 第四个参数：函数的类型，(返回值+参数类型) v:void @:对象-&gt;self :表示SEL-&gt;_cmd</span></span><br><span class="line">        class_addMethod(<span class="keyword">self</span>, sel, walk, <span class="string">"v@:"</span>);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> resolveInstanceMethod:sel];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="三-_给分类添加属性">三. 给分类添加属性</h5><ul>
+<li>原理：给一个类声明属性，其实本质就是给这个类添加关联，并不是直接把这个值的内存空间添加到类存空间。</li>
+</ul>
+<p>例如：给<code>NSObject</code>添加一个<code>name</code>属性。<br>思路：在NSObject中，setName方法中设置关联值，name方法中通过取出关联值。达到添加属性的效果。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义关联的key</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">char</span> *key = <span class="string">"name"</span>;</span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSObject</span> (<span class="title">Property</span>)</span></span><br><span class="line">- (<span class="built_in">NSString</span> *)name</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 根据关联的key，获取关联的值。</span></span><br><span class="line">    <span class="keyword">return</span> objc_getAssociatedObject(<span class="keyword">self</span>, key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setName:(<span class="built_in">NSString</span> *)name</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 第一个参数：给哪个对象添加关联</span></span><br><span class="line">    <span class="comment">// 第二个参数：关联的key，通过这个key获取</span></span><br><span class="line">    <span class="comment">// 第三个参数：关联的value</span></span><br><span class="line">    <span class="comment">// 第四个参数：关联的策略</span></span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, key, name, OBJC_ASSO<span class="built_in">CIATION_RETAIN_NONATOMIC</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h5 id="四-_更便捷的archive/unarchive">四. 更便捷的archive/unarchive</h5><p>需求：实现对象的归档和解档<br>思路：利用Runtime实现快速遍历对象的所有属性，减少大量类似于<code>self.property=[aDecoder decodeObjectForKey:type];</code>以及<code>[aCoder encodeObject:self.property forKey:type]</code>这种代码。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)encodeWithCoder:(<span class="built_in">NSCoder</span> *)encoder&#123;</span><br><span class="line">    <span class="comment">//归档存储自定义对象</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//获得指向该类所有属性的指针</span></span><br><span class="line">    objc_property_t *properties = class_copyPropertyList([Person class], &amp;count);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>; i &lt; count; i ++) &#123;</span><br><span class="line">        <span class="comment">//获得</span></span><br><span class="line">        objc_property_t property = properties[i];</span><br><span class="line">        <span class="comment">//根据objc_property_t获得其属性的名称---&gt;C语言的字符串</span></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span> *name = property_getName(property);</span><br><span class="line">        <span class="built_in">NSString</span> *key = [<span class="built_in">NSString</span> stringWithUTF8String:name];</span><br><span class="line">        <span class="comment">// 编码每个属性,利用kVC取出每个属性对应的数值</span></span><br><span class="line">        [encoder encodeObject:[<span class="keyword">self</span> valueForKeyPath:key] forKey:key];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (instancetype)initWithCoder:(<span class="built_in">NSCoder</span> *)decoder&#123;</span><br><span class="line">    <span class="comment">//归档存储自定义对象</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//获得指向该类所有属性的指针</span></span><br><span class="line">    objc_property_t *properties = class_copyPropertyList([Person class], &amp;count);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>; i &lt; count; i ++) &#123;</span><br><span class="line">        objc_property_t property = properties[i];</span><br><span class="line">        <span class="comment">//根据objc_property_t获得其属性的名称---&gt;C语言的字符串</span></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span> *name = property_getName(property);</span><br><span class="line">        <span class="built_in">NSString</span> *key = [<span class="built_in">NSString</span> stringWithUTF8String:name];</span><br><span class="line">        <span class="comment">//解码每个属性,利用kVC取出每个属性对应的数值</span></span><br><span class="line">        [<span class="keyword">self</span> setValue:[decoder decodeObjectForKey:key] forKeyPath:key];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="五-_字典转模型">五. 字典转模型</h5><p>需求：能不能自动根据一个字典，生成对应的属性。</p>
+<ul>
+<li>思路一：KVC。通过KVC方法<code>setValuesForKeysWithDictionary</code>可以进行转换。<ul>
+<li>弊端：必须保证模型中的属性和字典中的key一一对应。<ul>
+<li>如果不一致，就会调用<code>[&lt;Status 0x7fa74b545d60&gt; setValue:forUndefinedKey:]</code>报key找不到的错。</li>
+<li>分析:模型中的属性和字典的key不一一对应，系统就会调用setValue:forUndefinedKey:报错。</li>
+<li>解决:重写对象的setValue:forUndefinedKey:,把系统的方法覆盖， 就能继续使用KVC，字典转模型了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>思路二：RunTime。利用运行时，遍历模型中所有属性，根据模型的属性名，去字典中查找key，取出对应的值，给模型的属性赋值。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSObject</span> (<span class="title">Model</span>)</span></span><br><span class="line"></span><br><span class="line">+ (instancetype)modelWithDict:(<span class="built_in">NSDictionary</span> *)dict</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 思路：遍历模型中所有属性-》使用运行时</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 0.创建对应的对象</span></span><br><span class="line">    <span class="keyword">id</span> objc = [[<span class="keyword">self</span> alloc] init];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 1.利用runtime给对象中的成员属性赋值</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// class_copyIvarList:获取类中的所有成员属性</span></span><br><span class="line">    <span class="comment">// Ivar：成员属性的意思</span></span><br><span class="line">    <span class="comment">// 第一个参数：表示获取哪个类中的成员属性</span></span><br><span class="line">    <span class="comment">// 第二个参数：表示这个类有多少成员属性，传入一个Int变量地址，会自动给这个变量赋值</span></span><br><span class="line">    <span class="comment">// 返回值Ivar *：指的是一个ivar数组，会把所有成员属性放在一个数组中，通过返回的数组就能全部获取到。</span></span><br><span class="line">    <span class="comment">/* 类似下面这种写法</span><br><span class="line">     </span><br><span class="line">     Ivar ivar;</span><br><span class="line">     Ivar ivar1;</span><br><span class="line">     Ivar ivar2;</span><br><span class="line">     // 定义一个ivar的数组a</span><br><span class="line">     Ivar a[] = &#123;ivar,ivar1,ivar2&#125;;</span><br><span class="line">     </span><br><span class="line">     // 用一个Ivar *指针指向数组第一个元素</span><br><span class="line">     Ivar *ivarList = a;</span><br><span class="line">     </span><br><span class="line">     // 根据指针访问数组第一个元素</span><br><span class="line">     ivarList[0];</span><br><span class="line">     </span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> count;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取类中的所有成员属性</span></span><br><span class="line">    Ivar *ivarList = class_copyIvarList(<span class="keyword">self</span>, &amp;count);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">        <span class="comment">// 根据角标，从数组取出对应的成员属性</span></span><br><span class="line">        Ivar ivar = ivarList[i];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 获取成员属性名</span></span><br><span class="line">        <span class="built_in">NSString</span> *name = [<span class="built_in">NSString</span> stringWithUTF8String:ivar_getName(ivar)];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 处理成员属性名-&gt;字典中的key</span></span><br><span class="line">        <span class="comment">// 从第一个角标开始截取</span></span><br><span class="line">        <span class="built_in">NSString</span> *key = [name substringFromIndex:<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 根据成员属性名去字典中查找对应的value</span></span><br><span class="line">        <span class="keyword">id</span> value = dict[key];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 二级转换:如果字典中还有字典，也需要把对应的字典转换成模型</span></span><br><span class="line">        <span class="comment">// 判断下value是否是字典</span></span><br><span class="line">        <span class="keyword">if</span> ([value isKindOfClass:[<span class="built_in">NSDictionary</span> class]]) &#123;</span><br><span class="line">            <span class="comment">// 字典转模型</span></span><br><span class="line">            <span class="comment">// 获取模型的类对象，调用modelWithDict</span></span><br><span class="line">            <span class="comment">// 模型的类名已知，就是成员属性的类型</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 获取成员属性类型</span></span><br><span class="line">            <span class="built_in">NSString</span> *type = [<span class="built_in">NSString</span> stringWithUTF8String:ivar_getTypeEncoding(ivar)];</span><br><span class="line">            <span class="comment">// 生成的是这种@"@\"User\"" 类型 -》 @"User"  在OC字符串中 \" -&gt; "，\是转义的意思，不占用字符</span></span><br><span class="line">            <span class="comment">// 裁剪类型字符串</span></span><br><span class="line">            <span class="built_in">NSRange</span> range = [type rangeOfString:<span class="string">@"\""</span>];</span><br><span class="line">            </span><br><span class="line">            type = [type substringFromIndex:range<span class="variable">.location</span> + range<span class="variable">.length</span>];</span><br><span class="line">            </span><br><span class="line">            range = [type rangeOfString:<span class="string">@"\""</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 裁剪到哪个角标，不包括当前角标</span></span><br><span class="line">            type = [type substringToIndex:range<span class="variable">.location</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 根据字符串类名生成类对象</span></span><br><span class="line">            Class modelClass = <span class="built_in">NSClassFromString</span>(type);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (modelClass) &#123; <span class="comment">// 有对应的模型才需要转</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 把字典转模型</span></span><br><span class="line">                value  =  [modelClass modelWithDict:value];</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 三级转换：NSArray中也是字典，把数组中的字典转换成模型.</span></span><br><span class="line">        <span class="comment">// 判断值是否是数组</span></span><br><span class="line">        <span class="keyword">if</span> ([value isKindOfClass:[<span class="built_in">NSArray</span> class]]) &#123;</span><br><span class="line">            <span class="comment">// 判断对应类有没有实现字典数组转模型数组的协议</span></span><br><span class="line">            <span class="keyword">if</span> ([<span class="keyword">self</span> respondsToSelector:<span class="keyword">@selector</span>(arrayContainModelClass)]) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 转换成id类型，就能调用任何对象的方法</span></span><br><span class="line">                <span class="keyword">id</span> idSelf = <span class="keyword">self</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 获取数组中字典对应的模型</span></span><br><span class="line">                <span class="built_in">NSString</span> *type =  [idSelf arrayContainModelClass][key];</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 生成模型</span></span><br><span class="line">                Class classModel = <span class="built_in">NSClassFromString</span>(type);</span><br><span class="line">                <span class="built_in">NSMutableArray</span> *arrM = [<span class="built_in">NSMutableArray</span> array];</span><br><span class="line">                <span class="comment">// 遍历字典数组，生成模型数组</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="built_in">NSDictionary</span> *dict <span class="keyword">in</span> value) &#123;</span><br><span class="line">                    <span class="comment">// 字典转模型</span></span><br><span class="line">                    <span class="keyword">id</span> model =  [classModel modelWithDict:dict];</span><br><span class="line">                    [arrM addObject:model];</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 把模型数组赋值给value</span></span><br><span class="line">                value = arrM;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (value) &#123; <span class="comment">// 有值，才需要给模型的属性赋值</span></span><br><span class="line">            <span class="comment">// 利用KVC给模型中的属性赋值</span></span><br><span class="line">            [objc setValue:value forKey:key];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> objc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h4 id="Swift_Runtime">Swift Runtime</h4><ul>
+<li>纯Swift的类，不能通过runtime获取到属性与方法。比如tuple：纯Swift类的函数调用已经不再是OC的运行时发消息objc_msgsend，而是类似C++的vtable，在编译时就确定了调用什么函数，所以runtime获取不到。</li>
+<li>继承于NSObject的类依然拥有动态性，所以可以拿的到。</li>
+<li>@objc<ul>
+<li>@objc是用来将Swift的API导出给OC与OC runtime使用的，如果你继承NSObject的类，将会被自动的加入这个标识。</li>
+</ul>
+</li>
+<li>dynamic<ul>
+<li>加了@objc标识的方法、属性都无法保证都会被运行时调用，因为Swift会做静态优化。要想完全被动态调用就要使用dynamic修饰词了。使用这个标识也会隐形的加入@objc。这也就解释了为什么上边VC中的方法无法被替换了，被Swift优化成静态调用了，而ViewDidAppear本身为OC的方法，拥有动态特性，所以我们加入dynamic关键字</li>
+</ul>
+</li>
+</ul>
+<h4 id="小结">小结</h4><ul>
+<li>Runtime是运行时特性 ，方法调用的本质是给对象发消息：<code>objc_msgSend</code></li>
+<li><strong>class_getClassMethod</strong>: 获取类方法地址</li>
+<li><strong>class_getInstanceMethod</strong>: 获取实例方法地址</li>
+<li><strong>method_exchangeImplementations</strong>：交换方法的实现</li>
+<li><strong><code>+ (BOOL)resolveInstanceMethod:(SEL)sel</code></strong>: 当一个对象调用未实现的方法，会调用这个方法处理,并且会把对应的方法列表传过来.</li>
+<li><strong>class_addMethod</strong>：给实例添加方法</li>
+<li><strong>objc_setAssociatedObject</strong>：给对象设置关联值</li>
+<li><strong>objc_getAssociatedObject</strong>：获取对象的关联值</li>
+<li><strong>class_copyPropertyList</strong>：获得指向该类所有属性的指针</li>
+<li><strong>property_getName</strong>：取出属性指针对应的名称，返回字符串(char*)</li>
+<li><strong>class_copyIvarList</strong>：获取指向该类所有成员属性指针</li>
+<li><strong>ivar_getName</strong>：取出成员属性对应的名称</li>
+</ul>
+<h4 id="参考">参考</h4><p>Runtime简介： <a href="http://www.jianshu.com/p/94657b7d31d0" target="_blank" rel="external">http://www.jianshu.com/p/94657b7d31d0</a><br>Swift Runtime: <a href="http://www.jianshu.com/p/9c36a5b7820a" target="_blank" rel="external">http://www.jianshu.com/p/9c36a5b7820a</a><br>MJExtension: <a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">https://github.com/CoderMJLee/MJExtension</a></p>
+<h2 id="SourceTree_rebase_用法_-_曾铭">SourceTree rebase 用法 - 曾铭</h2><h4 id="push_with_-rebase">push with <code>--rebase</code></h4><h4 id="push_前调整本地的_commits_tree">push 前调整本地的 commits tree</h4><ul>
+<li>Add some commits append to the branch</li>
+<li>Right-click on a commit and hit <code>Rebase children of &lt;commit-id&gt; interactively...</code></li>
+<li>Try <code>reorder</code> or <code>squash</code> or <code>edit message</code> or <code>delete</code></li>
+<li>Click <code>OK</code></li>
+<li>Enjoy <code>the history tree</code></li>
+</ul>
+<blockquote>
+<p>注意:</p>
+<ul>
+<li>仅适用于 local branch 还没有 push 的情况!!!</li>
+<li>push 时不要使用 <code>-f</code> 参数</li>
+</ul>
+</blockquote>
+<h4 id="参考-1">参考</h4><ul>
+<li><a href="http://gitbook.liuhui998.com/4_2.html" target="_blank" rel="external">Git Book 中文版 - rebase</a></li>
+<li><a href="https://segmentfault.com/q/1010000000430041" target="_blank" rel="external">团队开发里频繁使用 git rebase 来保持树的整洁好吗? - SegmentFault</a></li>
+<li><a href="https://ihower.tw/blog/archives/8076" target="_blank" rel="external">三個使用版本控制系統的建議 | ihower { blogging }</a> 推荐此人博客</li>
+<li><a href="http://blogs.atlassian.com/2014/06/interactive-rebase-sourcetree/" target="_blank" rel="external">Interactive rebase in SourceTree | Atlassian Blogs</a></li>
+</ul>
+<h4 id="附带一提">附带一提</h4><ul>
+<li>对于同一个 repo, 本地 clone 一份即可, 用 branchs 切换不同状态. 否则每个 repo 都要 sync( pull&amp;push ) 很麻烦</li>
+<li>控制写代码的节奏, 半小时整理思路, 小步提交(起来走走喝杯水), 善用 <code>amend last commit</code> 和 <code>rebase</code>, 便于 reviewer 理解</li>
+</ul>
+<h2 id="Firebase_-_王胜">Firebase - 王胜</h2><p><a href="https://firebase.google.com/" target="_blank" rel="external">Firebase</a>是一个帮助你快速开发高质量的应用程序，增强你的用户基础，并提高盈利能力的移动开发平台。Firebase有很多互补性的功能组成，你可以根据具体需求，找到适用的功能模块搭配使用。</p>
+<h3 id="功能介绍">功能介绍</h3><blockquote>
+<p>总体功能预览：</p>
+</blockquote>
+<p><img src="https://lh3.googleusercontent.com/Jp5DG28Mj668TyylbnjcCjNvzh-9-IjxT1IixnKrOziswXJzQZZ8GUpRobmQPba0vvINC8c6GymEni3UYcAX3uLVdHFz0Z_x=s1600" alt="all-feature-preview"></p>
+<h4 id="分析功能">分析功能</h4><p>Firebase的核心功能是Firebases分析，一个免费且没有限制的分析解决方案。通过一个统一的Dashboard看板，可以查看用户的行为以及属性的定量分析。同时支持iOS和Android平台：</p>
+<ul>
+<li>最多可以无限制报告500个时间类型，每一个时间类型可支持25个属性</li>
+<li>统一的dashbaord查看用户行为以及跨网络性能分析</li>
+<li>人口分布，包括年龄、性别以及位置信息等</li>
+<li>提供可导出的BigQuery自定义查询</li>
+</ul>
+<h4 id="Develop">Develop</h4><p>构建更好的应用程序，并预留接口给开发者。节省关键的开发时间，产出高质量、无bug的应用程序。</p>
+<ul>
+<li>云端消息<br>提供可靠的跨平台的消息分发和接受通道</li>
+<li>认证<br>提供健壮的认证机制</li>
+<li>实时数据<br>实时存储和同步应用数据</li>
+<li>存储<br>便捷的文件存储</li>
+<li>寄主<br>快速分发网络内容</li>
+<li>远程配置<br>可远程自定义应用的配置信息</li>
+<li>测试Lab<br>提供云端测试功能</li>
+<li>Crash报告<br>保证应用的稳定性</li>
+</ul>
+<h4 id="Grow">Grow</h4><p>在恰当的时机，培养并吸引合适的用户。促进潜在用户的增长。</p>
+<ul>
+<li>通知<br>恰当的时机吸引用户</li>
+<li>App索引<br>驱动有效的搜索流量到你的App</li>
+<li>动态链接<br>应用内发送动态链接，引导用户到正确的地方</li>
+<li>邀请<br>引导用户分享你的应用程序</li>
+<li>AdWords广告<br>通过Google搜索获取用户</li>
+</ul>
+<h4 id="Earn">Earn</h4><p>通过向全球用户展示吸引的广告赚取到收入。</p>
+<ul>
+<li>AdMob<br>通过吸引性的广告盈利</li>
+</ul>
+<h3 id="开发使用">开发使用</h3><h4 id="前置条件">前置条件</h4><ul>
+<li>一个运行Google Play服务9.0.0以上版本的Android设备</li>
+<li>通过 <a href="https://developer.android.com/tools/help/sdk-manager.html" target="_blank" rel="external">Android SDK Manager</a> 获取Google Play services</li>
+<li><a href="http://developer.android.com/sdk" target="_blank" rel="external">Android Studio</a> 1.5或者更高版本</li>
+<li>一个Android Studio项目和包名</li>
+</ul>
+<blockquote>
+<p>注意事项：<br>Android Studio低于2.2版本中的Instant Run存在Firebase Analytics和特定事件保护不兼容问题，官方建议禁用 Instant run或者升级Android Studio到2.2预览版。</p>
+</blockquote>
+<h4 id="创建Firebase项目">创建Firebase项目</h4><ul>
+<li>访问 <a href="https://console.firebase.google.com/" target="_blank" rel="external">控制台</a>，创建一个Firebase项目。<br><img src="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-create-project.png" alt="firebase-create-projec"></li>
+<li>添加Firebase到应用程序<br>选择项目 -&gt; 项目设置 -&gt; 将Firebase添加到您的Android/iOS/网页应用，按照向导一步一步完成配置。<br><img src="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-console-dashboard.png" alt="firebase-console-dashboard"><br><img src="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-add-to-app.png" alt="firebase-add-to-app"></li>
+<li>选择需要的功能模块，加入项目中<br><img src="http://7xsk2b.com1.z0.glb.clouddn.com/image/firebase-feature-libs-list.png" alt="firebase-feature-libs-list"></li>
+</ul>
+<p>具体的开发文档，<a href="https://firebase.google.com/docs" target="_blank" rel="external">参见官网</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/27/移动周分享-第57期/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          移动周分享-第57期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/13/移动周分享-第55期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动周分享-第55期</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="移动周分享-第56期" data-title="移动周分享-第56期" data-url="http://yoursite.com/2016/05/20/移动周分享-第56期/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 移动组团队
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
